@@ -1,0 +1,29 @@
+# Node and build artifacts
+node_modules/
+dist/
+build/
+
+# Python environment (if present)
+venv/
+
+# IDE/editor files
+.vscode/
+.idea/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Archives and zips
+*.zip
+*.tar.gz
+*.rar
+
+# Env files
+.env
+
+# Misc
+coverage/

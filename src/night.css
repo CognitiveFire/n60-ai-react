@@ -1,0 +1,134 @@
+
+/* night.css */
+[data-theme="night"] {
+  background-color: #0a0a0a;
+  color: #fff;
+}
+
+[data-theme="night"] .navbar {
+  background-color: #000;
+}
+
+[data-theme="night"] .nav-links a {
+  color: #eee;
+}
+
+[data-theme="night"] .nav-links a:hover {
+  color: #60a38d;
+}
+
+[data-theme="night"] .hero-text p {
+  color: #f9f3f3;
+}
+
+[data-theme="night"] .solutions-section {
+  background-color: #000;
+}
+
+[data-theme="night"] .solution-card {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+}
+
+[data-theme="disco"] .solutions-section h2.aos-animate {
+  animation: neonFlicker 1.5s infinite;
+}
+
+[data-theme="disco"] .solution-card.aos-animate {
+  animation: popIn 1s ease-out forwards;
+}
+
+[data-theme="night"] #how-we-work .card {
+  background: #1c1c1c;
+  color: #fff;
+}
+
+[data-theme="night"] #pricing .card {
+  background: #1c1c1c;
+  color: #fff;
+}
+
+[data-theme="night"] .project-story {
+  background: #1e1e1e;
+}
+
+[data-theme="night"] .project-story h3 {
+  color: #00c0a5;
+}
+
+[data-theme="night"] .project-story p {
+  color: #ddd;
+}
+
+[data-theme="night"] .contact-form input,
+[data-theme="night"] .contact-form textarea {
+  background: #1c1c1c;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+[data-theme="night"] .contact-form input::placeholder,
+[data-theme="night"] .contact-form textarea::placeholder {
+  color: #ccc;
+}
+
+[data-theme="night"] .contact-form button {
+  background: #1a1a1a;
+  color: white;
+}
+
+[data-theme="night"] .form-status.success {
+  color: #00c0a5;
+}
+
+[data-theme="night"] .form-status.error {
+  color: #ff4d4f;
+}
+
+[data-theme="night"] .footer {
+  background: #0a0a0a;
+  color: #888;
+}
+
+[data-theme="night"] .footer .made-with-love {
+  color: #aaa;
+}
+
+[data-theme="night"] .slider {
+  background-color: #444;
+}
+
+[data-theme="night"] input:checked + .slider {
+  background-color: #60a38d;
+}
+
+[data-theme="night"] .theme-switch {
+  position: relative;
+  margin-right: 1rem;
+}
+
+[data-theme="night"] .theme-switch::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -35px;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('/images/DISCO-DANCE-NIGHT.png');
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.5rem;
+}
+
+
+[data-theme="night"] .burger {
+  color: #00ffcc;
+}
+
+[data-theme="night"] .burger:hover,
+[data-theme="night"] .burger:focus {
+  color: #ffeb3b;
+}
