@@ -11,7 +11,7 @@ html {
 
 /* Global Dark Mode Override */
 body {
-  background-color: #000 !important;
+  background-color: #437158!important;
   color: #fff !important;
 }
 
@@ -44,7 +44,7 @@ body {
 }
 
 .hero-text h1 {
-  font-size: 4rem; /* Hero text size */
+  font-size: 8rem; /* Hero text size */
   font-weight: 900;
   line-height: 1.2;
   margin: 0 0 1rem 0;

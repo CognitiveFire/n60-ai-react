@@ -109,7 +109,7 @@ function App() {
   <div className="hero-text">
     <h1 className="hero-title">
       <span>Kraftig</span><br />
-      <span>Agentic AI</span><br />
+      <span>AI</span><br />
       <span>for Norske SMB</span>
     </h1>
     <p>Skreddersydde AI-løsninger bygget i Norge for maksimal effekt og eierskap.</p>
