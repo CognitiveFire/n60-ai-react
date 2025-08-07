@@ -1,0 +1,44 @@
+# Node and build artifacts
+node_modules/
+dist/
+build/
+
+# Video, audio, and media assets
+*.mp4
+*.mp3
+*.wav
+*.mov
+*.avi
+
+# Subtitle and script files
+*.srt
+*.vtt
+*.txt
+
+# Images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.webp
+
+# Env and config files
+.env
+*.log
+
+# IDE/editor files
+.vscode/
+.idea/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+
+# Coverage
+coverage/

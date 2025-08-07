@@ -1,0 +1,14 @@
+
+.demo-video-wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.demo-video-wrapper video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
