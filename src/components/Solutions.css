@@ -59,26 +59,8 @@
 }
 
 
-  .solution-card:hover, {
+  .solution-card:hover {
     transform: translateY(-5px);
     transition: transform 0.3s ease;
-  }
-@media (max-width: 768px) {
-  .solutions-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 0 1rem;
-  }
-
-  .solution-card {
-    padding: 1.5rem;
-  }
-
-  .solution-card h3 {
-    font-size: 1.3rem;
-  }
-
-  .solution-card p {
-    font-size: 0.95rem;
   }
 }
