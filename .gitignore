@@ -6,6 +6,26 @@ build/
 # Python environment (if present)
 venv/
 
+# Video, audio, and media assets
+*.mp4
+*.mp3
+*.wav
+*.mov
+*.avi
+
+# Subtitle and script files
+*.srt
+*.vtt
+*.txt
+
+# Images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.webp
+
 # IDE/editor files
 .vscode/
 .idea/
@@ -25,5 +45,5 @@ Thumbs.db
 # Env files
 .env
 
-# Misc
+# Coverage
 coverage/
