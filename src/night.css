@@ -26,12 +26,12 @@
 }
 
 [data-theme="night"] .solution-card {
-  background-color: #e8f5e8;
-  color: #555;
+  background-color: transparent;
+  color: #fff;
 }
 
 [data-theme="night"] .solution-card h3 {
-  color: #2d4f3e;
+  color: #fff;
 }
 
 [data-theme="disco"] .solutions-section h2.aos-animate {

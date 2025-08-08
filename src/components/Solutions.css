@@ -20,24 +20,37 @@
   margin: 0 auto;
 }
 
+/* Force grid layout even on smaller screens */
+@media (max-width: 960px) {
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .solutions-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 .solution-card {
-  background-color: #e8f5e8 !important;
+  background-color: transparent !important;
   border: none;
   border-radius: 12px;
   padding: 2rem;
   transition: transform 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .solution-card h3 {
-  color: #2d4f3e !important;
+  color: #fff !important;
   font-size: 1.5rem;
   margin-bottom: 1rem;
   font-weight: 600;
 }
 
 .solution-card p {
-  color: #555 !important;
+  color: #fff !important;
   line-height: 1.6;
   font-size: 1rem;
 }
