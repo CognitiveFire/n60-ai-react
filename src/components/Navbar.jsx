@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import './Navbar.css'; 
-import logo from '/images/logo-light.png?v=2'; 
+import logo from '/images/logo-light.png'; 
 
 const navItems = [
   { id: 'solutions', label: 'Våre Løsninger' },

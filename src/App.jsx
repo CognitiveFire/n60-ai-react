@@ -294,7 +294,7 @@ function App() {
         rel="noopener noreferrer"
       >
         <img
-          src={theme === 'night' ? '/images/N60BOT-DARK.png' : '/images/N60BOT-DISCO.png'}
+          src={theme === 'night' ? '/images/N60BOT-DARK.png' : '/images/DISCODANCE-LIGHT.png'}
           alt="Chat med N60"
           className="chat-tab-image"
         />
