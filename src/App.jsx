@@ -130,17 +130,21 @@ function App() {
   </div>
   <div className="hero-image" ref={heroImageRef}>
     <img 
-      src="/images/N60Bot.png" 
-      alt="N60 Bot" 
+      src="/images/pointing-hand.png" 
+      alt="Pointing hand" 
       style={{
         transform: `translateX(${Math.min(scrollY * 0.5, 200)}px)`,
         transition: 'transform 0.1s ease-out',
         width: '300px',
         height: 'auto',
-        display: 'block'
+        display: 'block',
+        backgroundColor: 'rgba(255,255,255,0.1)'
       }}
-      onLoad={() => console.log('N60Bot image loaded successfully')}
-      onError={(e) => console.error('Failed to load N60Bot image:', e)}
+      onLoad={() => console.log('Pointing hand image loaded successfully')}
+      onError={(e) => {
+        console.error('Failed to load pointing hand image:', e);
+        console.log('Trying alternative approach...');
+      }}
     />
   </div>
 </section>
