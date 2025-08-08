@@ -130,8 +130,8 @@ function App() {
   </div>
   <div className="hero-image" ref={heroImageRef}>
     <img 
-      src="/images/dashboard-hero.png" 
-      alt="Dashboard preview" 
+      src="/images/N60Bot.png" 
+      alt="N60 Bot" 
       style={{
         transform: `translateX(${Math.min(scrollY * 0.5, 200)}px)`,
         transition: 'transform 0.1s ease-out',
@@ -139,8 +139,8 @@ function App() {
         height: 'auto',
         display: 'block'
       }}
-      onLoad={() => console.log('Dashboard image loaded successfully')}
-      onError={(e) => console.error('Failed to load dashboard image:', e)}
+      onLoad={() => console.log('N60Bot image loaded successfully')}
+      onError={(e) => console.error('Failed to load N60Bot image:', e)}
     />
   </div>
 </section>
