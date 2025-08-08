@@ -120,8 +120,8 @@ function App() {
   <div className="hero-text">
     <h1 className="hero-title">
       <span>Kraftig</span><br />
-      <span>AI</span><br />
-      <span>for Norske SMB</span>
+      <span>AI for</span><br />
+      <span>Norske SMB</span>
     </h1>
     <p>Skreddersydde AI-løsninger bygget i Norge for maksimal effekt og eierskap.</p>
     <a href="https://calendly.com/n60/new-meeting" target="_blank" rel="noopener noreferrer" className="cta">
@@ -135,7 +135,7 @@ function App() {
       style={{
         transform: `translateX(${Math.min(scrollY * 0.5, 200)}px)`,
         transition: 'transform 0.1s ease-out',
-        width: '600px',
+        width: '900px',
         height: 'auto',
         display: 'block'
       }}
