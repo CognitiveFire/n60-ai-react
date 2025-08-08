@@ -130,12 +130,17 @@ function App() {
   </div>
   <div className="hero-image" ref={heroImageRef}>
     <img 
-      src="/images/scalable.png" 
+      src="/images/pointing-hand-new.png" 
       alt="Pointing hand" 
       style={{
         transform: `translateX(${Math.min(scrollY * 0.5, 200)}px)`,
-        transition: 'transform 0.1s ease-out'
+        transition: 'transform 0.1s ease-out',
+        width: '300px',
+        height: 'auto',
+        display: 'block'
       }}
+      onLoad={() => console.log('Pointing hand image loaded successfully')}
+      onError={(e) => console.error('Failed to load pointing hand image:', e)}
     />
   </div>
 </section>
