@@ -468,7 +468,6 @@ section h2 {
     margin-bottom: 2rem;
   }
 
-  .solutions-grid,
   #how-we-work .grid-4 {
     grid-template-columns: 1fr;
   }
@@ -543,7 +542,7 @@ section h2 {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   }
 
-  .grid-4 {
+  .grid-4:not(.solutions-grid) {
     grid-template-columns: 1fr;
   }
 

@@ -33,7 +33,6 @@
     font-size: 2rem;
   }
 
-  .solutions-grid,
   .howwework-grid,
   .pricing-grid {
     grid-template-columns: 1fr;
