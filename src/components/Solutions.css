@@ -5,6 +5,9 @@
   padding: 6rem 2rem;
   text-align: center;
   border-top: 1px solid #fff;
+  display: block !important;
+  flex-direction: unset !important;
+  flex-wrap: unset !important;
 }
 
 .section-title {
@@ -19,6 +22,8 @@
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  flex-direction: unset !important;
+  flex-wrap: unset !important;
 }
 
 /* Force grid layout even on smaller screens */
