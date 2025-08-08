@@ -377,6 +377,11 @@ section h2 {
     max-width: 50%;
   }
 
+  .hero-image img {
+    width: 600px;
+    height: auto;
+  }
+
   #contact .text-block,
   #contact .graphic-block {
     flex: 1 1 50%;
@@ -645,6 +650,11 @@ section[data-aos].aos-animate {
   #contact .graphic-block {
     padding-left: 2rem;
   }
+
+  .hero-image img {
+    width: 700px;
+    height: auto;
+  }
 }
 
 @media (max-width: 960px) {
@@ -673,6 +683,7 @@ section[data-aos].aos-animate {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  min-height: 500px;
 }
 
 .hero-image img {
