@@ -26,8 +26,12 @@
 }
 
 [data-theme="night"] .solution-card {
-  background-color: #1a1a1a;
-  color: #f0f0f0;
+  background-color: #f5f5f5;
+  color: #555;
+}
+
+[data-theme="night"] .solution-card h3 {
+  color: #2d4f3e;
 }
 
 [data-theme="disco"] .solutions-section h2.aos-animate {
@@ -39,13 +43,21 @@
 }
 
 [data-theme="night"] #how-we-work .card {
-  background: #1c1c1c;
-  color: #fff;
+  background: #f5f5f5;
+  color: #555;
+}
+
+[data-theme="night"] #how-we-work .card h3 {
+  color: #2d4f3e;
 }
 
 [data-theme="night"] #pricing .card {
-  background: #1c1c1c;
-  color: #fff;
+  background: #f5f5f5;
+  color: #555;
+}
+
+[data-theme="night"] #pricing .card h3 {
+  color: #2d4f3e;
 }
 
 [data-theme="night"] .project-story {
