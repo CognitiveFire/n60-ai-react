@@ -10,11 +10,31 @@ const DemoShowcase = () => {
       </div>
       <div className="text-block">
         <p>
-          N60 er et norsk teknologiselskap med base i Bergen som har ett klart mål: å gjøre kraftig og verdifull kunstig intelligens tilgjengelig og overkommelig for små og mellomstore bedrifter i Norge. Vi utvikler og implementerer både skreddersydde og ferdigbygde AI-løsninger som hjelper bedrifter med å øke inntektene, jobbe mer effektivt og skalere raskere – uten å måtte investere i egne teknologiteam.
+          N60 er et AI-byrå basert i Bergen som gjør kraftig kunstig intelligens tilgjengelig for norske SMB-er.
         </p>
         
         <p>
-          Hos N60 tror vi på at du som kunde skal eie dine egne løsninger. Derfor leverer vi full kontroll og lokal hosting i Norge, helt i tråd med gjeldende GDPR-regelverk. Enten du ønsker å automatisere prosesser, forbedre beslutningsgrunnlag eller skape smartere kundeopplevelser, står vi klare til å hjelpe deg med en løsning som passer dine mål og ditt budsjett.
+          Vi tilbyr:
+        </p>
+        
+        <p>
+          🚀 <strong>Skreddersydde og ferdigbygde AI-løsninger</strong><br/>
+          – Øk inntektene, jobb smartere og skalér raskt
+        </p>
+        
+        <p>
+          💰 <strong>Overkommelig pris og høy verdi</strong><br/>
+          – Ingen behov for eget teknologiteam
+        </p>
+        
+        <p>
+          🔒 <strong>Full eierskap og lokal hosting i Norge</strong><br/>
+          – GDPR-kompatibelt og fremtidsrettet
+        </p>
+        
+        <p>
+          <strong>Målet vårt:</strong><br/>
+          Å gi deg kontroll, effektivitet og vekst – med løsninger som passer dine behov og ditt budsjett.
         </p>
       </div>
     </section>
