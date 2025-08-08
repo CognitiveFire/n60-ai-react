@@ -74,10 +74,10 @@
     position:relative;
     width:280px;
     flex:0 0 280px;
-    border:12px solid #000;
+    border:12px solid #437158;
     border-radius:26px;
     overflow:hidden;
-    background:#000;
+    background:#437158;
   }
   .phone-frame video, .phone-frame img{
     width:100%;

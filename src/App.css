@@ -24,7 +24,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   color: #fff;
-  background: #000;
+  background: #437158;
   min-height: 100vh;
   display: flex;
   flex-direction: row;
@@ -130,7 +130,7 @@ section h2 {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  background: #000;
+  background: #437158;
   color: #fff;
   padding: 80px 20px;
   max-width: 1200px;
@@ -149,7 +149,7 @@ section h2 {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  background-color: #000;
+  background-color: #437158;
   color: #fff;
   padding: 80px 20px;
   max-width: 1200px;
@@ -247,7 +247,7 @@ section h2 {
   margin: 0 auto;
   border: clamp(10px, 2vw, 20px) solid #333;
   border-radius: 12px;
-  background: #000;
+  background: #437158;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.45);
   overflow: hidden;
 }
