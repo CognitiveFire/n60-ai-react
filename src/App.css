@@ -591,6 +591,10 @@ section h2 {
     font-size: 0.9rem;
   }
 
+  .hero-image {
+    display: none !important;
+  }
+
   .grid-4,
   .project-grid {
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -690,7 +694,7 @@ section[data-aos].aos-animate {
   }
 
   .hero-image {
-    display: none;
+    display: none !important;
   }
 
   #contact {

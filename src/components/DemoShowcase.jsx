@@ -18,18 +18,18 @@ const DemoShowcase = () => {
         </p>
         
         <p>
-          🚀 <strong>Skreddersydde og ferdigbygde AI-løsninger</strong><br/>
-          – Øk inntektene, jobb smartere og skalér raskt
+          <strong>Skreddersydde og ferdigbygde AI-løsninger</strong><br/>
+           Øk inntektene, jobb smartere og skalér raskt
         </p>
         
         <p>
-          💰 <strong>Overkommelig pris og høy verdi</strong><br/>
-          – Ingen behov for eget teknologiteam
+           <strong>Overkommelig pris og høy verdi</strong><br/>
+           Ingen behov for eget teknologiteam
         </p>
         
         <p>
-          🔒 <strong>Full eierskap og lokal hosting i Norge</strong><br/>
-          – GDPR-kompatibelt og fremtidsrettet
+           <strong>Full eierskap og lokal hosting i Norge</strong><br/>
+           GDPR-kompatibelt og fremtidsrettet
         </p>
         
         <p>
