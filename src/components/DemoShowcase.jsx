@@ -5,33 +5,19 @@ import './DemoShowcase.css';
 const DemoShowcase = () => {
   return (
     <section className="demo-show">
-      <h2 className="demo-heading">Møt ditt nye markedsføringslag.</h2>
+      <h2 className="demo-heading">Hvem er N60?</h2>
 
-      <div className="device-row">
-        <div className="phone-frame">
-          <img src="/images/mobilephone-right.png" alt="App-skjerm" />
-        </div>
-
-        <div className="laptop-frame">
-          <div className="image-wrapper">
-            <img 
-              src="/images/laptop-poster.png" 
-              alt="Dashboard preview" 
-              className="demo-image"
-            />
-          </div>
-          <div className="laptop-base" />
-        </div>
-
-        <div className="phone-frame">
-          <img src="/images/mobilephone-left.png" alt="App-skjerm" />
+      <div className="about-content">
+        <div className="about-text">
+          <p className="about-paragraph">
+            N60 er et norsk teknologiselskap med base i Bergen som har ett klart mål: å gjøre kraftig og verdifull kunstig intelligens tilgjengelig og overkommelig for små og mellomstore bedrifter i Norge. Vi utvikler og implementerer både skreddersydde og ferdigbygde AI-løsninger som hjelper bedrifter med å øke inntektene, jobbe mer effektivt og skalere raskere – uten å måtte investere i egne teknologiteam.
+          </p>
+          
+          <p className="about-paragraph">
+            Hos N60 tror vi på at du som kunde skal eie dine egne løsninger. Derfor leverer vi full kontroll og lokal hosting i Norge, helt i tråd med gjeldende GDPR-regelverk. Enten du ønsker å automatisere prosesser, forbedre beslutningsgrunnlag eller skape smartere kundeopplevelser, står vi klare til å hjelpe deg med en løsning som passer dine mål og ditt budsjett.
+          </p>
         </div>
       </div>
-
-      <p className="demo-caption">
-       Fra skreddersydd skjema, AI-innholds­motor og
-        lead-scoring, til dashboard og automatisert utsendelse.
-      </p>
     </section>
   );
 };
