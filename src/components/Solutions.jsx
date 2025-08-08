@@ -1,7 +1,6 @@
 
 // Solutions.jsx
 import React from 'react';
-import './Solutions.css';
 
 const solutions = [
   { title: 'Salg', description: 'Automatiser lead-generering og kundereiser.' },

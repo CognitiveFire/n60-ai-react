@@ -139,6 +139,62 @@ section h2 {
   padding: 80px 20px;
   max-width: 1200px;
   margin: 0 auto;
+  display: block !important;
+  flex-direction: unset !important;
+  flex-wrap: unset !important;
+}
+
+.solutions-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  grid-template-rows: repeat(2, 1fr) !important;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-direction: unset !important;
+  flex-wrap: unset !important;
+}
+
+.solution-card {
+  background-color: transparent !important;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: transform 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.solution-card h3 {
+  color: #fff !important;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.solution-card p {
+  color: #fff !important;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.solution-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}
+
+/* Force grid layout even on smaller screens */
+@media (max-width: 960px) {
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .solutions-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+  }
 }
 
 .solutions-title {
@@ -581,12 +637,21 @@ section[data-aos].aos-animate {
 
 /* Footer */
 .footer {
+  background-color: transparent;
+  color: #fff;
   text-align: center;
   padding: 2rem 1rem;
+  border-top: 1px solid #fff;
   font-size: 0.9rem;
   width: 100%;
   margin: 0 auto;
   max-width: 1200px;
+  box-sizing: border-box;
+}
+
+.footer .made-with-love {
+  margin-top: 0.5rem;
+  opacity: 0.7;
 }
 
 .footer .made-with-love {
