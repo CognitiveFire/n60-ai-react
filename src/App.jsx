@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -44,6 +44,8 @@ function App() {
   const [activeFilter, setActiveFilter] = useState(projectsData[0]?.category || 'Salg');
   const [showVideo, setShowVideo] = useState(false);
   const [formStatus, setFormStatus] = useState(null);
+  const [scrollY, setScrollY] = useState(0);
+  const heroImageRef = useRef(null);
 
   useEffect(() => {
     AOS.init({
@@ -68,6 +70,15 @@ function App() {
       }
     }, 15000);
     return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleFormSubmit = async (event) => {
@@ -117,8 +128,15 @@ function App() {
       ▶ Se demoen
     </a>
   </div>
-  <div className="hero-image">
-    <img src="/images/dashboard-hero.png" alt="AI dashboard" />
+  <div className="hero-image" ref={heroImageRef}>
+    <img 
+      src="/images/pointing-hand.png" 
+      alt="Pointing hand" 
+      style={{
+        transform: `translateX(${Math.min(scrollY * 0.5, 200)}px)`,
+        transition: 'transform 0.1s ease-out'
+      }}
+    />
   </div>
 </section>
 <DemoShowcase />   {/* <-- nå vises demo-rammen */}

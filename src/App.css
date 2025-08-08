@@ -594,16 +594,16 @@ section[data-aos].aos-animate {
     padding-bottom: 2rem;
     padding-top: 60px;
     flex-direction: column;
+    justify-content: center;
   }
 
-  .hero-text,
-  .hero-image {
+  .hero-text {
     width: 100%;
     text-align: center;
   }
 
   .hero-image {
-    margin-top: 20px;
+    display: none;
   }
 
   #contact {
@@ -672,6 +672,7 @@ section[data-aos].aos-animate {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .hero-image img {
@@ -679,4 +680,5 @@ section[data-aos].aos-animate {
   height: auto;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  will-change: transform;
 }
