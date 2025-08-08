@@ -187,8 +187,9 @@ section h2 {
 #pricing .card {
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  background: #f5f5f5;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 #pricing .grid-2 > div h3,
@@ -196,11 +197,11 @@ section h2 {
 #pricing .grid-2 > div ul {
   display: block;
   margin-bottom: 0.5rem;
-  color: #555;
+  color: #fff;
 }
 
 #pricing .grid-2 > div h3 {
-  color: #2d4f3e;
+  color: #fff;
   font-weight: 600;
 }
 
@@ -293,11 +294,12 @@ section h2 {
 
 /* Card Example */
 .card {
-  background: #e8f5e8;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: .6rem;
   padding: 1.25rem;
   transition: transform .25s;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 .card:hover {
@@ -307,7 +309,7 @@ section h2 {
 .card h3 {
   margin-block: 0 .4rem;
   font-size: 1.1rem;
-  color: #2d4f3e;
+  color: #fff;
   font-weight: 600;
 }
 
@@ -315,7 +317,7 @@ section h2 {
   margin: 0;
   font-size: .9rem;
   line-height: 1.55;
-  color: #555;
+  color: #fff;
 }
 
 /* Tiny Phones Adjustment */

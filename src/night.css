@@ -28,6 +28,8 @@
 [data-theme="night"] .solution-card {
   background-color: transparent;
   color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 [data-theme="night"] .solution-card h3 {
@@ -43,21 +45,25 @@
 }
 
 [data-theme="night"] #how-we-work .card {
-  background: #e8f5e8;
-  color: #555;
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 [data-theme="night"] #how-we-work .card h3 {
-  color: #2d4f3e;
+  color: #fff;
 }
 
 [data-theme="night"] #pricing .card {
-  background: #e8f5e8;
-  color: #555;
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 [data-theme="night"] #pricing .card h3 {
-  color: #2d4f3e;
+  color: #fff;
 }
 
 [data-theme="night"] .project-story {
