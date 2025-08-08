@@ -130,7 +130,7 @@ function App() {
   </div>
   <div className="hero-image" ref={heroImageRef}>
     <img 
-      src="/images/pointing-hand.png" 
+      src="/images/scalable.png" 
       alt="Pointing hand" 
       style={{
         transform: `translateX(${Math.min(scrollY * 0.5, 200)}px)`,
