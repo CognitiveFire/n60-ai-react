@@ -18,13 +18,13 @@ venv/
 *.vtt
 *.txt
 
-# Images
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.svg
-*.webp
+# Images (excluding public images)
+!public/images/*.png
+!public/images/*.jpg
+!public/images/*.jpeg
+!public/images/*.gif
+!public/images/*.svg
+!public/images/*.webp
 
 # IDE/editor files
 .vscode/
