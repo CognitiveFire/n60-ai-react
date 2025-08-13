@@ -771,7 +771,7 @@ section h2 {
   }
 
   .hero-image img {
-    width: 1260px;
+    width: 1100px;
     height: auto;
   }
 
@@ -1058,7 +1058,7 @@ section[data-aos].aos-animate {
   }
 
   .hero-image img {
-    width: 1260px !important;
+    width: 1100px !important;
     height: auto;
   }
 }
@@ -1096,22 +1096,22 @@ section[data-aos].aos-animate {
   max-width: 100%;
   height: auto;
   will-change: transform;
-  width: 1260px !important;
-  min-width: 1260px !important;
+  width: 1100px !important;
+  min-width: 1100px !important;
   flex-shrink: 0 !important;
 }
 
 /* Force hero image size with higher specificity */
 .hero-section .hero-image img {
-  width: 1260px !important;
-  min-width: 1260px !important;
+  width: 1100px !important;
+  min-width: 1100px !important;
   max-width: none !important;
 }
 
 /* Most specific selector to override everything */
 body .hero-section .hero-image img {
-  width: 1260px !important;
-  min-width: 1260px !important;
+  width: 1100px !important;
+  min-width: 1100px !important;
   max-width: none !important;
   flex-shrink: 0 !important;
 }
