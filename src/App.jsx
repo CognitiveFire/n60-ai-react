@@ -135,7 +135,7 @@ function App() {
       style={{
         transform: `translateX(${Math.min(scrollY * 0.5, 200)}px)`,
         transition: 'transform 0.1s ease-out',
-        width: '1500px',
+        width: '2100px',
         height: 'auto',
         display: 'block'
       }}
