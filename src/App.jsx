@@ -135,8 +135,6 @@ function App() {
       style={{
         transform: `translateX(${Math.min(scrollY * 0.5, 200)}px)`,
         transition: 'transform 0.1s ease-out',
-        width: '2100px',
-        height: 'auto',
         display: 'block'
       }}
       onLoad={() => console.log('Pointing hand image loaded successfully')}

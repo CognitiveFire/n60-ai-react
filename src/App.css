@@ -272,7 +272,6 @@ section h2 {
   color: #fff;
   padding: 6rem 2rem;
   text-align: center;
-  border-top: 1px solid #fff;
 }
 
 .about-header {
@@ -336,7 +335,7 @@ section h2 {
     flex-direction: column !important;
     text-align: center !important;
     padding: 2rem 1.5rem !important;
-    height: fit-content !important;
+    height: 300px !important;
     display: block !important;
     width: 100% !important;
   }
@@ -755,7 +754,7 @@ section h2 {
   }
 
   .hero-image img {
-    width: 1500px;
+    width: 2100px;
     height: auto;
   }
 
@@ -1040,7 +1039,7 @@ section[data-aos].aos-animate {
   }
 
   .hero-image img {
-    width: 1800px;
+    width: 2100px;
     height: auto;
   }
 }
@@ -1078,4 +1077,5 @@ section[data-aos].aos-animate {
   max-width: 100%;
   height: auto;
   will-change: transform;
+  width: 2100px !important;
 }
