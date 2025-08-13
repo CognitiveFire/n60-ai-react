@@ -1,6 +1,5 @@
 
 import React from 'react';
-import './DemoShowcase.css';
 
 const DemoShowcase = () => {
   return (
@@ -14,7 +13,6 @@ const DemoShowcase = () => {
       
       <div className="about-content">
         <div className="about-features">
-          <h3>Vi tilbyr:</h3>
           
           <div className="feature-item">
             <div className="feature-icon">✦</div>
