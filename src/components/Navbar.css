@@ -21,8 +21,8 @@
 }
 
 .logo {
-  height: 80px; /* Default desktop size */
-  max-width: 150px;
+  height: 100px; /* Increased desktop size */
+  max-width: 200px;
   width: auto;
   padding-top: 0;
   object-fit: contain;
@@ -94,8 +94,8 @@
   }
 
   .logo {
-    height: 50px; /* Larger mobile logo */
-    max-width: 120px; /* Increased width */
+    height: 60px; /* Larger mobile logo */
+    max-width: 150px; /* Increased width */
   }
 
   .logo-container {

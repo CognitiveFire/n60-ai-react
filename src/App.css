@@ -295,7 +295,7 @@ section h2 {
 }
 
 .about-content {
-  max-width: 1000px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -319,6 +319,38 @@ section h2 {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Desktop: Show feature cards side by side */
+@media (min-width: 1024px) {
+  .about-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .feature-item {
+    margin-bottom: 0;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+  
+  .feature-icon {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  
+  .feature-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .feature-content p {
+    font-size: 1rem;
+  }
 }
 
 .feature-item:hover {
@@ -711,7 +743,7 @@ section h2 {
   }
 
   .hero-image img {
-    width: 1200px;
+    width: 1500px;
     height: auto;
   }
 
@@ -996,7 +1028,7 @@ section[data-aos].aos-animate {
   }
 
   .hero-image img {
-    width: 1400px;
+    width: 1800px;
     height: auto;
   }
 }
