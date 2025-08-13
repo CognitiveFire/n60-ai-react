@@ -321,8 +321,8 @@ section h2 {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Desktop: Show feature cards side by side */
-@media (min-width: 1024px) {
+/* Tablet and Desktop: Show feature cards side by side */
+@media (min-width: 768px) {
   .about-features {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -402,8 +402,8 @@ section h2 {
   margin: 0;
 }
 
-/* Responsive adjustments for About section */
-@media (max-width: 768px) {
+/* Mobile: Stack feature cards vertically */
+@media (max-width: 767px) {
   .about-section {
     padding: 4rem 1rem;
   }
@@ -416,10 +416,15 @@ section h2 {
     font-size: 1.1rem;
   }
   
+  .about-features {
+    display: block;
+  }
+  
   .feature-item {
     flex-direction: column;
     text-align: center;
     padding: 1rem;
+    margin-bottom: 2rem;
   }
   
   .feature-icon {
@@ -427,8 +432,7 @@ section h2 {
     margin-bottom: 1rem;
   }
   
-  .about-features h3,
-  .about-mission h3 {
+  .about-features h3 {
     font-size: 1.5rem;
   }
 }
