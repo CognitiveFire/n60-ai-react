@@ -92,7 +92,7 @@ function App() {
     };
 
     try {
-      const response = await axios.post('https://n60.ai/api/sendgrid', data, {
+      const response = await axios.post('/api/sendgrid', data, {
         headers: {
           'Content-Type': 'application/json',
         },
