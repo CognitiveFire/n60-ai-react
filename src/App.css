@@ -319,38 +319,40 @@ section h2 {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease, background-color 0.3s ease;
+  box-sizing: border-box;
 }
 
 /* Tablet and Desktop: Show feature cards side by side */
 @media (min-width: 768px) {
-  .about-features {
+  .about-section .about-features {
     display: grid !important;
     grid-template-columns: repeat(4, 1fr) !important;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    gap: 1.5rem !important;
+    margin-bottom: 3rem !important;
   }
   
-  .feature-item {
+  .about-section .feature-item {
     margin-bottom: 0 !important;
     flex-direction: column !important;
     text-align: center !important;
     padding: 2rem 1.5rem !important;
     height: fit-content !important;
     display: block !important;
+    width: 100% !important;
   }
   
-  .feature-icon {
+  .about-section .feature-icon {
     margin-right: 0 !important;
     margin-bottom: 1rem !important;
     font-size: 2rem;
   }
   
-  .feature-content h4 {
+  .about-section .feature-content h4 {
     font-size: 1.2rem;
     margin-bottom: 0.8rem;
   }
   
-  .feature-content p {
+  .about-section .feature-content p {
     font-size: 1rem;
   }
 }
