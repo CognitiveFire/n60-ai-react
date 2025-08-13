@@ -1058,7 +1058,7 @@ section[data-aos].aos-animate {
   }
 
   .hero-image img {
-    width: 2940px;
+    width: 2940px !important;
     height: auto;
   }
 }
@@ -1097,4 +1097,21 @@ section[data-aos].aos-animate {
   height: auto;
   will-change: transform;
   width: 2940px !important;
+  min-width: 2940px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Force hero image size with higher specificity */
+.hero-section .hero-image img {
+  width: 2940px !important;
+  min-width: 2940px !important;
+  max-width: none !important;
+}
+
+/* Most specific selector to override everything */
+body .hero-section .hero-image img {
+  width: 2940px !important;
+  min-width: 2940px !important;
+  max-width: none !important;
+  flex-shrink: 0 !important;
 }
