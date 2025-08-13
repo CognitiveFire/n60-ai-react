@@ -300,6 +300,25 @@ section h2 {
   margin: 0 auto;
 }
 
+/* Desktop: Show projects side by side */
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+  }
+  
+  .project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, scale 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+    z-index: 10;
+  }
+}
+
 .project-card {
   background-color: transparent;
   border: 2px solid rgba(255, 255, 255, 0.2);
@@ -558,7 +577,7 @@ section h2 {
   }
 
   .hero-image img {
-    width: 900px;
+    width: 1200px;
     height: auto;
   }
 
@@ -843,7 +862,7 @@ section[data-aos].aos-animate {
   }
 
   .hero-image img {
-    width: 1000px;
+    width: 1400px;
     height: auto;
   }
 }
