@@ -42,7 +42,7 @@ body {
   width: 50%;
   max-width: 700px;
   margin: 0;
-  padding: 20px 0;
+  padding: 20px 0 20px 40px;
   text-align: left;
 }
 
@@ -771,7 +771,7 @@ section h2 {
   }
 
   .hero-image img {
-    width: 900px;
+    width: 800px;
     height: auto;
   }
 
@@ -1058,7 +1058,7 @@ section[data-aos].aos-animate {
   }
 
   .hero-image img {
-    width: 900px !important;
+    width: 800px !important;
     height: auto;
   }
 }
@@ -1096,22 +1096,22 @@ section[data-aos].aos-animate {
   max-width: 100%;
   height: auto;
   will-change: transform;
-  width: 900px !important;
-  min-width: 900px !important;
+  width: 800px !important;
+  min-width: 800px !important;
   flex-shrink: 0 !important;
 }
 
 /* Force hero image size with higher specificity */
 .hero-section .hero-image img {
-  width: 900px !important;
-  min-width: 900px !important;
+  width: 800px !important;
+  min-width: 800px !important;
   max-width: none !important;
 }
 
 /* Most specific selector to override everything */
 body .hero-section .hero-image img {
-  width: 900px !important;
-  min-width: 900px !important;
+  width: 800px !important;
+  min-width: 800px !important;
   max-width: none !important;
   flex-shrink: 0 !important;
 }
