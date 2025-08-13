@@ -234,52 +234,85 @@ function App() {
           </div>
         </section>
 
-      
-<section id="projects" className="two-col-section" data-aos="fade-up">
-  {/* TEXT  ─────────────────────────────────────────── */}
-  <div className="text-block">
-    <h2>Prosjekter</h2>
-    <p>Reelle eksempler på verdi skapt med AI i norske selskaper.</p>
+        <section id="projects" className="projects-section" data-aos="fade-up">
+          <div className="projects-header">
+            <h2>Prosjekter</h2>
+            <p>Reelle eksempler på verdi skapt med AI i norske selskaper.</p>
+          </div>
+          
+          <div className="projects-grid">
+            <div className="project-card" data-aos="fade-up">
+              <div className="project-image">
+                <img src="/images/mentor.png" alt="N60 Mentor Interface" />
+              </div>
+              <div className="project-content">
+                <h3>N60 Mentor</h3>
+                <p className="project-description">
+                  N60 Mentor is an AI-powered assistant built for students inside Google Classroom. 
+                  It provides real-time guidance as pupils work on essays, reports, and projects — not by giving them the answers, 
+                  but by helping them think more clearly, structure better, and meet the actual goals of their curriculum.
+                </p>
+                <p className="project-description">
+                  Integrated with the syllabus for each age group, Mentor gives tailored feedback that supports learning, not shortcuts it. 
+                  Whether it's a Year 6 report or a high school essay, Mentor ensures students stay on track, improve faster, and build confidence — 
+                  while teachers save time and maintain full control.
+                </p>
+                <p className="project-description">
+                  It's like having a trusted, curriculum-aware study coach built right into the tools schools already use.
+                </p>
+              </div>
+            </div>
 
-    <div className="project-filters">
-      {projectsData.length ? (
-        [...new Set(projectsData.map(p => p.category))].map(cat => (
-          <button
-            key={cat}
-            className={activeFilter === cat ? 'active' : ''}
-            onClick={() => setActiveFilter(cat)}
-          >
-            {cat}
-          </button>
-        ))
-      ) : (
-        <p>Ingen prosjekter tilgjengelig.</p>
-      )}
-    </div>
-  </div>
+            <div className="project-card" data-aos="fade-up" data-aos-delay="200">
+              <div className="project-image">
+                <img src="/images/dealTrygt.png" alt="DelTrygt Interface" />
+              </div>
+              <div className="project-content">
+                <h3>DelTrygt</h3>
+                <p className="project-description">
+                  DelTrygt is a secure, AI-powered platform for sharing school photos and videos — with full parental control built in.
+                </p>
+                <p className="project-description">
+                  Designed for schools and families, DelTrygt ensures that parents decide who can view images of their child. 
+                  Group photos are handled with care: our proprietary ClassVault™ security layer uses AI to mask identities of children without consent, 
+                  then intelligently restores the background to preserve the image.
+                </p>
+                <p className="project-description">
+                  GDPR-compliant and hosted securely in Norway, DelTrygt works seamlessly across desktop and mobile. 
+                  With real-time notifications, detailed access logs, and time-limited sharing links, it replaces chaotic email threads and unsecure cloud folders 
+                  with a digital experience built on trust.
+                </p>
+                <p className="project-description">
+                  DelTrygt gives schools a safe, modern way to share memories — and gives families complete control, powered by ClassVault™.
+                </p>
+              </div>
+            </div>
 
-  {/* GRAPHIC  ───────────────────────────────────────── */}
-  <div className="graphic-block">
-    {/* Outer shell of the laptop */}
-    <div className="device" aria-hidden="true">
-      {/* Scrollable “screen” area */}
-      <div className="device__screen">
-        <div className="project-grid">
-          {filteredProjects.length ? (
-            filteredProjects.map(project => (
-              <article className="card" key={project.id}>
-                <h3>{project.title}</h3>
-                <p>{project.story}</p>
-              </article>
-            ))
-          ) : (
-            <p>Ingen prosjekter matcher filteret.</p>
-          )}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+            <div className="project-card" data-aos="fade-up" data-aos-delay="400">
+              <div className="project-image">
+                <img src="/images/Formulate.png" alt="Formulate Interface" />
+              </div>
+              <div className="project-content">
+                <h3>Formulate</h3>
+                <p className="project-description">
+                  Formulate is an AI-powered platform that turns your ideas into lead-generating content journeys.
+                </p>
+                <p className="project-description">
+                  Just describe the type of content you want — a readiness report, a product comparison, an investment profile — and Formulate does the rest. 
+                  It asks smart follow-up questions, then builds a custom form designed to collect the right information from your leads.
+                </p>
+                <p className="project-description">
+                  Once submitted, the platform uses AI to generate a fully personalised piece of content that's ready to download or share — 
+                  perfectly aligned with your campaign goals.
+                </p>
+                <p className="project-description">
+                  It's ideal for content marketing, B2B outreach, or sales enablement — helping you move beyond generic PDFs to intelligent, 
+                  conversion-focused content experiences.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
 
         <section id="contact" className="two-col-section" data-aos="fade-up">
