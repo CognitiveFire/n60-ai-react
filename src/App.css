@@ -771,7 +771,7 @@ section h2 {
   }
 
   .hero-image img {
-    width: 2100px;
+    width: 2940px;
     height: auto;
   }
 
@@ -1058,7 +1058,7 @@ section[data-aos].aos-animate {
   }
 
   .hero-image img {
-    width: 2100px;
+    width: 2940px;
     height: auto;
   }
 }
@@ -1096,5 +1096,5 @@ section[data-aos].aos-animate {
   max-width: 100%;
   height: auto;
   will-change: transform;
-  width: 2100px !important;
+  width: 2940px !important;
 }
