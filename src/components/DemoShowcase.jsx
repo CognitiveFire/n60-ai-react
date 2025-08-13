@@ -4,38 +4,47 @@ import './DemoShowcase.css';
 
 const DemoShowcase = () => {
   return (
-    <section id="about" className="two-col-section">
-      <div className="text-block">
+    <section id="about" className="about-section">
+      <div className="about-header">
         <h2>Hvem er N60?</h2>
-      </div>
-      <div className="text-block">
-        <p>
+        <p className="about-intro">
           N60 er et AI-byrå basert i Bergen som gjør kraftig kunstig intelligens tilgjengelig for norske SMB-er.
         </p>
+      </div>
+      
+      <div className="about-content">
+        <div className="about-features">
+          <h3>Vi tilbyr:</h3>
+          
+          <div className="feature-item">
+            <div className="feature-icon">✦</div>
+            <div className="feature-content">
+              <h4>Skreddersydde og ferdigbygde AI-løsninger</h4>
+              <p>Øk inntektene, jobb smartere og skalér raskt</p>
+            </div>
+          </div>
+          
+          <div className="feature-item">
+            <div className="feature-icon">✦</div>
+            <div className="feature-content">
+              <h4>Overkommelig pris og høy verdi</h4>
+              <p>Ingen behov for eget teknologiteam</p>
+            </div>
+          </div>
+          
+          <div className="feature-item">
+            <div className="feature-icon">✦</div>
+            <div className="feature-content">
+              <h4>Full eierskap og lokal hosting i Norge</h4>
+              <p>GDPR-kompatibelt og fremtidsrettet</p>
+            </div>
+          </div>
+        </div>
         
-        <p>
-          Vi tilbyr:
-        </p>
-        
-        <p>
-          <strong>Skreddersydde og ferdigbygde AI-løsninger</strong><br/>
-           Øk inntektene, jobb smartere og skalér raskt
-        </p>
-        
-        <p>
-           <strong>Overkommelig pris og høy verdi</strong><br/>
-           Ingen behov for eget teknologiteam
-        </p>
-        
-        <p>
-           <strong>Full eierskap og lokal hosting i Norge</strong><br/>
-           GDPR-kompatibelt og fremtidsrettet
-        </p>
-        
-        <p>
-          <strong>Målet vårt:</strong><br/>
-          Å gi deg kontroll, effektivitet og vekst – med løsninger som passer dine behov og ditt budsjett.
-        </p>
+        <div className="about-mission">
+          <h3>Målet vårt:</h3>
+          <p>Å gi deg kontroll, effektivitet og vekst – med løsninger som passer dine behov og ditt budsjett.</p>
+        </div>
       </div>
     </section>
   );
