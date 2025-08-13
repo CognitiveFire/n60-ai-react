@@ -335,6 +335,7 @@ section h2 {
     flex-direction: column;
     text-align: center;
     padding: 2rem 1.5rem;
+    height: fit-content;
   }
   
   .feature-icon {
@@ -708,10 +709,14 @@ section h2 {
   cursor: pointer;
   transition: transform 0.3s ease;
   width: auto;
+  background-color: #ffef3f;
+  color: #333;
 }
 
 .contact-form button:hover {
   transform: scale(1.05);
+  background-color: #ffef3f;
+  color: #333;
 }
 
 .graphic-block iframe {

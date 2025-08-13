@@ -39,11 +39,14 @@ const DemoShowcase = () => {
               <p>GDPR-kompatibelt og fremtidsrettet</p>
             </div>
           </div>
-        </div>
-        
-        <div className="about-mission">
-          <h3>Målet vårt:</h3>
-          <p>Å gi deg kontroll, effektivitet og vekst – med løsninger som passer dine behov og ditt budsjett.</p>
+          
+          <div className="feature-item">
+            <div className="feature-icon">✦</div>
+            <div className="feature-content">
+              <h4>Målet vårt:</h4>
+              <p>Å gi deg kontroll, effektivitet og vekst – med løsninger som passer dine behov og ditt budsjett.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
