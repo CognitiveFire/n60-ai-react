@@ -324,23 +324,24 @@ section h2 {
 /* Tablet and Desktop: Show feature cards side by side */
 @media (min-width: 768px) {
   .about-features {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
     gap: 1.5rem;
     margin-bottom: 3rem;
   }
   
   .feature-item {
-    margin-bottom: 0;
-    flex-direction: column;
-    text-align: center;
-    padding: 2rem 1.5rem;
-    height: fit-content;
+    margin-bottom: 0 !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 2rem 1.5rem !important;
+    height: fit-content !important;
+    display: block !important;
   }
   
   .feature-icon {
-    margin-right: 0;
-    margin-bottom: 1rem;
+    margin-right: 0 !important;
+    margin-bottom: 1rem !important;
     font-size: 2rem;
   }
   
@@ -713,14 +714,14 @@ section h2 {
   cursor: pointer;
   transition: transform 0.3s ease;
   width: auto;
-  background-color: #ffef3f;
-  color: #333;
+  background-color: #ffef3f !important;
+  color: #333 !important;
 }
 
 .contact-form button:hover {
   transform: scale(1.05);
-  background-color: #ffef3f;
-  color: #333;
+  background-color: #ffef3f !important;
+  color: #333 !important;
 }
 
 .graphic-block iframe {
