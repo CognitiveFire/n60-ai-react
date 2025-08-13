@@ -175,7 +175,7 @@ function App() {
         </section>
 
         <section id="how-we-work" className="two-col-section">
-          <div className="grid-4" data-aos="fade-left">
+          <div className="text-block" data-aos="fade-left">
             <h2>Slik jobber vi</h2>
             <p>Vi har gjort det enkelt å komme i gang med AI. Fra første samtale til ferdig løsning følger vi en strukturert, effektiv prosess.</p>
           </div>

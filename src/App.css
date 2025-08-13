@@ -445,7 +445,6 @@ section h2 {
   color: #fff;
   padding: 6rem 2rem;
   text-align: center;
-  border-top: 1px solid #fff;
 }
 
 .projects-header {
@@ -683,6 +682,19 @@ section h2 {
   display: flex;
   flex-direction: column;
   max-width: 100%;
+}
+
+/* Mobile: Center form */
+@media (max-width: 768px) {
+  .contact-form {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    text-align: center;
+  }
 }
 
 .contact-form > * + * {
@@ -956,7 +968,7 @@ section[data-aos].aos-animate {
 
 .footer .made-with-love {
   margin-top: 0.5rem;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .footer .made-with-love {
