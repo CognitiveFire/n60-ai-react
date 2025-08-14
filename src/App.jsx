@@ -92,7 +92,7 @@ function App() {
     };
 
     try {
-      const response = await axios.post('/api/sendgrid', data, {
+      const response = await axios.post('http://localhost:5000/api/sendgrid', data, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -234,8 +234,8 @@ function App() {
 
         <section id="projects" className="projects-section" data-aos="fade-up">
           <div className="projects-header">
-            <h2>Prosjekter</h2>
-            <p>Reelle eksempler på verdi skapt med AI i norske selskaper.</p>
+    <h2>Prosjekter</h2>
+    <p>Reelle eksempler på verdi skapt med AI i norske selskaper.</p>
           </div>
           
           <div className="projects-grid">
@@ -283,8 +283,8 @@ function App() {
                 <p className="project-description">
                   DelTrygt gives schools a safe, modern way to share memories — and gives families complete control, powered by ClassVault™.
                 </p>
-              </div>
-            </div>
+    </div>
+  </div>
 
             <div className="project-card" data-aos="fade-up" data-aos-delay="400">
               <div className="project-image">
@@ -307,10 +307,10 @@ function App() {
                   It's ideal for content marketing, B2B outreach, or sales enablement — helping you move beyond generic PDFs to intelligent, 
                   conversion-focused content experiences.
                 </p>
-              </div>
-            </div>
-          </div>
-        </section>
+      </div>
+    </div>
+  </div>
+</section>
 
 
         <section id="contact" className="two-col-section" data-aos="fade-up">
