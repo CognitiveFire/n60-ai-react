@@ -92,7 +92,7 @@ function App() {
     };
 
     try {
-      const response = await axios.post('http://localhost:5000/api/sendgrid', data, {
+      const response = await axios.post('/api/sendgrid', data, {
         headers: {
           'Content-Type': 'application/json',
         },
