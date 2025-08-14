@@ -288,7 +288,7 @@ function App() {
 
             <div className="project-card" data-aos="fade-up" data-aos-delay="400">
               <div className="project-image">
-                <img src="/images/Formulate.png" alt="Formulate Interface" />
+                <img src="/images/formulate.png" alt="Formulate Interface" />
               </div>
               <div className="project-content">
                 <h3>Formulate</h3>
@@ -307,6 +307,11 @@ function App() {
                   It's ideal for content marketing, B2B outreach, or sales enablement — helping you move beyond generic PDFs to intelligent, 
                   conversion-focused content experiences.
                 </p>
+                <div className="project-cta">
+                  <a href="https://formulate.no" target="_blank" rel="noopener noreferrer" className="cta-button">
+                    See it in action →
+                  </a>
+                </div>
       </div>
     </div>
   </div>
