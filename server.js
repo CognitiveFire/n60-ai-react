@@ -18,7 +18,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 app.use(cors());
 app.use(express.json());
 
-// Serve static files from the React build
+// Serve static files from the React build - this must come BEFORE the catch-all route
 app.use(express.static(join(__dirname, 'dist')));
 
 // Test endpoint
@@ -52,10 +52,16 @@ app.post('/api/sendgrid', async (req, res) => {
 });
 
 // Catch-all handler: send back React's index.html file for any non-API routes
+// This must come AFTER the static file middleware
 app.get('*', (req, res) => {
   // Skip API routes
   if (req.path.startsWith('/api/')) {
     return res.status(404).json({ error: 'API endpoint not found' });
+  }
+  
+  // Skip static file requests that should be handled by express.static
+  if (req.path.startsWith('/images/') || req.path.startsWith('/assets/') || req.path.startsWith('/favicon.ico')) {
+    return res.status(404).json({ error: 'Static file not found' });
   }
   
   // Serve the React app for all other routes
