@@ -289,7 +289,7 @@ function App() {
             <div className="project-card" data-aos="fade-up" data-aos-delay="400">
               <div className="project-image">
                 <img 
-                  src="https://picsum.photos/400/300" 
+                  src="https://i.ibb.co/VqKJ8M9/formulate.png" 
                   alt="Formulate Interface" 
                   onError={(e) => {
                     console.error('Image failed to load:', e.target.src);
