@@ -550,8 +550,8 @@ section h2 {
 
 .cta-button {
   display: inline-block;
-  background: linear-gradient(135deg, #4CAF50, #45a049);
-  color: white;
+  background: #ffef3f;
+  color: #000;
   padding: 12px 24px;
   border-radius: 8px;
   text-decoration: none;
@@ -560,13 +560,13 @@ section h2 {
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 239, 63, 0.3);
 }
 
 .cta-button:hover {
-  background: linear-gradient(135deg, #45a049, #4CAF50);
+  background: #ffe600;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 239, 63, 0.4);
 }
 
 .cta-button:active {
@@ -1016,6 +1016,13 @@ section[data-aos].aos-animate {
 .footer .made-with-love {
   margin-top: 0.5rem;
   font-style: italic;
+  color: #fff !important;
+}
+
+/* Ensure footer text is always white */
+.footer,
+.footer p,
+.footer .made-with-love {
   color: #fff !important;
 }
 

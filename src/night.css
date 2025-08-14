@@ -105,11 +105,11 @@
 
 [data-theme="night"] .footer {
   background: transparent !important;
-  color: #888;
+  color: #fff !important;
 }
 
 [data-theme="night"] .footer .made-with-love {
-  color: #aaa;
+  color: #fff !important;
 }
 
 [data-theme="night"] .slider {
