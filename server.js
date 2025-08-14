@@ -21,11 +21,6 @@ app.use(express.json());
 // Serve static files from the React build
 app.use(express.static(join(__dirname, 'dist')));
 
-// Serve images and other assets
-app.use('/images', express.static(join(__dirname, 'dist/images')));
-app.use('/favicon.ico', express.static(join(__dirname, 'dist/favicon.ico')));
-app.use('/assets', express.static(join(__dirname, 'dist/assets')));
-
 // Test endpoint
 app.get('/api/test', (req, res) => {
   console.log('Test endpoint hit');

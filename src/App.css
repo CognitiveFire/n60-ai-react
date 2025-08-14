@@ -517,6 +517,8 @@ section h2 {
   height: auto;
   display: block;
   transition: transform 0.3s ease;
+  border: 2px solid red; /* Debug border */
+  min-height: 200px; /* Debug minimum height */
 }
 
 .project-card:hover .project-image img {

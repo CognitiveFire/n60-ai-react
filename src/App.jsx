@@ -288,7 +288,15 @@ function App() {
 
             <div className="project-card" data-aos="fade-up" data-aos-delay="400">
               <div className="project-image">
-                <img src="/images/formulate.png" alt="Formulate Interface" />
+                <img 
+                  src="/images/formulate.png" 
+                  alt="Formulate Interface" 
+                  onError={(e) => {
+                    console.error('Image failed to load:', e.target.src);
+                    console.error('Error details:', e);
+                  }}
+                  onLoad={() => console.log('Formulate image loaded successfully')}
+                />
               </div>
               <div className="project-content">
                 <h3>Formulate</h3>
