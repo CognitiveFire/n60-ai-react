@@ -9,8 +9,7 @@ const Navbar = ({ language, setLanguage }) => {
     <nav className="navbar">
       <div className="navbar-container">
         <a href="#hero" className="navbar-brand">
-          <img src="/images/logo.png" alt="N60 Logo" />
-          <h1>N60</h1>
+          <img src="/images/logo.png" alt="N60 Logo" className="navbar-logo" />
         </a>
         
         <nav className="navbar-nav">

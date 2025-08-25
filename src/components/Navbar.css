@@ -20,9 +20,9 @@
   z-index: 1001;
 }
 
-.logo {
-  height: 100px; /* Increased desktop size */
-  max-width: 200px;
+.navbar-logo {
+  height: 140px; /* 40% larger than 100px */
+  max-width: 280px; /* 40% larger than 200px */
   width: auto;
   padding-top: 0;
   object-fit: contain;
@@ -119,9 +119,9 @@
     height: 100%;
   }
 
-  .logo {
-    height: 60px; /* Larger mobile logo */
-    max-width: 150px; /* Increased width */
+  .navbar-logo {
+    height: 84px; /* 40% larger than 60px */
+    max-width: 210px; /* 40% larger than 150px */
   }
 
   .nav-links {
@@ -164,9 +164,9 @@
     padding: 0.5rem;
   }
 
-  .logo {
-    height: 50px;
-    max-width: 120px;
+  .navbar-logo {
+    height: 70px; /* 40% larger than 50px */
+    max-width: 168px; /* 40% larger than 120px */
   }
 
   .language-toggle {
