@@ -34,8 +34,37 @@ const DemoPopup = ({ apps, initialIndex, onClose }) => {
         <h2 className="popup-title">{app.title}</h2>
 
         <div className="popup-content-wrapper">
-          <div className="phone-frame popup-video">
-            <video controls playsInline src={app.video} poster={app.poster} />
+          <div className="chat-interface">
+            <div className="chat-header">
+              <img src="/images/salesbot.png" alt="Sales Bot" className="bot-avatar" />
+              <div className="chat-info">
+                <h3>N60 Sales Assistant</h3>
+                <span className="status">Online • Ready to help</span>
+              </div>
+            </div>
+            <div className="chat-messages">
+              <div className="message bot-message">
+                <img src="/images/salesbot.png" alt="Bot" className="message-avatar" />
+                <div className="message-content">
+                  <p>Hei! Jeg er N60's AI-selger. Kan jeg hjelpe deg med å finne den perfekte AI-løsningen for din bedrift?</p>
+                </div>
+              </div>
+              <div className="message user-message">
+                <div className="message-content">
+                  <p>Ja, vi trenger hjelp med lead-generering og salg.</p>
+                </div>
+              </div>
+              <div className="message bot-message">
+                <img src="/images/salesbot.png" alt="Bot" className="message-avatar" />
+                <div className="message-content">
+                  <p>Perfekt! La meg vise deg hvordan våre AI-verktøy kan øke salget ditt med opptil 300%.</p>
+                </div>
+              </div>
+            </div>
+            <div className="chat-input">
+              <input type="text" placeholder="Skriv din melding..." />
+              <button className="send-button">Send</button>
+            </div>
           </div>
 
           <div className="popup-text">
