@@ -1,0 +1,18 @@
+
+.tiptap-container {
+    border: 1px solid #666;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #2a2a2a;
+    color: #fff;
+    min-height: 200px;
+  }
+  
+  .tiptap-container p.is-empty::before {
+    content: attr(data-placeholder);
+    color: #666;
+    float: left;
+    height: 0;
+    pointer-events: none;
+  }
+  

@@ -1,0 +1,56 @@
+
+.demo-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.demo-description h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.demo-description p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #ccc;
+}
+
+.video-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.video-nav button {
+  background: none;
+  border: 2px solid #666;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: #666;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.demo-video {
+  width: 100%;
+  max-width: 100%;
+}
+
+.demo-video .plyr {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .demo-section {
+    grid-template-columns: 1fr;
+  }
+}

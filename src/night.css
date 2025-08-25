@@ -1,0 +1,152 @@
+
+/* night.css */
+[data-theme="night"] {
+  background-color: #0a0a0a;
+  color: #fff;
+}
+
+[data-theme="night"] .navbar {
+  background-color: #2a2a2a;
+}
+
+[data-theme="night"] .nav-links a {
+  color: #eee;
+}
+
+[data-theme="night"] .nav-links a:hover {
+  color: #666;
+}
+
+[data-theme="night"] .hero-text p {
+  color: #f9f3f3;
+}
+
+[data-theme="night"] .solutions-section {
+  background-color: #2a2a2a;
+}
+
+[data-theme="night"] .solution-card {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="night"] .solution-card h3 {
+  color: #fff;
+}
+
+[data-theme="disco"] .solutions-section h2.aos-animate {
+  animation: neonFlicker 1.5s infinite;
+}
+
+[data-theme="disco"] .solution-card.aos-animate {
+  animation: popIn 1s ease-out forwards;
+}
+
+[data-theme="night"] #how-we-work .card {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="night"] #how-we-work .card h3 {
+  color: #fff;
+}
+
+[data-theme="night"] #pricing .card {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="night"] #pricing .card h3 {
+  color: #fff;
+}
+
+[data-theme="night"] .project-story {
+  background: #1e1e1e;
+}
+
+[data-theme="night"] .project-story h3 {
+  color: #666;
+}
+
+[data-theme="night"] .project-story p {
+  color: #ddd;
+}
+
+[data-theme="night"] .contact-form input,
+[data-theme="night"] .contact-form textarea {
+  background: #fff !important;
+  color: #333 !important;
+  border: 1px solid #ddd !important;
+}
+
+[data-theme="night"] .contact-form input::placeholder,
+[data-theme="night"] .contact-form textarea::placeholder {
+  color: #ccc;
+}
+
+[data-theme="night"] .contact-form button {
+  background: #ffef3f !important;
+  color: #333 !important;
+}
+
+[data-theme="night"] .form-status.success {
+  color: #666;
+}
+
+[data-theme="night"] .form-status.error {
+  color: #ff4d4f;
+}
+
+[data-theme="night"] .footer {
+  background: transparent !important;
+  color: #fff !important;
+}
+
+[data-theme="night"] .footer .made-with-love {
+  color: #fff !important;
+}
+
+[data-theme="night"] .slider {
+  background-color: #444;
+}
+
+[data-theme="night"] input:checked + .slider {
+  background-color: #666;
+}
+
+[data-theme="night"] .theme-switch {
+  position: relative;
+  margin-right: 1rem;
+}
+
+[data-theme="night"] .theme-switch::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -35px;
+  transform: translateY(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('/images/DISCO-DANCE-NIGHT.png');
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.5rem;
+}
+
+
+[data-theme="night"] .burger {
+  color: #666;
+}
+
+[data-theme="night"] .burger:hover,
+[data-theme="night"] .burger:focus {
+  color: #888;
+}

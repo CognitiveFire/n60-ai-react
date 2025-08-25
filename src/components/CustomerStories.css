@@ -1,0 +1,26 @@
+
+.stories-section {
+  background-color: #2a2a2a;
+  color: #fff;
+  padding: 6rem 2rem;
+  text-align: center;
+  border-top: 1px solid #fff;
+}
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.story-card {
+  border: 1px solid #fff;
+  padding: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.1);
+}
