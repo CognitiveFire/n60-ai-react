@@ -14,39 +14,46 @@ function App() {
   const content = {
     no: {
       hero: {
-        title: "AI-drevet B2B-markedsføring for SMB-er",
-        subtitle: "Optimaliser operasjoner, reduser kostnader og få full innsikt i din markedsføring med smart AI-teknologi.",
-        cta: "Se våre løsninger"
+        title: "Alt du trenger for B2B-vekst",
+        subtitle: "AI-løsninger som dekker hele reisen – fra produkt til kunde og videre til nye markeder.",
+        cta: "Få et tilpasset tilbud"
       },
       solutions: {
-        title: "Våre tre kjerneområder",
-        subtitle: "Konkrete AI-løsninger for din vekst",
+        title: "Alt du trenger for B2B-vekst",
+        subtitle: "AI-løsninger som dekker hele reisen – fra produkt til kunde og videre til nye markeder.",
         cases: [
           {
-            title: "AI for produktmarkedsføring",
-            description: "Identifiser og målrett idealkundeprofil (ICP) for hvert produkt med AI-drevet analyse.",
-            solution: "ICP-definisjon, kampanjeorkestrering, personlige funnels",
-            target: "B2B-produktselskaper innen teknologi, industri og SaaS",
-            value: "Raskere validering av produkt-marked fit, mer presist bruk av markedsbudsjett",
-            dashboard: "/images/hero_dashboard.png"
+            title: "Produktmarkedsføring",
+            emoji: "🎯",
+            description: "Nå de riktige kundene, med budskap som skaper etterspørsel.",
+            features: [
+              "Finn din idealkundeprofil (ICP)",
+              "Skap kampanjer som bygger interesse",
+              "Personlige kundereiser som leder til kjøp"
+            ]
           },
           {
-            title: "AI for leadgenerering",
-            description: "Bygg prediktive pipelines som identifiserer hvilke leads som mest sannsynlig konverterer.",
-            solution: "Prediktive pipelines, smarte outreach-kampanjer, automatisk lead scoring",
-            target: "B2B-tjenesteleverandører, konsulenter, programvareselskaper",
-            value: "Bedre leads, ikke bare flere leads, forutsigbar pipeline",
-            dashboard: "/images/dashboard-hero.png"
+            title: "Leadgenerering",
+            emoji: "📈",
+            description: "Fyll pipelinen med kvalifiserte leads, ikke bare flere kontakter.",
+            features: [
+              "Prediktive pipelines viser hvem som vil kjøpe",
+              "Outreach i skala, men med personlig preg",
+              "Høyere konverteringsrate for salget ditt"
+            ]
           },
           {
-            title: "AI for markedsutvidelse",
-            description: "Utvid til nye markeder med AI-drevet markedsinnsikt og lokalisert strategi.",
-            solution: "Markedsinnsikt, ABM-kampanjer, lokaliserte funnels",
-            target: "Ambitiøse SMB-er i Norge som vil ut internasjonalt",
-            value: "Klar vekstplan uten overforbruk, lavere risiko ved nye markeder",
-            dashboard: "/images/dashboard-no.png"
+            title: "Markedsutvidelse",
+            emoji: "🌍",
+            description: "Voks trygt inn i nye markeder.",
+            features: [
+              "AI-drevet innsikt i etterspørsel og konkurrenter",
+              "ABM-kampanjer mot nøkkelkunder",
+              "Lokalisert kommunikasjon i Skandinavia og Europa"
+            ]
           }
-        ]
+        ],
+        footer: "👉 Én helhetlig pakke. Verdi og vekst – uten kompleksitet."
       },
       howItWorks: {
         title: "Vår teknologi",
@@ -338,39 +345,46 @@ function App() {
     },
     en: {
       hero: {
-        title: "AI-driven B2B marketing for SMEs",
-        subtitle: "Optimize operations, reduce costs, and gain full insight into your marketing with smart AI technology.",
-        cta: "See our solutions"
+        title: "Everything you need for B2B growth",
+        subtitle: "AI solutions that cover the entire journey – from product to customer and into new markets.",
+        cta: "Get a custom quote"
       },
       solutions: {
-        title: "Our three core areas",
-        subtitle: "Concrete AI solutions for your growth",
+        title: "Everything you need for B2B growth",
+        subtitle: "AI solutions that cover the entire journey – from product to customer and into new markets.",
         cases: [
           {
-            title: "AI for product marketing",
-            description: "Identify and target ideal customer profiles (ICP) for each product with AI-driven analysis.",
-            solution: "ICP definition, campaign orchestration, personalized funnels",
-            target: "B2B technology, industry, and SaaS companies",
-            value: "Faster product-market fit validation, more precise use of marketing budget",
-            dashboard: "/images/dashboard-product-marketing.jpg"
+            title: "Product Marketing",
+            emoji: "🎯",
+            description: "Reach the right customers with campaigns that create demand.",
+            features: [
+              "Define your ICP",
+              "Build campaigns that spark interest",
+              "Personalised funnels that lead to purchase"
+            ]
           },
           {
-            title: "AI for lead generation",
-            description: "Build predictive pipelines that identify which leads are most likely to convert.",
-            solution: "Predictive pipelines, smart outreach campaigns, automated lead scoring",
-            target: "B2B service providers, consultants, software companies",
-            value: "Better leads, not just more leads, predictable pipeline",
-            dashboard: "/images/dashboard-lead-generation.jpg"
+            title: "Lead Generation",
+            emoji: "📈",
+            description: "Fill your pipeline with qualified leads, not just more contacts.",
+            features: [
+              "Predictive pipelines show who will buy",
+              "Outreach at scale, still personal",
+              "Higher sales conversion rates"
+            ]
           },
           {
-            title: "AI for market expansion",
-            description: "Expand to new markets with AI-driven market insights and localized strategy.",
-            solution: "Market insights, ABM campaigns, localized funnels",
-            target: "Ambitious SMBs in Norway looking to go international",
-            value: "Clear growth plan without over-investment, lower risk when entering new markets",
-            dashboard: "/images/dashboard-market-expansion.jpg"
+            title: "Market Expansion",
+            emoji: "🌍",
+            description: "Grow confidently into new markets.",
+            features: [
+              "AI-driven demand and competitor insights",
+              "ABM campaigns for key accounts",
+              "Localised communication for Scandinavia & Europe"
+            ]
           }
-        ]
+        ],
+        footer: "👉 One complete package. Value and growth – without the complexity."
       },
       innovation: {
         title: "Innovation Layer",
@@ -928,6 +942,37 @@ function App() {
           </div>
         </section>
 
+        {/* Solutions Section - Three Core Areas */}
+        <section id="solutions" className="solutions-section">
+          <div className="container">
+            <div className="section-header" data-aos="fade-up">
+              <h2>{currentContent.solutions.title}</h2>
+              <p>{currentContent.solutions.subtitle}</p>
+            </div>
+            <div className="solutions-grid">
+              {currentContent.solutions.cases.map((solution, index) => (
+                <div key={index} className="solution-card" data-aos="fade-up" data-aos-delay={index * 100}>
+                  <div className="solution-header">
+                    <span className="solution-emoji">{solution.emoji}</span>
+                    <h3>{solution.title}</h3>
+                  </div>
+                  <p className="solution-description">{solution.description}</p>
+                  <ul className="solution-features">
+                    {solution.features.map((feature, featureIndex) => (
+                      <li key={featureIndex}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            {currentContent.solutions.footer && (
+              <div className="solutions-footer" data-aos="fade-up">
+                <p>{currentContent.solutions.footer}</p>
+              </div>
+            )}
+          </div>
+        </section>
+
         {/* What is N60 Section */}
         <section className="what-is-section">
           <div className="container">
@@ -969,43 +1014,7 @@ function App() {
           </div>
         </section>
 
-        {/* Solutions Section - Three Core Business Cases */}
-        <section id="solutions" className="solutions-section">
-          <div className="container">
-            <div className="section-header" data-aos="fade-up">
-              <h2>{currentContent.solutions.title}</h2>
-              <p>{currentContent.solutions.subtitle}</p>
-            </div>
-            <div className="solutions-grid">
-              {currentContent.solutions.cases.map((solution, index) => (
-                <div key={index} className="solution-card" data-aos="fade-up" data-aos-delay={index * 100}>
-                  <div className="solution-image">
-                    <img src={solution.dashboard} alt={solution.title} />
-                  </div>
-                  <div className="solution-content">
-                    <h3>{solution.title}</h3>
-                    <p className="solution-description">{solution.description}</p>
-                    <div className="solution-details">
-                      <div className="detail-item">
-                        <strong>Løsning:</strong>
-                        <p>{solution.solution}</p>
-                      </div>
-                      <div className="detail-item">
-                        <strong>Passer best for:</strong>
-                        <p>{solution.target}</p>
-                      </div>
-                      <div className="detail-item">
-                        <strong>Verdi:</strong>
-                        <p>{solution.value}</p>
-                      </div>
-                    </div>
-                    <a href="#contact" className="solution-cta">Få tilbud</a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+
 
         {/* Innovation Layer Section */}
         <section id="innovation" className="innovation-section">
