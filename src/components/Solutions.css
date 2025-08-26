@@ -5,6 +5,9 @@
   padding: 6rem 2rem;
   text-align: center;
   border-top: 1px solid #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .section-title {
@@ -15,14 +18,18 @@
 .solutions-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 3rem;
   margin-bottom: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .solution-card {
   border: 1px solid #fff;
   padding: 2rem;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -30,6 +37,9 @@
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   text-align: left;
+  height: 100%;
+  min-height: 400px;
+  justify-content: space-between;
 }
 
 .solution-icon-container {
@@ -76,12 +86,15 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .solution-emoji {
-  font-size: 2.5rem;
+  font-size: 3rem;
   line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .solution-header h3 {
@@ -104,7 +117,8 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
+  flex: 1;
 }
 
 .solution-features li {
@@ -125,11 +139,12 @@
 
 .solutions-footer {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
   padding: 2rem;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .solutions-footer p {
@@ -137,13 +152,43 @@
   font-weight: 500;
   margin: 0;
   color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Ensure proper container alignment */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section header improvements */
+.section-header {
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 
-  .solution-card:hover, {
-    transform: translateY(-5px);
-    transition: transform 0.3s ease;
-  }
+.solution-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
 @media (max-width: 768px) {
   .solutions-grid {
     grid-template-columns: 1fr;
