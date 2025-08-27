@@ -25,6 +25,7 @@
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
+  border: 2px solid #ff0000 !important; /* Temporary debug border */
 }
 
 /* Step Header */
@@ -66,6 +67,8 @@
   align-items: stretch !important;
   width: 100% !important;
   max-width: 100% !important;
+  grid-auto-rows: 1fr !important;
+  border: 2px solid #00ff00 !important; /* Temporary debug border */
 }
 
 .challenge-card {
@@ -77,6 +80,7 @@
   visibility: visible !important;
   height: 100% !important;
   min-height: 0 !important;
+  width: 100% !important;
 }
 
 .challenge-card input[type="radio"] {
@@ -99,9 +103,10 @@
   justify-content: space-between !important;
   visibility: visible !important;
   opacity: 1 !important;
-  min-height: 250px !important;
+  min-height: 280px !important;
   box-sizing: border-box !important;
   overflow: hidden !important;
+  width: 100% !important;
 }
 
 .challenge-card input[type="radio"]:checked + .card-content {

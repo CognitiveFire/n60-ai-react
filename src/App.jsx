@@ -1063,43 +1063,43 @@ function App() {
                         <h3>Dine hovedutfordringer</h3>
                         <p>Hva er de største utfordringene for bedriften?</p>
                       </div>
-                      <div className="radio-options">
-                        <label className="radio-option">
+                      <div className="checkbox-options">
+                        <label className="checkbox-option">
                           <input 
-                            type="radio" 
+                            type="checkbox" 
                             name="main-challenge" 
                             value="demand-generation"
-                            checked={formSelections.mainChallenge === 'demand-generation'}
+                            checked={formSelections.mainChallenge.includes('demand-generation')}
                             onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
                           />
                           <span>Generere etterspørsel for produktet</span>
                         </label>
-                        <label className="radio-option">
+                        <label className="checkbox-option">
                           <input 
-                            type="radio" 
+                            type="checkbox" 
                             name="main-challenge" 
                             value="lead-engagement"
-                            checked={formSelections.mainChallenge === 'lead-engagement'}
+                            checked={formSelections.mainChallenge.includes('lead-engagement')}
                             onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
                           />
                           <span>Finne og engasjere potensielle leads</span>
                         </label>
-                        <label className="radio-option">
+                        <label className="checkbox-option">
                           <input 
-                            type="radio" 
+                            type="checkbox" 
                             name="main-challenge" 
                             value="market-expansion"
-                            checked={formSelections.mainChallenge === 'market-expansion'}
+                            checked={formSelections.mainChallenge.includes('market-expansion')}
                             onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
                           />
                           <span>Utvide til nye markeder</span>
                         </label>
-                        <label className="radio-option">
+                        <label className="checkbox-option">
                           <input 
-                            type="radio" 
+                            type="checkbox" 
                             name="main-challenge" 
                             value="other"
-                            checked={formSelections.mainChallenge === 'other'}
+                            checked={formSelections.mainChallenge.includes('other')}
                             onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
                           />
                           <span>Annet</span>
@@ -1127,14 +1127,14 @@ function App() {
                         <h3>Innovasjoner</h3>
                         <p>Hvilke løsninger er mest aktuelle for din bedrift?</p>
                       </div>
-                      <div className="radio-options">
+                      <div className="checkbox-options">
                         {currentContent.contact.modules.innovation.map((module) => (
-                          <label key={module.id} className="radio-option">
+                          <label key={module.id} className="checkbox-option">
                             <input 
-                              type="radio" 
+                              type="checkbox" 
                               name="innovation" 
                               value={module.id}
-                              checked={formSelections.innovation === module.id}
+                              checked={formSelections.innovation.includes(module.id)}
                               onChange={(e) => handleSelectionChange('innovation', e.target.value)}
                             />
                             <span>{module.name}</span>
