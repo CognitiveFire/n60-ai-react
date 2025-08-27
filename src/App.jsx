@@ -107,49 +107,49 @@ function App() {
             description: "Integrert chat + valgfri taleagent-integrasjon for bedre kundeservice",
             price: 15000,
             hours: 25,
-            dashboard: "/images/N60BOT-DARK.png"
+            dashboard: "https://i.ibb.co/B2h0pvty/A-2-D-digital-mockup-of-a-web-based-analytics-dashb.png"
           },
           {
             title: "Smart Forms & Landing Pages",
             description: "Adaptive skjemaer og konverteringsoptimalisering",
             price: 12000,
             hours: 20,
-            dashboard: "/images/Formulate.png"
+            dashboard: "https://i.ibb.co/Rf9LMwM/A-2-D-digital-dashboard-interface-screenshot-displa.png"
           },
           {
             title: "WhatsApp / Social Campaigns",
             description: "Multi-channel outreach-oppsett på tvers av sosiale medier",
             price: 15000,
             hours: 25,
-            dashboard: "/images/dashboard-social-campaigns.jpg"
+            dashboard: "https://i.ibb.co/Rk7rSvnf/A-2-D-digital-dashboard-UI-design-showcases-AI-powe.png"
           },
           {
             title: "Personlige produktguider",
             description: "AI-genererte ROI-guider, PDFs/mikrosider",
             price: 18000,
             hours: 30,
-            dashboard: "/images/dashboard-product-guides.jpg"
+            dashboard: "https://i.ibb.co/23ny8MsN/A-digital-graphic-displays-AI-powered-product-mark.png"
           },
           {
             title: "Augmented Content & Translation",
             description: "Kampanjevinkel-forslag + naturlig lokalisering",
             price: 18000,
             hours: 30,
-            dashboard: "/images/dashboard-content-translation.jpg"
+            dashboard: "https://i.ibb.co/Kj1SC0Xm/A-2-D-digital-illustration-showcases-a-customer-eng.png"
           },
           {
             title: "Prediktive innsikter / Churn Risk",
             description: "Forecasting-dashboards, kontohelse-anbefalinger",
             price: 21000,
             hours: 35,
-            dashboard: "/images/dashboard-predictive-insights.jpg"
+            dashboard: "https://i.ibb.co/hxSZC3cQ/A-2-D-digital-image-displays-an-analytics-dashboard.png"
           },
           {
             title: "Event-to-Pipeline Automation",
             description: "AI som knytter events til CRM-oppfølging",
             price: 24000,
             hours: 40,
-            dashboard: "/images/dashboard-event-automation.jpg"
+            dashboard: "https://i.ibb.co/PZnRQJ8b/A-2-D-digital-image-of-a-marketing-campaign-analyti.png"
           }
         ]
       },
@@ -1381,7 +1381,7 @@ function App() {
         className="chat-tab"
       >
         <img
-          src="/images/N60BOT-DARK.png"
+          src="https://i.ibb.co/yn9WGQBT/salesbot.png"
           alt="Chat med N60"
           className="chat-tab-image"
         />
