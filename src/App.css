@@ -1,22 +1,14 @@
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-/* TEMPORARY: Force Railway to deploy - BRIGHT YELLOW BACKGROUND */
-body {
-  background-color: #ffff00 !important; /* Bright yellow */
-  color: #ff0000 !important; /* Bright red text */
-}
-
-html {
-  background-color: #ffff00 !important; /* Bright yellow */
-}
+/* TEMPORARY: Force Railway to deploy - BRIGHT YELLOW BACKGROUND - REMOVED */
 
 /* ===== NAVBAR STYLES ===== */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #ff00ff !important; /* TEMPORARY: Bright pink navbar */
+  background: #ffffff;
   z-index: 1000;
   height: 80px;
   overflow: visible;
@@ -147,7 +139,7 @@ html {
 
 /* ===== HERO STYLES ===== */
 .hero-section {
-  background: linear-gradient(135deg, #ff0000 0%, #00ff00 100%) !important; /* TEMPORARY: Bright red to green gradient */
+  background: linear-gradient(135deg, #0f1c30 0%, #363f50 100%) !important; /* Blue gradient as requested */
   position: relative;
   padding: 8rem 2rem 6rem;
   color: #fff;
