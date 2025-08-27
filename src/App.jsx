@@ -920,6 +920,7 @@ function App() {
         cta: "Contact us for demo"
       }
     }
+  }
   };
 
   const currentContent = content[language];
