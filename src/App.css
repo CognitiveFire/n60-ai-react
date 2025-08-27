@@ -1,12 +1,22 @@
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
+/* TEMPORARY: Force Railway to deploy - BRIGHT YELLOW BACKGROUND */
+body {
+  background-color: #ffff00 !important; /* Bright yellow */
+  color: #ff0000 !important; /* Bright red text */
+}
+
+html {
+  background-color: #ffff00 !important; /* Bright yellow */
+}
+
 /* ===== NAVBAR STYLES ===== */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #ffffff;
+  background: #ff00ff !important; /* TEMPORARY: Bright pink navbar */
   z-index: 1000;
   height: 80px;
   overflow: visible;
