@@ -17,14 +17,16 @@
 }
 
 .solutions-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
   gap: 3rem;
   margin-bottom: 3rem;
   width: 100%;
   /* Debug: ensure grid works properly */
   grid-auto-flow: row;
   align-items: start;
+  /* Force single row layout */
+  grid-template-rows: 1fr;
 }
 
 .solution-card {
@@ -158,11 +160,13 @@
 
 /* Ensure proper container alignment */
 .container {
-  width: 100%;
+  width: 100% !important;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
   position: relative;
+  /* Debug: ensure container doesn't interfere with grid */
+  overflow: visible;
 }
 
 /* Section header improvements */

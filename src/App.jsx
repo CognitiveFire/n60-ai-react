@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 import './App.css';
 
 function App() {
@@ -930,19 +931,7 @@ function App() {
         <Navbar language={language} setLanguage={setLanguage} />
 
         {/* Hero Section */}
-        <section className="hero-section">
-          <div className="hero-background">
-            <img src="/images/hero1.png" alt="AI Marketing Solutions" />
-            <div className="hero-overlay"></div>
-          </div>
-          <div className="container">
-            <div className="hero-content" data-aos="fade-up">
-              <h1>{currentContent.hero.title}</h1>
-              <p>{currentContent.hero.subtitle}</p>
-              <a href="#solutions" className="cta-button">{currentContent.hero.cta}</a>
-            </div>
-          </div>
-        </section>
+        <Hero onOpenDemo={() => {}} />
 
         {/* Solutions Section - Three Core Areas */}
         <section id="solutions" className="solutions-section">
