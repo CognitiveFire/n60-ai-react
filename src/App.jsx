@@ -303,115 +303,7 @@ function App() {
             }
           ]
         }
-      },
-      contact: {
-        title: "Get a customized quote",
-        subtitle: "Our smart form gives you a personalized AI marketing solution with detailed pricing",
-        form: {
-          name: "Name",
-          email: "Email",
-          company: "Company",
-          challenge: "What challenge do you have?",
-          innovation: "What innovation solutions do you need?",
-          size: "Company size",
-          market: "Target market",
-          timeline: "Timeline",
-          budget: "Budget",
-          submit: "Get personalized quote",
-          companySizeTitle: "Company",
-          companySizeSubtitle: "How many employees do you have?",
-          companySizeExplanation: "We need this information to customize the solution to your needs and prepare for a personal meeting.",
-          step1Title: "Choose main challenge",
-          step1Subtitle: "What is your main challenge in marketing today?",
-          step2Title: "Your main challenges",
-          step2Subtitle: "What are the biggest challenges for the company?",
-          step3Title: "Innovations",
-          step3Subtitle: "Which solutions are most relevant for your company?",
-          step4Title: "Company",
-          step4Subtitle: "How many employees do you have?",
-          step5Title: "Contact and strategy meeting",
-          step5Subtitle: "Based on your choices, let's plan a personal meeting:",
-          readyForChat: "Ready for a strategy meeting?",
-          readyForChatSubtitle: "We need your details to prepare for a personal meeting with complete pricing and strategy plan."
-        },
-        modules: {
-          core: [
-            {
-              id: "product-marketing",
-              name: "AI for product marketing",
-              description: "ICP definition, campaign orchestration, personal funnels",
-              hours: 40,
-              price: 24000
-            },
-            {
-              id: "lead-generation", 
-              name: "AI for lead generation",
-              description: "Predictive scoring, outreach automation, pipeline dashboards",
-              hours: 45,
-              price: 27000
-            },
-            {
-              id: "market-expansion",
-              name: "AI for market expansion", 
-              description: "Market insights, ABM light/full, localization setup",
-              hours: 50,
-              price: 30000
-            }
-          ],
-          innovation: [
-            {
-              id: "chat-bots",
-              name: "Chat/Voice/Help Bots",
-              description: "Integrated chat + optional voice agent integration",
-              hours: 25,
-              price: 15000
-            },
-            {
-              id: "smart-forms",
-              name: "Smart forms and landing pages",
-              description: "Adaptive forms, conversion optimization",
-              hours: 20,
-              price: 12000
-            },
-            {
-              id: "whatsapp-social",
-              name: "WhatsApp / Social campaigns",
-              description: "Multi-channel outreach setup",
-              hours: 25,
-              price: 15000
-            },
-            {
-              id: "product-guides",
-              name: "Personalized product guides",
-              description: "AI-generated ROI guides, PDFs/microsites",
-              hours: 30,
-              price: 18000
-            },
-            {
-              id: "content-translation",
-              name: "Augmented content + translation",
-              description: "Campaign angle suggestions + natural localization",
-              hours: 30,
-              price: 18000
-            },
-            {
-              id: "predictive-insights",
-              name: "Predictive insights / Churn risk",
-              description: "Forecasting dashboards, account health recommendations",
-              hours: 35,
-              price: 21000
-            },
-            {
-              id: "event-pipeline",
-              name: "Event-to-Pipeline automation",
-              description: "AI bridging events to CRM follow-up",
-              hours: 40,
-              price: 24000
-            }
-          ]
-        }
-      }
-    },
+
     en: {
       hero: {
         title: "Everything you need for B2B growth",
@@ -1154,9 +1046,9 @@ function App() {
                   {currentStep === 1 && (
                     <div className="form-step">
                       <div className="step-header">
-                        <span className="step-indicator">Steg 1 av 5</span>
-                        <h3>{currentContent.contact.form.step1Title || 'Velg hovedutfordring'}</h3>
-                        <p>{currentContent.contact.form.step1Subtitle || 'Hva er din hovedutfordring innen markedsføring i dag?'}</p>
+                        <span className="step-indicator">{currentContent.contact.form.stepIndicator} 1 {currentContent.contact.form.of} 5</span>
+                        <h3>{currentContent.contact.form.step1Title}</h3>
+                        <p>{currentContent.contact.form.step1Subtitle}</p>
                       </div>
                       
                       <div className="challenge-cards">
@@ -1182,14 +1074,14 @@ function App() {
                         ))}
                       </div>
                       
-                                              <button 
-                          type="button" 
-                          className="next-step" 
-                          onClick={nextStep}
-                          disabled={!isStepValid(1)}
-                        >
-                          {currentContent.contact.form.submit || 'Fortsett'}
-                        </button>
+                      <button 
+                        type="button" 
+                        className="next-step" 
+                        onClick={nextStep}
+                        disabled={!isStepValid(1)}
+                      >
+                        {currentContent.contact.form.step1Button}
+                      </button>
                     </div>
                   )}
                   
@@ -1197,9 +1089,9 @@ function App() {
                   {currentStep === 2 && (
                     <div className="form-step">
                       <div className="step-header">
-                        <span className="step-indicator">Steg 2 av 5</span>
-                        <h3>{currentContent.contact.form.step2Title || 'Dine hovedutfordringer'}</h3>
-                        <p>{currentContent.contact.form.step2Subtitle || 'Hva er de største utfordringene for bedriften?'}</p>
+                        <span className="step-indicator">{currentContent.contact.form.stepIndicator} 2 {currentContent.contact.form.of} 5</span>
+                        <h3>{currentContent.contact.form.step2Title}</h3>
+                        <p>{currentContent.contact.form.step2Subtitle}</p>
                       </div>
                       <div className="checkbox-options">
                         <label className="checkbox-option">
@@ -1210,7 +1102,7 @@ function App() {
                             checked={formSelections.mainChallenge.includes('demand-generation')}
                             onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
                           />
-                          <span>Generere etterspørsel for produktet</span>
+                          <span>{language === 'no' ? 'Generere etterspørsel for produktet' : 'Generate demand for the product'}</span>
                         </label>
                         <label className="checkbox-option">
                           <input 
@@ -1220,7 +1112,7 @@ function App() {
                             checked={formSelections.mainChallenge.includes('lead-engagement')}
                             onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
                           />
-                          <span>Finne og engasjere potensielle leads</span>
+                          <span>{language === 'no' ? 'Finne og engasjere potensielle leads' : 'Find and engage potential leads'}</span>
                         </label>
                         <label className="checkbox-option">
                           <input 
@@ -1230,7 +1122,7 @@ function App() {
                             checked={formSelections.mainChallenge.includes('market-expansion')}
                             onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
                           />
-                          <span>Utvide til nye markeder</span>
+                          <span>{language === 'no' ? 'Utvide til nye markeder' : 'Expand to new markets'}</span>
                         </label>
                         <label className="checkbox-option">
                           <input 
@@ -1240,18 +1132,18 @@ function App() {
                             checked={formSelections.mainChallenge.includes('other')}
                             onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
                           />
-                          <span>Annet</span>
+                          <span>{language === 'no' ? 'Annet' : 'Other'}</span>
                         </label>
                       </div>
                       <div className="form-navigation">
-                        <button type="button" className="prev-step" onClick={prevStep}>Tilbake</button>
+                        <button type="button" className="prev-step" onClick={prevStep}>{currentContent.contact.form.back}</button>
                         <button 
                           type="button" 
                           className="next-step" 
                           onClick={nextStep}
                           disabled={!isStepValid(2)}
                         >
-                          Neste
+                          {currentContent.contact.form.step2Button}
                         </button>
                       </div>
                     </div>
@@ -1261,9 +1153,9 @@ function App() {
                   {currentStep === 3 && (
                     <div className="form-step">
                       <div className="step-header">
-                        <span className="step-indicator">Steg 3 av 5</span>
-                        <h3>{currentContent.contact.form.step3Title || 'Innovasjoner'}</h3>
-                        <p>{currentContent.contact.form.step3Subtitle || 'Hvilke løsninger er mest aktuelle for din bedrift?'}</p>
+                        <span className="step-indicator">{currentContent.contact.form.stepIndicator} 3 {currentContent.contact.form.of} 5</span>
+                        <h3>{currentContent.contact.form.step3Title}</h3>
+                        <p>{currentContent.contact.form.step3Subtitle}</p>
                       </div>
                       <div className="checkbox-options">
                         {currentContent.contact.modules.innovation.map((module) => (
@@ -1280,14 +1172,14 @@ function App() {
                         ))}
                       </div>
                       <div className="form-navigation">
-                        <button type="button" className="prev-step" onClick={prevStep}>Tilbake</button>
+                        <button type="button" className="prev-step" onClick={prevStep}>{currentContent.contact.form.back}</button>
                         <button 
                           type="button" 
                           className="next-step" 
                           onClick={nextStep}
                           disabled={!isStepValid(3)}
                         >
-                          Neste
+                          {currentContent.contact.form.step3Button}
                         </button>
                       </div>
                     </div>
@@ -1297,13 +1189,13 @@ function App() {
                   {currentStep === 4 && (
                     <div className="form-step">
                       <div className="step-header">
-                        <span className="step-indicator">Steg 4 av 5</span>
-                        <h3>{currentContent.contact.form.companySizeTitle || 'Selskap'}</h3>
-                        <p>{currentContent.contact.form.companySizeSubtitle || 'Hvor mange ansatte har dere?'}</p>
+                        <span className="step-indicator">{currentContent.contact.form.stepIndicator} 4 {currentContent.contact.form.of} 5</span>
+                        <h3>{currentContent.contact.form.companySizeTitle}</h3>
+                        <p>{currentContent.contact.form.companySizeSubtitle}</p>
                       </div>
                       
                       <div className="company-size-explanation">
-                        <p>{currentContent.contact.form.companySizeExplanation || 'Vi trenger denne informasjonen for å tilpasse løsningen til deres behov og forberede et personlig møte.'}</p>
+                        <p>{currentContent.contact.form.companySizeExplanation}</p>
                       </div>
                       
                       <div className="radio-options">
@@ -1335,19 +1227,19 @@ function App() {
                             checked={formSelections.companySize === '50+'}
                             onChange={(e) => handleSelectionChange('companySize', e.target.value)}
                           />
-                          <span>50 eller mer</span>
+                          <span>{language === 'no' ? '50 eller mer' : '50 or more'}</span>
                         </label>
                       </div>
                       
                       <div className="form-navigation">
-                        <button type="button" className="prev-step" onClick={prevStep}>Tilbake</button>
+                        <button type="button" className="prev-step" onClick={prevStep}>{currentContent.contact.form.back}</button>
                         <button 
                           type="button" 
                           className="next-step" 
                           onClick={nextStep}
                           disabled={!isStepValid(4)}
                         >
-                          Neste
+                          {currentContent.contact.form.step4Button}
                         </button>
                       </div>
                     </div>
@@ -1357,13 +1249,13 @@ function App() {
                   {currentStep === 5 && (
                     <div className="form-step">
                       <div className="step-header">
-                        <span className="step-indicator">Steg 5 av 5</span>
-                        <h3>{currentContent.contact.form.step5Title || 'Kontakt og strategimøte'}</h3>
-                        <p>{currentContent.contact.form.step5Subtitle || 'Basert på dine valg, la oss planlegge et personlig møte:'}</p>
+                        <span className="step-indicator">{currentContent.contact.form.stepIndicator} 5 {currentContent.contact.form.of} 5</span>
+                        <h3>{currentContent.contact.form.step5Title}</h3>
+                        <p>{currentContent.contact.form.step5Subtitle}</p>
                       </div>
                       
                       <div className="selection-summary">
-                        <h4>Dine valgte løsninger:</h4>
+                        <h4>{language === 'no' ? 'Dine valgte løsninger:' : 'Your selected solutions:'}</h4>
                         <div className="summary-items">
                           {/* Show selected core module */}
                           {formSelections.challenge && (() => {
@@ -1405,8 +1297,8 @@ function App() {
                           {/* Show company size if applicable */}
                           {formSelections.companySize && (
                             <div className="summary-item">
-                              <span className="item-name">Bedriftsstørrelse</span>
-                              <span className="item-description">{formSelections.companySize} ansatte</span>
+                              <span className="item-name">{language === 'no' ? 'Bedriftsstørrelse' : 'Company size'}</span>
+                              <span className="item-description">{formSelections.companySize} {language === 'no' ? 'ansatte' : 'employees'}</span>
                             </div>
                           )}
                         </div>
@@ -1416,7 +1308,7 @@ function App() {
                         <input 
                           type="text" 
                           name="name" 
-                          placeholder="Navn" 
+                          placeholder={currentContent.contact.form.namePlaceholder} 
                           value={formSelections.name}
                           onChange={(e) => handleSelectionChange('name', e.target.value)}
                           required 
@@ -1424,7 +1316,7 @@ function App() {
                         <input 
                           type="email" 
                           name="email" 
-                          placeholder="E-post" 
+                          placeholder={currentContent.contact.form.emailPlaceholder} 
                           value={formSelections.email}
                           onChange={(e) => handleSelectionChange('email', e.target.value)}
                           required 
@@ -1432,7 +1324,7 @@ function App() {
                         <input 
                           type="text" 
                           name="company" 
-                          placeholder="Bedrift" 
+                          placeholder={currentContent.contact.form.companyPlaceholder} 
                           value={formSelections.company}
                           onChange={(e) => handleSelectionChange('company', e.target.value)}
                           required 
@@ -1441,10 +1333,10 @@ function App() {
                       
                       <div className="form-navigation">
                         <button type="button" className="prev-step" onClick={prevStep}>
-                          {currentContent.contact.form.submit === 'Get personalized quote' ? 'Back' : 'Tilbake'}
+                          {currentContent.contact.form.step5Back}
                         </button>
                         <button type="button" className="submit-button" onClick={handleFormSubmit}>
-                          {currentContent.contact.form.submit === 'Get personalized quote' ? 'See your quote' : 'Se ditt tilbud'}
+                          {currentContent.contact.form.step5Button}
                         </button>
                       </div>
                     </div>
@@ -1461,8 +1353,8 @@ function App() {
                 {showQuote && quoteData && (
                   <div className="quote-display">
                     <div className="quote-header">
-                      <h3>Ditt tilpassede tilbud</h3>
-                      <p>Basert på dine valg</p>
+                      <h3>{currentContent.contact.form.quoteTitle}</h3>
+                      <p>{currentContent.contact.form.quoteSubtitle}</p>
                     </div>
                     
                     <div className="quote-items">
@@ -1470,11 +1362,11 @@ function App() {
                         <div key={index} className="quote-item">
                           <div className="quote-item-header">
                             <h4>{module.name}</h4>
-                            <span className="quote-price">{module.price.toLocaleString()} kr</span>
+                            <span className="quote-price">{module.price.toLocaleString()} {language === 'no' ? 'kr' : 'NOK'}</span>
                           </div>
                           <p className="quote-description">{module.description}</p>
                           <div className="quote-details">
-                            <span>Estimert tid: {module.hours} timer</span>
+                            <span>{language === 'no' ? 'Estimert tid:' : 'Estimated time:'} {module.hours} {language === 'no' ? 'timer' : 'hours'}</span>
                           </div>
                         </div>
                       ))}
@@ -1482,16 +1374,16 @@ function App() {
                     
                     <div className="quote-summary">
                       <div className="quote-total">
-                        <strong>Totalt: {quoteData.totalPrice.toLocaleString()} kr</strong>
+                        <strong>{currentContent.contact.form.quoteTotal}: {quoteData.totalPrice.toLocaleString()} {language === 'no' ? 'kr' : 'NOK'}</strong>
                       </div>
                       <div className="quote-timeline">
-                        <span>Estimert tidsplan: {quoteData.estimatedTimeline}</span>
+                        <span>{currentContent.contact.form.quoteTimeline}: {quoteData.estimatedTimeline}</span>
                       </div>
                     </div>
                     
                     <div className="quote-footer">
-                      <p>Dette tilbudet er sendt til din e-post og til vårt team.</p>
-                      <p>Vi tar kontakt innen 24 timer for å planlegge neste steg.</p>
+                      <p>{currentContent.contact.form.quoteFooter1}</p>
+                      <p>{currentContent.contact.form.quoteFooter2}</p>
                     </div>
                   </div>
                 )}
