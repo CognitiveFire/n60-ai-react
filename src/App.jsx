@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Salesbot from './components/Salesbot';
 import './App.css';
 
 function App() {
@@ -1383,18 +1384,7 @@ function App() {
         </div>
       </footer>
 
-      <a
-        href="https://calendly.com/n60/new-meeting"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="chat-tab"
-      >
-        <img
-          src="https://i.ibb.co/yn9WGQBT/salesbot.png"
-          alt="Chat med N60"
-          className="chat-tab-image"
-        />
-      </a>
+      <Salesbot />
     </>
   );
 }
