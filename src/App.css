@@ -234,7 +234,8 @@
   .hero-container {
     grid-template-columns: 1fr;
     gap: 2rem;
-    text-align: center;
+    text-align: left; /* Keep left alignment on mobile */
+    padding-left: 2rem; /* Add left spacing for hero text */
   }
   
   .hero-headline {
@@ -375,8 +376,9 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .solutions-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    background-color: #0000ff !important; /* TEMPORARY: Bright blue background to test solutions stacking */
   }
   
   .solutions-header h2 {
@@ -663,6 +665,13 @@
     text-align: center !important;
     padding: 2rem 1rem !important;
     background-color: #ff00ff !important; /* TEMPORARY: Bright pink background on mobile */
+    max-width: 90% !important; /* Center the form with margins */
+    margin: 0 auto !important;
+  }
+  
+  .contact-form {
+    text-align: center !important;
+    padding: 2rem 1rem !important;
   }
   
   .contact-fields {
