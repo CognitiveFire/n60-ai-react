@@ -633,6 +633,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   margin-bottom: 2rem;
+  margin-top: 3rem; /* Add more space above form fields */
 }
 
 .contact-fields input:nth-child(3) {
@@ -653,6 +654,39 @@
   outline: none;
   border-color: #667eea;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Mobile Responsiveness for Smart Form */
+@media (max-width: 768px) {
+  .contact-form-container {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  .contact-fields {
+    grid-template-columns: 1fr; /* Stack all fields vertically on mobile */
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .contact-fields input:nth-child(3) {
+    grid-column: 1; /* Reset company field to single column */
+  }
+  
+  .step-header {
+    text-align: center;
+  }
+  
+  .challenge-cards {
+    grid-template-columns: 1fr; /* Stack challenge cards on mobile */
+    gap: 1.5rem;
+  }
+  
+  .checkbox-options,
+  .radio-options {
+    grid-template-columns: 1fr; /* Stack options on mobile */
+    gap: 1rem;
+  }
 }
 
 .form-navigation {
