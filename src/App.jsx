@@ -790,6 +790,61 @@ function App() {
             }
           ]
         }
+      },
+      whatIs: {
+        title: "What is N60?",
+        subtitle: "AI-driven B2B marketing for small and medium-sized enterprises",
+        description: "N60 is a Bergen-based consultancy specializing in AI-driven B2B marketing for small and medium-sized businesses. We combine deep marketing expertise with cutting-edge AI tools to deliver scalable growth, predictable pipelines, and measurable ROI.",
+        features: [
+          "25+ years of marketing experience combined with modern AI automation",
+          "Scalable growth - build, measure, and optimize your pipeline faster",
+          "Actionable insights - AI-powered analytics that turn data into decisions",
+          "Built for SMEs - affordable, flexible, and tailored to your growth stage"
+        ]
+      },
+      howWeWork: {
+        title: "How We Work",
+        subtitle: "Concrete, business-oriented approach to planning and implementation",
+        steps: [
+          {
+            title: "Discovery session",
+            description: "Understand your goals, market, and pipeline challenges through thorough analysis."
+          },
+          {
+            title: "AI-driven strategy",
+            description: "Develop demand generation, outreach, account management, and prediction."
+          },
+          {
+            title: "Implementation",
+            description: "Automate campaigns, outreach, and reporting with AI tools."
+          },
+          {
+            title: "Ongoing optimization",
+            description: "Data-driven improvements that deliver results and increase ROI over time."
+          }
+        ]
+      },
+      whyAI: {
+        title: "Why AI-driven marketing?",
+        subtitle: "Concrete benefits compared to traditional methods",
+        benefits: [
+          {
+            title: "Higher quality leads, faster",
+            description: "AI identifies and prioritizes leads based on conversion probability, not just volume."
+          },
+          {
+            title: "Predictable pipeline and improved conversion",
+            description: "Predictive models give you insight into which prospects are ready to buy."
+          },
+          {
+            title: "Scalable outreach without extra staff",
+            description: "Automated campaigns that personalize at scale without losing human touch."
+          },
+          {
+            title: "Data insights that drive smarter decisions",
+            description: "AI analysis reveals patterns and opportunities impossible to detect manually."
+          }
+        ]
       }
     }
   };
