@@ -8,6 +8,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
 .section-title {
@@ -21,9 +22,9 @@
   gap: 3rem;
   margin-bottom: 3rem;
   width: 100%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  /* Debug: ensure grid works properly */
+  grid-auto-flow: row;
+  align-items: start;
 }
 
 .solution-card {
@@ -161,6 +162,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  position: relative;
 }
 
 /* Section header improvements */

@@ -973,6 +973,33 @@ function App() {
           </div>
         </section>
 
+        {/* Innovation Layer Section */}
+        <section id="innovation" className="innovation-section">
+          <div className="container">
+            <div className="section-header" data-aos="fade-up">
+              <h2>{currentContent.innovation.title}</h2>
+              <p>{currentContent.innovation.subtitle}</p>
+            </div>
+            <div className="innovation-grid">
+              {currentContent.innovation.features.map((feature, index) => (
+                <div key={index} className="innovation-card" data-aos="fade-up" data-aos-delay={index * 100}>
+                  <div className="innovation-image">
+                    <img src={feature.dashboard} alt={feature.title} />
+                  </div>
+                  <div className="innovation-content">
+                    <h3>{feature.title}</h3>
+                    <p>{feature.description}</p>
+                    <div className="innovation-price">
+                      <span className="price">{feature.price} NOK</span>
+                      <span className="hours">{feature.hours}h</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* What is N60 Section */}
         <section className="what-is-section">
           <div className="container">
@@ -1016,32 +1043,7 @@ function App() {
 
 
 
-        {/* Innovation Layer Section */}
-        <section id="innovation" className="innovation-section">
-          <div className="container">
-            <div className="section-header" data-aos="fade-up">
-              <h2>{currentContent.innovation.title}</h2>
-              <p>{currentContent.innovation.subtitle}</p>
-            </div>
-            <div className="innovation-grid">
-              {currentContent.innovation.features.map((feature, index) => (
-                <div key={index} className="innovation-card" data-aos="fade-up" data-aos-delay={index * 100}>
-                  <div className="innovation-image">
-                    <img src={feature.dashboard} alt={feature.title} />
-                  </div>
-                  <div className="innovation-content">
-                    <h3>{feature.title}</h3>
-                    <p>{feature.description}</p>
-                    <div className="innovation-price">
-                      <span className="price">{feature.price} NOK</span>
-                      <span className="hours">{feature.hours}h</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+
 
         {/* How We Work Section */}
         <section id="how-we-work" className="how-we-work-section">
