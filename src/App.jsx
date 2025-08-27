@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import './App.css';
-import './components/Contact.css';
 
 function App() {
   const [language, setLanguage] = useState('no');
