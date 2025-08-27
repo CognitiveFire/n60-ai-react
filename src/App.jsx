@@ -35,7 +35,8 @@ function App() {
       hero: {
         title: "Alt du trenger for B2B-vekst",
         subtitle: "AI-løsninger som dekker hele reisen – fra produkt til kunde og videre til nye markeder.",
-        cta: "Få et tilpasset tilbud"
+        cta: "Få et tilpasset tilbud",
+        background: "https://ibb.co/21nsrcLh"
       },
       solutions: {
         title: "Alt du trenger for B2B-vekst",
@@ -45,6 +46,7 @@ function App() {
             title: "Produktmarkedsføring",
             emoji: "🎯",
             description: "Nå de riktige kundene, med budskap som skaper etterspørsel.",
+            image: "https://ibb.co/chg1b8CL",
             features: [
               "Finn din idealkundeprofil (ICP)",
               "Skap kampanjer som bygger interesse",
@@ -55,6 +57,7 @@ function App() {
             title: "Leadgenerering",
             emoji: "📈",
             description: "Fyll pipelinen med kvalifiserte leads, ikke bare flere kontakter.",
+            image: "https://ibb.co/fzQ6S1Rf",
             features: [
               "Prediktive pipelines viser hvem som vil kjøpe",
               "Outreach i skala, men med personlig preg",
@@ -65,6 +68,7 @@ function App() {
             title: "Markedsutvidelse",
             emoji: "🌍",
             description: "Voks trygt inn i nye markeder.",
+            image: "https://ibb.co/sn2LDYD",
             features: [
               "AI-drevet innsikt i etterspørsel og konkurrenter",
               "ABM-kampanjer mot nøkkelkunder",
@@ -872,7 +876,7 @@ function App() {
         <Navbar />
 
         {/* Hero Section */}
-        <Hero onOpenDemo={() => {}} />
+        <Hero onOpenDemo={() => {}} backgroundImage={currentContent.hero.background} />
 
         {/* Solutions Section - Three Core Areas */}
         <section id="solutions" className="solutions-section">
@@ -884,6 +888,11 @@ function App() {
             <div className="solutions-grid">
               {currentContent.solutions.cases.map((solution, index) => (
                 <div key={index} className="solution-card" data-aos="fade-up" data-aos-delay={index * 100}>
+                  {solution.image && (
+                    <div className="solution-image">
+                      <img src={solution.image} alt={solution.title} />
+                    </div>
+                  )}
                   <div className="solution-header">
                     <span className="solution-emoji">{solution.emoji}</span>
                     <h3>{solution.title}</h3>

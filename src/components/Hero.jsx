@@ -3,9 +3,14 @@
 import React from 'react';
 // CSS moved to App.css
 
-const Hero = ({ onOpenDemo }) => {
+const Hero = ({ onOpenDemo, backgroundImage }) => {
   return (
     <section id="hero" className="hero-section">
+      {backgroundImage && (
+        <div className="hero-background">
+          <img src={backgroundImage} alt="Hero Background" />
+        </div>
+      )}
       <div className="hero-container">
         <div className="hero-left">
           <h1 className="hero-headline">Kraftig AI for Norske SMB</h1>
