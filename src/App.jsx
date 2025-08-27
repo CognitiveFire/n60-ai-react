@@ -1215,29 +1215,25 @@ function App() {
                     </div>
                   )}
                   
-                  {/* Step 5: Customized Offer */}
+                  {/* Step 5: Contact & Strategy Meeting */}
                   {currentStep === 5 && (
                     <div className="form-step">
                       <div className="step-header">
                         <span className="step-indicator">Steg 5 av 5</span>
-                        <h3>{currentContent.contact.form.step5Title || 'Tilpasset tilbud'}</h3>
-                        <p>{currentContent.contact.form.step5Subtitle || 'Basert på dine valg, her er ditt tilpassede tilbud:'}</p>
+                        <h3>{currentContent.contact.form.step5Title || 'Kontakt og strategimøte'}</h3>
+                        <p>{currentContent.contact.form.step5Subtitle || 'Basert på dine valg, la oss planlegge et personlig møte:'}</p>
                       </div>
                       
-                      <div className="ready-for-chat">
-                        <h4>{currentContent.contact.form.readyForChat || 'Klar for en prat?'}</h4>
-                        <p>{currentContent.contact.form.readyForChatSubtitle || 'Vi trenger dine detaljer for å forberede et personlig møte og tilpasse løsningen ytterligere.'}</p>
-                      </div>
-                      
-                      <div className="quote-summary">
-                        <div className="quote-items">
+                      <div className="selection-summary">
+                        <h4>Dine valgte løsninger:</h4>
+                        <div className="summary-items">
                           {/* Show selected core module */}
                           {formSelections.challenge && (() => {
                             const module = currentContent?.contact?.modules?.core?.find(m => m.id === formSelections.challenge);
                             return module ? (
-                              <div key="core" className="quote-item">
-                                <span>{module.name}</span>
-                                <span>{module.price.toLocaleString()} kr</span>
+                              <div key="core" className="summary-item">
+                                <span className="item-name">{module.name}</span>
+                                <span className="item-description">{module.description}</span>
                               </div>
                             ) : null;
                           })()}
@@ -1247,9 +1243,9 @@ function App() {
                             formSelections.mainChallenge.map((challengeId, index) => {
                               const module = currentContent?.contact?.modules?.mainChallenges?.find(m => m.id === challengeId);
                               return module ? (
-                                <div key={`mainChallenge-${index}`} className="quote-item">
-                                  <span>{module.name}</span>
-                                  <span>{module.price.toLocaleString()} kr</span>
+                                <div key={`mainChallenge-${index}`} className="summary-item">
+                                  <span className="item-name">{module.name}</span>
+                                  <span className="item-description">{module.description}</span>
                                 </div>
                               ) : null;
                             })
@@ -1260,25 +1256,27 @@ function App() {
                             formSelections.innovation.map((innovationId, index) => {
                               const module = currentContent?.contact?.modules?.innovation?.find(m => m.id === innovationId);
                               return module ? (
-                                <div key={`innovation-${index}`} className="quote-item">
-                                  <span>{module.name}</span>
-                                  <span>{module.price.toLocaleString()} kr</span>
+                                <div key={`innovation-${index}`} className="summary-item">
+                                  <span className="item-name">{module.name}</span>
+                                  <span className="item-description">{module.description}</span>
                                 </div>
                               ) : null;
                             })
                           }
                           
-                          {/* Show company size adjustment if applicable */}
+                          {/* Show company size if applicable */}
                           {formSelections.companySize && (
-                            <div className="quote-item">
-                              <span>Bedriftsstørrelse: {formSelections.companySize}</span>
-                              <span>0 kr</span>
+                            <div className="summary-item">
+                              <span className="item-name">Bedriftsstørrelse</span>
+                              <span className="item-description">{formSelections.companySize} ansatte</span>
                             </div>
                           )}
                         </div>
-                        <div className="quote-total">
-                          <strong>Totalt: {totalPrice.toLocaleString()} kr</strong>
-                        </div>
+                      </div>
+                      
+                      <div className="ready-for-chat">
+                        <h4>{currentContent.contact.form.readyForChat || 'Klar for en strategisamtale?'}</h4>
+                        <p>{currentContent.contact.form.readyForChatSubtitle || 'Vi trenger dine detaljer for å forberede et personlig møte med fullstendig prisoverslag og strategiplan.'}</p>
                       </div>
                       
                       <div className="contact-fields">
@@ -1310,7 +1308,7 @@ function App() {
                       
                       <div className="form-navigation">
                         <button type="button" className="prev-step" onClick={prevStep}>Tilbake</button>
-                        <button type="submit" className="submit-button">Få ditt tilbud</button>
+                        <button type="submit" className="submit-button">Få fullstendig tilbud og strategiplan</button>
                       </div>
                     </div>
                   )}
