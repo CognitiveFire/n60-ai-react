@@ -977,7 +977,12 @@ function App() {
                   </div>
                   
                   {/* Always show Step 1 for now to debug */}
-                  <div className="form-step">
+                  <div className="form-step" style={{border: '3px solid red', padding: '20px', background: '#fff'}}>
+                    <div style={{background: '#ffebee', padding: '10px', marginBottom: '10px', border: '2px solid #f44336'}}>
+                      <p><strong>🔴 FORM STEP 1 RENDERED - RED BORDER SHOULD BE VISIBLE</strong></p>
+                      <p>If you see this red border, the form is rendering but CSS might be hiding it</p>
+                    </div>
+                    
                     <div className="step-header">
                       <span className="step-indicator">Steg 1 av 5</span>
                       <h3>Velg hovedutfordring</h3>
@@ -990,26 +995,42 @@ function App() {
                       <pre>{JSON.stringify(currentContent?.contact?.modules?.core, null, 2)}</pre>
                     </div>
                     
-                    <div className="challenge-cards">
-                      {currentContent?.contact?.modules?.core?.map((module) => (
-                        <label key={module.id} className="challenge-card">
-                          <input 
-                            type="radio" 
-                            name="challenge" 
-                            value={module.id}
-                            checked={formSelections.challenge === module.id}
-                            onChange={(e) => handleSelectionChange('challenge', e.target.value)}
-                          />
-                          <div className="card-content">
-                            <div className="card-icon">
-                              {module.id === 'product-marketing' && '📦'}
-                              {module.id === 'lead-generation' && '📈'}
-                              {module.id === 'market-expansion' && '🌍'}
+                    {/* Debug CSS classes */}
+                    <div style={{background: '#e3f2fd', padding: '1rem', marginBottom: '1rem', borderRadius: '8px', border: '1px solid #2196f3'}}>
+                      <p><strong>Debug CSS:</strong></p>
+                      <p>Form step class: "form-step"</p>
+                      <p>Challenge cards class: "challenge-cards"</p>
+                      <p>Challenge card class: "challenge-card"</p>
+                      <p>Card content class: "card-content"</p>
+                    </div>
+                    
+                    <div className="challenge-cards" style={{border: '2px solid blue', padding: '10px', background: '#f0f8ff'}}>
+                      <p style={{background: '#fff', padding: '10px', margin: '10px 0', border: '1px solid #ccc'}}>
+                        <strong>🔵 CHALLENGE CARDS CONTAINER - BLUE BORDER SHOULD BE VISIBLE</strong>
+                      </p>
+                      
+                      {currentContent?.contact?.modules?.core?.map((module, index) => (
+                        <div key={module.id} style={{border: '2px solid green', margin: '10px 0', padding: '10px', background: '#f0fff0'}}>
+                          <p><strong>🟢 MODULE {index + 1} RENDERED - GREEN BORDER SHOULD BE VISIBLE</strong></p>
+                          <label className="challenge-card">
+                            <input 
+                              type="radio" 
+                              name="challenge" 
+                              value={module.id}
+                              checked={formSelections.challenge === module.id}
+                              onChange={(e) => handleSelectionChange('challenge', e.target.value)}
+                            />
+                            <div className="card-content">
+                              <div className="card-icon">
+                                {module.id === 'product-marketing' && '📦'}
+                                {module.id === 'lead-generation' && '📈'}
+                                {module.id === 'market-expansion' && '🌍'}
+                              </div>
+                              <h4>{module.name}</h4>
+                              <p>{module.description}</p>
                             </div>
-                            <h4>{module.name}</h4>
-                            <p>{module.description}</p>
-                          </div>
-                        </label>
+                          </label>
+                        </div>
                       )) || (
                         <div style={{background: '#f8d7da', padding: '1rem', borderRadius: '8px', border: '1px solid #f5c6cb'}}>
                           <p><strong>Error:</strong> No modules found in currentContent.contact.modules.core</p>
@@ -1023,8 +1044,9 @@ function App() {
                       className="next-step" 
                       onClick={nextStep}
                       disabled={!isStepValid(1)}
+                      style={{background: '#4caf50', color: 'white', padding: '15px 30px', fontSize: '18px', border: 'none', borderRadius: '8px', cursor: 'pointer'}}
                     >
-                      Fortsett
+                      🟢 FORTSETT BUTTON - GREEN BUTTON SHOULD BE VISIBLE
                     </button>
                   </div>
                   
