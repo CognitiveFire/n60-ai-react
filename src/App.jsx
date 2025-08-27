@@ -302,8 +302,240 @@ function App() {
               price: 24000
             }
           ]
+        },
+        contact: {
+          title: "Få et skreddersydd tilbud",
+          subtitle: "Vår smarte skjema gir deg en personlig AI-markedsføringsløsning med detaljert prising",
+          form: {
+            name: "Navn",
+            email: "E-post",
+            company: "Bedrift",
+            challenge: "Hvilken utfordring har du?",
+            innovation: "Hvilke innovasjonsløsninger trenger du?",
+            size: "Bedriftsstørrelse",
+            market: "Målmarked",
+            timeline: "Tidsplan",
+            budget: "Budsjett",
+            submit: "Få personlig tilbud",
+            companySizeTitle: "Selskap",
+            companySizeSubtitle: "Hvor mange ansatte har dere?",
+            companySizeExplanation: "Vi trenger denne informasjonen for å tilpasse løsningen til deres behov og forberede et personlig møte.",
+            step1Title: "Velg hovedutfordring",
+            step1Subtitle: "Hva er din hovedutfordring innen markedsføring i dag?",
+            step2Title: "Dine hovedutfordringer",
+            step2Subtitle: "Hva er de største utfordringene for bedriften?",
+            step3Title: "Innovasjoner",
+            step3Subtitle: "Hvilke løsninger er mest aktuelle for din bedrift?",
+            step4Title: "Selskap",
+            step4Subtitle: "Hvor mange ansatte har dere?",
+            step5Title: "Kontakt og strategimøte",
+            step5Subtitle: "Basert på dine valg, la oss planlegge et personlig møte:",
+            readyForChat: "Klar for en strategisamtale?",
+            readyForChatSubtitle: "Vi trenger dine detaljer for å forberede et personlig møte med fullstendig prisoverslag og strategiplan.",
+            stepIndicator: "Steg",
+            of: "av",
+            back: "Tilbake",
+            next: "Neste",
+            submitButton: "Se ditt tilbud",
+            step1Button: "Fortsett",
+            step2Button: "Neste",
+            step3Button: "Neste",
+            step4Button: "Neste",
+            step5Button: "Se ditt tilbud",
+            step5Back: "Tilbake",
+            namePlaceholder: "Navn",
+            emailPlaceholder: "E-post",
+            companyPlaceholder: "Bedrift",
+            quoteTitle: "Ditt tilpassede tilbud",
+            quoteSubtitle: "Basert på dine valg",
+            quoteTotal: "Totalt",
+            quoteTimeline: "Estimert tidsplan",
+            quoteFooter1: "Dette tilbudet er sendt til din e-post og til vårt team.",
+            quoteFooter2: "Vi tar kontakt innen 24 timer for å planlegge neste steg."
+          },
+          modules: {
+            core: [
+              {
+                id: "product-marketing",
+                name: "AI for produktmarkedsføring",
+                description: "ICP-definisjon, kampanjeorkestrering, personlige funnels",
+                hours: 40,
+                price: 24000
+              },
+              {
+                id: "lead-generation", 
+                name: "AI for leadgenerering",
+                description: "Prediktiv scoring, outreach-automatisering, pipeline-dashboards",
+                hours: 45,
+                price: 27000
+              },
+              {
+                id: "market-expansion",
+                name: "AI for markedsutvidelse", 
+                description: "Markedsinnsikt, ABM light/full, lokaliseringsoppsett",
+                hours: 50,
+                price: 30000
+              }
+            ],
+            mainChallenges: [
+              {
+                id: "demand-generation",
+                name: "Generere etterspørsel for produktet",
+                description: "Skape interesse og etterspørsel for produktet ditt",
+                hours: 20,
+                price: 12000
+              },
+              {
+                id: "lead-engagement",
+                name: "Finne og engasjere potensielle leads",
+                description: "Identifisere og engasjere kvalifiserte leads",
+                hours: 25,
+                price: 15000
+              },
+              {
+                id: "market-expansion",
+                name: "Utvide til nye markeder",
+                description: "Ekspandere til nye geografiske områder",
+                hours: 30,
+                price: 18000
+              },
+              {
+                id: "other",
+                name: "Annet",
+                description: "Andre markedsføringsutfordringer",
+                hours: 15,
+                price: 9000
+              }
+            ],
+            innovation: [
+              {
+                id: "chat-bots",
+                name: "Chat/Voice/Help Bots",
+                description: "Integrert chat + valgfri taleagent-integrasjon",
+                hours: 25,
+                price: 15000
+              },
+              {
+                id: "smart-forms",
+                name: "Smarte skjemaer og landingssider",
+                description: "Adaptive skjemaer, konverteringsoptimalisering",
+                hours: 20,
+                price: 12000
+              },
+              {
+                id: "whatsapp-social",
+                name: "WhatsApp / Sosiale kampanjer",
+                description: "Multi-kanal outreach-oppsett",
+                hours: 25,
+                price: 15000
+              },
+              {
+                id: "product-guides",
+                name: "Personlige produktguider",
+                description: "AI-genererte ROI-guider, PDF-er/mikrosider",
+                hours: 30,
+                price: 18000
+              },
+              {
+                id: "content-translation",
+                name: "Forsterket innhold + oversettelse",
+                description: "Kampanjevinkelforslag + naturlig lokalisering",
+                hours: 30,
+                price: 18000
+              },
+              {
+                id: "predictive-insights",
+                name: "Prediktive innsikter / Churn-risiko",
+                description: "Forecastings-dashboards, kontohverdsanbefalinger",
+                hours: 35,
+                price: 21000
+              },
+              {
+                id: "event-pipeline",
+                name: "Event-til-Pipeline-automatisering",
+                description: "AI som kobler events til CRM-oppfølging",
+                hours: 40,
+                price: 24000
+              }
+            ]
+          }
         }
-
+              },
+        pricing: {
+        title: "Pris",
+        subtitle: "Velg pakken som passer best for deg",
+        featureLabel: "Funksjon / Verdi",
+        starter: {
+          name: "Start",
+          description: "For små bedrifter som trenger en grunnleggende markedsføringsverktøy."
+        },
+        growth: {
+          name: "Vekst",
+          description: "For bedrifter som ønsker å utvikle seg og nå større markeder."
+        },
+        scale: {
+          name: "Skala",
+          description: "For store bedrifter som trenger avanserte markedsføringsverktøy og personalisering."
+        },
+        features: [
+          { 
+            name: "AI-støttet demand generation", 
+            starter: "✅", 
+            growth: "✅", 
+            scale: "✅" 
+          },
+          { 
+            name: "AI-automatisert outreach", 
+            starter: "Enkle sekvenser", 
+            growth: "Tilpasset nurturing", 
+            scale: "Hyper-personalisert" 
+          },
+          { 
+            name: "Lead capture-optimalisering", 
+            starter: "✅", 
+            growth: "✅", 
+            scale: "✅" 
+          },
+          { 
+            name: "Account-Based Marketing (ABM)", 
+            starter: "—", 
+            growth: "Light (utvalgte konti)", 
+            scale: "Full ABM med egne reiser" 
+          },
+          { 
+            name: "Prediktiv lead scoring", 
+            starter: "—", 
+            growth: "✅", 
+            scale: "Avansert prediksjon + forecasting" 
+          },
+          { 
+            name: "Datadrevne innsikter", 
+            starter: "Enkel dashboard", 
+            growth: "Handlingsklare rapporter", 
+            scale: "Beslutningsdashboards" 
+          },
+          { 
+            name: "Støtte for markedsutvidelse", 
+            starter: "—", 
+            growth: "Regionalt fokus", 
+            scale: "Skandinavisk & europeisk skalering" 
+          },
+          { 
+            name: "Kontinuerlig optimalisering", 
+            starter: "—", 
+            growth: "✅", 
+            scale: "Avansert AI-modelltrening" 
+          },
+          { 
+            name: "Verdi / ROI", 
+            starter: "Rask effekt, spar tid", 
+            growth: "Forutsigbar pipeline", 
+            scale: "Skalerbar vekst, konkurransefortrinn" 
+          }
+        ],
+        cta: "Ta kontakt for demo"
+      }
+    },
     en: {
       hero: {
         title: "Everything you need for B2B growth",
@@ -402,229 +634,162 @@ function App() {
           }
         ]
       },
-      whatIs: {
-        title: "What is N60?",
-        subtitle: "AI-driven B2B marketing for small and medium-sized enterprises",
-        description: "N60 is a Bergen-based consultancy specializing in AI-driven B2B marketing for small and medium-sized businesses. We combine deep marketing expertise with cutting-edge AI tools to deliver scalable growth, predictable pipelines, and measurable ROI.",
-        features: [
-          "25+ years of marketing experience combined with modern AI automation",
-          "Scalable growth - build, measure, and optimize your pipeline faster",
-          "Actionable insights - AI-powered analytics that turn data into decisions",
-          "Built for SMEs - affordable, flexible, and tailored to your growth stage"
-        ]
-      },
-
-      howWeWork: {
-        title: "How We Work",
-        subtitle: "Concrete, business-oriented approach to planning and implementation",
-        steps: [
-          {
-            title: "Discovery session",
-            description: "Understand your goals, market, and pipeline challenges through thorough analysis."
-          },
-          {
-            title: "AI-driven strategy",
-            description: "Develop demand generation, outreach, account management, and prediction."
-          },
-          {
-            title: "Implementation",
-            description: "Automate campaigns, outreach, and reporting with AI tools."
-          },
-          {
-            title: "Ongoing optimization",
-            description: "Data-driven improvements that deliver results and increase ROI over time."
-          }
-        ]
-      },
-      whyAI: {
-        title: "Why AI-driven marketing?",
-        subtitle: "Concrete benefits compared to traditional methods",
-        benefits: [
-          {
-            title: "Higher quality leads, faster",
-            description: "AI identifies and prioritizes leads based on conversion probability, not just volume."
-          },
-          {
-            title: "Predictable pipeline and improved conversion",
-            description: "Predictive models give you insight into which prospects are ready to buy."
-          },
-          {
-            title: "Scalable outreach without extra staff",
-            description: "Automated campaigns that personalize at scale without losing human touch."
-          },
-          {
-            title: "Data insights that drive smarter decisions",
-            description: "AI analysis reveals patterns and opportunities impossible to detect manually."
-          }
-        ]
-      },
-
-
       contact: {
-        title: "Få et skreddersydd tilbud",
-        subtitle: "Vår smarte skjema gir deg en personlig AI-markedsføringsløsning med detaljert prising",
+        title: "Get a customized quote",
+        subtitle: "Our smart form gives you a personalized AI marketing solution with detailed pricing",
         form: {
-          name: "Navn",
-          email: "E-post",
-          company: "Bedrift",
-          challenge: "Hvilken utfordring har du?",
-          innovation: "Hvilke innovasjonsløsninger trenger du?",
-          size: "Bedriftsstørrelse",
-          market: "Målmarked",
-          timeline: "Tidsplan",
-          budget: "Budsjett",
-          submit: "Få personlig tilbud"
+          name: "Name",
+          email: "Email",
+          company: "Company",
+          challenge: "What challenge do you have?",
+          innovation: "What innovation solutions do you need?",
+          size: "Company size",
+          market: "Target market",
+          timeline: "Timeline",
+          budget: "Budget",
+          submit: "Get personalized quote",
+          companySizeTitle: "Company",
+          companySizeSubtitle: "How many employees do you have?",
+          companySizeExplanation: "We need this information to customize the solution to your needs and prepare for a personal meeting.",
+          step1Title: "Choose main challenge",
+          step1Subtitle: "What is your main challenge in marketing today?",
+          step2Title: "Your main challenges",
+          step2Subtitle: "What are the biggest challenges for the company?",
+          step3Title: "Innovations",
+          step3Subtitle: "Which solutions are most relevant for your company?",
+          step4Title: "Company",
+          step4Subtitle: "How many employees do you have?",
+          step5Title: "Contact and strategy meeting",
+          step5Subtitle: "Based on your choices, let's plan a personal meeting:",
+          readyForChat: "Ready for a strategy meeting?",
+          readyForChatSubtitle: "We need your details to prepare for a personal meeting with complete pricing and strategy plan.",
+          stepIndicator: "Step",
+          of: "of",
+          back: "Back",
+          next: "Next",
+                      submitButton: "See your quote",
+          step1Button: "Continue",
+          step2Button: "Next",
+          step3Button: "Next",
+          step4Button: "Next",
+          step5Button: "See your quote",
+          step5Back: "Back",
+          namePlaceholder: "Name",
+          emailPlaceholder: "Email",
+          companyPlaceholder: "Company",
+          quoteTitle: "Your customized quote",
+          quoteSubtitle: "Based on your choices",
+          quoteTotal: "Total",
+          quoteTimeline: "Estimated timeline",
+          quoteFooter1: "This quote has been sent to your email and to our team.",
+          quoteFooter2: "We will contact you within 24 hours to plan the next steps."
         },
         modules: {
           core: [
             {
               id: "product-marketing",
-              name: "AI for produktmarkedsføring",
-              description: "ICP-definisjon, kampanjeorkestrering, personlige funnels",
+              name: "AI for product marketing",
+              description: "ICP definition, campaign orchestration, personal funnels",
               hours: 40,
               price: 24000
             },
             {
               id: "lead-generation", 
-              name: "AI for leadgenerering",
-              description: "Prediktiv scoring, outreach-automatisering, pipeline-dashboards",
+              name: "AI for lead generation",
+              description: "Predictive scoring, outreach automation, pipeline dashboards",
               hours: 45,
               price: 27000
             },
             {
               id: "market-expansion",
-              name: "AI for markedsutvidelse", 
-              description: "Markedsinnsikt, ABM light/full, lokaliseringsoppsett",
+              name: "AI for market expansion", 
+              description: "Market insights, ABM light/full, localization setup",
               hours: 50,
               price: 30000
+            }
+          ],
+          mainChallenges: [
+            {
+              id: "demand-generation",
+              name: "Generate demand for the product",
+              description: "Create interest and demand for your product",
+              hours: 20,
+              price: 12000
+            },
+            {
+              id: "lead-engagement",
+              name: "Find and engage potential leads",
+              description: "Identify and engage qualified leads",
+              hours: 25,
+              price: 15000
+            },
+            {
+              id: "market-expansion",
+              name: "Expand to new markets",
+              description: "Expand to new geographic areas",
+              hours: 30,
+              price: 18000
+            },
+            {
+              id: "other",
+              name: "Other",
+              description: "Other marketing challenges",
+              hours: 15,
+              price: 9000
             }
           ],
           innovation: [
             {
               id: "chat-bots",
               name: "Chat/Voice/Help Bots",
-              description: "Integrert chat + valgfri taleagent-integrasjon",
+              description: "Integrated chat + optional voice agent integration",
               hours: 25,
               price: 15000
             },
             {
               id: "smart-forms",
-              name: "Smarte skjemaer og landingssider",
-              description: "Adaptive skjemaer, konverteringsoptimalisering",
+              name: "Smart forms and landing pages",
+              description: "Adaptive forms, conversion optimization",
               hours: 20,
               price: 12000
             },
             {
               id: "whatsapp-social",
-              name: "WhatsApp / Sosiale kampanjer",
-              description: "Multi-kanal outreach-oppsett",
+              name: "WhatsApp / Social campaigns",
+              description: "Multi-channel outreach setup",
               hours: 25,
               price: 15000
             },
             {
               id: "product-guides",
-              name: "Personlige produktguider",
-              description: "AI-genererte ROI-guider, PDF-er/mikrosider",
+              name: "Personalized product guides",
+              description: "AI-generated ROI guides, PDFs/microsites",
               hours: 30,
               price: 18000
             },
             {
               id: "content-translation",
-              name: "Forsterket innhold + oversettelse",
-              description: "Kampanjevinkelforslag + naturlig lokalisering",
+              name: "Augmented content + translation",
+              description: "Campaign angle suggestions + natural localization",
               hours: 30,
               price: 18000
             },
             {
               id: "predictive-insights",
-              name: "Prediktive innsikter / Churn-risiko",
-              description: "Forecastings-dashboards, kontohverdsanbefalinger",
+              name: "Predictive insights / Churn risk",
+              description: "Forecasting dashboards, account health recommendations",
               hours: 35,
               price: 21000
             },
             {
               id: "event-pipeline",
-              name: "Event-til-Pipeline-automatisering",
-              description: "AI som kobler events til CRM-oppfølging",
+              name: "Event-to-Pipeline automation",
+              description: "AI bridging events to CRM follow-up",
               hours: 40,
               price: 24000
             }
           ]
         }
-      },
-      pricing: {
-        title: "Pris",
-        subtitle: "Velg pakken som passer best for deg",
-        featureLabel: "Funksjon / Verdi",
-        starter: {
-          name: "Start",
-          description: "For små bedrifter som trenger en grunnleggende markedsføringsverktøy."
-        },
-        growth: {
-          name: "Vekst",
-          description: "For bedrifter som ønsker å utvikle seg og nå større markeder."
-        },
-        scale: {
-          name: "Skala",
-          description: "For store bedrifter som trenger avanserte markedsføringsverktøy og personalisering."
-        },
-        features: [
-          { 
-            name: "AI-støttet demand generation", 
-            starter: "✅", 
-            growth: "✅", 
-            scale: "✅" 
-          },
-          { 
-            name: "AI-automatisert outreach", 
-            starter: "Enkle sekvenser", 
-            growth: "Tilpasset nurturing", 
-            scale: "Hyper-personalisert" 
-          },
-          { 
-            name: "Lead capture-optimalisering", 
-            starter: "✅", 
-            growth: "✅", 
-            scale: "✅" 
-          },
-          { 
-            name: "Account-Based Marketing (ABM)", 
-            starter: "—", 
-            growth: "Light (utvalgte konti)", 
-            scale: "Full ABM med egne reiser" 
-          },
-          { 
-            name: "Prediktiv lead scoring", 
-            starter: "—", 
-            growth: "✅", 
-            scale: "Avansert prediksjon + forecasting" 
-          },
-          { 
-            name: "Datadrevne innsikter", 
-            starter: "Enkel dashboard", 
-            growth: "Handlingsklare rapporter", 
-            scale: "Beslutningsdashboards" 
-          },
-          { 
-            name: "Støtte for markedsutvidelse", 
-            starter: "—", 
-            growth: "Regionalt fokus", 
-            scale: "Skandinavisk & europeisk skalering" 
-          },
-          { 
-            name: "Kontinuerlig optimalisering", 
-            starter: "—", 
-            growth: "✅", 
-            scale: "Avansert AI-modelltrening" 
-          },
-          { 
-            name: "Verdi / ROI", 
-            starter: "Rask effekt, spar tid", 
-            growth: "Forutsigbar pipeline", 
-            scale: "Skalerbar vekst, konkurransefortrinn" 
-          }
-        ],
-        cta: "Ta kontakt for demo"
       }
     }
   };
@@ -649,7 +814,7 @@ function App() {
       ...formSelections,
       totalPrice: totalPrice,
       totalHours: totalHours,
-      estimatedTimeline: currentContent.contact.form.submit === 'Get personalized quote' ? '6-8 weeks' : '6-8 uker',
+      estimatedTimeline: currentContent.contact.form.submitButton === 'See your quote' ? '6-8 weeks' : '6-8 uker',
       selectedModules: []
     };
 
@@ -697,7 +862,7 @@ function App() {
     // Show the quote immediately
     setFormStatus({
       type: 'success',
-      message: currentContent.contact.form.submit === 'Get personalized quote' 
+      message: currentContent.contact.form.submitButton === 'See your quote' 
         ? `Thank you for your inquiry, ${formSelections.name}! Here is your customized quote:`
         : `Takk for din henvendelse, ${formSelections.name}! Her er ditt tilpassede tilbud:`
     });
