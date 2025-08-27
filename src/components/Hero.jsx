@@ -6,11 +6,6 @@ import React from 'react';
 const Hero = ({ onOpenDemo, backgroundImage }) => {
   return (
     <section id="hero" className="hero-section">
-      {backgroundImage && (
-        <div className="hero-background">
-          <img src={backgroundImage} alt="Hero Background" />
-        </div>
-      )}
       <div className="hero-container">
         <div className="hero-left">
           <h1 className="hero-headline">Kraftig AI for Norske SMB</h1>
@@ -20,12 +15,18 @@ const Hero = ({ onOpenDemo, backgroundImage }) => {
           <button onClick={onOpenDemo} className="hero-cta">Se demoen</button>
         </div>
         <div className="hero-right">
-          <div className="hero-placeholder">
-            <div className="placeholder-content">
-              <h3>AI Innovation Dashboard</h3>
-              <p>Interactive AI-powered business intelligence</p>
+          {backgroundImage ? (
+            <div className="hero-image">
+              <img src={backgroundImage} alt="AI Innovation Dashboard" />
             </div>
-          </div>
+          ) : (
+            <div className="hero-placeholder">
+              <div className="placeholder-content">
+                <h3>AI Innovation Dashboard</h3>
+                <p>Interactive AI-powered business intelligence</p>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

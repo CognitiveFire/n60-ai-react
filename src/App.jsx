@@ -46,7 +46,7 @@ function App() {
             title: "Produktmarkedsføring",
             emoji: "🎯",
             description: "Nå de riktige kundene, med budskap som skaper etterspørsel.",
-            image: "https://ibb.co/chg1b8CL",
+            image: "https://i.ibb.co/chg1b8CL/A-digital-graphic-displays-AI-powered-product-mark.png",
             features: [
               "Finn din idealkundeprofil (ICP)",
               "Skap kampanjer som bygger interesse",
@@ -57,7 +57,7 @@ function App() {
             title: "Leadgenerering",
             emoji: "📈",
             description: "Fyll pipelinen med kvalifiserte leads, ikke bare flere kontakter.",
-            image: "https://ibb.co/fzQ6S1Rf",
+            image: "https://i.ibb.co/fzQ6S1Rf/A-2-D-digital-dashboard-UI-design-showcases-AI-powe.png",
             features: [
               "Prediktive pipelines viser hvem som vil kjøpe",
               "Outreach i skala, men med personlig preg",
@@ -68,7 +68,7 @@ function App() {
             title: "Markedsutvidelse",
             emoji: "🌍",
             description: "Voks trygt inn i nye markeder.",
-            image: "https://ibb.co/sn2LDYD",
+            image: "https://i.ibb.co/sn2LDYD/A-2-D-digital-dashboard-interface-screenshot-displa.png",
             features: [
               "AI-drevet innsikt i etterspørsel og konkurrenter",
               "ABM-kampanjer mot nøkkelkunder",
