@@ -28,7 +28,7 @@ function App() {
   console.log('Current step:', currentStep);
   console.log('Form selections:', formSelections);
   
-  // Version: 1.0.1 - Force cache refresh
+  // Version: 1.0.2 - Force cache refresh - syntax error fixed
 
   // Content in both languages following Naeva's structure
   const content = {
