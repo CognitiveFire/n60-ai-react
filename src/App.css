@@ -140,11 +140,11 @@
 .hero-section {
   background: linear-gradient(135deg, #0f1c30 0%, #363f50 100%) !important; /* Blue gradient as requested */
   position: relative;
-  padding: 4rem 2rem 4rem;
+  padding: 4rem 2rem 2rem;
   color: #fff;
-  min-height: 120vh;
+  min-height: 100vh;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 
 /* Removed black overlay so blue gradient shows through */
@@ -170,7 +170,7 @@
   justify-content: center;
   align-items: center;
   height: auto;
-  min-height: 500px;
+  min-height: 600px;
 }
 
 .hero-headline {
@@ -213,7 +213,7 @@
 .hero-image {
   width: 100%;
   height: auto;
-  max-height: 500px;
+  max-height: 600px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
