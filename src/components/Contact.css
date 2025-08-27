@@ -63,14 +63,17 @@
   margin-bottom: 2.5rem !important;
   visibility: visible !important;
   opacity: 1 !important;
+  align-items: stretch !important;
 }
 
 .challenge-card {
   position: relative !important;
   cursor: pointer !important;
   transition: all 0.3s ease !important;
-  display: block !important;
+  display: flex !important;
+  flex-direction: column !important;
   visibility: visible !important;
+  height: 100% !important;
 }
 
 .challenge-card input[type="radio"] {
@@ -90,9 +93,10 @@
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  justify-content: center !important;
+  justify-content: space-between !important;
   visibility: visible !important;
   opacity: 1 !important;
+  min-height: 200px !important;
 }
 
 .challenge-card input[type="radio"]:checked + .card-content {

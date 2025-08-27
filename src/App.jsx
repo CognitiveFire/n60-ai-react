@@ -645,7 +645,6 @@ function App() {
     
     const submissionData = {
       ...formSelections,
-      selectedModules: selectedModules,
       totalPrice: totalPrice,
       totalHours: totalHours,
       estimatedTimeline: '6-8 uker'
@@ -715,19 +714,32 @@ function App() {
     let newTotalPrice = 0;
     let newTotalHours = 0;
     
-    selectedModules.forEach(moduleId => {
-      const module = currentContent.contact.modules.core.find(m => m.id === moduleId) || 
-                     currentContent.contact.modules.innovation.find(m => m.id === moduleId);
-      
-      if (module) {
-        newTotalPrice += module.price;
-        newTotalHours += module.hours;
+    // Get selected modules from formSelections
+    const selectedChallenge = formSelections.challenge;
+    const selectedMainChallenge = formSelections.mainChallenge;
+    const selectedInnovation = formSelections.innovation;
+    
+    // Add core module if selected
+    if (selectedChallenge) {
+      const coreModule = currentContent?.contact?.modules?.core?.find(m => m.id === selectedChallenge);
+      if (coreModule) {
+        newTotalPrice += coreModule.price;
+        newTotalHours += coreModule.hours;
       }
-    });
+    }
+    
+    // Add innovation module if selected
+    if (selectedInnovation) {
+      const innovationModule = currentContent?.contact?.modules?.innovation?.find(m => m.id === selectedInnovation);
+      if (innovationModule) {
+        newTotalPrice += innovationModule.price;
+        newTotalHours += innovationModule.hours;
+      }
+    }
     
     setTotalPrice(newTotalPrice);
     setTotalHours(newTotalHours);
-  }, [selectedModules, currentContent.contact.modules]);
+  }, [formSelections, currentContent?.contact?.modules]);
 
   const updateQuoteDisplay = () => {
     const quoteItemsDiv = document.getElementById('quote-items');
@@ -1178,16 +1190,35 @@ function App() {
                       
                       <div className="quote-summary">
                         <div className="quote-items">
-                          {selectedModules.map((moduleId) => {
-                            const module = currentContent.contact.modules.core.find(m => m.id === moduleId) || 
-                                           currentContent.contact.modules.innovation.find(m => m.id === moduleId);
+                          {/* Show selected core module */}
+                          {formSelections.challenge && (() => {
+                            const module = currentContent?.contact?.modules?.core?.find(m => m.id === formSelections.challenge);
                             return module ? (
-                              <div key={moduleId} className="quote-item">
+                              <div key="core" className="quote-item">
                                 <span>{module.name}</span>
                                 <span>{module.price.toLocaleString()} kr</span>
                               </div>
                             ) : null;
-                          })}
+                          })()}
+                          
+                          {/* Show selected innovation module */}
+                          {formSelections.innovation && (() => {
+                            const module = currentContent?.contact?.modules?.innovation?.find(m => m.id === formSelections.innovation);
+                            return module ? (
+                              <div key="innovation" className="quote-item">
+                                <span>{module.name}</span>
+                                <span>{module.price.toLocaleString()} kr</span>
+                              </div>
+                            ) : null;
+                          })()}
+                          
+                          {/* Show company size adjustment if applicable */}
+                          {formSelections.companySize && (
+                            <div className="quote-item">
+                              <span>Bedriftsstørrelse: {formSelections.companySize}</span>
+                              <span>0 kr</span>
+                            </div>
+                          )}
                         </div>
                         <div className="quote-total">
                           <strong>Totalt: {totalPrice.toLocaleString()} kr</strong>
@@ -1228,7 +1259,7 @@ function App() {
                     </div>
                   )}
                   
-                  {formStatus && (
+                  {formStatus && formStatus.type === 'success' && (
                     <p className={`form-status ${formStatus.type}`}>
                       {formStatus.message}
                     </p>
