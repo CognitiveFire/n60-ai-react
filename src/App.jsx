@@ -976,43 +976,51 @@ function App() {
                     <p><strong>Debug:</strong> Current content: {JSON.stringify(currentContent?.contact?.modules?.core)}</p>
                   </div>
                   
-                  {/* Always show Step 1 for now to debug */}
-                  <div className="form-step" style={{border: '3px solid red', padding: '20px', background: '#fff'}}>
-                    <div style={{background: '#ffebee', padding: '10px', marginBottom: '10px', border: '2px solid #f44336'}}>
-                      <p><strong>🔴 FORM STEP 1 RENDERED - RED BORDER SHOULD BE VISIBLE</strong></p>
-                      <p>If you see this red border, the form is rendering but CSS might be hiding it</p>
-                    </div>
+                  {/* CRITICAL DEBUG - Force visibility with basic HTML */}
+                  <div style={{
+                    border: '5px solid red', 
+                    padding: '20px', 
+                    background: '#fff',
+                    margin: '20px 0',
+                    fontSize: '16px',
+                    color: '#000'
+                  }}>
+                    <h2 style={{color: 'red', fontSize: '24px'}}>🚨 CRITICAL DEBUG - RED BORDER SHOULD BE VISIBLE 🚨</h2>
+                    <p>If you see this red border and text, React is working but CSS is hiding the form.</p>
                     
-                    <div className="step-header">
-                      <span className="step-indicator">Steg 1 av 5</span>
+                    <div style={{
+                      border: '3px solid blue',
+                      padding: '15px',
+                      margin: '15px 0',
+                      background: '#e3f2fd'
+                    }}>
+                      <h3 style={{color: 'blue'}}>🔵 STEP HEADER - BLUE BORDER SHOULD BE VISIBLE</h3>
+                      <p><strong>Steg 1 av 5</strong></p>
                       <h3>Velg hovedutfordring</h3>
                       <p>Hva er din hovedutfordring innen markedsføring i dag?</p>
                     </div>
                     
-                    {/* Debug the modules data */}
-                    <div style={{background: '#fff3cd', padding: '1rem', marginBottom: '1rem', borderRadius: '8px', border: '1px solid #ffeaa7'}}>
-                      <p><strong>Debug Modules:</strong></p>
-                      <pre>{JSON.stringify(currentContent?.contact?.modules?.core, null, 2)}</pre>
-                    </div>
-                    
-                    {/* Debug CSS classes */}
-                    <div style={{background: '#e3f2fd', padding: '1rem', marginBottom: '1rem', borderRadius: '8px', border: '1px solid #2196f3'}}>
-                      <p><strong>Debug CSS:</strong></p>
-                      <p>Form step class: "form-step"</p>
-                      <p>Challenge cards class: "challenge-cards"</p>
-                      <p>Challenge card class: "challenge-card"</p>
-                      <p>Card content class: "card-content"</p>
-                    </div>
-                    
-                    <div className="challenge-cards" style={{border: '2px solid blue', padding: '10px', background: '#f0f8ff'}}>
-                      <p style={{background: '#fff', padding: '10px', margin: '10px 0', border: '1px solid #ccc'}}>
-                        <strong>🔵 CHALLENGE CARDS CONTAINER - BLUE BORDER SHOULD BE VISIBLE</strong>
-                      </p>
+                    <div style={{
+                      border: '3px solid green',
+                      padding: '15px',
+                      margin: '15px 0',
+                      background: '#f0fff0'
+                    }}>
+                      <h3 style={{color: 'green'}}>🟢 CHALLENGE CARDS - GREEN BORDER SHOULD BE VISIBLE</h3>
                       
                       {currentContent?.contact?.modules?.core?.map((module, index) => (
-                        <div key={module.id} style={{border: '2px solid green', margin: '10px 0', padding: '10px', background: '#f0fff0'}}>
-                          <p><strong>🟢 MODULE {index + 1} RENDERED - GREEN BORDER SHOULD BE VISIBLE</strong></p>
-                          <label className="challenge-card">
+                        <div key={module.id} style={{
+                          border: '2px solid purple',
+                          padding: '10px',
+                          margin: '10px 0',
+                          background: '#f3e5f5'
+                        }}>
+                          <p><strong>🟣 MODULE {index + 1}: {module.name}</strong></p>
+                          <p>Description: {module.description}</p>
+                          <p>Price: {module.price} kr</p>
+                          <p>Hours: {module.hours}</p>
+                          
+                          <label style={{display: 'block', margin: '10px 0'}}>
                             <input 
                               type="radio" 
                               name="challenge" 
@@ -1020,33 +1028,39 @@ function App() {
                               checked={formSelections.challenge === module.id}
                               onChange={(e) => handleSelectionChange('challenge', e.target.value)}
                             />
-                            <div className="card-content">
-                              <div className="card-icon">
-                                {module.id === 'product-marketing' && '📦'}
-                                {module.id === 'lead-generation' && '📈'}
-                                {module.id === 'market-expansion' && '🌍'}
-                              </div>
-                              <h4>{module.name}</h4>
-                              <p>{module.description}</p>
-                            </div>
+                            <span style={{marginLeft: '10px'}}>Select this option</span>
                           </label>
                         </div>
                       )) || (
-                        <div style={{background: '#f8d7da', padding: '1rem', borderRadius: '8px', border: '1px solid #f5c6cb'}}>
-                          <p><strong>Error:</strong> No modules found in currentContent.contact.modules.core</p>
+                        <div style={{
+                          background: '#ffebee',
+                          padding: '15px',
+                          border: '2px solid #f44336',
+                          color: '#c62828'
+                        }}>
+                          <p><strong>❌ ERROR: No modules found!</strong></p>
                           <p>Available keys: {Object.keys(currentContent || {}).join(', ')}</p>
+                          <p>Contact keys: {currentContent?.contact ? Object.keys(currentContent.contact).join(', ') : 'NO CONTACT'}</p>
+                          <p>Modules keys: {currentContent?.contact?.modules ? Object.keys(currentContent.contact.modules).join(', ') : 'NO MODULES'}</p>
                         </div>
                       )}
                     </div>
                     
                     <button 
                       type="button" 
-                      className="next-step" 
                       onClick={nextStep}
-                      disabled={!isStepValid(1)}
-                      style={{background: '#4caf50', color: 'white', padding: '15px 30px', fontSize: '18px', border: 'none', borderRadius: '8px', cursor: 'pointer'}}
+                      style={{
+                        background: '#4caf50',
+                        color: 'white',
+                        padding: '20px 40px',
+                        fontSize: '20px',
+                        border: 'none',
+                        borderRadius: '10px',
+                        cursor: 'pointer',
+                        margin: '20px 0'
+                      }}
                     >
-                      🟢 FORTSETT BUTTON - GREEN BUTTON SHOULD BE VISIBLE
+                      🟢 FORTSETT BUTTON - LARGE GREEN BUTTON SHOULD BE VISIBLE
                     </button>
                   </div>
                   
