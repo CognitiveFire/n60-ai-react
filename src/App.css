@@ -703,11 +703,16 @@
     gap: 1.5rem !important;
     background-color: #ffff00 !important; /* TEMPORARY: Bright yellow background on mobile */
     justify-items: center !important; /* Center the cards within the grid */
+    display: flex !important; /* Force flexbox instead of grid */
+    flex-direction: column !important;
+    align-items: center !important;
   }
   
   .challenge-card {
     width: 100% !important; /* Ensure cards take full width */
     max-width: 300px !important; /* Limit card width for better mobile layout */
+    margin: 0 auto !important; /* Center with auto margins */
+    background-color: #ff8800 !important; /* TEMPORARY: Bright orange to test card positioning */
   }
   
   .checkbox-options,
@@ -860,25 +865,7 @@
   line-height: 1.6;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .challenge-cards {
-    grid-template-columns: 1fr;
-  }
-  
-  .checkbox-options,
-  .radio-options {
-    grid-template-columns: 1fr;
-  }
-  
-  .contact-form {
-    padding: 2rem;
-  }
-  
-  .step-header h3 {
-    font-size: 2rem;
-  }
-}
+/* Mobile Responsiveness - Consolidated with main mobile styles above */
 
 @media (min-width: 1200px) {
   .challenge-cards {
