@@ -1,7 +1,7 @@
 
 
 import React, { useState } from 'react';
-import './DemoPopup.css';
+// CSS moved to App.css
 
 const DemoPopup = ({ apps, initialIndex, onClose }) => {
   const [idx, setIdx] = useState(initialIndex);

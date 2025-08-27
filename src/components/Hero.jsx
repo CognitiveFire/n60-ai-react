@@ -1,7 +1,7 @@
 
 // Hero.jsx
 import React from 'react';
-import './Hero.css';
+// CSS moved to App.css
 
 const Hero = ({ onOpenDemo }) => {
   return (

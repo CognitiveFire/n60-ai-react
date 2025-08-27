@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import './Navbar.css';
+// CSS moved to App.css
 
 const Navbar = ({ language, setLanguage }) => {
   const [menuOpen, setMenuOpen] = useState(false);

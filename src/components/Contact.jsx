@@ -1,7 +1,7 @@
 
 // Contact.jsx
 import React from 'react';
-import './Contact.css';
+// CSS moved to App.css
 
 const Contact = () => {
   return (
