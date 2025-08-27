@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import './App.css';
+import './components/Contact.css';
 
 function App() {
   const [language, setLanguage] = useState('no');
@@ -20,6 +21,10 @@ function App() {
     email: '',
     company: ''
   });
+
+  // Debug logging
+  console.log('Current step:', currentStep);
+  console.log('Form selections:', formSelections);
   
   // Version: 1.0.1 - Force cache refresh
 
@@ -964,6 +969,12 @@ function App() {
             <div className="contact-content">
               <div className="contact-form-container" data-aos="fade-right">
                                 <form className="contact-form" onSubmit={handleFormSubmit}>
+                  {/* Debug info */}
+                  <div style={{background: '#f0f0f0', padding: '1rem', marginBottom: '1rem', borderRadius: '8px'}}>
+                    <p><strong>Debug:</strong> Current step: {currentStep}</p>
+                    <p><strong>Debug:</strong> Form selections: {JSON.stringify(formSelections)}</p>
+                  </div>
+                  
                   {/* Step 1: Main Challenge Selection */}
                   {currentStep === 1 && (
                     <div className="form-step">
