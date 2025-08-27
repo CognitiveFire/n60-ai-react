@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Salesbot from './components/Salesbot';
+import SimpleContactForm from './components/SimpleContactForm';
 import './App.css';
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
         title: "Alt du trenger for B2B-vekst",
         subtitle: "AI-løsninger som dekker hele reisen – fra produkt til kunde og videre til nye markeder.",
         cta: "Få et tilpasset tilbud",
-        background: "https://ibb.co/21nsrcLh"
+        background: "https://i.ibb.co/21nsrcLh/Hero-background.png"
       },
       solutions: {
         title: "Alt du trenger for B2B-vekst",
@@ -1376,6 +1377,11 @@ function App() {
           </div>
         </section>
       </div>
+
+      {/* Simple Contact Form Section */}
+      <section id="simple-contact" className="simple-contact-section">
+        <SimpleContactForm />
+      </section>
 
       <footer className="footer">
         <div className="container">

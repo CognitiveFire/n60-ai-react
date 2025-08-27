@@ -6,10 +6,10 @@ const Salesbot = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleAskQuestion = () => {
-    // Scroll to contact form
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+    // Scroll to simple contact form
+    const simpleContactSection = document.getElementById('simple-contact');
+    if (simpleContactSection) {
+      simpleContactSection.scrollIntoView({ behavior: 'smooth' });
     }
     setIsOpen(false);
     setIsExpanded(false);
@@ -23,10 +23,10 @@ const Salesbot = () => {
   };
 
   const handleContact = () => {
-    // Scroll to contact form
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+    // Scroll to simple contact form
+    const simpleContactSection = document.getElementById('simple-contact');
+    if (simpleContactSection) {
+      simpleContactSection.scrollIntoView({ behavior: 'smooth' });
     }
     setIsOpen(false);
     setIsExpanded(false);
