@@ -25,9 +25,9 @@ function App() {
 
   // Debug logging
   console.log('Current step:', currentStep);
-  console.log('Form selections:', formSelections);
-  
-  // Version: 1.0.3 - Force fresh deployment - all changes applied
+          console.log('Form selections:', formSelections);
+        
+        // Version: 1.0.4 - Force fresh deployment - CSS conflicts fixed
 
   // Content in both languages following Naeva's structure
   const content = {
