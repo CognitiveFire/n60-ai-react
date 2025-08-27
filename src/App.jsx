@@ -10,6 +10,16 @@ function App() {
   const [selectedModules, setSelectedModules] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalHours, setTotalHours] = useState(0);
+  const [currentStep, setCurrentStep] = useState(1);
+  const [formSelections, setFormSelections] = useState({
+    challenge: '',
+    mainChallenge: '',
+    innovation: '',
+    companySize: '',
+    name: '',
+    email: '',
+    company: ''
+  });
   
   // Version: 1.0.1 - Force cache refresh
 
@@ -627,20 +637,13 @@ function App() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
     
     const submissionData = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      company: formData.get('company'),
-      size: formData.get('size'),
-      market: formData.get('market'),
-      timeline: formData.get('timeline'),
-      budget: formData.get('budget'),
+      ...formSelections,
       selectedModules: selectedModules,
       totalPrice: totalPrice,
       totalHours: totalHours,
-      estimatedTimeline: document.getElementById('estimated-timeline')?.textContent || '6-8 uker'
+      estimatedTimeline: '6-8 uker'
     };
 
     try {
@@ -657,10 +660,19 @@ function App() {
           type: 'success',
           message: `Takk for din henvendelse, ${submissionData.name}! Vi sender deg et detaljert forslag basert på dine valg innen 24 timer.`
         });
-        e.target.reset();
+        setFormSelections({
+          challenge: '',
+          mainChallenge: '',
+          innovation: '',
+          companySize: '',
+          name: '',
+          email: '',
+          company: ''
+        });
         setSelectedModules([]);
         setTotalPrice(0);
         setTotalHours(0);
+        setCurrentStep(1);
       } else {
         setFormStatus({
           type: 'error',
@@ -762,22 +774,38 @@ function App() {
   };
 
   const nextStep = () => {
-    const currentStep = document.querySelector('.form-step.active');
-    const nextStep = currentStep.nextElementSibling;
-    
-    if (nextStep && nextStep.classList.contains('form-step')) {
-      currentStep.classList.remove('active');
-      nextStep.classList.add('active');
+    if (currentStep < 5) {
+      setCurrentStep(currentStep + 1);
     }
   };
 
   const prevStep = () => {
-    const currentStep = document.querySelector('.form-step.active');
-    const prevStep = currentStep.previousElementSibling;
-    
-    if (prevStep && prevStep.classList.contains('form-step')) {
-      currentStep.classList.remove('active');
-      prevStep.classList.add('active');
+    if (currentStep > 1) {
+      setCurrentStep(currentStep - 1);
+    }
+  };
+
+  const handleSelectionChange = (field, value) => {
+    setFormSelections(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  const isStepValid = (step) => {
+    switch (step) {
+      case 1:
+        return formSelections.challenge !== '';
+      case 2:
+        return formSelections.mainChallenge !== '';
+      case 3:
+        return formSelections.innovation !== '';
+      case 4:
+        return formSelections.companySize !== '';
+      case 5:
+        return formSelections.name && formSelections.email && formSelections.company;
+      default:
+        return false;
     }
   };
 
@@ -786,28 +814,7 @@ function App() {
     updateQuoteDisplay();
   }, [selectedModules, totalPrice, totalHours]);
 
-  // Add event listeners for form navigation
-  useEffect(() => {
-    const nextButtons = document.querySelectorAll('.next-step');
-    const prevButtons = document.querySelectorAll('.prev-step');
 
-    nextButtons.forEach(button => {
-      button.addEventListener('click', nextStep);
-    });
-
-    prevButtons.forEach(button => {
-      button.addEventListener('click', prevStep);
-    });
-
-    return () => {
-      nextButtons.forEach(button => {
-        button.removeEventListener('click', nextStep);
-      });
-      prevButtons.forEach(button => {
-        button.removeEventListener('click', prevStep);
-      });
-    };
-  }, []);
 
   return (
     <>
@@ -956,118 +963,262 @@ function App() {
             </div>
             <div className="contact-content">
               <div className="contact-form-container" data-aos="fade-right">
-                <form className="contact-form" onSubmit={handleFormSubmit}>
-                  <div className="form-step active" id="step-1">
-                    <h3>Hva er din hovedutfordring innen markedsføring i dag?</h3>
-                    <div className="checkbox-group">
-                      {currentContent.contact.modules.core.map((module) => (
-                        <label key={module.id} className="checkbox-label">
+                                <form className="contact-form" onSubmit={handleFormSubmit}>
+                  {/* Step 1: Main Challenge Selection */}
+                  {currentStep === 1 && (
+                    <div className="form-step">
+                      <div className="step-header">
+                        <span className="step-indicator">Steg 1 av 5</span>
+                        <h3>Velg hovedutfordring</h3>
+                        <p>Hva er din hovedutfordring innen markedsføring i dag?</p>
+                      </div>
+                      <div className="challenge-cards">
+                        {currentContent.contact.modules.core.map((module) => (
+                          <label key={module.id} className="challenge-card">
+                            <input 
+                              type="radio" 
+                              name="challenge" 
+                              value={module.id}
+                              checked={formSelections.challenge === module.id}
+                              onChange={(e) => handleSelectionChange('challenge', e.target.value)}
+                            />
+                            <div className="card-content">
+                              <div className="card-icon">
+                                {module.id === 'product-marketing' && '📦'}
+                                {module.id === 'lead-generation' && '📈'}
+                                {module.id === 'market-expansion' && '🌍'}
+                              </div>
+                              <h4>{module.name}</h4>
+                              <p>{module.description}</p>
+                            </div>
+                          </label>
+                        ))}
+                      </div>
+                      <button 
+                        type="button" 
+                        className="next-step" 
+                        onClick={nextStep}
+                        disabled={!isStepValid(1)}
+                      >
+                        Fortsett
+                      </button>
+                    </div>
+                  )}
+                  
+                  {/* Step 2: Main Challenges */}
+                  {currentStep === 2 && (
+                    <div className="form-step">
+                      <div className="step-header">
+                        <span className="step-indicator">Steg 2 av 5</span>
+                        <h3>Dine hovedutfordringer</h3>
+                        <p>Hva er de største utfordringene for bedriften?</p>
+                      </div>
+                      <div className="radio-options">
+                        <label className="radio-option">
                           <input 
-                            type="checkbox" 
-                            name="challenge" 
-                            value={module.id}
-                            onChange={updateQuote}
+                            type="radio" 
+                            name="main-challenge" 
+                            value="demand-generation"
+                            checked={formSelections.mainChallenge === 'demand-generation'}
+                            onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
                           />
-                          <div className="checkbox-content">
-                            <strong>{module.name}</strong>
-                            <small>{module.description}</small>
-                            <span className="price-tag">{module.price.toLocaleString()} NOK</span>
-                          </div>
+                          <span>Generere etterspørsel for produktet</span>
                         </label>
-                      ))}
-                    </div>
-                    <button type="button" className="next-step">Neste</button>
-                  </div>
-                  
-                  <div className="form-step" id="step-2">
-                    <h3>Hvilke innovasjonsløsninger er mest relevante for din vekst?</h3>
-                    <div className="checkbox-group">
-                      {currentContent.contact.modules.innovation.map((module) => (
-                        <label key={module.id} className="checkbox-label">
+                        <label className="radio-option">
                           <input 
-                            type="checkbox" 
-                            name="innovation" 
-                            value={module.id}
-                            onChange={updateQuote}
+                            type="radio" 
+                            name="main-challenge" 
+                            value="lead-engagement"
+                            checked={formSelections.mainChallenge === 'lead-engagement'}
+                            onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
                           />
-                          <div className="checkbox-content">
-                            <strong>{module.name}</strong>
-                            <small>{module.description}</small>
-                            <span className="price-tag">{module.price.toLocaleString()} NOK</span>
-                          </div>
+                          <span>Finne og engasjere potensielle leads</span>
                         </label>
-                      ))}
-                    </div>
-                    <div className="form-navigation">
-                      <button type="button" className="prev-step">Tilbake</button>
-                      <button type="button" className="next-step">Neste</button>
-                    </div>
-                  </div>
-                  
-                  <div className="form-step" id="step-3">
-                    <h3>Bedriftsprofil</h3>
-                    <select name="size" required>
-                      <option value="">Hvor mange ansatte har du?</option>
-                      <option value="1-10">1–10</option>
-                      <option value="11-30">11–30</option>
-                      <option value="31-100">31–100</option>
-                      <option value="100+">100+</option>
-                    </select>
-                    <select name="market" required>
-                      <option value="">Hvilke markeder målretter du?</option>
-                      <option value="norway">Bare Norge</option>
-                      <option value="scandinavia">Skandinavia</option>
-                      <option value="europe">Europa</option>
-                      <option value="global">Globalt</option>
-                    </select>
-                    <div className="form-navigation">
-                      <button type="button" className="prev-step">Tilbake</button>
-                      <button type="button" className="next-step">Neste</button>
-                    </div>
-                  </div>
-                  
-                  <div className="form-step" id="step-4">
-                    <h3>Tidsplan og budsjett</h3>
-                    <select name="timeline" required>
-                      <option value="">Når planlegger du å starte?</option>
-                      <option value="asap">ASAP (dette kvartalet)</option>
-                      <option value="6-months">Innen 6 måneder</option>
-                      <option value="12-months">Innen 12 måneder</option>
-                    </select>
-                    <select name="budget" required>
-                      <option value="">Hvilken budsjettramme vurderer du?</option>
-                      <option value="under-50k">Under 50,000 NOK</option>
-                      <option value="50k-100k">50,000–100,000 NOK</option>
-                      <option value="100k-200k">100,000–200,000 NOK</option>
-                      <option value="200k+">200,000+ NOK</option>
-                    </select>
-                    <div className="form-navigation">
-                      <button type="button" className="prev-step">Tilbake</button>
-                      <button type="button" className="next-step">Neste</button>
-                    </div>
-                  </div>
-                  
-                  <div className="form-step" id="step-5">
-                    <h3>Kontaktinformasjon</h3>
-                    <input type="text" name="name" placeholder={currentContent.contact.form.name} required />
-                    <input type="email" name="email" placeholder={currentContent.contact.form.email} required />
-                    <input type="text" name="company" placeholder={currentContent.contact.form.company} required />
-                    
-                    <div className="quote-summary">
-                      <h4>Ditt skreddersydde tilbud</h4>
-                      <div id="quote-items"></div>
-                      <div className="quote-total">
-                        <strong>Total: <span id="total-price">0</span> NOK</strong>
-                        <small>Estimert tidsplan: <span id="estimated-timeline">6-8 uker</span></small>
-                        <small>Total timer: <span id="total-hours">0</span> timer</small>
+                        <label className="radio-option">
+                          <input 
+                            type="radio" 
+                            name="main-challenge" 
+                            value="market-expansion"
+                            checked={formSelections.mainChallenge === 'market-expansion'}
+                            onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
+                          />
+                          <span>Utvide til nye markeder</span>
+                        </label>
+                        <label className="radio-option">
+                          <input 
+                            type="radio" 
+                            name="main-challenge" 
+                            value="other"
+                            checked={formSelections.mainChallenge === 'other'}
+                            onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
+                          />
+                          <span>Annet</span>
+                        </label>
+                      </div>
+                      <div className="form-navigation">
+                        <button type="button" className="prev-step" onClick={prevStep}>Tilbake</button>
+                        <button 
+                          type="button" 
+                          className="next-step" 
+                          onClick={nextStep}
+                          disabled={!isStepValid(2)}
+                        >
+                          Neste
+                        </button>
                       </div>
                     </div>
-                    
-                    <div className="form-navigation">
-                      <button type="button" className="prev-step">Tilbake</button>
-                      <button type="submit">{currentContent.contact.form.submit}</button>
+                  )}
+                  
+                  {/* Step 3: Innovation Solutions */}
+                  {currentStep === 3 && (
+                    <div className="form-step">
+                      <div className="step-header">
+                        <span className="step-indicator">Steg 3 av 5</span>
+                        <h3>Innovasjoner</h3>
+                        <p>Hvilke løsninger er mest aktuelle for din bedrift?</p>
+                      </div>
+                      <div className="radio-options">
+                        {currentContent.contact.modules.innovation.map((module) => (
+                          <label key={module.id} className="radio-option">
+                            <input 
+                              type="radio" 
+                              name="innovation" 
+                              value={module.id}
+                              checked={formSelections.innovation === module.id}
+                              onChange={(e) => handleSelectionChange('innovation', e.target.value)}
+                            />
+                            <span>{module.name}</span>
+                          </label>
+                        ))}
+                      </div>
+                      <div className="form-navigation">
+                        <button type="button" className="prev-step" onClick={prevStep}>Tilbake</button>
+                        <button 
+                          type="button" 
+                          className="next-step" 
+                          onClick={nextStep}
+                          disabled={!isStepValid(3)}
+                        >
+                          Neste
+                        </button>
+                      </div>
                     </div>
-                  </div>
+                  )}
+                  
+                  {/* Step 4: Company Size */}
+                  {currentStep === 4 && (
+                    <div className="form-step">
+                      <div className="step-header">
+                        <span className="step-indicator">Steg 4 av 5</span>
+                        <h3>Selskap</h3>
+                        <p>Hvor mange ansatte har dere?</p>
+                      </div>
+                      <div className="radio-options">
+                        <label className="radio-option">
+                          <input 
+                            type="radio" 
+                            name="company-size" 
+                            value="1-9"
+                            checked={formSelections.companySize === '1-9'}
+                            onChange={(e) => handleSelectionChange('companySize', e.target.value)}
+                          />
+                          <span>1-9</span>
+                        </label>
+                        <label className="radio-option">
+                          <input 
+                            type="radio" 
+                            name="company-size" 
+                            value="10-49"
+                            checked={formSelections.companySize === '10-49'}
+                            onChange={(e) => handleSelectionChange('companySize', e.target.value)}
+                        />
+                          <span>10-49</span>
+                        </label>
+                        <label className="radio-option">
+                          <input 
+                            type="radio" 
+                            name="company-size" 
+                            value="50+"
+                            checked={formSelections.companySize === '50+'}
+                            onChange={(e) => handleSelectionChange('companySize', e.target.value)}
+                          />
+                          <span>50 eller mer</span>
+                        </label>
+                      </div>
+                      <div className="form-navigation">
+                        <button type="button" className="prev-step" onClick={prevStep}>Tilbake</button>
+                        <button 
+                          type="button" 
+                          className="next-step" 
+                          onClick={nextStep}
+                          disabled={!isStepValid(4)}
+                        >
+                          Neste
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* Step 5: Customized Offer */}
+                  {currentStep === 5 && (
+                    <div className="form-step">
+                      <div className="step-header">
+                        <span className="step-indicator">Steg 5 av 5</span>
+                        <h3>Tilpasset tilbud</h3>
+                        <p>Basert på dine valg, her er ditt tilpassede tilbud:</p>
+                      </div>
+                      
+                      <div className="quote-summary">
+                        <div className="quote-items">
+                          {selectedModules.map((moduleId) => {
+                            const module = currentContent.contact.modules.core.find(m => m.id === moduleId) || 
+                                           currentContent.contact.modules.innovation.find(m => m.id === moduleId);
+                            return module ? (
+                              <div key={moduleId} className="quote-item">
+                                <span>{module.name}</span>
+                                <span>{module.price.toLocaleString()} kr</span>
+                              </div>
+                            ) : null;
+                          })}
+                        </div>
+                        <div className="quote-total">
+                          <strong>Totalt: {totalPrice.toLocaleString()} kr</strong>
+                        </div>
+                      </div>
+                      
+                      <div className="contact-fields">
+                        <input 
+                          type="text" 
+                          name="name" 
+                          placeholder="Navn" 
+                          value={formSelections.name}
+                          onChange={(e) => handleSelectionChange('name', e.target.value)}
+                          required 
+                        />
+                        <input 
+                          type="email" 
+                          name="email" 
+                          placeholder="E-post" 
+                          value={formSelections.email}
+                          onChange={(e) => handleSelectionChange('email', e.target.value)}
+                          required 
+                        />
+                        <input 
+                          type="text" 
+                          name="company" 
+                          placeholder="Bedrift" 
+                          value={formSelections.company}
+                          onChange={(e) => handleSelectionChange('company', e.target.value)}
+                          required 
+                        />
+                      </div>
+                      
+                      <div className="form-navigation">
+                        <button type="button" className="prev-step" onClick={prevStep}>Tilbake</button>
+                        <button type="submit" className="submit-button">Få ditt tilbud</button>
+                      </div>
+                    </div>
+                  )}
                   
                   {formStatus && (
                     <p className={`form-status ${formStatus.type}`}>

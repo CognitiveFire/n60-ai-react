@@ -1,57 +1,304 @@
 
 .contact-section {
-  background-color: #2a2a2a;
-  color: #fff;
-  padding: 6rem 2rem;
-  border-top: 1px solid #fff;
-  text-align: center;
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 4rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-form-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .contact-form {
-  max-width: 600px;
-  margin: 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  position: relative;
+}
+
+/* Step Header */
+.step-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.step-indicator {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.step-header h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+
+.step-header p {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Challenge Cards (Step 1) */
+.challenge-cards {
   display: grid;
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
-.contact-form input,
-.contact-form textarea {
-  padding: 1rem;
-  background: transparent;
-  border: 1px solid #fff;
-  color: #fff;
-  font-size: 1rem;
-  width: 100%;
-}
-
-.contact-form textarea {
-  min-height: 150px;
-  resize: vertical;
-}
-
-.contact-form button {
-  background: #fe868b;
-  border: 1px solid #fe868b;
-  padding: 1rem;
-  font-size: 1rem;
-  color: #fff;
+.challenge-card {
+  position: relative;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.contact-form button:hover {
-  background-color: #67acb2;
-  border-color: #67acb2;
+.challenge-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.card-content {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.challenge-card input[type="radio"]:checked + .card-content {
+  border-color: #007bff;
+  background: #f8f9ff;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.card-content h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Radio Options (Steps 2-4) */
+.radio-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.radio-option:hover {
+  border-color: #007bff;
+  background: #f8f9ff;
+}
+
+.radio-option input[type="radio"] {
+  margin-right: 1rem;
+  transform: scale(1.2);
+}
+
+.radio-option span {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Quote Summary (Step 5) */
+.quote-summary {
+  background: #f8f9ff;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.quote-items {
+  margin-bottom: 1.5rem;
+}
+
+.quote-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.quote-item:last-child {
+  border-bottom: none;
+}
+
+.quote-item span:first-child {
+  color: #333;
+  font-weight: 500;
+}
+
+.quote-item span:last-child {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.quote-total {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 2px solid #007bff;
+}
+
+.quote-total strong {
+  font-size: 1.3rem;
+  color: #007bff;
+}
+
+/* Contact Fields */
+.contact-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-fields input {
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.contact-fields input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Navigation Buttons */
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.next-step,
+.prev-step,
+.submit-button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.next-step,
+.submit-button {
+  background: #007bff;
   color: #fff;
 }
+
+.next-step:hover,
+.submit-button:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+}
+
+.prev-step {
+  background: #6c757d;
+  color: #fff;
+}
+
+.prev-step:hover {
+  background: #545b62;
+}
+
+/* Form Steps */
+.form-step {
+  display: none;
+}
+
+.form-step.active {
+  display: block;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .contact-form {
-    padding: 1rem;
+    padding: 2rem 1.5rem;
+  }
+  
+  .challenge-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .step-header h3 {
+    font-size: 1.5rem;
+  }
+  
+  .form-navigation {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .next-step,
+  .prev-step,
+  .submit-button {
+    width: 100%;
   }
 }
-.contact-form button:focus,
-.contact-form button:focus-visible {
-  outline: 2px dashed #fff;
-  outline-offset: 3px;
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 2rem 0;
+  }
+  
+  .contact-form-container {
+    padding: 0 1rem;
+  }
+  
+  .contact-form {
+    padding: 1.5rem 1rem;
+  }
 }
 
