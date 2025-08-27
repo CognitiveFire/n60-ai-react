@@ -757,7 +757,7 @@ function App() {
       ...formSelections,
       totalPrice: totalPrice,
       totalHours: totalHours,
-      estimatedTimeline: '6-8 uker',
+      estimatedTimeline: currentContent.contact.form.submit === 'Get personalized quote' ? '6-8 weeks' : '6-8 uker',
       selectedModules: []
     };
 
@@ -802,55 +802,31 @@ function App() {
       });
     }
 
-    try {
-      // Send to both user and matthew@n60.ai
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...quoteData,
-          sendTo: [formSelections.email, 'matthew@n60.ai']
-        }),
-      });
-
-      if (response.ok) {
-        // Show the quote to the user
-        setFormStatus({
-          type: 'success',
-          message: `Takk for din henvendelse, ${formSelections.name}! Her er ditt tilpassede tilbud:`
-        });
-        
-        // Show quote details
-        setShowQuote(true);
-        setQuoteData(quoteData);
-        
-        // Reset form
-        setFormSelections({
-          challenge: '',
-          mainChallenge: [],
-          innovation: [],
-          companySize: '',
-          name: '',
-          email: '',
-          company: ''
-        });
-        setTotalPrice(0);
-        setTotalHours(0);
-        setCurrentStep(1);
-      } else {
-        setFormStatus({
-          type: 'error',
-          message: 'Det oppstod en feil. Vennligst prøv igjen senere.'
-        });
-      }
-    } catch (error) {
-      setFormStatus({
-        type: 'error',
-        message: 'Det oppstod en feil. Vennligst prøv igjen senere.'
-      });
-    }
+    // Show the quote immediately
+    setFormStatus({
+      type: 'success',
+      message: currentContent.contact.form.submit === 'Get personalized quote' 
+        ? `Thank you for your inquiry, ${formSelections.name}! Here is your customized quote:`
+        : `Takk for din henvendelse, ${formSelections.name}! Her er ditt tilpassede tilbud:`
+    });
+    
+    // Show quote details
+    setShowQuote(true);
+    setQuoteData(quoteData);
+    
+    // Reset form
+    setFormSelections({
+      challenge: '',
+      mainChallenge: [],
+      innovation: [],
+      companySize: '',
+      name: '',
+      email: '',
+      company: ''
+    });
+    setTotalPrice(0);
+    setTotalHours(0);
+    setCurrentStep(1);
   };
 
   const updateQuote = (event) => {
@@ -1206,14 +1182,14 @@ function App() {
                         ))}
                       </div>
                       
-                      <button 
-                        type="button" 
-                        className="next-step" 
-                        onClick={nextStep}
-                        disabled={!isStepValid(1)}
-                      >
-                        Fortsett
-                      </button>
+                                              <button 
+                          type="button" 
+                          className="next-step" 
+                          onClick={nextStep}
+                          disabled={!isStepValid(1)}
+                        >
+                          {currentContent.contact.form.submit || 'Fortsett'}
+                        </button>
                     </div>
                   )}
                   
@@ -1464,8 +1440,12 @@ function App() {
                       </div>
                       
                       <div className="form-navigation">
-                        <button type="button" className="prev-step" onClick={prevStep}>Tilbake</button>
-                        <button type="submit" className="submit-button">Se ditt tilbud</button>
+                        <button type="button" className="prev-step" onClick={prevStep}>
+                          {currentContent.contact.form.submit === 'Get personalized quote' ? 'Back' : 'Tilbake'}
+                        </button>
+                        <button type="button" className="submit-button" onClick={handleFormSubmit}>
+                          {currentContent.contact.form.submit === 'Get personalized quote' ? 'See your quote' : 'Se ditt tilbud'}
+                        </button>
                       </div>
                     </div>
                   )}
