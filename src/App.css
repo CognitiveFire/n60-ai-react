@@ -866,63 +866,7 @@ body, html {
   background: #ffffff;
 }
 
-.solutions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.solution-card {
-  background: #f8f9fa;
-  border: 1px solid #e9ecef;
-  border-radius: 16px;
-  padding: 2.5rem;
-  text-align: center;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.solution-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #4ade80, #22c55e);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.solution-card:hover {
-  transform: translateY(-8px);
-  background: #ffffff;
-  border-color: rgba(74, 222, 128, 0.3);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.solution-card:hover::before {
-  transform: scaleX(1);
-}
-
-.solution-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-}
-
-.solution-card h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #000000;
-}
-
-.solution-card p {
-  color: #666666;
-  line-height: 1.6;
-}
+/* Duplicate solutions styles removed - using consolidated styles above */
 
 /* How It Works Section */
 .how-it-works-section {
