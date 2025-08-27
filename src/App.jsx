@@ -148,24 +148,7 @@ function App() {
           "Bygget for SMB-er - rimelig, fleksibelt og tilpasset din vekstfase"
         ]
       },
-      whoFor: {
-        title: "Hvem er N60 for?",
-        subtitle: "Norske SMB-er som er klare til å vokse på tvers av Skandinavia og Europa",
-        targets: [
-          {
-            title: "SMB-er i Norge",
-            description: "Som ønsker vekst i Skandinavia og Europa med AI-drevet markedsføring."
-          },
-          {
-            title: "B2B-selskaper",
-            description: "Som vil ha smartere demand generation og outreach uten å bygge store interne team."
-          },
-          {
-            title: "Ledelsesteam",
-            description: "Som ønsker forutsigbar, skalerbar markedsføring med målbar ROI."
-          }
-        ]
-      },
+
       howWeWork: {
         title: "Hvordan vi jobber",
         subtitle: "Konkret, forretningsorientert tilnærming til planlegging og implementering",
@@ -210,49 +193,8 @@ function App() {
           }
         ]
       },
-      whyN60: {
-        title: "Hvorfor N60?",
-        subtitle: "Fordeler sammenlignet med HubSpot / Salesforce full suites",
-        advantages: [
-          {
-            title: "Fokusert på SMB-behov",
-            description: "Vi bygger ikke for enterprise, men for din størrelse og vekstfase med konkrete løsninger."
-          },
-          {
-            title: "Transparent prising",
-            description: "Ingen skjulte kostnader eller årlige kontrakter. Betal kun for det du trenger."
-          },
-          {
-            title: "Personlig tilpasning",
-            description: "Skreddersydde løsninger som passer din bransje og målgruppe, ikke generiske templates."
-          },
-          {
-            title: "Lokal ekspertise",
-            description: "Forstår norske markeder og kan hjelpe deg med å ekspandere i Skandinavia og Europa."
-          }
-        ]
-      },
-      labs: {
-        title: "N60 Labs",
-        subtitle: "AI-innovasjon og forskning for fremtidens markedsføring",
-        projects: [
-          {
-            title: "AI-drevet leadgenerering",
-            description: "Utvikler AI-verktøy for å forbedre leadgenereringen og kvalifiseringen med prediktive modeller.",
-            image: "/images/ai-lead-gen.jpg"
-          },
-          {
-            title: "Automatiserte kampanjer",
-            description: "AI-verktøy som hjelper markedsføringsbyråer med å optimalisere kampanjer og øke ROI.",
-            image: "/images/ai-campaigns.jpg"
-          },
-          {
-            title: "Prediktiv markedsføring",
-            description: "Forutser kunder i risiko for å forlate og gir preskriptive anbefalinger for å beholde dem.",
-            image: "/images/ai-predictive.jpg"
-          }
-        ]
-      },
+
+
       contact: {
         title: "Få et skreddersydd tilbud",
         subtitle: "Vår smarte skjema gir deg en personlig AI-markedsføringsløsning med detaljert prising",
@@ -455,24 +397,7 @@ function App() {
           "Built for SMEs - affordable, flexible, and tailored to your growth stage"
         ]
       },
-      whoFor: {
-        title: "Who is N60 for?",
-        subtitle: "Norwegian SMEs ready to grow across Scandinavia and Europe",
-        targets: [
-          {
-            title: "SMEs in Norway",
-            description: "Ready to grow across Scandinavia and Europe with AI-driven marketing."
-          },
-          {
-            title: "B2B companies",
-            description: "That want smarter demand generation and outreach without building large in-house teams."
-          },
-          {
-            title: "Leadership teams",
-            description: "Looking for predictable, scalable marketing with measurable ROI."
-          }
-        ]
-      },
+
       howWeWork: {
         title: "How We Work",
         subtitle: "Concrete, business-oriented approach to planning and implementation",
@@ -517,49 +442,8 @@ function App() {
           }
         ]
       },
-      whyN60: {
-        title: "Why N60?",
-        subtitle: "Advantages compared to HubSpot / Salesforce full suites",
-        advantages: [
-          {
-            title: "Focused on SME needs",
-            description: "We don't build for enterprise, but for your size and growth stage with concrete solutions."
-          },
-          {
-            title: "Transparent pricing",
-            description: "No hidden costs or annual contracts. Pay only for what you need."
-          },
-          {
-            title: "Personal customization",
-            description: "Tailored solutions that fit your industry and target audience, not generic templates."
-          },
-          {
-            title: "Local expertise",
-            description: "Understands Norwegian markets and can help you expand in Scandinavia and Europe."
-          }
-        ]
-      },
-      labs: {
-        title: "N60 Labs",
-        subtitle: "AI innovation and research for the future of marketing",
-        projects: [
-          {
-            title: "AI-driven lead generation",
-            description: "Develop AI tools to improve lead generation and qualification with predictive models.",
-            image: "/images/ai-lead-gen.jpg"
-          },
-          {
-            title: "Automated campaigns",
-            description: "AI tools that help marketing agencies optimize campaigns and increase ROI.",
-            image: "/images/ai-campaigns.jpg"
-          },
-          {
-            title: "Predictive marketing",
-            description: "Predicts customers at risk of leaving and provides prescriptive recommendations to retain them.",
-            image: "/images/ai-predictive.jpg"
-          }
-        ]
-      },
+
+
       contact: {
         title: "Få et skreddersydd tilbud",
         subtitle: "Vår smarte skjema gir deg en personlig AI-markedsføringsløsning med detaljert prising",
@@ -1014,23 +898,7 @@ function App() {
           </div>
         </section>
 
-        {/* Who is it for Section */}
-        <section className="who-for-section">
-          <div className="container">
-            <div className="section-header" data-aos="fade-up">
-              <h2>{currentContent.whoFor.title}</h2>
-              <p>{currentContent.whoFor.subtitle}</p>
-            </div>
-            <div className="who-for-grid">
-              {currentContent.whoFor.targets.map((target, index) => (
-                <div key={index} className="target-card" data-aos="fade-up" data-aos-delay={index * 100}>
-                  <h3>{target.title}</h3>
-                  <p>{target.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+
 
 
 
@@ -1075,51 +943,9 @@ function App() {
           </div>
         </section>
 
-        {/* Why N60 Section */}
-        <section id="why-n60" className="why-n60-section">
-          <div className="container">
-            <div className="section-header" data-aos="fade-up">
-              <h2>{currentContent.whyN60.title}</h2>
-              <p>{currentContent.whyN60.subtitle}</p>
-            </div>
-            <div className="why-n60-grid">
-              {currentContent.whyN60.advantages.map((advantage, index) => (
-                <div key={index} className="why-n60-card" data-aos="fade-up" data-aos-delay={index * 100}>
-                  <h3>{advantage.title}</h3>
-                  <p>{advantage.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* N60 Labs Section (formerly Projects) */}
-        <section id="labs" className="labs-section">
-          <div className="container">
-            <div className="section-header" data-aos="fade-up">
-              <h2>{currentContent.labs.title}</h2>
-              <p>{currentContent.labs.subtitle}</p>
-            </div>
-            <div className="labs-grid">
-              {currentContent.labs.projects.map((project, index) => (
-                <div key={index} className="lab-project" data-aos="fade-up" data-aos-delay={index * 100}>
-                  <div className="project-image">
-                    <img src={project.image} alt={project.title} />
-                  </div>
-                  <div className="project-content">
-                    <h3>{project.title}</h3>
-                    <p>{project.description}</p>
-                    <div className="project-tech">
-                      <span>AI</span>
-                      <span>Marketing</span>
-                      <span>Innovation</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+
+
 
         {/* Contact Section with Smart Form */}
         <section id="contact" className="contact-section">
@@ -1250,18 +1076,7 @@ function App() {
                   )}
                 </form>
               </div>
-              <div className="contact-info" data-aos="fade-left">
-                <div className="contact-map">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000.19282804073!2d5.3301803!3d60.3854691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x463cfc04e96f5a39%3A0xda17ce282c8e9338!2sMedia%20City%20Bergen%20AS!5e0!3m2!1sen!2sno!4v1697654321!5m2!1sen!2sno"
-                    width="100%"
-                    height="300"
-                    style={{ border: 0, borderRadius: '12px' }}
-                    loading="lazy"
-                    title="Media City Bergen"
-                  ></iframe>
-                </div>
-              </div>
+
             </div>
           </div>
         </section>

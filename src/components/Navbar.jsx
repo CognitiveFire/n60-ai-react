@@ -17,7 +17,6 @@ const Navbar = ({ language, setLanguage }) => {
           <a href="#innovation">{language === 'no' ? 'Innovasjon' : 'Innovation'}</a>
           <a href="#how-we-work">{language === 'no' ? 'Hvordan vi jobber' : 'How We Work'}</a>
           <a href="#why-ai">{language === 'no' ? 'Hvorfor AI' : 'Why AI'}</a>
-          <a href="#why-n60">{language === 'no' ? 'Hvorfor N60' : 'Why N60'}</a>
           <a href="#contact">{language === 'no' ? 'Kontakt' : 'Contact'}</a>
         </nav>
         
