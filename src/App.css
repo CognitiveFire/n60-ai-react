@@ -414,6 +414,10 @@
 
 .form-step {
   display: block;
+  width: 100% !important; /* Take full width */
+  display: flex !important; /* Force flexbox */
+  flex-direction: column !important; /* Stack content vertically */
+  align-items: center !important; /* Center all step content */
 }
 
 /* Keep active class for future use if needed */
@@ -664,11 +668,19 @@
     padding: 2rem 1rem !important;
     max-width: 90% !important; /* Center the form with margins */
     margin: 0 auto !important;
+    display: flex !important; /* Force flexbox */
+    flex-direction: column !important; /* Stack content vertically */
+    align-items: center !important; /* Center all content horizontally */
+    justify-content: center !important; /* Center content vertically */
   }
   
   .contact-form {
     text-align: center !important;
     padding: 2rem 1rem !important;
+    width: 100% !important; /* Take full width of container */
+    display: flex !important; /* Force flexbox */
+    flex-direction: column !important; /* Stack content vertically */
+    align-items: center !important; /* Center all form elements */
   }
   
   .contact-fields {
@@ -684,14 +696,20 @@
   .step-header {
     text-align: center !important;
     margin-bottom: 2rem !important;
+    width: 100% !important; /* Take full width */
+    display: flex !important; /* Force flexbox */
+    flex-direction: column !important; /* Stack content vertically */
+    align-items: center !important; /* Center all header content */
   }
   
   .step-header h3 {
     text-align: center !important;
+    width: 100% !important; /* Take full width */
   }
   
   .step-header p {
     text-align: center !important;
+    width: 100% !important; /* Take full width */
   }
   
   .challenge-cards {
