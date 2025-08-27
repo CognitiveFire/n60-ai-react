@@ -158,7 +158,7 @@ function App() {
         ]
       },
       whatIs: {
-        title: "Hva er N60?",
+        title: "Din Partner for AI-Drevet Vekst",
         subtitle: "AI-drevet B2B-markedsføring for små og mellomstore bedrifter",
         description: "N60 er et Bergen-basert konsulentselskap som spesialiserer seg på AI-drevet B2B-markedsføring for små og mellomstore bedrifter. Vi kombinerer dyp markedsføringserfaring med kutting-edge AI-verktøy for å levere skalerbar vekst, forutsigbare pipelines og målbar ROI.",
         features: [
@@ -958,7 +958,7 @@ function App() {
                 </ul>
               </div>
               <div className="what-is-visual" data-aos="fade-left">
-                <img src="/images/logo.png" alt="N60 Logo" className="n60-logo" />
+                <img src="https://i.ibb.co/yFPQd4Jn/Chat-GPT-Image-Aug-27-2025-07-50-21-PM.png" alt="AI-Drevet Vekst" className="what-is-image" />
               </div>
             </div>
           </div>
