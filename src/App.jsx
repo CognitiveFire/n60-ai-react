@@ -1017,8 +1017,8 @@ function App() {
                     <div className="form-step">
                       <div className="step-header">
                         <span className="step-indicator">Steg 1 av 5</span>
-                        <h3>Velg hovedutfordring</h3>
-                        <p>Hva er din hovedutfordring innen markedsføring i dag?</p>
+                        <h3>{currentContent.contact.form.step1Title || 'Velg hovedutfordring'}</h3>
+                        <p>{currentContent.contact.form.step1Subtitle || 'Hva er din hovedutfordring innen markedsføring i dag?'}</p>
                       </div>
                       
                       <div className="challenge-cards">
@@ -1060,8 +1060,8 @@ function App() {
                     <div className="form-step">
                       <div className="step-header">
                         <span className="step-indicator">Steg 2 av 5</span>
-                        <h3>Dine hovedutfordringer</h3>
-                        <p>Hva er de største utfordringene for bedriften?</p>
+                        <h3>{currentContent.contact.form.step2Title || 'Dine hovedutfordringer'}</h3>
+                        <p>{currentContent.contact.form.step2Subtitle || 'Hva er de største utfordringene for bedriften?'}</p>
                       </div>
                       <div className="checkbox-options">
                         <label className="checkbox-option">
@@ -1124,8 +1124,8 @@ function App() {
                     <div className="form-step">
                       <div className="step-header">
                         <span className="step-indicator">Steg 3 av 5</span>
-                        <h3>Innovasjoner</h3>
-                        <p>Hvilke løsninger er mest aktuelle for din bedrift?</p>
+                        <h3>{currentContent.contact.form.step3Title || 'Innovasjoner'}</h3>
+                        <p>{currentContent.contact.form.step3Subtitle || 'Hvilke løsninger er mest aktuelle for din bedrift?'}</p>
                       </div>
                       <div className="checkbox-options">
                         {currentContent.contact.modules.innovation.map((module) => (
@@ -1160,9 +1160,14 @@ function App() {
                     <div className="form-step">
                       <div className="step-header">
                         <span className="step-indicator">Steg 4 av 5</span>
-                        <h3>Selskap</h3>
-                        <p>Hvor mange ansatte har dere?</p>
+                        <h3>{currentContent.contact.form.companySizeTitle || 'Selskap'}</h3>
+                        <p>{currentContent.contact.form.companySizeSubtitle || 'Hvor mange ansatte har dere?'}</p>
                       </div>
+                      
+                      <div className="company-size-explanation">
+                        <p>{currentContent.contact.form.companySizeExplanation || 'Vi trenger denne informasjonen for å tilpasse løsningen til deres behov og forberede et personlig møte.'}</p>
+                      </div>
+                      
                       <div className="radio-options">
                         <label className="radio-option">
                           <input 
@@ -1195,6 +1200,7 @@ function App() {
                           <span>50 eller mer</span>
                         </label>
                       </div>
+                      
                       <div className="form-navigation">
                         <button type="button" className="prev-step" onClick={prevStep}>Tilbake</button>
                         <button 
@@ -1214,8 +1220,13 @@ function App() {
                     <div className="form-step">
                       <div className="step-header">
                         <span className="step-indicator">Steg 5 av 5</span>
-                        <h3>Tilpasset tilbud</h3>
-                        <p>Basert på dine valg, her er ditt tilpassede tilbud:</p>
+                        <h3>{currentContent.contact.form.step5Title || 'Tilpasset tilbud'}</h3>
+                        <p>{currentContent.contact.form.step5Subtitle || 'Basert på dine valg, her er ditt tilpassede tilbud:'}</p>
+                      </div>
+                      
+                      <div className="ready-for-chat">
+                        <h4>{currentContent.contact.form.readyForChat || 'Klar for en prat?'}</h4>
+                        <p>{currentContent.contact.form.readyForChatSubtitle || 'Vi trenger dine detaljer for å forberede et personlig møte og tilpasse løsningen ytterligere.'}</p>
                       </div>
                       
                       <div className="quote-summary">

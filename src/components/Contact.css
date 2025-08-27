@@ -100,13 +100,28 @@
   display: flex !important;
   flex-direction: column !important;
   align-items: center !important;
-  justify-content: space-between !important;
+  justify-content: flex-start !important;
   visibility: visible !important;
   opacity: 1 !important;
-  min-height: 280px !important;
+  min-height: 300px !important;
   box-sizing: border-box !important;
   overflow: hidden !important;
   width: 100% !important;
+  position: relative !important;
+}
+
+.card-content h4 {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  flex-shrink: 0 !important;
+}
+
+.card-content p {
+  flex: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1.5 !important;
 }
 
 .challenge-card input[type="radio"]:checked + .card-content {
@@ -135,7 +150,48 @@
   line-height: 1.4 !important;
 }
 
-/* Checkbox Options (Steps 2-4) */
+/* Company Size Explanation */
+.company-size-explanation {
+  background: #f8f9ff !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  margin-bottom: 2rem !important;
+  text-align: center !important;
+  border-left: 4px solid #007bff !important;
+}
+
+.company-size-explanation p {
+  margin: 0 !important;
+  color: #495057 !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Ready for Chat Section */
+.ready-for-chat {
+  background: #fff3cd !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  margin-bottom: 2rem !important;
+  text-align: center !important;
+  border: 2px solid #ffeaa7 !important;
+}
+
+.ready-for-chat h4 {
+  margin: 0 0 1rem 0 !important;
+  color: #856404 !important;
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+}
+
+.ready-for-chat p {
+  margin: 0 !important;
+  color: #856404 !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Checkbox Options (Steps 2-3) */
 .checkbox-options {
   display: flex !important;
   flex-direction: column !important;
