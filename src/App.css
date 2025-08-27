@@ -378,7 +378,6 @@
   .solutions-grid {
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
-    background-color: #0000ff !important; /* TEMPORARY: Bright blue background to test solutions stacking */
   }
   
   .solutions-header h2 {
@@ -636,7 +635,6 @@
   gap: 1.5rem;
   margin-bottom: 2rem;
   margin-top: 3rem; /* Add more space above form fields */
-  background-color: #ff0000 !important; /* TEMPORARY: Bright red background to test spacing */
 }
 
 .contact-fields input:nth-child(3) {
@@ -664,7 +662,6 @@
   .contact-form-container {
     text-align: center !important;
     padding: 2rem 1rem !important;
-    background-color: #ff00ff !important; /* TEMPORARY: Bright pink background on mobile */
     max-width: 90% !important; /* Center the form with margins */
     margin: 0 auto !important;
   }
@@ -678,7 +675,6 @@
     grid-template-columns: 1fr !important; /* Stack all fields vertically on mobile */
     gap: 1rem !important;
     margin-top: 2rem !important;
-    background-color: #00ff00 !important; /* TEMPORARY: Bright green background on mobile */
   }
   
   .contact-fields input:nth-child(3) {
@@ -701,18 +697,27 @@
   .challenge-cards {
     grid-template-columns: 1fr !important; /* Stack challenge cards on mobile */
     gap: 1.5rem !important;
-    background-color: #ffff00 !important; /* TEMPORARY: Bright yellow background on mobile */
     justify-items: center !important; /* Center the cards within the grid */
     display: flex !important; /* Force flexbox instead of grid */
     flex-direction: column !important;
     align-items: center !important;
+    text-align: center !important; /* Center text within cards */
   }
   
   .challenge-card {
     width: 100% !important; /* Ensure cards take full width */
     max-width: 300px !important; /* Limit card width for better mobile layout */
     margin: 0 auto !important; /* Center with auto margins */
-    background-color: #ff8800 !important; /* TEMPORARY: Bright orange to test card positioning */
+    display: flex !important; /* Force flexbox */
+    justify-content: center !important; /* Center content horizontally */
+  }
+  
+  .card-content {
+    text-align: center !important; /* Center text within card content */
+    width: 100% !important; /* Take full width */
+    display: flex !important; /* Use flexbox */
+    flex-direction: column !important; /* Stack content vertically */
+    align-items: center !important; /* Center items horizontally */
   }
   
   .checkbox-options,
