@@ -21,12 +21,12 @@
 }
 
 .navbar-logo {
-  height: 140px; /* Already 40% larger than 100px */
-  max-width: 280px; /* Already 40% larger than 200px */
-  width: auto;
-  padding-top: 0;
-  object-fit: contain;
-  display: block;
+  height: 180px !important; /* Increased to 80% larger than 100px for visibility */
+  max-width: 360px !important; /* Increased to 80% larger than 200px for visibility */
+  width: auto !important;
+  padding-top: 0 !important;
+  object-fit: contain !important;
+  display: block !important;
 }
 
 .logo-container {
@@ -121,8 +121,8 @@
   }
 
   .navbar-logo {
-    height: 84px; /* 40% larger than 60px */
-    max-width: 210px; /* 40% larger than 150px */
+    height: 108px !important; /* 80% larger than 60px */
+    max-width: 270px !important; /* 80% larger than 150px */
   }
 
   .nav-links {
@@ -166,8 +166,8 @@
   }
 
   .navbar-logo {
-    height: 70px; /* 40% larger than 50px */
-    max-width: 168px; /* 40% larger than 120px */
+    height: 90px !important; /* 80% larger than 50px */
+    max-width: 216px !important; /* 80% larger than 120px */
   }
 
   .language-toggle {
