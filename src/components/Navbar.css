@@ -21,8 +21,8 @@
 }
 
 .navbar-logo {
-  height: 140px; /* 40% larger than 100px */
-  max-width: 280px; /* 40% larger than 200px */
+  height: 140px; /* Already 40% larger than 100px */
+  max-width: 280px; /* Already 40% larger than 200px */
   width: auto;
   padding-top: 0;
   object-fit: contain;
