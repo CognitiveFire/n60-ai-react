@@ -973,48 +973,60 @@ function App() {
                   <div style={{background: '#f0f0f0', padding: '1rem', marginBottom: '1rem', borderRadius: '8px'}}>
                     <p><strong>Debug:</strong> Current step: {currentStep}</p>
                     <p><strong>Debug:</strong> Form selections: {JSON.stringify(formSelections)}</p>
+                    <p><strong>Debug:</strong> Current content: {JSON.stringify(currentContent?.contact?.modules?.core)}</p>
                   </div>
                   
-                  {/* Step 1: Main Challenge Selection */}
-                  {currentStep === 1 && (
-                    <div className="form-step">
-                      <div className="step-header">
-                        <span className="step-indicator">Steg 1 av 5</span>
-                        <h3>Velg hovedutfordring</h3>
-                        <p>Hva er din hovedutfordring innen markedsføring i dag?</p>
-                      </div>
-                      <div className="challenge-cards">
-                        {currentContent.contact.modules.core.map((module) => (
-                          <label key={module.id} className="challenge-card">
-                            <input 
-                              type="radio" 
-                              name="challenge" 
-                              value={module.id}
-                              checked={formSelections.challenge === module.id}
-                              onChange={(e) => handleSelectionChange('challenge', e.target.value)}
-                            />
-                            <div className="card-content">
-                              <div className="card-icon">
-                                {module.id === 'product-marketing' && '📦'}
-                                {module.id === 'lead-generation' && '📈'}
-                                {module.id === 'market-expansion' && '🌍'}
-                              </div>
-                              <h4>{module.name}</h4>
-                              <p>{module.description}</p>
-                            </div>
-                          </label>
-                        ))}
-                      </div>
-                      <button 
-                        type="button" 
-                        className="next-step" 
-                        onClick={nextStep}
-                        disabled={!isStepValid(1)}
-                      >
-                        Fortsett
-                      </button>
+                  {/* Always show Step 1 for now to debug */}
+                  <div className="form-step">
+                    <div className="step-header">
+                      <span className="step-indicator">Steg 1 av 5</span>
+                      <h3>Velg hovedutfordring</h3>
+                      <p>Hva er din hovedutfordring innen markedsføring i dag?</p>
                     </div>
-                  )}
+                    
+                    {/* Debug the modules data */}
+                    <div style={{background: '#fff3cd', padding: '1rem', marginBottom: '1rem', borderRadius: '8px', border: '1px solid #ffeaa7'}}>
+                      <p><strong>Debug Modules:</strong></p>
+                      <pre>{JSON.stringify(currentContent?.contact?.modules?.core, null, 2)}</pre>
+                    </div>
+                    
+                    <div className="challenge-cards">
+                      {currentContent?.contact?.modules?.core?.map((module) => (
+                        <label key={module.id} className="challenge-card">
+                          <input 
+                            type="radio" 
+                            name="challenge" 
+                            value={module.id}
+                            checked={formSelections.challenge === module.id}
+                            onChange={(e) => handleSelectionChange('challenge', e.target.value)}
+                          />
+                          <div className="card-content">
+                            <div className="card-icon">
+                              {module.id === 'product-marketing' && '📦'}
+                              {module.id === 'lead-generation' && '📈'}
+                              {module.id === 'market-expansion' && '🌍'}
+                            </div>
+                            <h4>{module.name}</h4>
+                            <p>{module.description}</p>
+                          </div>
+                        </label>
+                      )) || (
+                        <div style={{background: '#f8d7da', padding: '1rem', borderRadius: '8px', border: '1px solid #f5c6cb'}}>
+                          <p><strong>Error:</strong> No modules found in currentContent.contact.modules.core</p>
+                          <p>Available keys: {Object.keys(currentContent || {}).join(', ')}</p>
+                        </div>
+                      )}
+                    </div>
+                    
+                    <button 
+                      type="button" 
+                      className="next-step" 
+                      onClick={nextStep}
+                      disabled={!isStepValid(1)}
+                    >
+                      Fortsett
+                    </button>
+                  </div>
                   
                   {/* Step 2: Main Challenges */}
                   {currentStep === 2 && (
