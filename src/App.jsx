@@ -459,8 +459,7 @@ function App() {
               }
             ]
           }
-        }
-              },
+        },
         pricing: {
         title: "Pris",
         subtitle: "Velg pakken som passer best for deg",
@@ -845,6 +844,80 @@ function App() {
             description: "AI analysis reveals patterns and opportunities impossible to detect manually."
           }
         ]
+      },
+      pricing: {
+        title: "Pricing",
+        subtitle: "Choose the package that best fits you",
+        featureLabel: "Feature / Value",
+        starter: {
+          name: "Starter",
+          description: "For small businesses that need a basic marketing tool."
+        },
+        growth: {
+          name: "Growth",
+          description: "For businesses that want to develop and reach larger markets."
+        },
+        scale: {
+          name: "Scale",
+          description: "For large businesses that need advanced marketing tools and personalization."
+        },
+        features: [
+          { 
+            name: "AI-supported demand generation", 
+            starter: "✅", 
+            growth: "✅", 
+            scale: "✅" 
+          },
+          { 
+            name: "AI-automated outreach", 
+            starter: "Simple sequences", 
+            growth: "Customized nurturing", 
+            scale: "Hyper-personalized" 
+          },
+          { 
+            name: "Lead capture optimization", 
+            starter: "✅", 
+            growth: "✅", 
+            scale: "✅" 
+          },
+          { 
+            name: "Account-Based Marketing (ABM)", 
+            starter: "—", 
+            growth: "Light (selected accounts)", 
+            scale: "Full ABM with custom journeys" 
+          },
+          { 
+            name: "Predictive lead scoring", 
+            starter: "—", 
+            growth: "✅", 
+            scale: "Advanced prediction + forecasting" 
+          },
+          { 
+            name: "Data-driven insights", 
+            starter: "Simple dashboard", 
+            growth: "Actionable reports", 
+            scale: "Decision dashboards" 
+          },
+          { 
+            name: "Market expansion support", 
+            starter: "—", 
+            growth: "Regional focus", 
+            scale: "Scandinavian & European scaling" 
+          },
+          { 
+            name: "Continuous optimization", 
+            starter: "—", 
+            growth: "✅", 
+            scale: "Advanced AI model training" 
+          },
+          { 
+            name: "Value / ROI", 
+            starter: "Quick effect, save time", 
+            growth: "Predictable pipeline", 
+            scale: "Scalable growth, competitive advantage" 
+          }
+        ],
+        cta: "Contact us for demo"
       }
     }
   };

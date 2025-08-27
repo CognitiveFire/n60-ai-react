@@ -1,9 +1,5 @@
 .hero-section {
   background: linear-gradient(135deg, #0f1c30 0%, #363f50 100%) !important;
-  background-image: url('/images/hero1.png') !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
   position: relative;
   padding: 8rem 2rem 6rem;
   color: #fff;

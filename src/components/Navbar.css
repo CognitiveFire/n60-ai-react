@@ -21,8 +21,8 @@
 }
 
 .navbar-logo {
-  height: 180px !important; /* Increased to 80% larger than 100px for visibility */
-  max-width: 360px !important; /* Increased to 80% larger than 200px for visibility */
+  height: 140px !important; /* 40% larger than 100px */
+  max-width: 280px !important; /* 40% larger than 200px */
   width: auto !important;
   padding-top: 0 !important;
   object-fit: contain !important;
@@ -121,8 +121,8 @@
   }
 
   .navbar-logo {
-    height: 108px !important; /* 80% larger than 60px */
-    max-width: 270px !important; /* 80% larger than 150px */
+    height: 84px !important; /* 40% larger than 60px */
+    max-width: 210px !important; /* 40% larger than 150px */
   }
 
   .nav-links {
@@ -166,8 +166,8 @@
   }
 
   .navbar-logo {
-    height: 90px !important; /* 80% larger than 50px */
-    max-width: 216px !important; /* 80% larger than 120px */
+    height: 70px !important; /* 40% larger than 50px */
+    max-width: 168px !important; /* 40% larger than 120px */
   }
 
   .language-toggle {
