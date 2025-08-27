@@ -5,7 +5,7 @@ import Hero from './components/Hero';
 import './App.css';
 
 function App() {
-  const [language, setLanguage] = useState('no');
+
   const [formStatus, setFormStatus] = useState(null);
   const [selectedModules, setSelectedModules] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -29,7 +29,7 @@ function App() {
         
         // Version: 1.0.4 - Force fresh deployment - CSS conflicts fixed
 
-  // Content in both languages following Naeva's structure
+  // Content in Norwegian following Naeva's structure
   const content = {
     no: {
       hero: {
@@ -598,396 +598,11 @@ function App() {
         ],
         cta: "Ta kontakt for demo"
       }
-    },
-    en: {
-      hero: {
-        title: "Everything you need for B2B growth",
-        subtitle: "AI solutions that cover the entire journey – from product to customer and into new markets.",
-        cta: "Get a custom quote"
-      },
-      solutions: {
-        title: "Everything you need for B2B growth",
-        subtitle: "AI solutions that cover the entire journey – from product to customer and into new markets.",
-        cases: [
-          {
-            title: "Product Marketing",
-            emoji: "🎯",
-            description: "Reach the right customers with campaigns that create demand.",
-            features: [
-              "Define your ICP",
-              "Build campaigns that spark interest",
-              "Personalised funnels that lead to purchase"
-            ]
-          },
-          {
-            title: "Lead Generation",
-            emoji: "📈",
-            description: "Fill your pipeline with qualified leads, not just more contacts.",
-            features: [
-              "Predictive pipelines show who will buy",
-              "Outreach at scale, still personal",
-              "Higher sales conversion rates"
-            ]
-          },
-          {
-            title: "Market Expansion",
-            emoji: "🌍",
-            description: "Grow confidently into new markets.",
-            features: [
-              "AI-driven demand and competitor insights",
-              "ABM campaigns for key accounts",
-              "Localised communication for Scandinavia & Europe"
-            ]
-          }
-        ],
-        footer: "👉 One complete package. Value and growth – without the complexity."
-      },
-      innovation: {
-        title: "Innovation Layer",
-        subtitle: "Cutting-edge AI solutions for the future",
-        features: [
-          {
-            title: "AI Chat & Voice Assistants",
-            description: "Integrated chat + optional voice agent integration for better customer service",
-            price: 15000,
-            hours: 25,
-            dashboard: "/images/dashboard-chat-bots.jpg"
-          },
-          {
-            title: "Smart Forms & Landing Pages",
-            description: "Adaptive forms and conversion optimization",
-            price: 12000,
-            hours: 20,
-            dashboard: "/images/dashboard-smart-forms.jpg"
-          },
-          {
-            title: "WhatsApp / Social Campaigns",
-            description: "Multi-channel outreach setup across social media",
-            price: 15000,
-            hours: 25,
-            dashboard: "/images/dashboard-social-campaigns.jpg"
-          },
-          {
-            title: "Personalized product guides",
-            description: "AI-generated ROI guides, PDFs/microsites",
-            price: 18000,
-            hours: 30,
-            dashboard: "/images/dashboard-product-guides.jpg"
-          },
-          {
-            title: "Augmented Content & Translation",
-            description: "Campaign angle suggestions + natural localization",
-            price: 18000,
-            hours: 30,
-            dashboard: "/images/dashboard-content-translation.jpg"
-          },
-          {
-            title: "Predictive insights / Churn Risk",
-            description: "Forecasting dashboards, account health recommendations",
-            price: 21000,
-            hours: 35,
-            dashboard: "/images/dashboard-predictive-insights.jpg"
-          },
-          {
-            title: "Event-to-Pipeline Automation",
-            description: "AI bridging events to CRM follow-up",
-            price: 24000,
-            hours: 40,
-            dashboard: "/images/dashboard-event-automation.jpg"
-          }
-        ]
-      },
-      contact: {
-        title: "Get a customized quote",
-        subtitle: "Our smart form gives you a personalized AI marketing solution with detailed pricing",
-        form: {
-          name: "Name",
-          email: "Email",
-          company: "Company",
-          challenge: "What challenge do you have?",
-          innovation: "What innovation solutions do you need?",
-          size: "Company size",
-          market: "Target market",
-          timeline: "Timeline",
-          budget: "Budget",
-          submit: "Get personalized quote",
-          companySizeTitle: "Company",
-          companySizeSubtitle: "How many employees do you have?",
-          companySizeExplanation: "We need this information to customize the solution to your needs and prepare for a personal meeting.",
-          step1Title: "Choose main challenge",
-          step1Subtitle: "What is your main challenge in marketing today?",
-          step2Title: "Your main challenges",
-          step2Subtitle: "What are the biggest challenges for the company?",
-          step3Title: "Innovations",
-          step3Subtitle: "Which solutions are most relevant for your company?",
-          step4Title: "Company",
-          step4Subtitle: "How many employees do you have?",
-          step5Title: "Contact and strategy meeting",
-          step5Subtitle: "Based on your choices, let's plan a personal meeting:",
-          readyForChat: "Ready for a strategy meeting?",
-          readyForChatSubtitle: "We need your details to prepare for a personal meeting with complete pricing and strategy plan.",
-          stepIndicator: "Step",
-          of: "of",
-          back: "Back",
-          next: "Next",
-                      submitButton: "See your quote",
-          step1Button: "Continue",
-          step2Button: "Next",
-          step3Button: "Next",
-          step4Button: "Next",
-          step5Button: "See your quote",
-          step5Back: "Back",
-          namePlaceholder: "Name",
-          emailPlaceholder: "Email",
-          companyPlaceholder: "Company",
-          quoteTitle: "Your customized quote",
-          quoteSubtitle: "Based on your choices",
-          quoteTotal: "Total",
-          quoteTimeline: "Estimated timeline",
-          quoteFooter1: "This quote has been sent to your email and to our team.",
-          quoteFooter2: "We will contact you within 24 hours to plan the next steps."
-        },
-        modules: {
-          core: [
-            {
-              id: "product-marketing",
-              name: "AI for product marketing",
-              description: "ICP definition, campaign orchestration, personal funnels",
-              hours: 40,
-              price: 24000
-            },
-            {
-              id: "lead-generation", 
-              name: "AI for lead generation",
-              description: "Predictive scoring, outreach automation, pipeline dashboards",
-              hours: 45,
-              price: 27000
-            },
-            {
-              id: "market-expansion",
-              name: "AI for market expansion", 
-              description: "Market insights, ABM light/full, localization setup",
-              hours: 50,
-              price: 30000
-            }
-          ],
-          mainChallenges: [
-            {
-              id: "demand-generation",
-              name: "Generate demand for the product",
-              description: "Create interest and demand for your product",
-              hours: 20,
-              price: 12000
-            },
-            {
-              id: "lead-engagement",
-              name: "Find and engage potential leads",
-              description: "Identify and engage qualified leads",
-              hours: 25,
-              price: 15000
-            },
-            {
-              id: "market-expansion",
-              name: "Expand to new markets",
-              description: "Expand to new geographic areas",
-              hours: 30,
-              price: 18000
-            },
-            {
-              id: "other",
-              name: "Other",
-              description: "Other marketing challenges",
-              hours: 15,
-              price: 9000
-            }
-          ],
-          innovation: [
-            {
-              id: "chat-bots",
-              name: "Chat/Voice/Help Bots",
-              description: "Integrated chat + optional voice agent integration",
-              hours: 25,
-              price: 15000
-            },
-            {
-              id: "smart-forms",
-              name: "Smart forms and landing pages",
-              description: "Adaptive forms, conversion optimization",
-              hours: 20,
-              price: 12000
-            },
-            {
-              id: "whatsapp-social",
-              name: "WhatsApp / Social campaigns",
-              description: "Multi-channel outreach setup",
-              hours: 25,
-              price: 15000
-            },
-            {
-              id: "product-guides",
-              name: "Personalized product guides",
-              description: "AI-generated ROI guides, PDFs/microsites",
-              hours: 30,
-              price: 18000
-            },
-            {
-              id: "content-translation",
-              name: "Augmented content + translation",
-              description: "Campaign angle suggestions + natural localization",
-              hours: 30,
-              price: 18000
-            },
-            {
-              id: "predictive-insights",
-              name: "Predictive insights / Churn risk",
-              description: "Forecasting dashboards, account health recommendations",
-              hours: 35,
-              price: 21000
-            },
-            {
-              id: "event-pipeline",
-              name: "Event-to-Pipeline automation",
-              description: "AI bridging events to CRM follow-up",
-              hours: 40,
-              price: 24000
-            }
-          ]
-        }
-      },
-      whatIs: {
-        title: "What is N60?",
-        subtitle: "AI-driven B2B marketing for small and medium-sized enterprises",
-        description: "N60 is a Bergen-based consultancy specializing in AI-driven B2B marketing for small and medium-sized businesses. We combine deep marketing expertise with cutting-edge AI tools to deliver scalable growth, predictable pipelines, and measurable ROI.",
-        features: [
-          "25+ years of marketing experience combined with modern AI automation",
-          "Scalable growth - build, measure, and optimize your pipeline faster",
-          "Actionable insights - AI-powered analytics that turn data into decisions",
-          "Built for SMEs - affordable, flexible, and tailored to your growth stage"
-        ]
-      },
-      howWeWork: {
-        title: "How We Work",
-        subtitle: "Concrete, business-oriented approach to planning and implementation",
-        steps: [
-          {
-            title: "Discovery session",
-            description: "Understand your goals, market, and pipeline challenges through thorough analysis."
-          },
-          {
-            title: "AI-driven strategy",
-            description: "Develop demand generation, outreach, account management, and prediction."
-          },
-          {
-            title: "Implementation",
-            description: "Automate campaigns, outreach, and reporting with AI tools."
-          },
-          {
-            title: "Ongoing optimization",
-            description: "Data-driven improvements that deliver results and increase ROI over time."
-          }
-        ]
-      },
-      whyAI: {
-        title: "Why AI-driven marketing?",
-        subtitle: "Concrete benefits compared to traditional methods",
-        benefits: [
-          {
-            title: "Higher quality leads, faster",
-            description: "AI identifies and prioritizes leads based on conversion probability, not just volume."
-          },
-          {
-            title: "Predictable pipeline and improved conversion",
-            description: "Predictive models give you insight into which prospects are ready to buy."
-          },
-          {
-            title: "Scalable outreach without extra staff",
-            description: "Automated campaigns that personalize at scale without losing human touch."
-          },
-          {
-            title: "Data insights that drive smarter decisions",
-            description: "AI analysis reveals patterns and opportunities impossible to detect manually."
-          }
-        ]
-      },
-      pricing: {
-        title: "Pricing",
-        subtitle: "Choose the package that best fits you",
-        featureLabel: "Feature / Value",
-        starter: {
-          name: "Starter",
-          description: "For small businesses that need a basic marketing tool."
-        },
-        growth: {
-          name: "Growth",
-          description: "For businesses that want to develop and reach larger markets."
-        },
-        scale: {
-          name: "Scale",
-          description: "For large businesses that need advanced marketing tools and personalization."
-        },
-        features: [
-          { 
-            name: "AI-supported demand generation", 
-            starter: "✅", 
-            growth: "✅", 
-            scale: "✅" 
-          },
-          { 
-            name: "AI-automated outreach", 
-            starter: "Simple sequences", 
-            growth: "Customized nurturing", 
-            scale: "Hyper-personalized" 
-          },
-          { 
-            name: "Lead capture optimization", 
-            starter: "✅", 
-            growth: "✅", 
-            scale: "✅" 
-          },
-          { 
-            name: "Account-Based Marketing (ABM)", 
-            starter: "—", 
-            growth: "Light (selected accounts)", 
-            scale: "Full ABM with custom journeys" 
-          },
-          { 
-            name: "Predictive lead scoring", 
-            starter: "—", 
-            growth: "✅", 
-            scale: "Advanced prediction + forecasting" 
-          },
-          { 
-            name: "Data-driven insights", 
-            starter: "Simple dashboard", 
-            growth: "Actionable reports", 
-            scale: "Decision dashboards" 
-          },
-          { 
-            name: "Market expansion support", 
-            starter: "—", 
-            growth: "Regional focus", 
-            scale: "Scandinavian & European scaling" 
-          },
-          { 
-            name: "Continuous optimization", 
-            starter: "—", 
-            growth: "✅", 
-            scale: "Advanced AI model training" 
-          },
-          { 
-            name: "Value / ROI", 
-            starter: "Quick effect, save time", 
-            growth: "Predictable pipeline", 
-            scale: "Scalable growth, competitive advantage" 
-          }
-        ],
-        cta: "Contact us for demo"
-      }
     }
   }
   };
 
-  const currentContent = content[language];
+  const currentContent = content.no;
 
   useEffect(() => {
     // AOS.init({
@@ -1007,7 +622,7 @@ function App() {
       ...formSelections,
       totalPrice: totalPrice,
       totalHours: totalHours,
-      estimatedTimeline: currentContent.contact.form.submitButton === 'See your quote' ? '6-8 weeks' : '6-8 uker',
+      estimatedTimeline: currentContent.contact.form.submitButton === 'Se ditt tilbud' ? '6-8 uker' : '6-8 uker',
       selectedModules: []
     };
 
@@ -1055,8 +670,8 @@ function App() {
     // Show the quote immediately
     setFormStatus({
       type: 'success',
-      message: currentContent.contact.form.submitButton === 'See your quote' 
-        ? `Thank you for your inquiry, ${formSelections.name}! Here is your customized quote:`
+      message: currentContent.contact.form.submitButton === 'Se ditt tilbud' 
+        ? `Takk for din henvendelse, ${formSelections.name}! Her er ditt tilpassede tilbud:`
         : `Takk for din henvendelse, ${formSelections.name}! Her er ditt tilpassede tilbud:`
     });
     
@@ -1254,7 +869,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <Navbar language={language} setLanguage={setLanguage} />
+        <Navbar />
 
         {/* Hero Section */}
         <Hero onOpenDemo={() => {}} />
@@ -1460,7 +1075,7 @@ function App() {
                             checked={formSelections.mainChallenge.includes('demand-generation')}
                             onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
                           />
-                          <span>{language === 'no' ? 'Generere etterspørsel for produktet' : 'Generate demand for the product'}</span>
+                          <span>Generere etterspørsel for produktet</span>
                         </label>
                         <label className="checkbox-option">
                           <input 
@@ -1470,7 +1085,7 @@ function App() {
                             checked={formSelections.mainChallenge.includes('lead-engagement')}
                             onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
                           />
-                          <span>{language === 'no' ? 'Finne og engasjere potensielle leads' : 'Find and engage potential leads'}</span>
+                          <span>Finne og engasjere potensielle leads</span>
                         </label>
                         <label className="checkbox-option">
                           <input 
@@ -1480,7 +1095,7 @@ function App() {
                             checked={formSelections.mainChallenge.includes('market-expansion')}
                             onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
                           />
-                          <span>{language === 'no' ? 'Utvide til nye markeder' : 'Expand to new markets'}</span>
+                          <span>Utvide til nye markeder</span>
                         </label>
                         <label className="checkbox-option">
                           <input 
@@ -1490,7 +1105,7 @@ function App() {
                             checked={formSelections.mainChallenge.includes('other')}
                             onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
                           />
-                          <span>{language === 'no' ? 'Annet' : 'Other'}</span>
+                          <span>Annet</span>
                         </label>
                       </div>
                       <div className="form-navigation">
@@ -1585,7 +1200,7 @@ function App() {
                             checked={formSelections.companySize === '50+'}
                             onChange={(e) => handleSelectionChange('companySize', e.target.value)}
                           />
-                          <span>{language === 'no' ? '50 eller mer' : '50 or more'}</span>
+                          <span>50 eller mer</span>
                         </label>
                       </div>
                       
@@ -1613,7 +1228,7 @@ function App() {
                       </div>
                       
                       <div className="selection-summary">
-                        <h4>{language === 'no' ? 'Dine valgte løsninger:' : 'Your selected solutions:'}</h4>
+                        <h4>Dine valgte løsninger:</h4>
                         <div className="summary-items">
                           {/* Show selected core module */}
                           {formSelections.challenge && (() => {
@@ -1655,8 +1270,8 @@ function App() {
                           {/* Show company size if applicable */}
                           {formSelections.companySize && (
                             <div className="summary-item">
-                              <span className="item-name">{language === 'no' ? 'Bedriftsstørrelse' : 'Company size'}</span>
-                              <span className="item-description">{formSelections.companySize} {language === 'no' ? 'ansatte' : 'employees'}</span>
+                                                          <span className="item-name">Bedriftsstørrelse</span>
+                            <span className="item-description">{formSelections.companySize} ansatte</span>
                             </div>
                           )}
                         </div>
@@ -1720,11 +1335,11 @@ function App() {
                         <div key={index} className="quote-item">
                           <div className="quote-item-header">
                             <h4>{module.name}</h4>
-                            <span className="quote-price">{module.price.toLocaleString()} {language === 'no' ? 'kr' : 'NOK'}</span>
+                            <span className="quote-price">{module.price.toLocaleString()} kr</span>
                           </div>
                           <p className="quote-description">{module.description}</p>
                           <div className="quote-details">
-                            <span>{language === 'no' ? 'Estimert tid:' : 'Estimated time:'} {module.hours} {language === 'no' ? 'timer' : 'hours'}</span>
+                            <span>Estimert tid: {module.hours} timer</span>
                           </div>
                         </div>
                       ))}
@@ -1732,7 +1347,7 @@ function App() {
                     
                     <div className="quote-summary">
                       <div className="quote-total">
-                        <strong>{currentContent.contact.form.quoteTotal}: {quoteData.totalPrice.toLocaleString()} {language === 'no' ? 'kr' : 'NOK'}</strong>
+                        <strong>{currentContent.contact.form.quoteTotal}: {quoteData.totalPrice.toLocaleString()} kr</strong>
                       </div>
                       <div className="quote-timeline">
                         <span>{currentContent.contact.form.quoteTimeline}: {quoteData.estimatedTimeline}</span>

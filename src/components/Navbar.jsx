@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 // CSS moved to App.css
 
-const Navbar = ({ language, setLanguage }) => {
+const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -13,21 +13,14 @@ const Navbar = ({ language, setLanguage }) => {
         </a>
         
         <nav className="navbar-nav">
-          <a href="#solutions">{language === 'no' ? 'Løsninger' : 'Solutions'}</a>
-          <a href="#innovation">{language === 'no' ? 'Innovasjon' : 'Innovation'}</a>
-          <a href="#how-we-work">{language === 'no' ? 'Hvordan vi jobber' : 'How We Work'}</a>
-          <a href="#why-ai">{language === 'no' ? 'Hvorfor AI' : 'Why AI'}</a>
-          <a href="#contact">{language === 'no' ? 'Kontakt' : 'Contact'}</a>
+          <a href="#solutions">Løsninger</a>
+          <a href="#innovation">Innovasjon</a>
+          <a href="#how-we-work">Hvordan vi jobber</a>
+          <a href="#why-ai">Hvorfor AI</a>
+          <a href="#contact">Kontakt</a>
         </nav>
         
         <div className="navbar-actions">
-          <button 
-            className="language-toggle"
-            onClick={() => setLanguage(language === 'no' ? 'en' : 'no')}
-          >
-            {language === 'no' ? 'EN' : 'NO'}
-          </button>
-          
           <button 
             className="mobile-menu-button"
             onClick={() => setMenuOpen(!menuOpen)}
