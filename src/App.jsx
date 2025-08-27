@@ -9,6 +9,8 @@ function App() {
   const [selectedModules, setSelectedModules] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalHours, setTotalHours] = useState(0);
+  
+  // Version: 1.0.1 - Force cache refresh
 
   // Content in both languages following Naeva's structure
   const content = {
