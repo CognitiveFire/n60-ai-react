@@ -969,58 +969,19 @@ function App() {
             <div className="contact-content">
               <div className="contact-form-container" data-aos="fade-right">
                                 <form className="contact-form" onSubmit={handleFormSubmit}>
-                  {/* Debug info */}
-                  <div style={{background: '#f0f0f0', padding: '1rem', marginBottom: '1rem', borderRadius: '8px'}}>
-                    <p><strong>Debug:</strong> Current step: {currentStep}</p>
-                    <p><strong>Debug:</strong> Form selections: {JSON.stringify(formSelections)}</p>
-                    <p><strong>Debug:</strong> Current content: {JSON.stringify(currentContent?.contact?.modules?.core)}</p>
-                  </div>
                   
-                  {/* CRITICAL DEBUG - Force visibility with basic HTML */}
-                  <div style={{
-                    border: '5px solid red', 
-                    padding: '20px', 
-                    background: '#fff',
-                    margin: '20px 0',
-                    fontSize: '16px',
-                    color: '#000'
-                  }}>
-                    <h2 style={{color: 'red', fontSize: '24px'}}>🚨 CRITICAL DEBUG - RED BORDER SHOULD BE VISIBLE 🚨</h2>
-                    <p>If you see this red border and text, React is working but CSS is hiding the form.</p>
-                    
-                    <div style={{
-                      border: '3px solid blue',
-                      padding: '15px',
-                      margin: '15px 0',
-                      background: '#e3f2fd'
-                    }}>
-                      <h3 style={{color: 'blue'}}>🔵 STEP HEADER - BLUE BORDER SHOULD BE VISIBLE</h3>
-                      <p><strong>Steg 1 av 5</strong></p>
-                      <h3>Velg hovedutfordring</h3>
-                      <p>Hva er din hovedutfordring innen markedsføring i dag?</p>
-                    </div>
-                    
-                    <div style={{
-                      border: '3px solid green',
-                      padding: '15px',
-                      margin: '15px 0',
-                      background: '#f0fff0'
-                    }}>
-                      <h3 style={{color: 'green'}}>🟢 CHALLENGE CARDS - GREEN BORDER SHOULD BE VISIBLE</h3>
+                  {/* Step 1: Main Challenge Selection */}
+                  {currentStep === 1 && (
+                    <div className="form-step">
+                      <div className="step-header">
+                        <span className="step-indicator">Steg 1 av 5</span>
+                        <h3>Velg hovedutfordring</h3>
+                        <p>Hva er din hovedutfordring innen markedsføring i dag?</p>
+                      </div>
                       
-                      {currentContent?.contact?.modules?.core?.map((module, index) => (
-                        <div key={module.id} style={{
-                          border: '2px solid purple',
-                          padding: '10px',
-                          margin: '10px 0',
-                          background: '#f3e5f5'
-                        }}>
-                          <p><strong>🟣 MODULE {index + 1}: {module.name}</strong></p>
-                          <p>Description: {module.description}</p>
-                          <p>Price: {module.price} kr</p>
-                          <p>Hours: {module.hours}</p>
-                          
-                          <label style={{display: 'block', margin: '10px 0'}}>
+                      <div className="challenge-cards">
+                        {currentContent?.contact?.modules?.core?.map((module) => (
+                          <label key={module.id} className="challenge-card">
                             <input 
                               type="radio" 
                               name="challenge" 
@@ -1028,41 +989,29 @@ function App() {
                               checked={formSelections.challenge === module.id}
                               onChange={(e) => handleSelectionChange('challenge', e.target.value)}
                             />
-                            <span style={{marginLeft: '10px'}}>Select this option</span>
+                            <div className="card-content">
+                              <div className="card-icon">
+                                {module.id === 'product-marketing' && '📦'}
+                                {module.id === 'lead-generation' && '📈'}
+                                {module.id === 'market-expansion' && '🌍'}
+                              </div>
+                              <h4>{module.name}</h4>
+                              <p>{module.description}</p>
+                            </div>
                           </label>
-                        </div>
-                      )) || (
-                        <div style={{
-                          background: '#ffebee',
-                          padding: '15px',
-                          border: '2px solid #f44336',
-                          color: '#c62828'
-                        }}>
-                          <p><strong>❌ ERROR: No modules found!</strong></p>
-                          <p>Available keys: {Object.keys(currentContent || {}).join(', ')}</p>
-                          <p>Contact keys: {currentContent?.contact ? Object.keys(currentContent.contact).join(', ') : 'NO CONTACT'}</p>
-                          <p>Modules keys: {currentContent?.contact?.modules ? Object.keys(currentContent.contact.modules).join(', ') : 'NO MODULES'}</p>
-                        </div>
-                      )}
+                        ))}
+                      </div>
+                      
+                      <button 
+                        type="button" 
+                        className="next-step" 
+                        onClick={nextStep}
+                        disabled={!isStepValid(1)}
+                      >
+                        Fortsett
+                      </button>
                     </div>
-                    
-                    <button 
-                      type="button" 
-                      onClick={nextStep}
-                      style={{
-                        background: '#4caf50',
-                        color: 'white',
-                        padding: '20px 40px',
-                        fontSize: '20px',
-                        border: 'none',
-                        borderRadius: '10px',
-                        cursor: 'pointer',
-                        margin: '20px 0'
-                      }}
-                    >
-                      🟢 FORTSETT BUTTON - LARGE GREEN BUTTON SHOULD BE VISIBLE
-                    </button>
-                  </div>
+                  )}
                   
                   {/* Step 2: Main Challenges */}
                   {currentStep === 2 && (

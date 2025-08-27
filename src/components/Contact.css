@@ -1,304 +1,318 @@
 
 .contact-section {
-  background-color: #f5f5f5;
-  color: #333;
-  padding: 4rem 0;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #f5f5f5 !important;
+  color: #333 !important;
+  padding: 4rem 0 !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .contact-form-container {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  width: 100% !important;
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
 }
 
 .contact-form {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  padding: 3rem;
-  position: relative;
+  background: #fff !important;
+  border-radius: 16px !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+  padding: 3rem !important;
+  position: relative !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Step Header */
 .step-header {
-  text-align: center;
-  margin-bottom: 2.5rem;
+  text-align: center !important;
+  margin-bottom: 2.5rem !important;
+  display: block !important;
+  visibility: visible !important;
 }
 
 .step-indicator {
-  display: block;
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 0.5rem;
+  display: block !important;
+  font-size: 0.9rem !important;
+  color: #666 !important;
+  margin-bottom: 0.5rem !important;
 }
 
 .step-header h3 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #333;
-  margin: 0 0 0.5rem 0;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  color: #333 !important;
+  margin: 0 0 0.5rem 0 !important;
 }
 
 .step-header p {
-  font-size: 1.1rem;
-  color: #666;
-  margin: 0;
+  font-size: 1.1rem !important;
+  color: #666 !important;
+  margin: 0 !important;
 }
 
 /* Challenge Cards (Step 1) */
 .challenge-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.5rem !important;
+  margin-bottom: 2.5rem !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .challenge-card {
-  position: relative;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  position: relative !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  display: block !important;
+  visibility: visible !important;
 }
 
 .challenge-card input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
+  position: absolute !important;
+  opacity: 0 !important;
+  cursor: pointer !important;
 }
 
 .card-content {
-  background: #fff;
-  border: 2px solid #e0e0e0;
-  border-radius: 12px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  transition: all 0.3s ease;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  background: #fff !important;
+  border: 2px solid #e0e0e0 !important;
+  border-radius: 12px !important;
+  padding: 2rem 1.5rem !important;
+  text-align: center !important;
+  transition: all 0.3s ease !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .challenge-card input[type="radio"]:checked + .card-content {
-  border-color: #007bff;
-  background: #f8f9ff;
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
+  border-color: #007bff !important;
+  background: #f8f9ff !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15) !important;
 }
 
 .card-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 3rem !important;
+  margin-bottom: 1rem !important;
 }
 
 .card-content h4 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #333;
-  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+  margin: 0 0 0.5rem 0 !important;
 }
 
 .card-content p {
-  font-size: 0.9rem;
-  color: #666;
-  margin: 0;
-  line-height: 1.4;
+  font-size: 0.9rem !important;
+  color: #666 !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
 }
 
 /* Radio Options (Steps 2-4) */
 .radio-options {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+  margin-bottom: 2.5rem !important;
+  visibility: visible !important;
 }
 
 .radio-option {
-  display: flex;
-  align-items: center;
-  padding: 1.5rem;
-  background: #fff;
-  border: 2px solid #e0e0e0;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  display: flex !important;
+  align-items: center !important;
+  padding: 1.5rem !important;
+  background: #fff !important;
+  border: 2px solid #e0e0e0 !important;
+  border-radius: 12px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  visibility: visible !important;
 }
 
 .radio-option:hover {
-  border-color: #007bff;
-  background: #f8f9ff;
+  border-color: #007bff !important;
+  background: #f8f9ff !important;
 }
 
 .radio-option input[type="radio"] {
-  margin-right: 1rem;
-  transform: scale(1.2);
+  margin-right: 1rem !important;
+  transform: scale(1.2) !important;
 }
 
 .radio-option span {
-  font-size: 1.1rem;
-  color: #333;
-  font-weight: 500;
+  font-size: 1.1rem !important;
+  color: #333 !important;
+  font-weight: 500 !important;
 }
 
 /* Quote Summary (Step 5) */
 .quote-summary {
-  background: #f8f9ff;
-  border-radius: 12px;
-  padding: 2rem;
-  margin-bottom: 2.5rem;
+  background: #f8f9ff !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  margin-bottom: 2.5rem !important;
+  visibility: visible !important;
 }
 
 .quote-items {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem !important;
 }
 
 .quote-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
-  border-bottom: 1px solid #e0e0e0;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 1rem 0 !important;
+  border-bottom: 1px solid #e0e0e0 !important;
 }
 
 .quote-item:last-child {
-  border-bottom: none;
+  border-bottom: none !important;
 }
 
 .quote-item span:first-child {
-  color: #333;
-  font-weight: 500;
+  color: #333 !important;
+  font-weight: 500 !important;
 }
 
 .quote-item span:last-child {
-  color: #007bff;
-  font-weight: 600;
+  color: #007bff !important;
+  font-weight: 600 !important;
 }
 
 .quote-total {
-  text-align: center;
-  padding-top: 1rem;
-  border-top: 2px solid #007bff;
+  text-align: center !important;
+  padding-top: 1rem !important;
+  border-top: 2px solid #007bff !important;
 }
 
 .quote-total strong {
-  font-size: 1.3rem;
-  color: #007bff;
+  font-size: 1.3rem !important;
+  color: #007bff !important;
 }
 
 /* Contact Fields */
 .contact-fields {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2.5rem;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+  margin-bottom: 2.5rem !important;
+  visibility: visible !important;
 }
 
 .contact-fields input {
-  padding: 1rem;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
+  padding: 1rem !important;
+  border: 2px solid #e0e0e0 !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  transition: border-color 0.3s ease !important;
 }
 
 .contact-fields input:focus {
-  outline: none;
-  border-color: #007bff;
+  outline: none !important;
+  border-color: #007bff !important;
 }
 
 /* Navigation Buttons */
 .form-navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  visibility: visible !important;
 }
 
 .next-step,
 .prev-step,
 .submit-button {
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  padding: 1rem 2rem !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
 }
 
 .next-step,
 .submit-button {
-  background: #007bff;
-  color: #fff;
+  background: #007bff !important;
+  color: #fff !important;
 }
 
 .next-step:hover,
 .submit-button:hover {
-  background: #0056b3;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+  background: #0056b3 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3) !important;
 }
 
 .prev-step {
-  background: #6c757d;
-  color: #fff;
+  background: #6c757d !important;
+  color: #fff !important;
 }
 
 .prev-step:hover {
-  background: #545b62;
+  background: #545b62 !important;
 }
 
 /* Form Steps */
 .form-step {
-  display: none;
-}
-
-.form-step.active {
-  display: block;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .contact-form {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem !important;
   }
   
   .challenge-cards {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
   }
   
   .step-header h3 {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
   }
   
   .form-navigation {
-    flex-direction: column;
-    gap: 1rem;
+    flex-direction: column !important;
+    gap: 1rem !important;
   }
   
   .next-step,
   .prev-step,
   .submit-button {
-    width: 100%;
+    width: 100% !important;
   }
 }
 
 @media (max-width: 480px) {
   .contact-section {
-    padding: 2rem 0;
+    padding: 2rem 0 !important;
   }
   
   .contact-form-container {
-    padding: 0 1rem;
+    padding: 0 1rem !important;
   }
   
   .contact-form {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1rem !important;
   }
 }
 
