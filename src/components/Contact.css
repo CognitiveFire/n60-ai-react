@@ -64,6 +64,8 @@
   visibility: visible !important;
   opacity: 1 !important;
   align-items: stretch !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 .challenge-card {
@@ -74,6 +76,7 @@
   flex-direction: column !important;
   visibility: visible !important;
   height: 100% !important;
+  min-height: 0 !important;
 }
 
 .challenge-card input[type="radio"] {
@@ -96,7 +99,9 @@
   justify-content: space-between !important;
   visibility: visible !important;
   opacity: 1 !important;
-  min-height: 200px !important;
+  min-height: 250px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
 }
 
 .challenge-card input[type="radio"]:checked + .card-content {
@@ -125,8 +130,8 @@
   line-height: 1.4 !important;
 }
 
-/* Radio Options (Steps 2-4) */
-.radio-options {
+/* Checkbox Options (Steps 2-4) */
+.checkbox-options {
   display: flex !important;
   flex-direction: column !important;
   gap: 1rem !important;
@@ -134,7 +139,7 @@
   visibility: visible !important;
 }
 
-.radio-option {
+.checkbox-option {
   display: flex !important;
   align-items: center !important;
   padding: 1.5rem !important;
@@ -146,20 +151,25 @@
   visibility: visible !important;
 }
 
-.radio-option:hover {
+.checkbox-option:hover {
   border-color: #007bff !important;
   background: #f8f9ff !important;
 }
 
-.radio-option input[type="radio"] {
+.checkbox-option input[type="checkbox"] {
   margin-right: 1rem !important;
   transform: scale(1.2) !important;
 }
 
-.radio-option span {
+.checkbox-option span {
   font-size: 1.1rem !important;
   color: #333 !important;
   font-weight: 500 !important;
+}
+
+.checkbox-option input[type="checkbox"]:checked + span {
+  color: #007bff !important;
+  font-weight: 600 !important;
 }
 
 /* Quote Summary (Step 5) */

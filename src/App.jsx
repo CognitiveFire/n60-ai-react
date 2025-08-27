@@ -14,8 +14,8 @@ function App() {
   const [currentStep, setCurrentStep] = useState(1);
   const [formSelections, setFormSelections] = useState({
     challenge: '',
-    mainChallenge: '',
-    innovation: '',
+    mainChallenge: [],
+    innovation: [],
     companySize: '',
     name: '',
     email: '',
@@ -666,8 +666,8 @@ function App() {
         });
         setFormSelections({
           challenge: '',
-          mainChallenge: '',
-          innovation: '',
+          mainChallenge: [],
+          innovation: [],
           companySize: '',
           name: '',
           email: '',
@@ -716,8 +716,8 @@ function App() {
     
     // Get selected modules from formSelections
     const selectedChallenge = formSelections.challenge;
-    const selectedMainChallenge = formSelections.mainChallenge;
-    const selectedInnovation = formSelections.innovation;
+    const selectedMainChallenges = formSelections.mainChallenge || [];
+    const selectedInnovations = formSelections.innovation || [];
     
     // Add core module if selected
     if (selectedChallenge) {
@@ -728,14 +728,23 @@ function App() {
       }
     }
     
-    // Add innovation module if selected
-    if (selectedInnovation) {
-      const innovationModule = currentContent?.contact?.modules?.innovation?.find(m => m.id === selectedInnovation);
+    // Add main challenge modules if selected (multiple)
+    selectedMainChallenges.forEach(challengeId => {
+      const challengeModule = currentContent?.contact?.modules?.mainChallenges?.find(m => m.id === challengeId);
+      if (challengeModule) {
+        newTotalPrice += challengeModule.price;
+        newTotalHours += challengeModule.hours;
+      }
+    });
+    
+    // Add innovation modules if selected (multiple)
+    selectedInnovations.forEach(innovationId => {
+      const innovationModule = currentContent?.contact?.modules?.innovation?.find(m => m.id === innovationId);
       if (innovationModule) {
         newTotalPrice += innovationModule.price;
         newTotalHours += innovationModule.hours;
       }
-    }
+    });
     
     setTotalPrice(newTotalPrice);
     setTotalHours(newTotalHours);
@@ -803,10 +812,31 @@ function App() {
   };
 
   const handleSelectionChange = (field, value) => {
-    setFormSelections(prev => ({
-      ...prev,
-      [field]: value
-    }));
+    setFormSelections(prev => {
+      if (field === 'mainChallenge' || field === 'innovation') {
+        // Handle multiple selections for these fields
+        const currentSelections = prev[field] || [];
+        if (currentSelections.includes(value)) {
+          // Remove if already selected
+          return {
+            ...prev,
+            [field]: currentSelections.filter(item => item !== value)
+          };
+        } else {
+          // Add if not selected
+          return {
+            ...prev,
+            [field]: [...currentSelections, value]
+          };
+        }
+      } else {
+        // Handle single selections for other fields
+        return {
+          ...prev,
+          [field]: value
+        };
+      }
+    });
   };
 
   const isStepValid = (step) => {
@@ -814,9 +844,9 @@ function App() {
       case 1:
         return formSelections.challenge !== '';
       case 2:
-        return formSelections.mainChallenge !== '';
+        return formSelections.mainChallenge.length > 0;
       case 3:
-        return formSelections.innovation !== '';
+        return formSelections.innovation.length > 0;
       case 4:
         return formSelections.companySize !== '';
       case 5:
@@ -1201,16 +1231,31 @@ function App() {
                             ) : null;
                           })()}
                           
-                          {/* Show selected innovation module */}
-                          {formSelections.innovation && (() => {
-                            const module = currentContent?.contact?.modules?.innovation?.find(m => m.id === formSelections.innovation);
-                            return module ? (
-                              <div key="innovation" className="quote-item">
-                                <span>{module.name}</span>
-                                <span>{module.price.toLocaleString()} kr</span>
-                              </div>
-                            ) : null;
-                          })()}
+                          {/* Show selected main challenge modules */}
+                          {formSelections.mainChallenge && formSelections.mainChallenge.length > 0 && 
+                            formSelections.mainChallenge.map((challengeId, index) => {
+                              const module = currentContent?.contact?.modules?.mainChallenges?.find(m => m.id === challengeId);
+                              return module ? (
+                                <div key={`mainChallenge-${index}`} className="quote-item">
+                                  <span>{module.name}</span>
+                                  <span>{module.price.toLocaleString()} kr</span>
+                                </div>
+                              ) : null;
+                            })
+                          }
+                          
+                          {/* Show selected innovation modules */}
+                          {formSelections.innovation && formSelections.innovation.length > 0 && 
+                            formSelections.innovation.map((innovationId, index) => {
+                              const module = currentContent?.contact?.modules?.innovation?.find(m => m.id === innovationId);
+                              return module ? (
+                                <div key={`innovation-${index}`} className="quote-item">
+                                  <span>{module.name}</span>
+                                  <span>{module.price.toLocaleString()} kr</span>
+                                </div>
+                              ) : null;
+                            })
+                          }
                           
                           {/* Show company size adjustment if applicable */}
                           {formSelections.companySize && (
