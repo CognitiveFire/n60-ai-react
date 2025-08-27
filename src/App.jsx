@@ -1274,11 +1274,6 @@ function App() {
                         </div>
                       </div>
                       
-                      <div className="ready-for-chat">
-                        <h4>{currentContent.contact.form.readyForChat || 'Klar for en strategisamtale?'}</h4>
-                        <p>{currentContent.contact.form.readyForChatSubtitle || 'Vi trenger dine detaljer for å forberede et personlig møte med fullstendig prisoverslag og strategiplan.'}</p>
-                      </div>
-                      
                       <div className="contact-fields">
                         <input 
                           type="text" 
@@ -1308,7 +1303,7 @@ function App() {
                       
                       <div className="form-navigation">
                         <button type="button" className="prev-step" onClick={prevStep}>Tilbake</button>
-                        <button type="submit" className="submit-button">Få fullstendig tilbud og strategiplan</button>
+                        <button type="submit" className="submit-button">Se ditt tilbud</button>
                       </div>
                     </div>
                   )}
