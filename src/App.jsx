@@ -38,7 +38,7 @@ function App() {
         title: "Alt du trenger for B2B-vekst",
         subtitle: "AI-løsninger som dekker hele reisen – fra produkt til kunde og videre til nye markeder.",
         cta: "Få et tilpasset tilbud",
-        background: "https://i.ibb.co/21nsrcLh/Hero-background.png"
+        background: "https://i.ibb.co/Rk7rSvnf/A-2-D-digital-dashboard-UI-design-showcases-AI-powe.png"
       },
       solutions: {
         title: "Alt du trenger for B2B-vekst",
