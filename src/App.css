@@ -412,9 +412,10 @@
 }
 
 .form-step {
-  display: none;
+  display: block;
 }
 
+/* Keep active class for future use if needed */
 .form-step.active {
   display: block;
 }
