@@ -224,7 +224,42 @@ function App() {
           market: "Målmarked",
           timeline: "Tidsplan",
           budget: "Budsjett",
-          submit: "Få personlig tilbud"
+          submit: "Få personlig tilbud",
+          companySizeTitle: "Selskap",
+          companySizeSubtitle: "Hvor mange ansatte har dere?",
+          companySizeExplanation: "Vi trenger denne informasjonen for å tilpasse løsningen til deres behov og forberede et personlig møte.",
+          step1Title: "Velg hovedutfordring",
+          step1Subtitle: "Hva er din hovedutfordring innen markedsføring i dag?",
+          step2Title: "Dine hovedutfordringer",
+          step2Subtitle: "Hva er de største utfordringene for bedriften?",
+          step3Title: "Innovasjoner",
+          step3Subtitle: "Hvilke løsninger er mest aktuelle for din bedrift?",
+          step4Title: "Selskap",
+          step4Subtitle: "Hvor mange ansatte har dere?",
+          step5Title: "Kontakt og strategimøte",
+          step5Subtitle: "Basert på dine valg, la oss planlegge et personlig møte:",
+          readyForChat: "Klar for en strategisamtale?",
+          readyForChatSubtitle: "Vi trenger dine detaljer for å forberede et personlig møte med fullstendig prisoverslag og strategiplan.",
+          stepIndicator: "Steg",
+          of: "av",
+          back: "Tilbake",
+          next: "Neste",
+          submitButton: "Se ditt tilbud",
+          step1Button: "Fortsett",
+          step2Button: "Neste",
+          step3Button: "Neste",
+          step4Button: "Neste",
+          step5Button: "Se ditt tilbud",
+          step5Back: "Tilbake",
+          namePlaceholder: "Navn",
+          emailPlaceholder: "E-post",
+          companyPlaceholder: "Bedrift",
+          quoteTitle: "Ditt tilpassede tilbud",
+          quoteSubtitle: "Basert på dine valg",
+          quoteTotal: "Totalt",
+          quoteTimeline: "Estimert tidsplan",
+          quoteFooter1: "Dette tilbudet er sendt til din e-post og til vårt team.",
+          quoteFooter2: "Vi tar kontakt innen 24 timer for å planlegge neste steg."
         },
         modules: {
           core: [
@@ -299,6 +334,36 @@ function App() {
               description: "AI som kobler events til CRM-oppfølging",
               hours: 40,
               price: 24000
+            }
+          ],
+          mainChallenges: [
+            {
+              id: "demand-generation",
+              name: "Generere etterspørsel for produktet",
+              description: "Skape interesse og etterspørsel for produktet ditt",
+              hours: 20,
+              price: 12000
+            },
+            {
+              id: "lead-engagement",
+              name: "Finne og engasjere potensielle leads",
+              description: "Identifisere og engasjere kvalifiserte leads",
+              hours: 25,
+              price: 15000
+            },
+            {
+              id: "market-expansion",
+              name: "Utvide til nye markeder",
+              description: "Ekspandere til nye geografiske områder",
+              hours: 30,
+              price: 18000
+            },
+            {
+              id: "other",
+              name: "Annet",
+              description: "Andre utfordringer",
+              hours: 15,
+              price: 9000
             }
           ]
         },
