@@ -687,12 +687,27 @@
   
   .step-header {
     text-align: center !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .step-header h3 {
+    text-align: center !important;
+  }
+  
+  .step-header p {
+    text-align: center !important;
   }
   
   .challenge-cards {
     grid-template-columns: 1fr !important; /* Stack challenge cards on mobile */
     gap: 1.5rem !important;
     background-color: #ffff00 !important; /* TEMPORARY: Bright yellow background on mobile */
+    justify-items: center !important; /* Center the cards within the grid */
+  }
+  
+  .challenge-card {
+    width: 100% !important; /* Ensure cards take full width */
+    max-width: 300px !important; /* Limit card width for better mobile layout */
   }
   
   .checkbox-options,
