@@ -1064,6 +1064,9 @@
   padding: 3rem;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
   margin-top: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .quote-header {
@@ -1097,8 +1100,10 @@
 .quote-item-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .quote-item-header h4 {
@@ -1106,12 +1111,17 @@
   font-weight: 600;
   color: #000000;
   margin: 0;
+  flex: 1;
+  min-width: 0;
+  word-wrap: break-word;
 }
 
 .quote-price {
   font-size: 1.1rem;
   font-weight: 700;
   color: #667eea;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .quote-description {
@@ -1156,6 +1166,36 @@
   margin-top: 2rem;
   color: #666666;
   line-height: 1.6;
+}
+
+/* Mobile responsiveness for quote display */
+@media (max-width: 768px) {
+  .quote-display {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+  
+  .quote-header h3 {
+    font-size: 2rem;
+  }
+  
+  .quote-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .quote-item-header h4 {
+    font-size: 1rem;
+  }
+  
+  .quote-price {
+    align-self: flex-end;
+  }
+  
+  .quote-summary {
+    padding: 1.5rem;
+  }
 }
 
 /* Mobile Responsiveness - Consolidated with main mobile styles above */
