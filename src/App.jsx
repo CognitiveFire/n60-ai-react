@@ -981,11 +981,19 @@ function App() {
             <div className="work-steps">
               {currentContent.howWeWork.steps.map((step, index) => (
                 <div key={index} className="work-step" data-aos="fade-up" data-aos-delay={index * 100}>
-                  <div className="step-number">{index + 1}</div>
+                  <div className="step-icon">
+                    {index === 0 && '🔍'}
+                    {index === 1 && '📈'}
+                    {index === 2 && '⚙️'}
+                    {index === 3 && '📊'}
+                  </div>
                   <div className="step-content">
                     <h3>{step.title}</h3>
                     <p>{step.description}</p>
                   </div>
+                  {index < currentContent.howWeWork.steps.length - 1 && (
+                    <div className="step-connector"></div>
+                  )}
                 </div>
               ))}
             </div>

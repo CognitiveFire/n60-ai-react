@@ -174,6 +174,19 @@
 
 /* Mobile Section Spacing Adjustments */
 @media (max-width: 768px) {
+  .work-steps {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .work-step {
+    max-width: 100%;
+  }
+  
+  .step-connector {
+    display: none;
+  }
+  
   .hero-right {
     display: none !important;
   }
@@ -2110,46 +2123,75 @@ body, html {
 }
 
 .work-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 2rem;
   margin-top: 3rem;
+  position: relative;
 }
 
 .work-step {
   display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  padding: 2rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   border: 1px solid #e5e7eb;
+  flex: 1;
+  position: relative;
+  max-width: 280px;
 }
 
-.step-number {
-  background: #3b82f6;
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  flex-shrink: 0;
+.step-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #20b2aa;
 }
 
 .step-content h3 {
   color: #1f2937;
-  margin-bottom: 0.75rem;
-  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .step-content p {
   color: #6b7280;
   line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.step-connector {
+  position: absolute;
+  top: 50%;
+  right: -1rem;
+  width: 2rem;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    #20b2aa 0,
+    #20b2aa 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  transform: translateY(-50%);
+}
+
+.step-connector::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background: #20b2aa;
+  border-radius: 50%;
+  transform: translateY(-50%);
 }
 
 /* Why AI Section Styles */
