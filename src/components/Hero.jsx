@@ -8,9 +8,9 @@ const Hero = ({ onOpenDemo, backgroundImage }) => {
     <section id="hero" className="hero-section">
       <div className="hero-container">
         <div className="hero-left">
-          <h1 className="hero-headline">Kraftig AI for Norske SMB</h1>
+          <h1 className="hero-headline">Kraftig AI-markedsføring for norske SMB</h1>
           <p className="hero-subheadline">
-            N60.ai leverer banebrytende AI-verktøy skreddersydd for din bedrift. Ingen forvirrende valg – bare de riktige funksjonene for raske resultater.
+            N60.ai leverer målrettede AI-verktøy for markedsføring, skreddersydd for din bedrift. Ingen unødvendige funksjoner – bare løsninger som gir rask vekst og flere kunder.
           </p>
           <button 
             onClick={() => window.open('https://calendly.com/n60/new-meeting', '_blank')} 
