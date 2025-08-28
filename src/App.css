@@ -471,6 +471,36 @@
   filter: contrast(1.1) brightness(1.05);
 }
 
+/* Additional YouTube element hiding */
+.hero-video {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-video::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hero-video::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+  z-index: 10;
+  pointer-events: none;
+}
+
 .hero-video:hover {
   transform: scale(1.02);
 }

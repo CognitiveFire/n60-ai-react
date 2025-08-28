@@ -30,6 +30,9 @@ const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
                 allowFullScreen
                 loading="lazy"
                 sandbox="allow-same-origin allow-scripts allow-presentation"
+                style={{
+                  pointerEvents: 'none'
+                }}
               ></iframe>
             </div>
           ) : backgroundImage ? (
