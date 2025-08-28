@@ -896,7 +896,6 @@ function App() {
                     </div>
                   )}
                   <div className="solution-header">
-                    <span className="solution-emoji">{solution.emoji}</span>
                     <h3>{solution.title}</h3>
                   </div>
                   <p className="solution-description">{solution.description}</p>
@@ -1376,7 +1375,7 @@ function App() {
       {/* Tech Partners Section */}
       <section id="tech-partners" className="tech-partners-section">
         <div className="container">
-          <h2 className="tech-partners-title">Trusted Technology Partners</h2>
+          <h2 className="tech-partners-title">Våre Teknologipartnere</h2>
           <div className="tech-partners-grid">
             <div className="tech-partner">
               <img src="https://i.ibb.co/QFM3Hy6r/1.png" alt="Tech Partner 1" className="tech-partner-logo" />

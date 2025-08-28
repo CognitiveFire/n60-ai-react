@@ -12,7 +12,12 @@ const Hero = ({ onOpenDemo, backgroundImage }) => {
           <p className="hero-subheadline">
             N60.ai leverer banebrytende AI-verktøy skreddersydd for din bedrift. Ingen forvirrende valg – bare de riktige funksjonene for raske resultater.
           </p>
-          <button onClick={onOpenDemo} className="hero-cta">Se demoen</button>
+          <button 
+            onClick={() => window.open('https://calendly.com/n60/new-meeting', '_blank')} 
+            className="hero-cta"
+          >
+            Se demoen
+          </button>
         </div>
         <div className="hero-right">
           {backgroundImage ? (
