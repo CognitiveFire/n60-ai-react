@@ -26,10 +26,10 @@ const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
                 src={videoUrl}
                 title="N60 AI Marketing Demo"
                 frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
                 loading="lazy"
-                sandbox="allow-same-origin allow-scripts allow-presentation"
                 style={{
                   pointerEvents: 'none'
                 }}

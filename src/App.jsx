@@ -39,7 +39,7 @@ function App() {
         subtitle: "AI-løsninger som dekker hele reisen – fra produkt til kunde og videre til nye markeder.",
         cta: "Få et tilpasset tilbud",
         background: "https://i.ibb.co/ycfYCgMP/Hero-background.png",
-        video: "https://www.youtube.com/embed/yeAYS5h_DZs?rel=0&modestbranding=1&showinfo=0&controls=1&iv_load_policy=3&fs=1&autoplay=1&mute=1&start=2&end=30&loop=1&playlist=yeAYS5h_DZs&disablekb=1&cc_load_policy=0&color=white"
+        video: "https://player.vimeo.com/video/1113887078?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1&controls=1&title=0&byline=0&portrait=0&dnt=1"
       },
       solutions: {
         title: "Alt du trenger for B2B-vekst",

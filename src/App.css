@@ -465,13 +465,13 @@
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
-/* Hide YouTube branding and extra elements */
-.hero-video iframe[src*="youtube.com"] {
-  /* Force clean appearance */
-  filter: contrast(1.1) brightness(1.05);
+/* Vimeo video styling */
+.hero-video iframe[src*="vimeo.com"] {
+  /* Clean appearance for Vimeo */
+  filter: contrast(1.05) brightness(1.02);
 }
 
-/* Additional YouTube element hiding */
+/* Vimeo element hiding */
 .hero-video {
   position: relative;
   overflow: hidden;
@@ -483,8 +483,8 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 40px;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 100%);
+  height: 30px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 100%);
   z-index: 10;
   pointer-events: none;
 }
@@ -495,8 +495,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60px;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+  height: 40px;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
   z-index: 10;
   pointer-events: none;
 }
