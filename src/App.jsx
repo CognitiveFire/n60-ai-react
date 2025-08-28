@@ -959,9 +959,9 @@ function App() {
                   ))}
                 </ul>
               </div>
-              <div className="what-is-visual" data-aos="fade-left">
-                <img src="https://i.ibb.co/yFPQd4Jn/Chat-GPT-Image-Aug-27-2025-07-50-21-PM.png" alt="AI-Drevet Vekst" className="what-is-image" />
-              </div>
+                              <div className="what-is-visual" data-aos="fade-left">
+                  <img src="https://i.ibb.co/fd5v2xtv/om-n60.png" alt="Om N60" className="what-is-image" />
+                </div>
             </div>
           </div>
         </section>
@@ -1378,10 +1378,7 @@ function App() {
         </section>
       </div>
 
-      {/* Simple Contact Form Section */}
-      <section id="simple-contact" className="simple-contact-section">
-        <SimpleContactForm />
-      </section>
+
 
       <footer className="footer">
         <div className="container">

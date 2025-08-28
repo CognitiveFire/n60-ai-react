@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import './Salesbot.css';
+import SimpleContactForm from './SimpleContactForm';
 
 const Salesbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const [showContactForm, setShowContactForm] = useState(false);
 
   const handleAskQuestion = () => {
-    // Scroll to simple contact form
-    const simpleContactSection = document.getElementById('simple-contact');
-    if (simpleContactSection) {
-      simpleContactSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Show contact form in salesbot
     setIsOpen(false);
     setIsExpanded(false);
+    setShowContactForm(true);
   };
 
   const handleBookDemo = () => {
@@ -23,13 +22,10 @@ const Salesbot = () => {
   };
 
   const handleContact = () => {
-    // Scroll to simple contact form
-    const simpleContactSection = document.getElementById('simple-contact');
-    if (simpleContactSection) {
-      simpleContactSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Show contact form in salesbot
     setIsOpen(false);
     setIsExpanded(false);
+    setShowContactForm(true);
   };
 
   return (
@@ -93,6 +89,22 @@ const Salesbot = () => {
           <div className="popup-footer">
             <span>n60</span>
           </div>
+        </div>
+      )}
+
+      {/* Contact Form */}
+      {showContactForm && (
+        <div className="salesbot-contact-form">
+          <div className="contact-form-header">
+            <button 
+              className="back-button"
+              onClick={() => setShowContactForm(false)}
+            >
+              ← Tilbake
+            </button>
+            <h3>Kontakt oss</h3>
+          </div>
+          <SimpleContactForm />
         </div>
       )}
     </div>
