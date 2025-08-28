@@ -1046,11 +1046,6 @@ function App() {
                               onChange={(e) => handleSelectionChange('challenge', e.target.value)}
                             />
                             <div className="card-content">
-                              <div className="card-icon">
-                                {module.id === 'product-marketing' && '📦'}
-                                {module.id === 'lead-generation' && '📈'}
-                                {module.id === 'market-expansion' && '🌍'}
-                              </div>
                               <h4>{module.name}</h4>
                               <p>{module.description}</p>
                             </div>
