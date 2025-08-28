@@ -28,6 +28,8 @@ const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
+                loading="lazy"
+                sandbox="allow-same-origin allow-scripts allow-presentation"
               ></iframe>
             </div>
           ) : backgroundImage ? (

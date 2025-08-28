@@ -465,6 +465,12 @@
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
+/* Hide YouTube branding and extra elements */
+.hero-video iframe[src*="youtube.com"] {
+  /* Force clean appearance */
+  filter: contrast(1.1) brightness(1.05);
+}
+
 .hero-video:hover {
   transform: scale(1.02);
 }
