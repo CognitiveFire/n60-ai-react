@@ -38,7 +38,8 @@ function App() {
         title: "Alt du trenger for B2B-vekst",
         subtitle: "AI-løsninger som dekker hele reisen – fra produkt til kunde og videre til nye markeder.",
         cta: "Få et tilpasset tilbud",
-        background: "https://i.ibb.co/ycfYCgMP/Hero-background.png"
+        background: "https://i.ibb.co/ycfYCgMP/Hero-background.png",
+        video: "https://www.youtube.com/embed/yeAYS5h_DZs"
       },
       solutions: {
         title: "Alt du trenger for B2B-vekst",
@@ -878,7 +879,7 @@ function App() {
         <Navbar />
 
         {/* Hero Section */}
-        <Hero onOpenDemo={() => {}} backgroundImage={currentContent.hero.background} />
+        <Hero onOpenDemo={() => {}} backgroundImage={currentContent.hero.background} videoUrl={currentContent.hero.video} />
 
         {/* Solutions Section - Three Core Areas */}
         <section id="solutions" className="solutions-section">

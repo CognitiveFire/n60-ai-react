@@ -3,7 +3,7 @@
 import React from 'react';
 // CSS moved to App.css
 
-const Hero = ({ onOpenDemo, backgroundImage }) => {
+const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
   return (
     <section id="hero" className="hero-section">
       <div className="hero-container">
@@ -20,7 +20,17 @@ const Hero = ({ onOpenDemo, backgroundImage }) => {
           </button>
         </div>
         <div className="hero-right">
-          {backgroundImage ? (
+          {videoUrl ? (
+            <div className="hero-video">
+              <iframe
+                src={videoUrl}
+                title="N60 AI Marketing Demo"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          ) : backgroundImage ? (
             <div className="hero-image">
               <img src={backgroundImage} alt="AI Innovation Dashboard" />
             </div>
