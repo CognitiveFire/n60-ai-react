@@ -1378,7 +1378,38 @@ function App() {
         </section>
       </div>
 
-
+      {/* Tech Partners Section */}
+      <section id="tech-partners" className="tech-partners-section">
+        <div className="container">
+          <h2 className="tech-partners-title">Trusted Technology Partners</h2>
+          <div className="tech-partners-grid">
+            <div className="tech-partner">
+              <img src="https://i.ibb.co/pvdBKY3J" alt="AWS" className="tech-partner-logo" />
+            </div>
+            <div className="tech-partner">
+              <img src="https://i.ibb.co/bR5ZGxXB" alt="OpenAI" className="tech-partner-logo" />
+            </div>
+            <div className="tech-partner">
+              <img src="https://i.ibb.co/fVn3Gvy9" alt="React" className="tech-partner-logo" />
+            </div>
+            <div className="tech-partner">
+              <img src="https://i.ibb.co/DHF3N9CH" alt="Serdgripe" className="tech-partner-logo" />
+            </div>
+            <div className="tech-partner">
+              <img src="https://i.ibb.co/vC6gPBQc" alt="SenaGrid" className="tech-partner-logo" />
+            </div>
+            <div className="tech-partner">
+              <img src="https://i.ibb.co/m5jHpWtR" alt="Tech Partner" className="tech-partner-logo" />
+            </div>
+            <div className="tech-partner">
+              <img src="https://i.ibb.co/G4vJPPYm" alt="Tech Partner" className="tech-partner-logo" />
+            </div>
+            <div className="tech-partner">
+              <img src="https://i.ibb.co/27tZJSxf" alt="Tech Partner" className="tech-partner-logo" />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <footer className="footer">
         <div className="container">
