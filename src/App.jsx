@@ -1379,28 +1379,28 @@ function App() {
           <h2 className="tech-partners-title">Trusted Technology Partners</h2>
           <div className="tech-partners-grid">
             <div className="tech-partner">
-              <img src="https://i.ibb.co/pvdBKY3J" alt="AWS" className="tech-partner-logo" />
+              <img src="https://i.ibb.co/QFM3Hy6r/1.png" alt="Tech Partner 1" className="tech-partner-logo" />
             </div>
             <div className="tech-partner">
-              <img src="https://i.ibb.co/bR5ZGxXB" alt="OpenAI" className="tech-partner-logo" />
+              <img src="https://i.ibb.co/XkxgG9ts/2.png" alt="Tech Partner 2" className="tech-partner-logo" />
             </div>
             <div className="tech-partner">
-              <img src="https://i.ibb.co/fVn3Gvy9" alt="React" className="tech-partner-logo" />
+              <img src="https://i.ibb.co/ZRYQ1mFS/3.png" alt="Tech Partner 3" className="tech-partner-logo" />
             </div>
             <div className="tech-partner">
-              <img src="https://i.ibb.co/DHF3N9CH" alt="Serdgripe" className="tech-partner-logo" />
+              <img src="https://i.ibb.co/rRhngx6R/4.png" alt="Tech Partner 4" className="tech-partner-logo" />
             </div>
             <div className="tech-partner">
-              <img src="https://i.ibb.co/vC6gPBQc" alt="SenaGrid" className="tech-partner-logo" />
+              <img src="https://i.ibb.co/j9PBM5W8/5.png" alt="Tech Partner 5" className="tech-partner-logo" />
             </div>
             <div className="tech-partner">
-              <img src="https://i.ibb.co/m5jHpWtR" alt="Tech Partner" className="tech-partner-logo" />
+              <img src="https://i.ibb.co/TMfHy3Rw/6.png" alt="Tech Partner 6" className="tech-partner-logo" />
             </div>
             <div className="tech-partner">
-              <img src="https://i.ibb.co/G4vJPPYm" alt="Tech Partner" className="tech-partner-logo" />
+              <img src="https://i.ibb.co/RkpSHHr8/7.png" alt="Tech Partner 7" className="tech-partner-logo" />
             </div>
             <div className="tech-partner">
-              <img src="https://i.ibb.co/27tZJSxf" alt="Tech Partner" className="tech-partner-logo" />
+              <img src="https://i.ibb.co/7JWkhQP6/8.png" alt="Tech Partner 8" className="tech-partner-logo" />
             </div>
           </div>
         </div>
