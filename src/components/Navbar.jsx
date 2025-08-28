@@ -24,11 +24,34 @@ const Navbar = () => {
           <button 
             className="mobile-menu-button"
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle mobile menu"
           >
             ☰
           </button>
         </div>
       </div>
+      
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="mobile-menu">
+          <div className="mobile-menu-header">
+            <button 
+              className="mobile-menu-close"
+              onClick={() => setMenuOpen(false)}
+              aria-label="Close mobile menu"
+            >
+              ×
+            </button>
+          </div>
+          <nav className="mobile-menu-nav">
+            <a href="#solutions" onClick={() => setMenuOpen(false)}>Løsninger</a>
+            <a href="#innovation" onClick={() => setMenuOpen(false)}>Innovasjon</a>
+            <a href="#how-we-work" onClick={() => setMenuOpen(false)}>Hvordan vi jobber</a>
+            <a href="#why-ai" onClick={() => setMenuOpen(false)}>Hvorfor AI</a>
+            <a href="#contact" onClick={() => setMenuOpen(false)}>Kontakt</a>
+          </nav>
+        </div>
+      )}
     </nav>
   );
 };
