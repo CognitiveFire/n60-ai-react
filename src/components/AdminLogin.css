@@ -863,6 +863,27 @@
   margin: 0;
 }
 
+.share-actions {
+  margin-top: 1rem;
+}
+
+.share-quote-btn {
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.share-quote-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(74, 222, 128, 0.3);
+}
+
 .lightbox-actions {
   display: flex;
   gap: 1rem;

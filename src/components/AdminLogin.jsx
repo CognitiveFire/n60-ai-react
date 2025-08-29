@@ -53,7 +53,7 @@ const AdminLogin = ({ onClose }) => {
     const totalHours = selectedInnovasjonslag.reduce((sum, option) => sum + option.hours, 0);
     const estimatedRunningCosts = Math.round(totalPrice * 0.10); // 10% of total price
     
-    const quote = {
+    const quoteData = {
       id: `N60-${Date.now()}`,
       clientCompany: proposalData.clientCompany,
       clientEmail: proposalData.clientEmail,
@@ -66,6 +66,11 @@ const AdminLogin = ({ onClose }) => {
       estimatedRunningCosts,
       generatedAt: new Date().toLocaleDateString('nb-NO'),
       shareLink: `${window.location.origin}/Command-Center/quote/${Date.now()}`
+    };
+    
+    const quote = {
+      ...quoteData,
+      shareData: btoa(JSON.stringify(quoteData)) // Encode quote data for sharing
     };
     
     setGeneratedQuote(quote);
@@ -81,6 +86,85 @@ const AdminLogin = ({ onClose }) => {
         return [...prev, option];
       }
     });
+  };
+
+  const downloadPDF = (quote) => {
+    // Create a simple HTML document for PDF generation
+    const htmlContent = `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8">
+          <title>Tilbud - ${quote.clientCompany}</title>
+          <style>
+            body { font-family: Arial, sans-serif; margin: 40px; }
+            .header { text-align: center; margin-bottom: 30px; }
+            .company-info { margin-bottom: 30px; }
+            .services { margin-bottom: 30px; }
+            .service-item { margin-bottom: 15px; padding: 10px; border: 1px solid #ddd; }
+            .totals { margin-top: 30px; padding: 20px; background: #f5f5f5; }
+            .proposal-content { margin-top: 30px; }
+            h1, h2, h3 { color: #333; }
+            .price { font-weight: bold; color: #2e7d32; }
+            .running-costs { color: #f57c00; }
+          </style>
+        </head>
+        <body>
+          <div class="header">
+            <h1>N60.ai - Profesjonelt Tilbud</h1>
+            <h2>${quote.clientCompany}</h2>
+          </div>
+          
+          <div class="company-info">
+            <p><strong>Kontaktperson:</strong> ${quote.clientContact || 'Ikke spesifisert'}</p>
+            <p><strong>Tilbuds-ID:</strong> ${quote.id}</p>
+            <p><strong>Generert:</strong> ${quote.generatedAt}</p>
+          </div>
+          
+          <div class="services">
+            <h3>Valgte Tjenester:</h3>
+            ${quote.selectedServices.map(service => `
+              <div class="service-item">
+                <h4>${service.name}</h4>
+                <p>${service.description}</p>
+                <p><strong>Pris:</strong> <span class="price">${service.price.toLocaleString()} NOK</span></p>
+                <p><strong>Estimert tid:</strong> ${service.hours} timer</p>
+              </div>
+            `).join('')}
+          </div>
+          
+          <div class="totals">
+            <h3>Oppsummering:</h3>
+            <p><strong>Total Pris:</strong> <span class="price">${quote.totalPrice.toLocaleString()} NOK</span></p>
+            <p><strong>Total Tid:</strong> ${quote.totalHours} timer</p>
+            <p><strong>Estimert Driftskostnader (10% per måned):</strong> <span class="running-costs">${quote.estimatedRunningCosts.toLocaleString()} NOK</span></p>
+          </div>
+          
+          ${quote.customMessage ? `
+            <div class="custom-message">
+              <h3>Personlig Melding:</h3>
+              <p>${quote.customMessage}</p>
+            </div>
+          ` : ''}
+          
+          <div class="proposal-content">
+            <h3>Forslagstekst:</h3>
+            ${quote.editedProposalText || 'Ingen forslagstekst tilgjengelig'}
+          </div>
+        </body>
+      </html>
+    `;
+    
+    // Create blob and download
+    const blob = new Blob([htmlContent], { type: 'text/html' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `Tilbud-${quote.clientCompany}-${quote.id}.html`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
   };
 
   const allServices = [
@@ -484,7 +568,7 @@ const AdminLogin = ({ onClose }) => {
                   <span className="total-hours">{generatedQuote.totalHours} timer</span>
                 </div>
                 <div className="total-row running-costs">
-                  <span>Estimert Driftskostnader (10%):</span>
+                  <span>Estimert Driftskostnader (10% per måned):</span>
                   <span className="running-costs-price">{generatedQuote.estimatedRunningCosts.toLocaleString()} NOK</span>
                 </div>
               </div>
@@ -506,33 +590,46 @@ const AdminLogin = ({ onClose }) => {
                 </div>
               )}
 
-              <div className="share-section">
-                <h4>Del med kunden:</h4>
-                <div className="share-link">
-                  <input
-                    type="text"
-                    value={generatedQuote.shareLink}
-                    readOnly
-                    className="share-input"
-                  />
-                  <button 
-                    className="copy-link-btn"
-                    onClick={() => {
-                      navigator.clipboard.writeText(generatedQuote.shareLink);
-                      alert('Lenke kopiert til utklippstavlen!');
-                    }}
-                  >
-                    Kopier
-                  </button>
+                              <div className="share-section">
+                  <h4>Del med kunden:</h4>
+                  <div className="share-link">
+                    <input
+                      type="text"
+                      value={generatedQuote.shareLink}
+                      readOnly
+                      className="share-input"
+                    />
+                    <button 
+                      className="copy-link-btn"
+                      onClick={() => {
+                        navigator.clipboard.writeText(generatedQuote.shareLink);
+                        alert('Lenke kopiert til utklippstavlen!');
+                      }}
+                    >
+                      Kopier
+                    </button>
+                  </div>
+                  <p className="share-note">Denne lenken kan deles med kunden for å vise tilbudet</p>
+                  <div className="share-actions">
+                    <button 
+                      className="share-quote-btn"
+                      onClick={() => {
+                        const shareData = generatedQuote.shareData;
+                        const shareUrl = `${window.location.origin}/Command-Center/quote?data=${shareData}`;
+                        navigator.clipboard.writeText(shareUrl);
+                        alert('Delbar lenke kopiert! Denne lenken viser tilbudet direkte.');
+                      }}
+                    >
+                      Generer delbar lenke
+                    </button>
+                  </div>
                 </div>
-                <p className="share-note">Denne lenken kan deles med kunden for å vise tilbudet</p>
-              </div>
             </div>
 
             <div className="lightbox-actions">
               <button 
                 className="download-pdf-btn"
-                onClick={() => alert('PDF-nedlasting kommer snart!')}
+                onClick={() => downloadPDF(generatedQuote)}
               >
                 Last ned PDF
               </button>
