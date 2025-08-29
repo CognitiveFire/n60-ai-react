@@ -27,7 +27,7 @@ const AdminLogin = ({ onClose }) => {
       setIsLoggedIn(true);
       setLoginError('');
     } else {
-      setLoginError('Invalid credentials. Use Admin / admin123.');
+      setLoginError('Invalid credentials.');
     }
   };
 
@@ -322,6 +322,77 @@ const AdminLogin = ({ onClose }) => {
                         </div>
                       );
                     })}
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label>Forslagstekst</label>
+                  <div className="proposal-template">
+                    <h4>Proposal for Digital Growth & AI-Powered Lead Generation</h4>
+                    
+                    <div className="proposal-section">
+                      <h5>1. Introduction</h5>
+                      <p>This proposal outlines how N60.ai will accelerate digital growth and generate high-quality leads for <strong>[{proposalData.clientCompany || 'Client Company'}]</strong>. By combining AI-powered tools, smart landing pages, and targeted campaigns, we deliver measurable results while ensuring seamless integration with your existing systems.</p>
+                    </div>
+
+                    <div className="proposal-section">
+                      <h5>2. Objectives</h5>
+                      <ul>
+                        <li>Increase qualified lead flow through AI-driven marketing.</li>
+                        <li>Create smart landing pages and content pages optimised for conversion.</li>
+                        <li>Deploy a hybrid salesbot with live agent handover.</li>
+                        <li>Integrate the solution with your existing CRM to streamline lead management.</li>
+                        <li>Provide measurable reporting and ongoing optimisation.</li>
+                      </ul>
+                    </div>
+
+                    <div className="proposal-section">
+                      <h5>3. Scope of Work</h5>
+                      
+                      <div className="scope-item">
+                        <h6>Smart Landing Pages & Content Pages</h6>
+                        <ul>
+                          <li>Design and build conversion-focused landing pages.</li>
+                          <li>Integrate hybrid salesbot (AI chat + human agent handover).</li>
+                          <li>Connect directly to your CRM for seamless lead capture.</li>
+                        </ul>
+                      </div>
+
+                      <div className="scope-item">
+                        <h6>AI-Powered Lead Generation</h6>
+                        <ul>
+                          <li>Setup and optimisation of AI-driven ad campaigns.</li>
+                          <li>Automated content suggestions for blogs & newsletters.</li>
+                          <li>Predictive lead scoring and follow-up automation.</li>
+                        </ul>
+                      </div>
+
+                      <div className="scope-item">
+                        <h6>CRM Integration</h6>
+                        <ul>
+                          <li>Ensure full compatibility with your CRM.</li>
+                          <li>Setup of automated workflows for lead nurturing.</li>
+                        </ul>
+                      </div>
+
+                      <div className="scope-item">
+                        <h6>Reporting & Optimisation</h6>
+                        <ul>
+                          <li>Custom dashboards with KPIs.</li>
+                          <li>Monthly insights and recommendations for improvement.</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="proposal-section">
+                      <h5>4. Deliverables</h5>
+                      <ul>
+                        <li>2–3 Smart Landing Pages with hybrid salesbot + CRM integration.</li>
+                        <li>AI campaign setup and optimisation.</li>
+                        <li>Automated reporting dashboard.</li>
+                        <li>Monthly optimisation and support.</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
 

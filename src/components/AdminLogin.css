@@ -900,6 +900,67 @@
   color: #ffffff;
 }
 
+/* Proposal Template */
+.proposal-template {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.proposal-template h4 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.proposal-section {
+  margin-bottom: 1.5rem;
+}
+
+.proposal-section h5 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+}
+
+.proposal-section p {
+  color: #e5e7eb;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.5;
+}
+
+.proposal-section ul {
+  color: #e5e7eb;
+  margin: 0 0 0.75rem 0;
+  padding-left: 1.5rem;
+}
+
+.proposal-section li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.scope-item {
+  margin-bottom: 1rem;
+}
+
+.scope-item h6 {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.proposal-template strong {
+  color: #4ade80;
+  font-weight: 600;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .admin-login-page,
