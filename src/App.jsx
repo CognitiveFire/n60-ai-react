@@ -25,6 +25,7 @@ function App() {
     email: '',
     company: ''
   });
+  const [showLoginLightbox, setShowLoginLightbox] = useState(false);
 
   // Debug logging
   console.log('Current step:', currentStep);
@@ -877,7 +878,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <Navbar />
+        <Navbar onLoginClick={() => setShowLoginLightbox(true)} />
 
         {/* Hero Section */}
         <Hero onOpenDemo={() => {}} backgroundImage={currentContent.hero.background} videoUrl={currentContent.hero.video} />
@@ -1417,17 +1418,21 @@ function App() {
         </div>
       </section>
 
-      {/* Login/Admin Section */}
-      <section id="login" className="login-section">
-        <AdminLogin />
-      </section>
-
       <footer className="footer">
         <div className="container">
           <p>© {new Date().getFullYear()} N60</p>
           <p className="made-with-love">Made in Bergen, Norway, with love ❤️</p>
         </div>
       </footer>
+
+      {/* Login Lightbox */}
+      {showLoginLightbox && (
+        <div className="login-lightbox-overlay" onClick={() => setShowLoginLightbox(false)}>
+          <div className="login-lightbox" onClick={(e) => e.stopPropagation()}>
+            <AdminLogin onClose={() => setShowLoginLightbox(false)} />
+          </div>
+        </div>
+      )}
 
       <Salesbot />
     </>

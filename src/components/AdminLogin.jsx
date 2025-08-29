@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './AdminLogin.css';
 
-const AdminLogin = () => {
+const AdminLogin = ({ onClose }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeTab, setActiveTab] = useState('quotes');
   const [loginForm, setLoginForm] = useState({
@@ -23,17 +23,18 @@ const AdminLogin = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (loginForm.email === 'admin@n60.ai' && loginForm.password === 'admin123') {
+    if (loginForm.email === 'Admin' && loginForm.password === 'admin123') {
       setIsLoggedIn(true);
       setLoginError('');
     } else {
-      setLoginError('Invalid credentials. Use admin@n60.ai / admin123 for demo.');
+      setLoginError('Invalid credentials. Use Admin / admin123.');
     }
   };
 
   const handleLogout = () => {
     setIsLoggedIn(false);
     setLoginForm({ email: '', password: '' });
+    if (onClose) onClose();
   };
 
   const handleProposalSubmit = (e) => {
@@ -169,14 +170,14 @@ const AdminLogin = () => {
             
             <form onSubmit={handleLogin} className="login-form">
               <div className="form-group">
-                <label htmlFor="email">E-post</label>
+                <label htmlFor="email">Brukernavn</label>
                 <input
-                  type="email"
+                  type="text"
                   id="email"
                   value={loginForm.email}
                   onChange={(e) => setLoginForm({...loginForm, email: e.target.value})}
                   required
-                  placeholder="admin@n60.ai"
+                  placeholder="Admin"
                 />
               </div>
               
