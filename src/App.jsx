@@ -632,6 +632,7 @@ function App() {
       totalPrice: totalPrice,
       totalHours: totalHours,
       estimatedTimeline: currentContent.contact.form.submitButton === 'Se ditt tilbud' ? '6-8 uker' : '6-8 uker',
+      monthlyRunningCosts: Math.round(totalPrice * 0.10), // 10% of total price per month
       selectedModules: []
     };
 
@@ -1369,6 +1370,9 @@ function App() {
                       </div>
                       <div className="quote-timeline">
                         <span>{currentContent.contact.form.quoteTimeline}: {quoteData.estimatedTimeline}</span>
+                      </div>
+                      <div className="quote-monthly-costs">
+                        <span>Månedlige driftskostnader (10%): {quoteData.monthlyRunningCosts.toLocaleString()} kr</span>
                       </div>
                     </div>
                     

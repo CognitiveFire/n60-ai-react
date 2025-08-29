@@ -1948,6 +1948,20 @@ body, html {
   font-size: 0.9rem;
 }
 
+.quote-monthly-costs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.quote-monthly-costs span {
+  color: #eab20b;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
 /* Responsive adjustments for smart form */
 @media (max-width: 768px) {
   .checkbox-label {
