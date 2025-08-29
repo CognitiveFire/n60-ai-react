@@ -76,28 +76,7 @@ const AdminLogin = ({ onClose }) => {
     });
   };
 
-  const proposalTemplates = {
-    'digital-growth': {
-      title: 'Digital Growth & AI-Powered Lead Generation',
-      description: 'Complete AI marketing solution with landing pages, salesbot, and CRM integration',
-      basePrice: 50000,
-      monthlySupport: 5000
-    },
-    'landing-pages': {
-      title: 'Smart Landing Pages & Conversion Optimization',
-      description: 'High-converting landing pages with AI-powered optimization',
-      basePrice: 25000,
-      monthlySupport: 3000
-    },
-    'ai-campaigns': {
-      title: 'AI-Powered Marketing Campaigns',
-      description: 'Automated lead generation campaigns with predictive analytics',
-      basePrice: 35000,
-      monthlySupport: 4000
-    }
-  };
-
-  const innovasjonslagOptions = [
+  const allServices = [
     {
       id: 'ai-marketing',
       name: 'AI-Drevet Markedsføring',
@@ -164,8 +143,7 @@ const AdminLogin = ({ onClose }) => {
         <div className="login-container">
           <div className="login-card">
             <div className="login-header">
-              <h1>N60.ai Admin Portal</h1>
-              <p>Professional proposal generation and customer management</p>
+              <h1>N60 Command Center</h1>
             </div>
             
             <form onSubmit={handleLogin} className="login-form">
@@ -177,7 +155,6 @@ const AdminLogin = ({ onClose }) => {
                   value={loginForm.email}
                   onChange={(e) => setLoginForm({...loginForm, email: e.target.value})}
                   required
-                  placeholder="Admin"
                 />
               </div>
               
@@ -189,7 +166,6 @@ const AdminLogin = ({ onClose }) => {
                   value={loginForm.password}
                   onChange={(e) => setLoginForm({...loginForm, password: e.target.value})}
                   required
-                  placeholder="admin123"
                 />
               </div>
               
@@ -247,23 +223,8 @@ const AdminLogin = ({ onClose }) => {
             </div>
 
             <div className="template-selection">
-              <h3>Velg forslagsmal</h3>
-              <div className="template-grid">
-                {Object.entries(proposalTemplates).map(([key, template]) => (
-                  <div 
-                    key={key}
-                    className={`template-card ${selectedTemplate === key ? 'selected' : ''}`}
-                    onClick={() => setSelectedTemplate(key)}
-                  >
-                    <h4>{template.title}</h4>
-                    <p>{template.description}</p>
-                    <div className="template-price">
-                      <span className="base-price">{template.basePrice.toLocaleString()} NOK</span>
-                      <span className="monthly">+ {template.monthlySupport.toLocaleString()} NOK/mnd</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <h3>Velg tjenester</h3>
+              <p>Velg fra våre AI-drevne markedsføringstjenester</p>
             </div>
 
             <div className="proposal-form">
@@ -334,9 +295,9 @@ const AdminLogin = ({ onClose }) => {
                 </div>
 
                 <div className="form-group">
-                  <label>Velg Innovasjonslag Tjenester</label>
+                  <label>Velg tjenester</label>
                   <div className="innovasjonslag-grid">
-                    {innovasjonslagOptions.map((option) => {
+                    {allServices.map((option) => {
                       const isSelected = selectedInnovasjonslag.find(item => item.id === option.id);
                       return (
                         <div 
@@ -436,6 +397,9 @@ const AdminLogin = ({ onClose }) => {
             <div className="quote-content">
               <div className="quote-summary">
                 <h3>Tilbud for {generatedQuote.clientCompany}</h3>
+                {generatedQuote.clientContact && (
+                  <p className="quote-contact">Kontaktperson: {generatedQuote.clientContact}</p>
+                )}
                 <p className="quote-id">Tilbuds-ID: {generatedQuote.id}</p>
                 <p className="quote-date">Generert: {generatedQuote.generatedAt}</p>
               </div>
