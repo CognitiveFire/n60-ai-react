@@ -351,7 +351,17 @@
 
 /* ===== HERO STYLES ===== */
 .hero-section {
-  background: linear-gradient(135deg, #0f1c30 0%, #363f50 100%) !important; /* Blue gradient as requested */
+  background: 
+    /* Base blue gradient */
+    linear-gradient(135deg, #0f1c30 0%, #363f50 100%),
+    /* Mountain layer 1 (farthest - very subtle) */
+    linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.02) 30%, rgba(255,255,255,0.02) 35%, transparent 35%),
+    /* Mountain layer 2 (middle - subtle) */
+    linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.015) 40%, rgba(255,255,255,0.015) 45%, transparent 45%),
+    /* Mountain layer 3 (closest - slightly more visible) */
+    linear-gradient(45deg, transparent 50%, rgba(255,255,255,0.01) 50%, rgba(255,255,255,0.01) 55%, transparent 55%);
+  background-size: 100% 100%, 200% 100%, 300% 100%, 400% 100%;
+  background-position: 0 0, 0 100%, 0 100%, 0 100%;
   position: relative;
   padding: 4rem 2rem 2rem;
   color: #fff;
