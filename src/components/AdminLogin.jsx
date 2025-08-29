@@ -135,7 +135,7 @@ const AdminLogin = ({ onClose }) => {
     }
   ];
 
-  const currentTemplate = proposalTemplates[selectedTemplate];
+
 
   if (!isLoggedIn) {
     return (
