@@ -744,12 +744,12 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #ffffff;
+  color: #000000;
 }
 
 .step-header p {
   font-size: 1.1rem;
-  color: #e5e7eb;
+  color: #000000;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -1136,6 +1136,27 @@
   align-items: start;
 }
 
+.quote-item-content {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 2rem;
+  align-items: start;
+}
+
+.quote-item-content h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+}
+
+.quote-item-content .quote-description {
+  color: #e5e7eb;
+  margin: 0;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
 .quote-item-header h4 {
   font-size: 1.1rem;
   font-weight: 600;
@@ -1428,6 +1449,15 @@ body, html {
   padding: 100px 0;
   background: linear-gradient(135deg, #0f1c30 0%, #363f50 100%);
   color: #ffffff;
+}
+
+/* Override section header colors for contact section */
+.contact-section .section-header h2 {
+  color: #ffffff !important;
+}
+
+.contact-section .section-header p {
+  color: #e5e7eb !important;
 }
 
 .contact-content {

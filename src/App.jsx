@@ -1347,13 +1347,15 @@ function App() {
                     <div className="quote-items">
                       {quoteData.selectedModules.map((module, index) => (
                         <div key={index} className="quote-item">
-                          <div className="quote-item-header">
-                            <h4>{module.name}</h4>
+                          <div className="quote-item-content">
+                            <div>
+                              <h4>{module.name}</h4>
+                              <p className="quote-description">{module.description}</p>
+                            </div>
                             <span className="quote-price">{module.price.toLocaleString()} kr</span>
-                          </div>
-                          <p className="quote-description">{module.description}</p>
-                          <div className="quote-details">
-                            <span>Estimert tid: {module.hours} timer</span>
+                            <div className="quote-details">
+                              <span>Estimert tid: {module.hours} timer</span>
+                            </div>
                           </div>
                         </div>
                       ))}
