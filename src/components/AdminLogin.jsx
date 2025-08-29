@@ -23,7 +23,7 @@ const AdminLogin = ({ onClose }) => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (loginForm.email === 'admin' && loginForm.password === 'admin1234') {
+    if (loginForm.email === 'admin' && loginForm.password === 'admin123') {
       setIsLoggedIn(true);
       setLoginError('');
     } else {
