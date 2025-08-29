@@ -17,6 +17,9 @@ const AdminLogin = () => {
     projectScope: 'full',
     customMessage: ''
   });
+  const [selectedInnovasjonslag, setSelectedInnovasjonslag] = useState([]);
+  const [showQuoteLightbox, setShowQuoteLightbox] = useState(false);
+  const [generatedQuote, setGeneratedQuote] = useState(null);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -35,8 +38,41 @@ const AdminLogin = () => {
 
   const handleProposalSubmit = (e) => {
     e.preventDefault();
-    // In production, this would generate and send the proposal
-    alert(`Proposal generated for ${proposalData.clientCompany}! This would create a professional PDF document.`);
+    
+    if (selectedInnovasjonslag.length === 0) {
+      alert('Vennligst velg minst én Innovasjonslag tjeneste.');
+      return;
+    }
+
+    const totalPrice = selectedInnovasjonslag.reduce((sum, option) => sum + option.price, 0);
+    const totalHours = selectedInnovasjonslag.reduce((sum, option) => sum + option.hours, 0);
+    
+    const quote = {
+      id: `N60-${Date.now()}`,
+      clientCompany: proposalData.clientCompany,
+      clientEmail: proposalData.clientEmail,
+      clientContact: proposalData.clientContact,
+      customMessage: proposalData.customMessage,
+      selectedServices: selectedInnovasjonslag,
+      totalPrice,
+      totalHours,
+      generatedAt: new Date().toLocaleDateString('nb-NO'),
+      shareLink: `${window.location.origin}/quote/${Date.now()}`
+    };
+    
+    setGeneratedQuote(quote);
+    setShowQuoteLightbox(true);
+  };
+
+  const handleInnovasjonslagToggle = (option) => {
+    setSelectedInnovasjonslag(prev => {
+      const isSelected = prev.find(item => item.id === option.id);
+      if (isSelected) {
+        return prev.filter(item => item.id !== option.id);
+      } else {
+        return [...prev, option];
+      }
+    });
   };
 
   const proposalTemplates = {
@@ -59,6 +95,65 @@ const AdminLogin = () => {
       monthlySupport: 4000
     }
   };
+
+  const innovasjonslagOptions = [
+    {
+      id: 'ai-marketing',
+      name: 'AI-Drevet Markedsføring',
+      description: 'Automatiserte kampanjer med prediktiv analyse og optimalisering',
+      price: 15000,
+      hours: 30
+    },
+    {
+      id: 'smart-landing-pages',
+      name: 'Smart Landing Pages',
+      description: 'Høykonverterende landingssider med AI-optimalisering',
+      price: 12000,
+      hours: 25
+    },
+    {
+      id: 'salesbot',
+      name: 'Hybrid Salesbot',
+      description: 'AI-chat med live agent overlevering for bedre kundeservice',
+      price: 18000,
+      hours: 35
+    },
+    {
+      id: 'crm-integration',
+      name: 'CRM Integrasjon',
+      description: 'Seamless integrasjon med eksisterende CRM-systemer',
+      price: 8000,
+      hours: 15
+    },
+    {
+      id: 'analytics-dashboard',
+      name: 'Analytics Dashboard',
+      description: 'Tilpassede dashboards med KPIer og rapportering',
+      price: 10000,
+      hours: 20
+    },
+    {
+      id: 'content-automation',
+      name: 'Innholdsautomatisering',
+      description: 'Automatiserte innholdsforslag for blogs og nyhetsbrev',
+      price: 9000,
+      hours: 18
+    },
+    {
+      id: 'lead-scoring',
+      name: 'Lead Scoring & Nurturing',
+      description: 'Prediktiv lead scoring og automatiserte workflows',
+      price: 11000,
+      hours: 22
+    },
+    {
+      id: 'seo-optimization',
+      name: 'SEO Optimalisering',
+      description: 'AI-drevet SEO med kontinuerlig optimalisering',
+      price: 7000,
+      hours: 14
+    }
+  ];
 
   const currentTemplate = proposalTemplates[selectedTemplate];
 
@@ -104,11 +199,7 @@ const AdminLogin = () => {
               </button>
             </form>
             
-            <div className="demo-credentials">
-              <p><strong>Demo credentials:</strong></p>
-              <p>E-post: admin@n60.ai</p>
-              <p>Passord: admin123</p>
-            </div>
+
           </div>
         </div>
       </div>
@@ -241,6 +332,37 @@ const AdminLogin = () => {
                   />
                 </div>
 
+                <div className="form-group">
+                  <label>Velg Innovasjonslag Tjenester</label>
+                  <div className="innovasjonslag-grid">
+                    {innovasjonslagOptions.map((option) => {
+                      const isSelected = selectedInnovasjonslag.find(item => item.id === option.id);
+                      return (
+                        <div 
+                          key={option.id}
+                          className={`innovasjonslag-option ${isSelected ? 'selected' : ''}`}
+                          onClick={() => handleInnovasjonslagToggle(option)}
+                        >
+                          <div className="option-header">
+                            <input
+                              type="checkbox"
+                              checked={isSelected}
+                              onChange={() => handleInnovasjonslagToggle(option)}
+                              onClick={(e) => e.stopPropagation()}
+                            />
+                            <h4>{option.name}</h4>
+                            <span className="option-price">{option.price.toLocaleString()} NOK</span>
+                          </div>
+                          <p>{option.description}</p>
+                          <div className="option-details">
+                            <span>Estimert tid: {option.hours} timer</span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
                 <div className="form-actions">
                   <button type="submit" className="generate-button">
                     Generer forslag
@@ -295,6 +417,102 @@ const AdminLogin = () => {
           </div>
         )}
       </main>
+
+      {/* Quote Lightbox */}
+      {showQuoteLightbox && generatedQuote && (
+        <div className="quote-lightbox-overlay" onClick={() => setShowQuoteLightbox(false)}>
+          <div className="quote-lightbox" onClick={(e) => e.stopPropagation()}>
+            <div className="lightbox-header">
+              <h2>Tilbud Generert</h2>
+              <button 
+                className="close-lightbox"
+                onClick={() => setShowQuoteLightbox(false)}
+              >
+                ×
+              </button>
+            </div>
+            
+            <div className="quote-content">
+              <div className="quote-summary">
+                <h3>Tilbud for {generatedQuote.clientCompany}</h3>
+                <p className="quote-id">Tilbuds-ID: {generatedQuote.id}</p>
+                <p className="quote-date">Generert: {generatedQuote.generatedAt}</p>
+              </div>
+
+              <div className="selected-services">
+                <h4>Valgte Tjenester:</h4>
+                {generatedQuote.selectedServices.map((service, index) => (
+                  <div key={index} className="service-item">
+                    <div className="service-info">
+                      <h5>{service.name}</h5>
+                      <p>{service.description}</p>
+                    </div>
+                    <div className="service-pricing">
+                      <span className="service-price">{service.price.toLocaleString()} NOK</span>
+                      <span className="service-hours">{service.hours} timer</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="quote-total">
+                <div className="total-row">
+                  <span>Total Pris:</span>
+                  <span className="total-price">{generatedQuote.totalPrice.toLocaleString()} NOK</span>
+                </div>
+                <div className="total-row">
+                  <span>Total Tid:</span>
+                  <span className="total-hours">{generatedQuote.totalHours} timer</span>
+                </div>
+              </div>
+
+              {generatedQuote.customMessage && (
+                <div className="custom-message">
+                  <h4>Personlig Melding:</h4>
+                  <p>{generatedQuote.customMessage}</p>
+                </div>
+              )}
+
+              <div className="share-section">
+                <h4>Del med kunden:</h4>
+                <div className="share-link">
+                  <input
+                    type="text"
+                    value={generatedQuote.shareLink}
+                    readOnly
+                    className="share-input"
+                  />
+                  <button 
+                    className="copy-link-btn"
+                    onClick={() => {
+                      navigator.clipboard.writeText(generatedQuote.shareLink);
+                      alert('Lenke kopiert til utklippstavlen!');
+                    }}
+                  >
+                    Kopier
+                  </button>
+                </div>
+                <p className="share-note">Denne lenken kan deles med kunden for å vise tilbudet</p>
+              </div>
+            </div>
+
+            <div className="lightbox-actions">
+              <button 
+                className="download-pdf-btn"
+                onClick={() => alert('PDF-nedlasting kommer snart!')}
+              >
+                Last ned PDF
+              </button>
+              <button 
+                className="send-email-btn"
+                onClick={() => alert('E-post sending kommer snart!')}
+              >
+                Send på e-post
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
