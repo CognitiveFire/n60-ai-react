@@ -897,7 +897,7 @@
 }
 
 .company-size-explanation p {
-  color: #666666;
+  color: #000000;
   margin: 0;
   line-height: 1.6;
 }
@@ -920,6 +920,7 @@
   border-radius: 8px;
   font-size: 1rem;
   transition: all 0.3s ease;
+  color: #000000;
 }
 
 .form-group input:focus {
@@ -949,6 +950,7 @@
   font-size: 1rem;
   transition: all 0.3s ease;
   box-sizing: border-box;
+  color: #000000;
 }
 
 .contact-fields input:focus {
