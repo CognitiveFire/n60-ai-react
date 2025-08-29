@@ -225,7 +225,7 @@
 }
 
 .section-header p {
-  color: #e5e7eb;
+  color: #ffffff;
   font-size: 1.1rem;
 }
 
@@ -648,13 +648,13 @@
 }
 
 .quote-summary h3 {
-  color: #ffffff;
+  color: #000000;
   margin: 0 0 0.5rem 0;
   font-size: 1.5rem;
 }
 
-.quote-id, .quote-date, .quote-contact {
-  color: #a5b4fc;
+.quote-id, .quote-contact {
+  color: #000000;
   margin: 0.25rem 0;
   font-size: 0.9rem;
 }
@@ -756,6 +756,42 @@
   color: #fbbf24;
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+.proposal-display {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.proposal-display h4 {
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+.proposal-content {
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+.proposal-content h4,
+.proposal-content h5,
+.proposal-content h6 {
+  color: #ffffff;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.proposal-content p,
+.proposal-content li {
+  color: #e5e7eb;
+  margin-bottom: 0.5rem;
+}
+
+.proposal-content strong {
+  color: #4ade80;
 }
 
 .custom-message {

@@ -45,6 +45,10 @@ const AdminLogin = ({ onClose }) => {
       return;
     }
 
+    // Capture the edited proposal text
+    const proposalTemplate = document.querySelector('.proposal-template');
+    const editedProposalText = proposalTemplate ? proposalTemplate.innerHTML : '';
+
     const totalPrice = selectedInnovasjonslag.reduce((sum, option) => sum + option.price, 0);
     const totalHours = selectedInnovasjonslag.reduce((sum, option) => sum + option.hours, 0);
     const estimatedRunningCosts = Math.round(totalPrice * 0.10); // 10% of total price
@@ -55,12 +59,13 @@ const AdminLogin = ({ onClose }) => {
       clientEmail: proposalData.clientEmail,
       clientContact: proposalData.clientContact,
       customMessage: proposalData.customMessage,
+      editedProposalText,
       selectedServices: selectedInnovasjonslag,
       totalPrice,
       totalHours,
       estimatedRunningCosts,
       generatedAt: new Date().toLocaleDateString('nb-NO'),
-      shareLink: `${window.location.origin}/quote/${Date.now()}`
+      shareLink: `${window.location.origin}/Command-Center/quote/${Date.now()}`
     };
     
     setGeneratedQuote(quote);
@@ -251,31 +256,15 @@ const AdminLogin = ({ onClose }) => {
                   </div>
                 </div>
 
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="clientContact">Kontaktperson</label>
-                    <input
-                      type="text"
-                      id="clientContact"
-                      value={proposalData.clientContact}
-                      onChange={(e) => setProposalData({...proposalData, clientContact: e.target.value})}
-                      placeholder="Navn på kontaktperson"
-                    />
-                  </div>
-                  
-                  <div className="form-group">
-                    <label htmlFor="projectScope">Prosjektomfang</label>
-                    <select
-                      id="projectScope"
-                      value={proposalData.projectScope}
-                      onChange={(e) => setProposalData({...proposalData, projectScope: e.target.value})}
-                    >
-                      <option value="full">Full pakke</option>
-                      <option value="landing-pages">Kun landing pages</option>
-                      <option value="ai-campaigns">Kun AI-kampanjer</option>
-                      <option value="custom">Tilpasset løsning</option>
-                    </select>
-                  </div>
+                <div className="form-group">
+                  <label htmlFor="clientContact">Kontaktperson</label>
+                  <input
+                    type="text"
+                    id="clientContact"
+                    value={proposalData.clientContact}
+                    onChange={(e) => setProposalData({...proposalData, clientContact: e.target.value})}
+                    placeholder="Navn på kontaktperson"
+                  />
                 </div>
 
                 <div className="form-group">
@@ -321,8 +310,8 @@ const AdminLogin = ({ onClose }) => {
                 </div>
 
                 <div className="form-group">
-                  <label>Forslagstekst</label>
-                  <div className="proposal-template">
+                  <label>Forslagstekst (Redigerbar)</label>
+                  <div className="proposal-template" contentEditable="true" suppressContentEditableWarning={true}>
                     <h4>Forslag for Digital Vekst & AI-Drevet Lead Generering</h4>
                     
                     <div className="proposal-section">
@@ -353,7 +342,7 @@ const AdminLogin = ({ onClose }) => {
                         </ul>
                       </div>
 
-                      <div className="scope-item">
+                      <div className="proposal-section">
                         <h6>AI-Drevet Lead Generering</h6>
                         <ul>
                           <li>Oppsett og optimalisering av AI-drevne annonsekampanjer.</li>
@@ -362,7 +351,7 @@ const AdminLogin = ({ onClose }) => {
                         </ul>
                       </div>
 
-                      <div className="scope-item">
+                      <div className="proposal-section">
                         <h6>CRM Integrasjon</h6>
                         <ul>
                           <li>Sikre full kompatibilitet med din CRM.</li>
@@ -370,7 +359,7 @@ const AdminLogin = ({ onClose }) => {
                         </ul>
                       </div>
 
-                      <div className="scope-item">
+                      <div className="proposal-section">
                         <h6>Rapportering & Optimalisering</h6>
                         <ul>
                           <li>Tilpassede dashboards med KPIer.</li>
@@ -467,7 +456,6 @@ const AdminLogin = ({ onClose }) => {
                   <p className="quote-contact">Kontaktperson: {generatedQuote.clientContact}</p>
                 )}
                 <p className="quote-id">Tilbuds-ID: {generatedQuote.id}</p>
-                <p className="quote-date">Generert: {generatedQuote.generatedAt}</p>
               </div>
 
               <div className="selected-services">
@@ -500,6 +488,16 @@ const AdminLogin = ({ onClose }) => {
                   <span className="running-costs-price">{generatedQuote.estimatedRunningCosts.toLocaleString()} NOK</span>
                 </div>
               </div>
+
+              {generatedQuote.editedProposalText && (
+                <div className="proposal-display">
+                  <h4>Forslagstekst:</h4>
+                  <div 
+                    className="proposal-content"
+                    dangerouslySetInnerHTML={{ __html: generatedQuote.editedProposalText }}
+                  />
+                </div>
+              )}
 
               {generatedQuote.customMessage && (
                 <div className="custom-message">
