@@ -237,7 +237,7 @@
 }
 
 .share-button {
-  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+  background: linear-gradient(135deg, #eab20b 0%, #d4a009 100%);
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -251,7 +251,7 @@
 
 .share-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(74, 222, 128, 0.3);
+  box-shadow: 0 10px 25px rgba(234, 178, 11, 0.3);
 }
 
 .success-message {
@@ -320,9 +320,9 @@
 }
 
 .action-button {
-  background: rgba(102, 126, 234, 0.1);
-  border: 1px solid rgba(102, 126, 234, 0.3);
-  color: #a5b4fc;
+  background: rgba(234, 178, 11, 0.1);
+  border: 1px solid rgba(234, 178, 11, 0.3);
+  color: #eab20b;
   padding: 0.5rem 1rem;
   border-radius: 6px;
   font-size: 0.9rem;
@@ -332,9 +332,9 @@
 }
 
 .action-button:hover {
-  background: rgba(102, 126, 234, 0.2);
-  border-color: rgba(102, 126, 234, 0.5);
-  color: #c7d2fe;
+  background: rgba(234, 178, 11, 0.2);
+  border-color: rgba(234, 178, 11, 0.5);
+  color: #d4a009;
 }
 
 /* Mobile Responsiveness */

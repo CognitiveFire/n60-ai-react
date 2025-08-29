@@ -375,7 +375,7 @@
 }
 
 .generate-button {
-  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+  background: linear-gradient(135deg, #eab20b 0%, #d4a009 100%);
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -388,13 +388,13 @@
 
 .generate-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(74, 222, 128, 0.3);
+  box-shadow: 0 10px 25px rgba(234, 178, 11, 0.3);
 }
 
 .preview-button {
-  background: rgba(102, 126, 234, 0.1);
-  border: 1px solid rgba(102, 126, 234, 0.3);
-  color: #a5b4fc;
+  background: rgba(234, 178, 11, 0.1);
+  border: 1px solid rgba(234, 178, 11, 0.3);
+  color: #eab20b;
   padding: 1rem 2rem;
   border-radius: 8px;
   font-size: 1.1rem;
@@ -404,8 +404,8 @@
 }
 
 .preview-button:hover {
-  background: rgba(102, 126, 234, 0.2);
-  border-color: rgba(102, 126, 234, 0.5);
+  background: rgba(234, 178, 11, 0.2);
+  border-color: rgba(234, 178, 11, 0.5);
 }
 
 /* Customers Section */
@@ -465,9 +465,9 @@
 }
 
 .action-btn {
-  background: rgba(102, 126, 234, 0.1);
-  border: 1px solid rgba(102, 126, 234, 0.3);
-  color: #a5b4fc;
+  background: rgba(234, 178, 11, 0.1);
+  border: 1px solid rgba(234, 178, 11, 0.3);
+  color: #eab20b;
   padding: 0.5rem 1rem;
   border-radius: 6px;
   font-size: 0.9rem;
@@ -477,9 +477,9 @@
 }
 
 .action-btn:hover {
-  background: rgba(102, 126, 234, 0.2);
-  border-color: rgba(102, 126, 234, 0.5);
-  color: #c7d2fe;
+  background: rgba(234, 178, 11, 0.2);
+  border-color: rgba(234, 178, 11, 0.5);
+  color: #d4a009;
 }
 
 /* Templates Section */
@@ -841,9 +841,9 @@
 }
 
 .copy-link-btn {
-  background: rgba(102, 126, 234, 0.1);
-  border: 1px solid rgba(102, 126, 234, 0.3);
-  color: #a5b4fc;
+  background: rgba(234, 178, 11, 0.1);
+  border: 1px solid rgba(234, 178, 11, 0.3);
+  color: #eab20b;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   font-weight: 600;
@@ -853,8 +853,8 @@
 }
 
 .copy-link-btn:hover {
-  background: rgba(102, 126, 234, 0.2);
-  border-color: rgba(102, 126, 234, 0.5);
+  background: rgba(234, 178, 11, 0.2);
+  border-color: rgba(234, 178, 11, 0.5);
 }
 
 .share-note {
@@ -868,7 +868,7 @@
 }
 
 .share-quote-btn {
-  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+  background: linear-gradient(135deg, #eab20b 0%, #d4a009 100%);
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -881,7 +881,7 @@
 
 .share-quote-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(74, 222, 128, 0.3);
+  box-shadow: 0 10px 25px rgba(234, 178, 11, 0.3);
 }
 
 .lightbox-actions {
@@ -892,7 +892,7 @@
 }
 
 .download-pdf-btn {
-  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+  background: linear-gradient(135deg, #eab20b 0%, #d4a009 100%);
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -905,13 +905,13 @@
 
 .download-pdf-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(74, 222, 128, 0.3);
+  box-shadow: 0 10px 25px rgba(234, 178, 11, 0.3);
 }
 
 .send-email-btn {
-  background: rgba(102, 126, 234, 0.1);
-  border: 1px solid rgba(102, 126, 234, 0.3);
-  color: #a5b4fc;
+  background: rgba(234, 178, 11, 0.1);
+  border: 1px solid rgba(234, 178, 11, 0.3);
+  color: #eab20b;
   padding: 1rem 2rem;
   border-radius: 8px;
   font-weight: 600;
@@ -921,8 +921,8 @@
 }
 
 .send-email-btn:hover {
-  background: rgba(102, 126, 234, 0.2);
-  border-color: rgba(102, 126, 234, 0.5);
+  background: rgba(234, 178, 11, 0.2);
+  border-color: rgba(234, 178, 11, 0.5);
 }
 
 /* Login Lightbox */
