@@ -23,7 +23,7 @@ const AdminLogin = ({ onClose }) => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (loginForm.email === 'Admin' && loginForm.password === 'admin123') {
+    if (loginForm.email === 'admin' && loginForm.password === 'admin1234') {
       setIsLoggedIn(true);
       setLoginError('');
     } else {
@@ -47,6 +47,7 @@ const AdminLogin = ({ onClose }) => {
 
     const totalPrice = selectedInnovasjonslag.reduce((sum, option) => sum + option.price, 0);
     const totalHours = selectedInnovasjonslag.reduce((sum, option) => sum + option.hours, 0);
+    const estimatedRunningCosts = Math.round(totalPrice * 0.10); // 10% of total price
     
     const quote = {
       id: `N60-${Date.now()}`,
@@ -57,6 +58,7 @@ const AdminLogin = ({ onClose }) => {
       selectedServices: selectedInnovasjonslag,
       totalPrice,
       totalHours,
+      estimatedRunningCosts,
       generatedAt: new Date().toLocaleDateString('nb-NO'),
       shareLink: `${window.location.origin}/quote/${Date.now()}`
     };
@@ -79,50 +81,50 @@ const AdminLogin = ({ onClose }) => {
   const allServices = [
     {
       id: 'chat-voice-bots',
-      name: 'Chat/Voice/Help Bots',
-      description: 'Embedded chat + optional voice agent integration',
+      name: 'Chat/Voice/Hjelpeboter',
+      description: 'Integrerte chat + valgfri stemmeagent-integrasjon',
       price: 15000,
       hours: 25
     },
     {
       id: 'smart-forms-landing',
       name: 'Smart Forms & Landing Pages',
-      description: 'Adaptive forms, conversion optimisation',
+      description: 'Adaptive skjemaer, konverteringsoptimalisering',
       price: 12000,
       hours: 20
     },
     {
       id: 'whatsapp-social',
-      name: 'WhatsApp / Social Campaigns',
-      description: 'Multi-channel outreach setup',
+      name: 'WhatsApp / Sosiale Kampanjer',
+      description: 'Multi-kanal outreach oppsett',
       price: 15000,
       hours: 25
     },
     {
       id: 'personalised-guides',
-      name: 'Personalised Product Guides',
-      description: 'AI-generated ROI guides, PDFs/microsites',
+      name: 'Personlige Produktguider',
+      description: 'AI-genererte ROI-guider, PDFs/mikrosider',
       price: 18000,
       hours: 30
     },
     {
       id: 'augmented-content',
-      name: 'Augmented Content + Translation',
-      description: 'Campaign angle suggestions + naturalised localisation',
+      name: 'Augmentert Innhold + Oversettelse',
+      description: 'Kampanjevinkel-forslag + naturlig lokalisering',
       price: 18000,
       hours: 30
     },
     {
       id: 'predictive-insights',
-      name: 'Predictive Insights / Churn Risk',
-      description: 'Forecasting dashboards, account health recommendations',
+      name: 'Prediktive Innblikk / Churn Risiko',
+      description: 'Prognose-dashboards, kontohelse-anbefalinger',
       price: 21000,
       hours: 35
     },
     {
       id: 'event-pipeline',
-      name: 'Event-to-Pipeline Automation',
-      description: 'AI bridging events to CRM follow-up',
+      name: 'Event-til-Pipeline Automatisering',
+      description: 'AI-bro mellom events og CRM-oppfølging',
       price: 24000,
       hours: 40
     }
@@ -321,69 +323,69 @@ const AdminLogin = ({ onClose }) => {
                 <div className="form-group">
                   <label>Forslagstekst</label>
                   <div className="proposal-template">
-                    <h4>Proposal for Digital Growth & AI-Powered Lead Generation</h4>
+                    <h4>Forslag for Digital Vekst & AI-Drevet Lead Generering</h4>
                     
                     <div className="proposal-section">
-                      <h5>1. Introduction</h5>
-                      <p>This proposal outlines how N60.ai will accelerate digital growth and generate high-quality leads for <strong>[{proposalData.clientCompany || 'Client Company'}]</strong>. By combining AI-powered tools, smart landing pages, and targeted campaigns, we deliver measurable results while ensuring seamless integration with your existing systems.</p>
+                      <h5>1. Introduksjon</h5>
+                      <p>Dette forslaget beskriver hvordan N60.ai vil akselerere digital vekst og generere høykvalitets leads for <strong>[{proposalData.clientCompany || 'Kunde'}]</strong>. Ved å kombinere AI-drevne verktøy, smarte landingssider og målrettede kampanjer, leverer vi målbare resultater samtidig som vi sikrer sømløs integrasjon med dine eksisterende systemer.</p>
                     </div>
 
                     <div className="proposal-section">
-                      <h5>2. Objectives</h5>
+                      <h5>2. Mål</h5>
                       <ul>
-                        <li>Increase qualified lead flow through AI-driven marketing.</li>
-                        <li>Create smart landing pages and content pages optimised for conversion.</li>
-                        <li>Deploy a hybrid salesbot with live agent handover.</li>
-                        <li>Integrate the solution with your existing CRM to streamline lead management.</li>
-                        <li>Provide measurable reporting and ongoing optimisation.</li>
+                        <li>Øke kvalifisert lead-strøm gjennom AI-drevet markedsføring.</li>
+                        <li>Skape smarte landingssider og innholdssider optimalisert for konvertering.</li>
+                        <li>Implementere hybrid salesbot med live agent overlevering.</li>
+                        <li>Integrere løsningen med din eksisterende CRM for å strømlinjeform lead-håndtering.</li>
+                        <li>Gi målbare rapporter og kontinuerlig optimalisering.</li>
                       </ul>
                     </div>
 
                     <div className="proposal-section">
-                      <h5>3. Scope of Work</h5>
+                      <h5>3. Arbeidsomfang</h5>
                       
                       <div className="scope-item">
-                        <h6>Smart Landing Pages & Content Pages</h6>
+                        <h6>Smarte Landingssider & Innholdssider</h6>
                         <ul>
-                          <li>Design and build conversion-focused landing pages.</li>
-                          <li>Integrate hybrid salesbot (AI chat + human agent handover).</li>
-                          <li>Connect directly to your CRM for seamless lead capture.</li>
+                          <li>Design og bygging av konverteringsfokuserte landingssider.</li>
+                          <li>Integrering av hybrid salesbot (AI-chat + menneskelig agent overlevering).</li>
+                          <li>Direkte tilkobling til din CRM for sømløs lead-fangst.</li>
                         </ul>
                       </div>
 
                       <div className="scope-item">
-                        <h6>AI-Powered Lead Generation</h6>
+                        <h6>AI-Drevet Lead Generering</h6>
                         <ul>
-                          <li>Setup and optimisation of AI-driven ad campaigns.</li>
-                          <li>Automated content suggestions for blogs & newsletters.</li>
-                          <li>Predictive lead scoring and follow-up automation.</li>
+                          <li>Oppsett og optimalisering av AI-drevne annonsekampanjer.</li>
+                          <li>Automatiserte innholdsforslag for blogger og nyhetsbrev.</li>
+                          <li>Prediktiv lead scoring og oppfølgingsautomatisering.</li>
                         </ul>
                       </div>
 
                       <div className="scope-item">
-                        <h6>CRM Integration</h6>
+                        <h6>CRM Integrasjon</h6>
                         <ul>
-                          <li>Ensure full compatibility with your CRM.</li>
-                          <li>Setup of automated workflows for lead nurturing.</li>
+                          <li>Sikre full kompatibilitet med din CRM.</li>
+                          <li>Oppsett av automatiserte arbeidsflyter for lead-oppfølging.</li>
                         </ul>
                       </div>
 
                       <div className="scope-item">
-                        <h6>Reporting & Optimisation</h6>
+                        <h6>Rapportering & Optimalisering</h6>
                         <ul>
-                          <li>Custom dashboards with KPIs.</li>
-                          <li>Monthly insights and recommendations for improvement.</li>
+                          <li>Tilpassede dashboards med KPIer.</li>
+                          <li>Månedlige innsikter og anbefalinger for forbedring.</li>
                         </ul>
                       </div>
                     </div>
 
                     <div className="proposal-section">
-                      <h5>4. Deliverables</h5>
+                      <h5>4. Leveranser</h5>
                       <ul>
-                        <li>2–3 Smart Landing Pages with hybrid salesbot + CRM integration.</li>
-                        <li>AI campaign setup and optimisation.</li>
-                        <li>Automated reporting dashboard.</li>
-                        <li>Monthly optimisation and support.</li>
+                        <li>2–3 Smarte Landingssider med hybrid salesbot + CRM integrasjon.</li>
+                        <li>AI kampanje oppsett og optimalisering.</li>
+                        <li>Automatisert rapporteringsdashboard.</li>
+                        <li>Månedlig optimalisering og støtte.</li>
                       </ul>
                     </div>
                   </div>
@@ -492,6 +494,10 @@ const AdminLogin = ({ onClose }) => {
                 <div className="total-row">
                   <span>Total Tid:</span>
                   <span className="total-hours">{generatedQuote.totalHours} timer</span>
+                </div>
+                <div className="total-row running-costs">
+                  <span>Estimert Driftskostnader (10%):</span>
+                  <span className="running-costs-price">{generatedQuote.estimatedRunningCosts.toLocaleString()} NOK</span>
                 </div>
               </div>
 
