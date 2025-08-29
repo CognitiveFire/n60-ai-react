@@ -78,60 +78,53 @@ const AdminLogin = ({ onClose }) => {
 
   const allServices = [
     {
-      id: 'ai-marketing',
-      name: 'AI-Drevet Markedsføring',
-      description: 'Automatiserte kampanjer med prediktiv analyse og optimalisering',
+      id: 'chat-voice-bots',
+      name: 'Chat/Voice/Help Bots',
+      description: 'Embedded chat + optional voice agent integration',
       price: 15000,
-      hours: 30
-    },
-    {
-      id: 'smart-landing-pages',
-      name: 'Smart Landing Pages',
-      description: 'Høykonverterende landingssider med AI-optimalisering',
-      price: 12000,
       hours: 25
     },
     {
-      id: 'salesbot',
-      name: 'Hybrid Salesbot',
-      description: 'AI-chat med live agent overlevering for bedre kundeservice',
-      price: 18000,
-      hours: 35
-    },
-    {
-      id: 'crm-integration',
-      name: 'CRM Integrasjon',
-      description: 'Seamless integrasjon med eksisterende CRM-systemer',
-      price: 8000,
-      hours: 15
-    },
-    {
-      id: 'analytics-dashboard',
-      name: 'Analytics Dashboard',
-      description: 'Tilpassede dashboards med KPIer og rapportering',
-      price: 10000,
+      id: 'smart-forms-landing',
+      name: 'Smart Forms & Landing Pages',
+      description: 'Adaptive forms, conversion optimisation',
+      price: 12000,
       hours: 20
     },
     {
-      id: 'content-automation',
-      name: 'Innholdsautomatisering',
-      description: 'Automatiserte innholdsforslag for blogs og nyhetsbrev',
-      price: 9000,
-      hours: 18
+      id: 'whatsapp-social',
+      name: 'WhatsApp / Social Campaigns',
+      description: 'Multi-channel outreach setup',
+      price: 15000,
+      hours: 25
     },
     {
-      id: 'lead-scoring',
-      name: 'Lead Scoring & Nurturing',
-      description: 'Prediktiv lead scoring og automatiserte workflows',
-      price: 11000,
-      hours: 22
+      id: 'personalised-guides',
+      name: 'Personalised Product Guides',
+      description: 'AI-generated ROI guides, PDFs/microsites',
+      price: 18000,
+      hours: 30
     },
     {
-      id: 'seo-optimization',
-      name: 'SEO Optimalisering',
-      description: 'AI-drevet SEO med kontinuerlig optimalisering',
-      price: 7000,
-      hours: 14
+      id: 'augmented-content',
+      name: 'Augmented Content + Translation',
+      description: 'Campaign angle suggestions + naturalised localisation',
+      price: 18000,
+      hours: 30
+    },
+    {
+      id: 'predictive-insights',
+      name: 'Predictive Insights / Churn Risk',
+      description: 'Forecasting dashboards, account health recommendations',
+      price: 21000,
+      hours: 35
+    },
+    {
+      id: 'event-pipeline',
+      name: 'Event-to-Pipeline Automation',
+      description: 'AI bridging events to CRM follow-up',
+      price: 24000,
+      hours: 40
     }
   ];
 
