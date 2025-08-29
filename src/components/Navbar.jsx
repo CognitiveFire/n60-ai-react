@@ -17,7 +17,8 @@ const Navbar = () => {
           <a href="#innovation">Innovasjon</a>
           <a href="#how-we-work">Hvordan vi jobber</a>
           <a href="#why-ai">Hvorfor AI</a>
-          <a href="#contact">Pris</a>
+                      <a href="#contact">Pris</a>
+            <a href="#login">Admin</a>
         </nav>
         
         <div className="navbar-actions">
@@ -49,6 +50,7 @@ const Navbar = () => {
             <a href="#how-we-work" onClick={() => setMenuOpen(false)}>Hvordan vi jobber</a>
             <a href="#why-ai" onClick={() => setMenuOpen(false)}>Hvorfor AI</a>
             <a href="#contact" onClick={() => setMenuOpen(false)}>Pris</a>
+            <a href="#login" onClick={() => setMenuOpen(false)}>Admin</a>
           </nav>
         </div>
       )}
