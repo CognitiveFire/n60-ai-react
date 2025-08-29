@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Salesbot from './components/Salesbot';
 import SimpleContactForm from './components/SimpleContactForm';
-import Login from './components/Login';
+import AdminLogin from './components/AdminLogin';
 import './App.css';
 
 function App() {
@@ -1419,7 +1419,7 @@ function App() {
 
       {/* Login/Admin Section */}
       <section id="login" className="login-section">
-        <Login />
+        <AdminLogin />
       </section>
 
       <footer className="footer">
