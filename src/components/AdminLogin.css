@@ -951,9 +951,9 @@
 
 /* Login Nav Button */
 .login-nav-button {
-  background: none;
-  border: none;
-  color: #ffffff;
+  background: #eab20b;
+  border: 1px solid #eab20b;
+  color: #000000;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
@@ -965,8 +965,9 @@
 }
 
 .login-nav-button:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  background: #d4a009;
+  border-color: #d4a009;
+  color: #000000;
 }
 
 /* Proposal Template */

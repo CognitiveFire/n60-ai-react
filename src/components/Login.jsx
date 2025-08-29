@@ -19,11 +19,11 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     // Simple login validation - in production, this would connect to your backend
-    if (loginForm.email === 'admin@n60.ai' && loginForm.password === 'admin123') {
+    if (loginForm.email === 'admin' && loginForm.password === 'admin1234') {
       setIsLoggedIn(true);
       setLoginError('');
     } else {
-      setLoginError('Invalid credentials. Use admin@n60.ai / admin123 for demo.');
+      setLoginError('Invalid credentials. Use admin / admin1234 for demo.');
     }
   };
 
@@ -58,14 +58,14 @@ const Login = () => {
           
           <form onSubmit={handleLogin} className="login-form">
             <div className="form-group">
-              <label htmlFor="email">E-post</label>
+              <label htmlFor="email">Brukernavn</label>
               <input
-                type="email"
+                type="text"
                 id="email"
                 value={loginForm.email}
                 onChange={(e) => setLoginForm({...loginForm, email: e.target.value})}
                 required
-                placeholder="admin@n60.ai"
+                placeholder="admin"
               />
             </div>
             
@@ -77,7 +77,7 @@ const Login = () => {
                 value={loginForm.password}
                 onChange={(e) => setLoginForm({...loginForm, password: e.target.value})}
                 required
-                placeholder="admin123"
+                placeholder="admin1234"
               />
             </div>
             
@@ -90,8 +90,8 @@ const Login = () => {
           
           <div className="demo-credentials">
             <p><strong>Demo credentials:</strong></p>
-            <p>E-post: admin@n60.ai</p>
-            <p>Passord: admin123</p>
+            <p>Brukernavn: admin</p>
+            <p>Passord: admin1234</p>
           </div>
         </div>
       </div>
