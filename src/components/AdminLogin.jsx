@@ -594,7 +594,7 @@ const AdminLogin = ({ onClose }) => {
     <div className="admin-dashboard-page">
       <header className="dashboard-header">
         <div className="header-content">
-          <h1>N60.ai Admin Dashboard</h1>
+          <h1>Control Center</h1>
           <nav className="admin-nav">
             <button 
               className={`nav-tab ${activeTab === 'quotes' ? 'active' : ''}`}
@@ -603,23 +603,18 @@ const AdminLogin = ({ onClose }) => {
               Tilbud & Forslag
             </button>
             <button 
-              className={`nav-tab ${activeTab === 'customers' ? 'active' : ''}`}
+              className={`nav-tab customers-tab ${activeTab === 'customers' ? 'active' : ''}`}
               onClick={() => setActiveTab('customers')}
             >
               Kunder
             </button>
             <button 
-              className={`nav-tab ${activeTab === 'quotes-tracking' ? 'active' : ''}`}
+              className={`nav-tab quotes-tracking-tab ${activeTab === 'quotes-tracking' ? 'active' : ''}`}
               onClick={() => setActiveTab('quotes-tracking')}
             >
               Tilbud Tracking
             </button>
-            <button 
-              className={`nav-tab ${activeTab === 'templates' ? 'active' : ''}`}
-              onClick={() => setActiveTab('templates')}
-            >
-              Maler
-            </button>
+
           </nav>
           <button onClick={handleLogout} className="logout-button">
             Logg ut
@@ -951,15 +946,7 @@ const AdminLogin = ({ onClose }) => {
           </div>
         )}
 
-        {activeTab === 'templates' && (
-          <div className="templates-section">
-            <h2>Forslagsmaler</h2>
-            <div className="template-editor">
-              <p>Her kan du redigere og tilpasse forslagsmalene dine.</p>
-              <p>Funksjonalitet kommer snart...</p>
-            </div>
-          </div>
-        )}
+
       </main>
 
       {/* Quote Lightbox */}

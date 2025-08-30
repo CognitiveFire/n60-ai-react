@@ -188,6 +188,29 @@
   color: #ffffff;
 }
 
+/* Specific button styles */
+.nav-tab.customers-tab {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: #22c55e;
+  color: #ffffff;
+}
+
+.nav-tab.customers-tab:hover {
+  background: rgba(34, 197, 94, 0.3);
+  border-color: #16a34a;
+}
+
+.nav-tab.quotes-tracking-tab {
+  background: rgba(234, 178, 11, 0.2);
+  border-color: #eab20b;
+  color: #ffffff;
+}
+
+.nav-tab.quotes-tracking-tab:hover {
+  background: rgba(234, 178, 11, 0.3);
+  border-color: #d4a009;
+}
+
 .logout-button {
   background: rgba(239, 68, 68, 0.1);
   border: 1px solid #ef4444;
@@ -1163,18 +1186,19 @@
 }
 
 .proposal-section p {
-  color: #e5e7eb;
+  color: #ffffff;
   margin: 0 0 0.75rem 0;
   line-height: 1.5;
 }
 
 .proposal-section ul {
-  color: #e5e7eb;
+  color: #ffffff;
   margin: 0 0 0.75rem 0;
   padding-left: 1.5rem;
 }
 
 .proposal-section li {
+  color: #ffffff;
   margin-bottom: 0.5rem;
   line-height: 1.4;
 }
@@ -1191,7 +1215,7 @@
 }
 
 .proposal-template strong {
-  color: #4ade80;
+  color: #ffffff;
   font-weight: 600;
 }
 
