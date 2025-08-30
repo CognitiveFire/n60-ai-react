@@ -39,7 +39,7 @@ function AppContent() {
 
   return (
     <Routes>
-      <Route path="/quote" element={<QuotePage />} />
+      <Route path="/quote/*" element={<QuotePage />} />
       <Route path="/" element={<MainPage />} />
     </Routes>
   );
