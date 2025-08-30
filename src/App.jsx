@@ -38,14 +38,14 @@ function App() {
   const content = {
     no: {
       hero: {
-        title: "Alt du trenger for B2B-vekst",
+        title: "AI-drevet B2B-markedsføring",
         subtitle: "AI-løsninger som dekker hele reisen – fra produkt til kunde og videre til nye markeder.",
         cta: "Få et tilpasset tilbud",
         background: "https://i.ibb.co/ycfYCgMP/Hero-background.png",
         video: "https://player.vimeo.com/video/1113961370?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1&controls=1&title=0&byline=0&portrait=0&dnt=1"
       },
       solutions: {
-        title: "Alt du trenger for B2B-vekst",
+        title: "Våre løsninger",
         subtitle: "AI-løsninger som dekker hele reisen – fra produkt til kunde og videre til nye markeder.",
         cases: [
           {
@@ -1009,7 +1009,13 @@ function App() {
             {/* Innovation Modules Grid */}
             <div className="innovation-grid" data-aos="fade-up">
               {currentContent.innovation.modules.map((module, index) => (
-                <div key={index} className="innovation-card" data-aos="fade-up" data-aos-delay={index * 100}>
+                <div 
+                  key={index} 
+                  className="innovation-card" 
+                  data-aos="fade-up" 
+                  data-aos-delay={index * 100}
+                  data-lane={selectedLane}
+                >
                   <div className="innovation-image">
                     <img src={module.dashboard} alt={module.title} />
                   </div>
