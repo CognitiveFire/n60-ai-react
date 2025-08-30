@@ -302,8 +302,8 @@ function App() {
           companySizeTitle: "Selskap",
           companySizeSubtitle: "Hvor mange ansatte har dere?",
           companySizeExplanation: "Vi trenger denne informasjonen for å tilpasse løsningen til deres behov og forberede et personlig møte.",
-          step1Title: "Velg hovedutfordring",
-          step1Subtitle: "Hva er din hovedutfordring innen markedsføring i dag?",
+          step1Title: "Få ditt personlige pristilbud",
+          step1Subtitle: "Velg dine viktigste behov – vi setter sammen en løsning og pris som passer din vekststrategi",
           step2Title: "Dine hovedutfordringer",
           step2Subtitle: "Hva er de største utfordringene for bedriften?",
           step3Title: "Innovasjoner",
@@ -1137,7 +1137,15 @@ function App() {
                   {currentStep === 1 && (
                     <div className="form-step">
                       <div className="step-header">
-                        <span className="step-indicator">{currentContent.contact.form.stepIndicator} 1 {currentContent.contact.form.of} 5</span>
+                        <div className="stepper-container">
+                          <div className="stepper">
+                            {[1, 2, 3, 4, 5].map((step) => (
+                              <div key={step} className={`stepper-dot ${step === 1 ? 'active' : ''}`}>
+                                {step === 1 && <span className="step-number">1</span>}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                         <h3>{currentContent.contact.form.step1Title}</h3>
                         <p>{currentContent.contact.form.step1Subtitle}</p>
                       </div>
@@ -1153,7 +1161,16 @@ function App() {
                               onChange={(e) => handleSelectionChange('challenge', e.target.value)}
                             />
                             <div className="card-content">
-                              <h4>{module.name}</h4>
+                              <div className="card-icon">
+                                {module.id === 'product-marketing' && '📢'}
+                                {module.id === 'lead-generation' && '🔄'}
+                                {module.id === 'market-expansion' && '🌍'}
+                              </div>
+                              <h4>
+                                {module.name.split(' ').map((word, index) => 
+                                  word === 'AI' ? <span key={index} className="accent-text">{word}</span> : word
+                                ).reduce((prev, curr) => [prev, ' ', curr])}
+                              </h4>
                               <p>{module.description}</p>
                             </div>
                           </label>
