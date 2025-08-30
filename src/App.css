@@ -1469,16 +1469,44 @@ body, html {
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #000000;
+  color: #000000 !important;
   line-height: 1.2;
 }
 
 .section-header p {
   font-size: 1.25rem;
-  color: #666666;
+  color: #666666 !important;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
+}
+
+/* Ensure section headers have proper contrast on light backgrounds */
+.solutions-section .section-header h2,
+.solutions-section .section-header p,
+.what-is-section .section-header h2,
+.what-is-section .section-header p,
+.value-section .section-header h2,
+.value-section .section-header p,
+.how-it-works-section .section-header h2,
+.how-it-works-section .section-header p,
+.how-we-work-section .section-header h2,
+.how-we-work-section .section-header p,
+.why-ai-section .section-header h2,
+.why-ai-section .section-header p,
+.why-n60-section .section-header h2,
+.why-n60-section .section-header p {
+  color: #000000 !important;
+}
+
+.solutions-section .section-header p,
+.what-is-section .section-header p,
+.value-section .section-header p,
+.how-it-works-section .section-header p,
+.how-we-work-section .section-header p,
+.why-ai-section .section-header p,
+.why-n60-section .section-header p {
+  color: #666666 !important;
 }
 
 /* Hero Section - Styles moved to Hero.css component */
