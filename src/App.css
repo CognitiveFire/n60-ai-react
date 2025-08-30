@@ -197,7 +197,7 @@
   }
   
   .hero-section {
-    padding: 6rem 1rem 3rem;
+    padding: 4rem 1rem 2rem;
     min-height: auto;
   }
   
@@ -353,7 +353,7 @@
 .hero-section {
   background: linear-gradient(135deg, #0f1c30 0%, #363f50 100%);
   position: relative;
-  padding: 8rem 2rem 4rem;
+  padding: 6rem 2rem 4rem;
   color: #fff;
   min-height: 120vh;
   display: flex;
@@ -398,7 +398,7 @@
   width: 100%;
   position: relative;
   z-index: 3;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .hero-left {
@@ -419,7 +419,7 @@
   font-weight: 800;
   letter-spacing: -0.5px;
   margin-bottom: 2.5rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .hero-subheadline {
