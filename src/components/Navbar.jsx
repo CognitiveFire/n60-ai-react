@@ -9,7 +9,7 @@ const Navbar = ({ onLoginClick }) => {
     <nav className="navbar">
       <div className="navbar-container">
         <a href="#hero" className="navbar-brand">
-          <img src="/images/logo.png" alt="N60 Logo" className="navbar-logo" />
+          <img src="https://i.ibb.co/vCcJ11RK/logo.png" alt="N60 Logo" className="navbar-logo" />
         </a>
         
         <nav className="navbar-nav">
