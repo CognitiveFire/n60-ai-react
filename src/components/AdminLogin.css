@@ -818,18 +818,21 @@
 
 .quote-summary {
   margin-bottom: 2rem;
+  padding: 1.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
 }
 
 .quote-summary h3 {
-  color: #ffffff;
+  color: #000000;
   margin: 0 0 0.5rem 0;
   font-size: 1.5rem;
 }
 
 .quote-id, .quote-contact {
-  color: #ffffff;
+  color: #000000;
   margin: 0.25rem 0;
   font-size: 0.9rem;
 }
