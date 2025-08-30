@@ -229,6 +229,130 @@
   font-size: 1.1rem;
 }
 
+/* Stepper Styles */
+.stepper-container {
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.stepper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto;
+  max-width: 300px;
+}
+
+.stepper-dot {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.stepper-dot.active {
+  border-color: #eab20b;
+  background: #eab20b;
+  box-shadow: 0 0 20px rgba(234, 178, 11, 0.4);
+}
+
+.step-number {
+  color: #000000;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.stepper-dot:not(.active)::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+
+/* Pricing Table Styles */
+.pricing-table-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pricing-table th {
+  font-weight: 600;
+  color: #eab20b;
+  font-size: 1rem;
+}
+
+.pricing-table td {
+  color: #ffffff;
+}
+
+.pricing-table td[contenteditable="true"]:focus {
+  outline: 2px solid #eab20b;
+  background: rgba(234, 178, 11, 0.1);
+  border-radius: 4px;
+}
+
+.pricing-table .total-row {
+  background: rgba(234, 178, 11, 0.1);
+  font-weight: 600;
+}
+
+.pricing-table .total-row td {
+  color: #eab20b;
+  border-bottom: none;
+}
+
+.editable-hours {
+  display: inline-block;
+  min-width: 20px;
+}
+
+.hours-adjust-btn {
+  background: rgba(234, 178, 11, 0.2);
+  border: 1px solid #eab20b;
+  color: #eab20b;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.hours-adjust-btn:hover {
+  background: rgba(234, 178, 11, 0.3);
+  transform: scale(1.1);
+}
+
 /* Template Selection */
 .template-selection {
   margin-bottom: 3rem;

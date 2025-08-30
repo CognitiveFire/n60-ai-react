@@ -309,6 +309,15 @@ const AdminLogin = ({ onClose }) => {
         {activeTab === 'quotes' && (
           <div className="quotes-section">
             <div className="section-header">
+              <div className="stepper-container">
+                <div className="stepper">
+                  {[1, 2, 3].map((step) => (
+                    <div key={step} className={`stepper-dot ${step === 1 ? 'active' : ''}`}>
+                      {step === 1 && <span className="step-number">1</span>}
+                    </div>
+                  ))}
+                </div>
+              </div>
               <h2>Generer profesjonelle forslag</h2>
               <p>Velg en mal og tilpass den til din kunde</p>
             </div>
@@ -468,6 +477,59 @@ const AdminLogin = ({ onClose }) => {
                         <li>Månedlig optimalisering og støtte.</li>
                       </ul>
                     </div>
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label>Prisoverslag (Redigerbar)</label>
+                  <div className="pricing-table-container">
+                    <table className="pricing-table">
+                      <thead>
+                        <tr>
+                          <th>Activity</th>
+                          <th>Estimated Hours</th>
+                          <th>Rate</th>
+                          <th>Price (NOK)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td contentEditable="true">Discovery & Strategy</td>
+                          <td contentEditable="true">10</td>
+                          <td contentEditable="true">500</td>
+                          <td contentEditable="true">5,000</td>
+                        </tr>
+                        {selectedInnovasjonslag.map((service) => (
+                          <tr key={service.id}>
+                            <td contentEditable="true">{service.name}</td>
+                            <td contentEditable="true">{service.hours}</td>
+                            <td contentEditable="true">500</td>
+                            <td contentEditable="true">{(service.hours * 500).toLocaleString()}</td>
+                          </tr>
+                        ))}
+                        <tr>
+                          <td contentEditable="true">Reporting Dashboard Setup</td>
+                          <td contentEditable="true">10</td>
+                          <td contentEditable="true">500</td>
+                          <td contentEditable="true">5,000</td>
+                        </tr>
+                        <tr>
+                          <td contentEditable="true">Monthly Optimisation & Support (per month)</td>
+                          <td contentEditable="true">
+                            <span className="editable-hours">10</span>
+                            <button className="hours-adjust-btn" onClick={() => handleHoursAdjustment('monthly')}>▼</button>
+                          </td>
+                          <td contentEditable="true">500</td>
+                          <td contentEditable="true">5,000</td>
+                        </tr>
+                        <tr className="total-row">
+                          <td><strong>Total</strong></td>
+                          <td><strong>{calculateTotalHours()}</strong></td>
+                          <td></td>
+                          <td><strong>{calculateTotalPrice().toLocaleString()} NOK</strong></td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
 
@@ -652,6 +714,22 @@ const AdminLogin = ({ onClose }) => {
       )}
     </div>
   );
+
+  // Helper functions for pricing table
+  const calculateTotalHours = () => {
+    const selectedHours = selectedInnovasjonslag.reduce((total, service) => total + service.hours, 0);
+    return selectedHours + 30; // Discovery & Strategy (10) + Reporting Dashboard (10) + Monthly Support (10)
+  };
+
+  const calculateTotalPrice = () => {
+    const selectedPrice = selectedInnovasjonslag.reduce((total, service) => total + (service.hours * 500), 0);
+    return selectedPrice + 15000; // Discovery & Strategy (5000) + Reporting Dashboard (5000) + Monthly Support (5000)
+  };
+
+  const handleHoursAdjustment = (type) => {
+    // This function can be expanded to handle hours adjustment for monthly support
+    console.log('Hours adjustment for:', type);
+  };
 };
 
 export default AdminLogin;
