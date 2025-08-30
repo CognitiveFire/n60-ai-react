@@ -856,13 +856,13 @@
 }
 
 .service-info h5 {
-  color: #ffffff;
+  color: #000000;
   margin: 0 0 0.5rem 0;
   font-size: 1rem;
 }
 
 .service-info p {
-  color: #ffffff;
+  color: #000000;
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.4;
@@ -876,13 +876,13 @@
 }
 
 .service-price {
-  color: #ffffff;
+  color: #000000;
   font-weight: 600;
   font-size: 1rem;
 }
 
 .service-hours {
-  color: #ffffff;
+  color: #000000;
   font-size: 0.8rem;
 }
 
@@ -906,18 +906,18 @@
 }
 
 .total-row span:first-child {
-  color: #ffffff;
+  color: #000000;
   font-weight: 500;
 }
 
 .total-price {
-  color: #ffffff;
+  color: #000000;
   font-size: 1.5rem;
   font-weight: 700;
 }
 
 .total-hours {
-  color: #ffffff;
+  color: #000000;
   font-weight: 600;
 }
 
@@ -928,13 +928,13 @@
 }
 
 .running-costs-price {
-  color: #ffffff;
+  color: #000000;
   font-size: 1.2rem;
   font-weight: 700;
 }
 
 .mva-price {
-  color: #ffffff;
+  color: #000000;
   font-size: 1.1rem;
   font-weight: 600;
 }
