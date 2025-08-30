@@ -823,13 +823,13 @@
 }
 
 .quote-summary h3 {
-  color: #000000;
+  color: #ffffff;
   margin: 0 0 0.5rem 0;
   font-size: 1.5rem;
 }
 
 .quote-id, .quote-contact {
-  color: #000000;
+  color: #ffffff;
   margin: 0.25rem 0;
   font-size: 0.9rem;
 }
@@ -856,13 +856,13 @@
 }
 
 .service-info h5 {
-  color: #000000;
+  color: #ffffff;
   margin: 0 0 0.5rem 0;
   font-size: 1rem;
 }
 
 .service-info p {
-  color: #000000;
+  color: #ffffff;
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.4;
@@ -876,13 +876,13 @@
 }
 
 .service-price {
-  color: #000000;
+  color: #ffffff;
   font-weight: 600;
   font-size: 1rem;
 }
 
 .service-hours {
-  color: #000000;
+  color: #ffffff;
   font-size: 0.8rem;
 }
 
@@ -906,18 +906,18 @@
 }
 
 .total-row span:first-child {
-  color: #000000;
+  color: #ffffff;
   font-weight: 500;
 }
 
 .total-price {
-  color: #000000;
+  color: #ffffff;
   font-size: 1.5rem;
   font-weight: 700;
 }
 
 .total-hours {
-  color: #000000;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -928,13 +928,13 @@
 }
 
 .running-costs-price {
-  color: #000000;
+  color: #ffffff;
   font-size: 1.2rem;
   font-weight: 700;
 }
 
 .mva-price {
-  color: #000000;
+  color: #ffffff;
   font-size: 1.1rem;
   font-weight: 600;
 }
@@ -954,31 +954,31 @@
 }
 
 .proposal-display h4 {
-  color: #000000;
+  color: #ffffff;
   margin: 0 0 1rem 0;
   font-size: 1.1rem;
 }
 
 .proposal-content {
-  color: #000000;
+  color: #ffffff;
   line-height: 1.6;
 }
 
 .proposal-content h4,
 .proposal-content h5,
 .proposal-content h6 {
-  color: #000000;
+  color: #ffffff;
   margin: 1rem 0 0.5rem 0;
 }
 
 .proposal-content p,
 .proposal-content li {
-  color: #000000;
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
 .proposal-content strong {
-  color: #000000;
+  color: #ffffff;
 }
 
 .custom-message {
@@ -990,13 +990,13 @@
 }
 
 .custom-message h4 {
-  color: #000000;
+  color: #ffffff;
   margin: 0 0 0.75rem 0;
   font-size: 1.1rem;
 }
 
 .custom-message p {
-  color: #000000;
+  color: #ffffff;
   margin: 0;
   line-height: 1.5;
 }
@@ -1006,7 +1006,7 @@
 }
 
 .share-section h4 {
-  color: #000000;
+  color: #ffffff;
   margin: 0 0 1rem 0;
   font-size: 1.1rem;
 }
@@ -1021,7 +1021,7 @@
   flex: 1;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #000000;
+  color: #ffffff;
   padding: 0.75rem;
   border-radius: 8px;
   font-size: 0.9rem;
@@ -1045,7 +1045,7 @@
 }
 
 .share-note {
-  color: #000000;
+  color: #ffffff;
   font-size: 0.8rem;
   margin: 0;
 }
