@@ -212,12 +212,12 @@
   padding: 2rem;
 }
 
-/* Ensure black text in quotes section */
+/* Ensure white text for main section headers */
 .quotes-section .section-header h2,
 .quotes-section .section-header p,
 .quotes-section .template-selection h3,
 .quotes-section .template-selection p {
-  color: #000000 !important;
+  color: #ffffff !important;
 }
 
 .section-header {
@@ -229,11 +229,11 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: #000000 !important;
+  color: #ffffff !important;
 }
 
 .section-header p {
-  color: #000000 !important;
+  color: #ffffff !important;
   font-size: 1.1rem;
 }
 
@@ -301,7 +301,7 @@
   width: 100%;
   min-width: 800px;
   border-collapse: collapse;
-  color: #ffffff;
+  color: #000000;
   font-size: 0.9rem;
   background: rgba(255, 255, 255, 0.95);
 }
@@ -390,7 +390,7 @@
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #000000 !important;
+  color: #ffffff !important;
 }
 
 .template-grid {
@@ -464,7 +464,7 @@
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #000000;
+  color: #ffffff;
 }
 
 .customer-form {
@@ -833,13 +833,13 @@
 }
 
 .service-info h5 {
-  color: #ffffff;
+  color: #000000;
   margin: 0 0 0.5rem 0;
   font-size: 1rem;
 }
 
 .service-info p {
-  color: #e5e7eb;
+  color: #000000;
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.4;
@@ -853,13 +853,13 @@
 }
 
 .service-price {
-  color: #4ade80;
+  color: #000000;
   font-weight: 600;
   font-size: 1rem;
 }
 
 .service-hours {
-  color: #a5b4fc;
+  color: #000000;
   font-size: 0.8rem;
 }
 
@@ -883,18 +883,18 @@
 }
 
 .total-row span:first-child {
-  color: #e5e7eb;
+  color: #000000;
   font-weight: 500;
 }
 
 .total-price {
-  color: #4ade80;
+  color: #000000;
   font-size: 1.5rem;
   font-weight: 700;
 }
 
 .total-hours {
-  color: #a5b4fc;
+  color: #000000;
   font-weight: 600;
 }
 
@@ -905,13 +905,13 @@
 }
 
 .running-costs-price {
-  color: #fbbf24;
+  color: #000000;
   font-size: 1.2rem;
   font-weight: 700;
 }
 
 .mva-price {
-  color: #ef4444;
+  color: #000000;
   font-size: 1.1rem;
   font-weight: 600;
 }
@@ -931,31 +931,31 @@
 }
 
 .proposal-display h4 {
-  color: #ffffff;
+  color: #000000;
   margin: 0 0 1rem 0;
   font-size: 1.1rem;
 }
 
 .proposal-content {
-  color: #e5e7eb;
+  color: #000000;
   line-height: 1.6;
 }
 
 .proposal-content h4,
 .proposal-content h5,
 .proposal-content h6 {
-  color: #ffffff;
+  color: #000000;
   margin: 1rem 0 0.5rem 0;
 }
 
 .proposal-content p,
 .proposal-content li {
-  color: #e5e7eb;
+  color: #000000;
   margin-bottom: 0.5rem;
 }
 
 .proposal-content strong {
-  color: #4ade80;
+  color: #000000;
 }
 
 .custom-message {
@@ -967,13 +967,13 @@
 }
 
 .custom-message h4 {
-  color: #ffffff;
+  color: #000000;
   margin: 0 0 0.75rem 0;
   font-size: 1.1rem;
 }
 
 .custom-message p {
-  color: #e5e7eb;
+  color: #000000;
   margin: 0;
   line-height: 1.5;
 }
@@ -983,7 +983,7 @@
 }
 
 .share-section h4 {
-  color: #ffffff;
+  color: #000000;
   margin: 0 0 1rem 0;
   font-size: 1.1rem;
 }
@@ -998,7 +998,7 @@
   flex: 1;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+  color: #000000;
   padding: 0.75rem;
   border-radius: 8px;
   font-size: 0.9rem;
@@ -1022,7 +1022,7 @@
 }
 
 .share-note {
-  color: #a5b4fc;
+  color: #000000;
   font-size: 0.8rem;
   margin: 0;
 }
