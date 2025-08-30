@@ -86,13 +86,16 @@ const AdminLogin = ({ onClose }) => {
       mva,
       totalWithMva,
       estimatedRunningCosts,
-      generatedAt: new Date().toLocaleDateString('nb-NO'),
-      shareLink: `${window.location.origin}/quote?data=${btoa(unescape(encodeURIComponent(JSON.stringify(quoteData))))}`
+      generatedAt: new Date().toLocaleDateString('nb-NO')
     };
+    
+    // Create share link after quoteData is defined
+    const shareData = btoa(unescape(encodeURIComponent(JSON.stringify(quoteData))));
+    quoteData.shareLink = `${window.location.origin}/quote?data=${shareData}`;
     
     const quote = {
       ...quoteData,
-      shareData: btoa(unescape(encodeURIComponent(JSON.stringify(quoteData)))) // Encode quote data for sharing
+      shareData: shareData // Use the already created shareData
     };
     
     // Automatically add customer to customers list
