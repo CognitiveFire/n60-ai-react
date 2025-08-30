@@ -1192,7 +1192,15 @@ function App() {
                   {currentStep === 2 && (
                     <div className="form-step">
                       <div className="step-header">
-                        <span className="step-indicator">{currentContent.contact.form.stepIndicator} 2 {currentContent.contact.form.of} 5</span>
+                        <div className="stepper-container">
+                          <div className="stepper">
+                            {[1, 2, 3, 4, 5].map((step) => (
+                              <div key={step} className={`stepper-dot ${step === 2 ? 'active' : ''}`}>
+                                {step === 2 && <span className="step-number">2</span>}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                         <h3>{currentContent.contact.form.step2Title}</h3>
                         <p>{currentContent.contact.form.step2Subtitle}</p>
                       </div>
@@ -1256,7 +1264,15 @@ function App() {
                   {currentStep === 3 && (
                     <div className="form-step">
                       <div className="step-header">
-                        <span className="step-indicator">{currentContent.contact.form.stepIndicator} 3 {currentContent.contact.form.of} 5</span>
+                        <div className="stepper-container">
+                          <div className="stepper">
+                            {[1, 2, 3, 4, 5].map((step) => (
+                              <div key={step} className={`stepper-dot ${step === 3 ? 'active' : ''}`}>
+                                {step === 3 && <span className="step-number">3</span>}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                         <h3>{currentContent.contact.form.step3Title}</h3>
                         <p>{currentContent.contact.form.step3Subtitle}</p>
                       </div>
@@ -1292,7 +1308,15 @@ function App() {
                   {currentStep === 4 && (
                     <div className="form-step">
                       <div className="step-header">
-                        <span className="step-indicator">{currentContent.contact.form.stepIndicator} 4 {currentContent.contact.form.of} 5</span>
+                        <div className="stepper-container">
+                          <div className="stepper">
+                            {[1, 2, 3, 4, 5].map((step) => (
+                              <div key={step} className={`stepper-dot ${step === 4 ? 'active' : ''}`}>
+                                {step === 4 && <span className="step-number">4</span>}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                         <h3>{currentContent.contact.form.companySizeTitle}</h3>
                         <p>{currentContent.contact.form.companySizeSubtitle}</p>
                       </div>
@@ -1352,7 +1376,15 @@ function App() {
                   {currentStep === 5 && (
                     <div className="form-step">
                       <div className="step-header">
-                        <span className="step-indicator">{currentContent.contact.form.stepIndicator} 5 {currentContent.contact.form.of} 5</span>
+                        <div className="stepper-container">
+                          <div className="stepper">
+                            {[1, 2, 3, 4, 5].map((step) => (
+                              <div key={step} className={`stepper-dot ${step === 5 ? 'active' : ''}`}>
+                                {step === 5 && <span className="step-number">5</span>}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                         <h3>{currentContent.contact.form.step5Title}</h3>
                         <p>{currentContent.contact.form.step5Subtitle}</p>
                       </div>
