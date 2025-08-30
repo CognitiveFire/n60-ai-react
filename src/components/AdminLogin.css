@@ -212,12 +212,12 @@
   padding: 2rem;
 }
 
-/* Ensure white text in quotes section */
+/* Ensure black text in quotes section */
 .quotes-section .section-header h2,
 .quotes-section .section-header p,
 .quotes-section .template-selection h3,
 .quotes-section .template-selection p {
-  color: #ffffff !important;
+  color: #000000 !important;
 }
 
 .section-header {
@@ -229,11 +229,11 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: #ffffff !important;
+  color: #000000 !important;
 }
 
 .section-header p {
-  color: #ffffff !important;
+  color: #000000 !important;
   font-size: 1.1rem;
 }
 
@@ -390,7 +390,7 @@
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #ffffff !important;
+  color: #000000 !important;
 }
 
 .template-grid {
@@ -425,7 +425,7 @@
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
-  color: #ffffff;
+  color: #000000;
 }
 
 .template-card p {
@@ -464,7 +464,7 @@
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #ffffff;
+  color: #000000;
 }
 
 .customer-form {
