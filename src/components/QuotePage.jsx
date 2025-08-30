@@ -9,14 +9,29 @@ const QuotePage = () => {
   const [accepted, setAccepted] = useState(false);
 
   useEffect(() => {
-    // Get quote data from URL parameters
+    // Get quote data from URL parameters or path
     const urlParams = new URLSearchParams(window.location.search);
     const dataParam = urlParams.get('data');
+    const pathParts = window.location.pathname.split('/');
+    
+    let quoteDataToParse = null;
     
     if (dataParam) {
+      // Handle query parameter format: /quote?data=...
+      quoteDataToParse = dataParam;
+    } else if (pathParts.length > 2 && pathParts[1] === 'quote') {
+      // Handle path format: /quote/123456789
+      // For now, we'll need to get the data from localStorage or redirect
+      // This is a fallback for the timestamp-based URLs
+      setError('Denne lenken krever tilbudsdata. Vennligst bruk den opprinnelige delingslenken.');
+      setLoading(false);
+      return;
+    }
+    
+    if (quoteDataToParse) {
       try {
         // Decode the base64 data
-        const decodedData = atob(dataParam);
+        const decodedData = atob(quoteDataToParse);
         const parsedQuote = JSON.parse(decodedData);
         console.log('Parsed quote data:', parsedQuote);
         setQuoteData(parsedQuote);
@@ -25,7 +40,7 @@ const QuotePage = () => {
         setError('Kunne ikke laste tilbudet. Vennligst sjekk lenken.');
       }
     } else {
-      setError('Ingen tilbudsdata funnet.');
+      setError('Ingen tilbudsdata funnet. Vennligst bruk den opprinnelige delingslenken.');
     }
     setLoading(false);
   }, []);

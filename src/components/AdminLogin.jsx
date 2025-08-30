@@ -87,7 +87,7 @@ const AdminLogin = ({ onClose }) => {
       totalWithMva,
       estimatedRunningCosts,
       generatedAt: new Date().toLocaleDateString('nb-NO'),
-      shareLink: `${window.location.origin}/quote/${Date.now()}`
+      shareLink: `${window.location.origin}/quote?data=${btoa(unescape(encodeURIComponent(JSON.stringify(quoteData))))}`
     };
     
     const quote = {
