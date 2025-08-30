@@ -2185,7 +2185,63 @@ body, html {
 /* Innovation Section Styles */
 .innovation-section {
   padding: 5rem 0;
-  background-color: #f9fafb;
+  background: linear-gradient(135deg, #0f1c30 0%, #363f50 100%);
+  color: #ffffff;
+}
+
+/* Innovation Lanes */
+.innovation-lanes {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.lane-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  min-width: 280px;
+  backdrop-filter: blur(10px);
+}
+
+.lane-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-4px);
+}
+
+.lane-button.active {
+  background: rgba(234, 178, 11, 0.2);
+  border-color: #eab20b;
+  box-shadow: 0 8px 25px rgba(234, 178, 11, 0.3);
+}
+
+.lane-button h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem 0;
+}
+
+.lane-button p {
+  color: #e5e7eb;
+  margin: 0;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.lane-button.active h3 {
+  color: #eab20b;
+}
+
+.lane-button.active p {
+  color: #f3f4f6;
 }
 
 .innovation-grid {
@@ -2196,22 +2252,25 @@ body, html {
 }
 
 .innovation-card {
-  background: white;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e5e7eb;
-  transition: transform 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .innovation-card:hover {
   transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
 }
 
 .innovation-image {
   height: 200px;
   overflow: hidden;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, #0f1c30 0%, #363f50 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2234,16 +2293,17 @@ body, html {
 }
 
 .innovation-content h3 {
-  color: #1f2937;
+  color: #ffffff;
   margin-bottom: 0.75rem;
   font-size: 1.3rem;
 }
 
-.innovation-content p {
-  color: #6b7280;
+.module-description {
+  color: #e5e7eb;
   margin-bottom: 1rem;
   line-height: 1.5;
   font-size: 0.95rem;
+  min-height: 4.5rem;
 }
 
 .innovation-price {
@@ -2253,8 +2313,8 @@ body, html {
 }
 
 .price {
-  background: #10b981;
-  color: white;
+  background: #eab20b;
+  color: #000000;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
   font-size: 0.9rem;
@@ -2262,9 +2322,31 @@ body, html {
 }
 
 .hours {
-  color: #6b7280;
+  color: #e5e7eb;
   font-size: 0.9rem;
   font-weight: 500;
+}
+
+/* Mobile Responsiveness for Innovation Section */
+@media (max-width: 768px) {
+  .innovation-lanes {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .lane-button {
+    min-width: 100%;
+    max-width: 400px;
+  }
+  
+  .innovation-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .innovation-card {
+    margin: 0 1rem;
+  }
 }
 
 /* How We Work Section Styles */

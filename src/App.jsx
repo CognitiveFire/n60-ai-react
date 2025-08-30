@@ -16,6 +16,7 @@ function App() {
   const [showQuote, setShowQuote] = useState(false);
   const [quoteData, setQuoteData] = useState(null);
   const [currentStep, setCurrentStep] = useState(1);
+  const [selectedLane, setSelectedLane] = useState('product-marketing');
   const [formSelections, setFormSelections] = useState({
     challenge: '',
     mainChallenge: [],
@@ -108,57 +109,121 @@ function App() {
         cta: "Ta kontakt for demo"
       },
       innovation: {
-        title: "Innovasjonslag",
-        subtitle: "Kutting-edge AI-løsninger for fremtiden",
-        features: [
+        title: "Innovasjonsmoduler",
+        subtitle: "Hos N60.ai bygger vi løsninger som kombinerer kraften i kunstig intelligens med konkret forretningsverdi. Våre innovasjonsmoduler kan settes sammen fleksibelt for å støtte tre sentrale vekstspor: produktmarkedsføring, leadgenerering og skalering/markedsutvidelse.",
+        lanes: [
           {
-            title: "AI Chat & Voice Assistants",
-            description: "Integrert chat + valgfri taleagent-integrasjon for bedre kundeservice",
-            price: 15000,
-            hours: 25,
-            dashboard: "https://i.ibb.co/B2h0pvty/A-2-D-digital-mockup-of-a-web-based-analytics-dashb.png"
+            id: "product-marketing",
+            title: "Produktmarkedsføring",
+            description: "Fokus på å fremheve produktets verdi og engasjere kunder"
           },
           {
-            title: "Smart Forms & Landing Pages",
-            description: "Adaptive skjemaer og konverteringsoptimalisering",
+            id: "lead-generation", 
+            title: "Leadgenerering",
+            description: "Automatisert lead-kvalifisering og pipeline-oppfølging"
+          },
+          {
+            id: "scaling-markets",
+            title: "Skalering og markedsutvidelse",
+            description: "Ekspansjon til nye markeder med lokalt tilpasset innhold"
+          }
+        ],
+        modules: [
+          {
+            id: "chatbots-voice",
+            title: "Chatbots og stemmeassistenter",
+            price: 15000,
+            hours: 25,
+            dashboard: "https://i.ibb.co/B2h0pvty/A-2-D-digital-mockup-of-a-web-based-analytics-dashb.png",
+            descriptions: {
+              "product-marketing": "Gi kundene en levende produktopplevelse med AI-drevne assistenter som kan forklare funksjoner, sammenligne alternativer og svare på spørsmål i sanntid.",
+              "lead-generation": "Sett opp chatbots som kvalifiserer leads automatisk, samler inn nøkkelinformasjon og kobler direkte til salgsteamet når kunden er klar for dialog.",
+              "scaling-markets": "Bruk flerspråklige stemmeassistenter for å åpne nye markeder uten behov for å bygge opp lokale kundeservice-team fra bunnen av."
+            }
+          },
+          {
+            id: "smart-forms-landing",
+            title: "SmartForms og intelligente landingssider",
             price: 12000,
             hours: 20,
-            dashboard: "https://i.ibb.co/Rf9LMwM/A-2-D-digital-dashboard-interface-screenshot-displa.png"
+            dashboard: "https://i.ibb.co/Rf9LMwM/A-2-D-digital-dashboard-interface-screenshot-displa.png",
+            descriptions: {
+              "product-marketing": "Skap interaktive skjemaer og landingssider som tilpasser seg brukerens respons, og fremhever de mest relevante produktene.",
+              "lead-generation": "Øk konverteringsraten med dynamiske skjemaer som reduserer friksjon og gjør det enkelt for kunden å ta neste steg.",
+              "scaling-markets": "Rull ut skreddersydde kampanjesider raskt i nye markeder, med AI som optimaliserer innhold og design basert på lokale preferanser."
+            }
           },
           {
-            title: "WhatsApp / Social Campaigns",
-            description: "Multi-channel outreach-oppsett på tvers av sosiale medier",
+            id: "whatsapp-social",
+            title: "WhatsApp og multikanals outreach",
             price: 15000,
             hours: 25,
-            dashboard: "https://i.ibb.co/Rk7rSvnf/A-2-D-digital-dashboard-UI-design-showcases-AI-powe.png"
+            dashboard: "https://i.ibb.co/Rk7rSvnf/A-2-D-digital-dashboard-UI-design-showcases-AI-powe.png",
+            descriptions: {
+              "product-marketing": "Engasjer kunder direkte i de kanalene de bruker mest, med oppdateringer om produktnyheter, lanseringer og bruksområder.",
+              "lead-generation": "Automatiser personlig oppfølging via WhatsApp, e-post og sosiale medier – slik at ingen leads går tapt.",
+              "scaling-markets": "Bygg en multikanals strategi som gjør at merkevaren din føles nær og tilgjengelig, uansett tidssone eller region."
+            }
           },
           {
-            title: "Personlige produktguider",
-            description: "AI-genererte ROI-guider, PDFs/mikrosider",
+            id: "personalized-content",
+            title: "Personlig innhold",
             price: 18000,
             hours: 30,
-            dashboard: "https://i.ibb.co/23ny8MsN/A-digital-graphic-displays-AI-powered-product-mark.png"
+            dashboard: "https://i.ibb.co/23ny8MsN/A-digital-graphic-displays-AI-powered-product-mark.png",
+            descriptions: {
+              "product-marketing": "Del produktguider, demoer og case-studier som treffer akkurat den situasjonen kunden befinner seg i.",
+              "lead-generation": "Send tilpassede pristilbud og innhold som bygger tillit, basert på kundens digitale atferd.",
+              "scaling-markets": "Skaler innholdsproduksjon uten å miste relevans – AI gjør det mulig å levere personlig kommunikasjon til tusenvis av kunder samtidig."
+            }
           },
           {
-            title: "Augmented Content & Translation",
-            description: "Kampanjevinkel-forslag + naturlig lokalisering",
+            id: "augmented-content",
+            title: "Augmentert innhold og lokalisering",
             price: 18000,
             hours: 30,
-            dashboard: "https://i.ibb.co/Kj1SC0Xm/A-2-D-digital-illustration-showcases-a-customer-eng.png"
+            dashboard: "https://i.ibb.co/Kj1SC0Xm/A-2-D-digital-illustration-showcases-a-customer-eng.png",
+            descriptions: {
+              "product-marketing": "Sørg for at budskapet alltid treffer kulturelt riktig, enten du lanserer i Oslo eller Singapore.",
+              "lead-generation": "Bruk AI til å raskt oversette og tilpasse kampanjer til nye språk og markeder uten å miste tone of voice.",
+              "scaling-markets": "Ta en global posisjon med lokalt tilpasset innhold som føles autentisk for hver enkelt målgruppe."
+            }
           },
           {
-            title: "Prediktive innsikter / Churn Risk",
-            description: "Forecasting-dashboards, kontohelse-anbefalinger",
+            id: "predictive-insights",
+            title: "Prediktivt salg og data-innsikt",
             price: 21000,
             hours: 35,
-            dashboard: "https://i.ibb.co/hxSZC3cQ/A-2-D-digital-image-displays-an-analytics-dashboard.png"
+            dashboard: "https://i.ibb.co/hxSZC3cQ/A-2-D-digital-image-displays-an-analytics-dashboard.png",
+            descriptions: {
+              "product-marketing": "Forstå hvilke funksjoner eller budskap som faktisk driver kjøp, og optimaliser markedsføringen deretter.",
+              "lead-generation": "Bruk prediktive modeller til å rangere leads og fokusere ressursene på de med høyest sannsynlighet for å konvertere.",
+              "scaling-markets": "Oppdag nye markedsmuligheter og trender før konkurrentene, med AI-drevet innsikt på tvers av datakilder."
+            }
           },
           {
-            title: "Event-to-Pipeline Automation",
-            description: "AI som knytter events til CRM-oppfølging",
+            id: "event-pipeline",
+            title: "Fysiske eventer til digital pipeline",
             price: 24000,
             hours: 40,
-            dashboard: "https://i.ibb.co/PZnRQJ8b/A-2-D-digital-image-of-a-marketing-campaign-analyti.png"
+            dashboard: "https://i.ibb.co/PZnRQJ8b/A-2-D-digital-image-of-a-marketing-campaign-analyti.png",
+            descriptions: {
+              "product-marketing": "Gjør messer og konferanser til en digital forlengelse av produktreisen, med live innhold og oppfølging i sanntid.",
+              "lead-generation": "Digitaliser innsamlingen av leads på events og send automatiske, personlige oppfølginger.",
+              "scaling-markets": "Bygg bro mellom fysiske og digitale aktiviteter slik at hvert event kan skaleres til å nå en global målgruppe."
+            }
+          },
+          {
+            id: "ai-seo",
+            title: "AI for SEO",
+            price: 20000,
+            hours: 30,
+            dashboard: "https://i.ibb.co/23ny8MsN/A-digital-graphic-displays-AI-powered-product-mark.png",
+            descriptions: {
+              "product-marketing": "Optimaliser produktbeskrivelser og innhold slik at de alltid er synlige der kundene søker.",
+              "lead-generation": "Bruk AI til å identifisere søketrender og lage innhold som tiltrekker kvalifisert trafikk.",
+              "scaling-markets": "Ta posisjon i nye markeder raskt ved å la AI analysere lokale søkemønstre og produsere relevant innhold."
+            }
           }
         ]
       },
@@ -926,18 +991,36 @@ function App() {
               <h2>{currentContent.innovation.title}</h2>
               <p>{currentContent.innovation.subtitle}</p>
             </div>
-            <div className="innovation-grid">
-              {currentContent.innovation.features.map((feature, index) => (
+            
+            {/* Lane Selection */}
+            <div className="innovation-lanes" data-aos="fade-up">
+              {currentContent.innovation.lanes.map((lane) => (
+                <button
+                  key={lane.id}
+                  className={`lane-button ${selectedLane === lane.id ? 'active' : ''}`}
+                  onClick={() => setSelectedLane(lane.id)}
+                >
+                  <h3>{lane.title}</h3>
+                  <p>{lane.description}</p>
+                </button>
+              ))}
+            </div>
+            
+            {/* Innovation Modules Grid */}
+            <div className="innovation-grid" data-aos="fade-up">
+              {currentContent.innovation.modules.map((module, index) => (
                 <div key={index} className="innovation-card" data-aos="fade-up" data-aos-delay={index * 100}>
                   <div className="innovation-image">
-                    <img src={feature.dashboard} alt={feature.title} />
+                    <img src={module.dashboard} alt={module.title} />
                   </div>
                   <div className="innovation-content">
-                    <h3>{feature.title}</h3>
-                    <p>{feature.description}</p>
+                    <h3>{module.title}</h3>
+                    <p className="module-description">
+                      {module.descriptions[selectedLane]}
+                    </p>
                     <div className="innovation-price">
-                      <span className="price">{feature.price} NOK</span>
-                      <span className="hours">{feature.hours}h</span>
+                      <span className="price">{module.price.toLocaleString()} NOK</span>
+                      <span className="hours">{module.hours}h</span>
                     </div>
                   </div>
                 </div>
