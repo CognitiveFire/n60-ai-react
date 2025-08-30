@@ -8,6 +8,7 @@ import SimpleContactForm from './components/SimpleContactForm';
 import AdminLogin from './components/AdminLogin';
 import QuotePage from './components/QuotePage';
 import './App.css';
+import './components/Contact.css';
 
 function App() {
   return (
