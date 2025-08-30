@@ -42,7 +42,7 @@ function App() {
         subtitle: "AI-løsninger som dekker hele reisen – fra produkt til kunde og videre til nye markeder.",
         cta: "Få et tilpasset tilbud",
         background: "https://i.ibb.co/ycfYCgMP/Hero-background.png",
-        video: "https://player.vimeo.com/video/1113961370?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1&controls=1&title=0&byline=0&portrait=0&dnt=1"
+        video: null
       },
       solutions: {
         title: "Våre løsninger",
@@ -231,6 +231,7 @@ function App() {
         title: "Din Partner for AI-Drevet Vekst",
         subtitle: "AI-drevet B2B-markedsføring for små og mellomstore bedrifter",
         description: "N60 er et Bergen-basert konsulentselskap som spesialiserer seg på AI-drevet B2B-markedsføring for små og mellomstore bedrifter. Vi kombinerer dyp markedsføringserfaring med kutting-edge AI-verktøy for å levere skalerbar vekst, forutsigbare pipelines og målbar ROI.",
+        video: "https://player.vimeo.com/video/1113961370?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=1&controls=1&title=0&byline=0&portrait=0&dnt=1",
         features: [
           "25+ års markedsføringserfaring kombinert med moderne AI-automatisering",
           "Skalerbar vekst - bygg, mål og optimaliser pipeline raskere",
@@ -1059,7 +1060,21 @@ function App() {
                 </ul>
               </div>
                               <div className="what-is-visual" data-aos="fade-left">
-                  <img src="https://i.ibb.co/fd5v2xtv/om-n60.png" alt="Om N60" className="what-is-image" />
+                  {currentContent.whatIs.video ? (
+                    <div className="what-is-video">
+                      <iframe
+                        src={currentContent.whatIs.video}
+                        title="N60 AI Marketing Demo"
+                        frameBorder="0"
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    </div>
+                  ) : (
+                    <img src="https://i.ibb.co/fd5v2xtv/om-n60.png" alt="Om N60" className="what-is-image" />
+                  )}
                 </div>
             </div>
           </div>
