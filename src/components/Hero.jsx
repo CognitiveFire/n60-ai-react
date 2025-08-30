@@ -8,7 +8,7 @@ const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
     <section id="hero" className="hero-section">
       <div className="hero-container">
         <div className="hero-left">
-          <h1 className="hero-headline">Kraftig AI-markedsføring for norske SMB</h1>
+          <h1 className="hero-headline">Kraftig AI-markedsføring for norske B2B-bedrifter</h1>
           <p className="hero-subheadline">
             N60.ai leverer målrettede AI-verktøy for markedsføring, skreddersydd for din bedrift. Ingen unødvendige funksjoner – bare løsninger som gir rask vekst og flere kunder.
           </p>
