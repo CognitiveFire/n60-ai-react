@@ -2482,9 +2482,12 @@ body, html {
 
 .why-ai-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   margin-top: 3rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .why-ai-card {
@@ -2510,6 +2513,25 @@ body, html {
 .why-ai-card p {
   color: #6b7280;
   line-height: 1.6;
+}
+
+/* Responsive breakpoints for Why AI section */
+@media (max-width: 1200px) {
+  .why-ai-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-ai-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .why-ai-card {
+    padding: 1.5rem;
+  }
 }
 
 /* Why N60 Section Styles */
