@@ -1,14 +1,23 @@
 
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Salesbot from './components/Salesbot';
 import SimpleContactForm from './components/SimpleContactForm';
 import AdminLogin from './components/AdminLogin';
+import QuotePage from './components/QuotePage';
 import './App.css';
 
 function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  );
+}
 
+function AppContent() {
   const [formStatus, setFormStatus] = useState(null);
   const [selectedModules, setSelectedModules] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -28,11 +37,35 @@ function App() {
   });
   const [showLoginLightbox, setShowLoginLightbox] = useState(false);
 
-  // Debug logging
-  console.log('Current step:', currentStep);
-          console.log('Form selections:', formSelections);
-        
-        // Version: 1.0.4 - Force fresh deployment - CSS conflicts fixed
+  return (
+    <Routes>
+      <Route path="/quote" element={<QuotePage />} />
+      <Route path="/" element={<MainPage />} />
+    </Routes>
+  );
+}
+
+function MainPage() {
+  const [formStatus, setFormStatus] = useState(null);
+  const [selectedModules, setSelectedModules] = useState([]);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalHours, setTotalHours] = useState(0);
+  const [showQuote, setShowQuote] = useState(false);
+  const [quoteData, setQuoteData] = useState(null);
+  const [currentStep, setCurrentStep] = useState(1);
+  const [selectedLane, setSelectedLane] = useState('product-marketing');
+  const [formSelections, setFormSelections] = useState({
+    challenge: '',
+    mainChallenge: [],
+    innovation: [],
+    companySize: '',
+    name: '',
+    email: '',
+    company: ''
+  });
+  const [showLoginLightbox, setShowLoginLightbox] = useState(false);
+
+  // Version: 1.0.4 - Force fresh deployment - CSS conflicts fixed
 
   // Content in Norwegian following Naeva's structure
   const content = {
@@ -607,9 +640,9 @@ function App() {
           }
         },
         pricing: {
-        title: "Pris",
-        subtitle: "Velg pakken som passer best for deg",
-        featureLabel: "Funksjon / Verdi",
+          title: "Pris",
+          subtitle: "Velg pakken som passer best for deg",
+          featureLabel: "Funksjon / Verdi",
         starter: {
           name: "Start",
           description: "For små bedrifter som trenger en grunnleggende markedsføringsverktøy."
@@ -679,12 +712,171 @@ function App() {
           }
         ],
         cta: "Ta kontakt for demo"
+      },
+      contact: {
+        title: "Få et skreddersydd tilbud",
+        subtitle: "Vår smarte skjema gir deg en personlig AI-markedsføringsløsning med detaljert prising",
+        form: {
+          name: "Navn",
+          email: "E-post",
+          company: "Bedrift",
+          challenge: "Hvilken utfordring har du?",
+          innovation: "Hvilke innovasjonsløsninger trenger du?",
+          size: "Bedriftsstørrelse",
+          market: "Målmarked",
+          timeline: "Tidsplan",
+          budget: "Budsjett",
+          submit: "Få personlig tilbud",
+          companySizeTitle: "Selskap",
+          companySizeSubtitle: "Hvor mange ansatte har dere?",
+          companySizeExplanation: "Vi trenger denne informasjonen for å tilpasse løsningen til deres behov og forberede et personlig møte.",
+          step1Title: "Få ditt personlige pristilbud",
+          step1Subtitle: "Velg dine viktigste behov – vi setter sammen en løsning og pris som passer din vekststrategi",
+          step2Title: "Dine hovedutfordringer",
+          step2Subtitle: "Hva er de største utfordringene for bedriften?",
+          step3Title: "Innovasjoner",
+          step3Subtitle: "Hvilke løsninger er mest aktuelle for din bedrift?",
+          step4Title: "Selskap",
+          step4Subtitle: "Hvor mange ansatte har dere?",
+          step5Title: "Kontakt og strategimøte",
+          step5Subtitle: "Basert på dine valg, la oss planlegge et personlig møte:",
+          readyForChat: "Klar for en strategisamtale?",
+          readyForChatSubtitle: "Vi trenger dine detaljer for å forberede et personlig møte med fullstendig prisoverslag og strategiplan.",
+          stepIndicator: "Steg",
+          of: "av",
+          back: "Tilbake",
+          next: "Neste",
+          submitButton: "Se ditt tilbud",
+          step1Button: "Fortsett",
+          step2Button: "Neste",
+          step3Button: "Neste",
+          step4Button: "Neste",
+          step5Button: "Se ditt tilbud",
+          step5Back: "Tilbake",
+          namePlaceholder: "Navn",
+          emailPlaceholder: "E-post",
+          companyPlaceholder: "Bedrift",
+          quoteTitle: "Ditt tilpassede tilbud",
+          quoteSubtitle: "Basert på dine valg",
+          quoteTotal: "Totalt",
+          quoteTimeline: "Estimert tidsplan",
+          quoteFooter1: "Dette tilbudet er sendt til din e-post og til vårt team.",
+          quoteFooter2: "Vi tar kontakt innen 24 timer for å planlegge neste steg."
+        },
+        modules: {
+          core: [
+            {
+              id: "product-marketing",
+              name: "AI for produktmarkedsføring",
+              description: "ICP-definisjon, kampanjeorkestrering, personlige funnels",
+              hours: 40,
+              price: 24000
+            },
+            {
+              id: "lead-generation", 
+              name: "AI for leadgenerering",
+              description: "Prediktiv scoring, outreach-automatisering, pipeline-dashboards",
+              hours: 45,
+              price: 27000
+            },
+            {
+              id: "market-expansion",
+              name: "AI for markedsutvidelse", 
+              description: "Markedsinnsikt, ABM light/full, lokaliseringsoppsett",
+              hours: 50,
+              price: 30000
+            }
+          ],
+          innovation: [
+            {
+              id: "chat-bots",
+              name: "Chat/Voice/Help Bots",
+              description: "Integrert chat + valgfri taleagent-integrasjon",
+              hours: 25,
+              price: 15000
+            },
+            {
+              id: "smart-forms",
+              name: "Smarte skjemaer og landingssider",
+              description: "Adaptive skjemaer, konverteringsoptimalisering",
+              hours: 20,
+              price: 12000
+            },
+            {
+              id: "whatsapp-social",
+              name: "WhatsApp / Sosiale kampanjer",
+              description: "Multi-kanal outreach-oppsett",
+              hours: 25,
+              price: 15000
+            },
+            {
+              id: "product-guides",
+              name: "Personlige produktguider",
+              description: "AI-genererte ROI-guider, PDF-er/mikrosider",
+              hours: 30,
+              price: 18000
+            },
+            {
+              id: "content-translation",
+              name: "Forsterket innhold + oversettelse",
+              description: "Kampanjevinkelforslag + naturlig lokalisering",
+              hours: 30,
+              price: 18000
+            },
+            {
+              id: "predictive-insights",
+              name: "Prediktive innsikter / Churn-risiko",
+              description: "Forecastings-dashboards, kontohverdsanbefalinger",
+              hours: 35,
+              price: 21000
+            },
+            {
+              id: "event-pipeline",
+              name: "Event-til-Pipeline-automatisering",
+              description: "AI som kobler events til CRM-oppfølging",
+              hours: 40,
+              price: 24000
+            }
+          ],
+          mainChallenges: [
+            {
+              id: "demand-generation",
+              name: "Generere etterspørsel for produktet",
+              description: "Skape interesse og etterspørsel for produktet ditt",
+              hours: 20,
+              price: 12000
+            },
+            {
+              id: "lead-engagement",
+              name: "Finne og engasjere potensielle leads",
+              description: "Identifisere og engasjere kvalifiserte leads",
+              hours: 25,
+              price: 15000
+            },
+            {
+              id: "market-expansion",
+              name: "Utvide til nye markeder",
+              description: "Ekspandere til nye geografiske områder",
+              hours: 30,
+              price: 18000
+            },
+            {
+              id: "other",
+              name: "Annet",
+              description: "Andre utfordringer",
+              hours: 15,
+              price: 9000
+            }
+          ]
+        }
       }
     }
   }
   };
 
   const currentContent = content.no;
+
+
 
   useEffect(() => {
     // AOS.init({
@@ -702,10 +894,10 @@ function App() {
     // Calculate the quote
     const quoteData = {
       ...formSelections,
-      totalPrice: totalPrice,
-      totalHours: totalHours,
-      estimatedTimeline: currentContent.contact.form.submitButton === 'Se ditt tilbud' ? '6-8 uker' : '6-8 uker',
-      monthlyRunningCosts: Math.round(totalPrice * 0.10), // 10% of total price per month
+      totalPrice: totalPrice || 0,
+      totalHours: totalHours || 0,
+      estimatedTimeline: '6-8 uker',
+      monthlyRunningCosts: Math.round((totalPrice || 0) * 0.10), // 10% of total price per month
       selectedModules: []
     };
 
@@ -948,6 +1140,12 @@ function App() {
   }, [selectedModules, totalPrice, totalHours]);
 
 
+
+  // Safety check to ensure content is loaded
+  if (!currentContent || !currentContent.contact || !currentContent.contact.form) {
+    console.log('Content not loaded yet:', { currentContent });
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
@@ -1508,31 +1706,35 @@ function App() {
                     </div>
                     
                     <div className="quote-items">
-                      {quoteData.selectedModules.map((module, index) => (
-                        <div key={index} className="quote-item">
-                          <div className="quote-item-content">
-                            <div>
-                              <h4>{module.name}</h4>
-                              <p className="quote-description">{module.description}</p>
-                            </div>
-                            <span className="quote-price">{module.price.toLocaleString()} kr</span>
-                            <div className="quote-details">
-                              <span>Estimert tid: {module.hours} timer</span>
+                      {quoteData.selectedModules && quoteData.selectedModules.length > 0 ? (
+                        quoteData.selectedModules.map((module, index) => (
+                          <div key={index} className="quote-item">
+                            <div className="quote-item-content">
+                              <div>
+                                <h4>{module.name}</h4>
+                                <p className="quote-description">{module.description}</p>
+                              </div>
+                              <span className="quote-price">{module.price?.toLocaleString() || 0} kr</span>
+                              <div className="quote-details">
+                                <span>Estimert tid: {module.hours || 0} timer</span>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      ))}
+                        ))
+                      ) : (
+                        <p>Ingen moduler valgt</p>
+                      )}
                     </div>
                     
                     <div className="quote-summary">
                       <div className="quote-total">
-                        <strong>{currentContent.contact.form.quoteTotal}: {quoteData.totalPrice.toLocaleString()} kr</strong>
+                        <strong>{currentContent.contact.form.quoteTotal}: {(quoteData.totalPrice || 0).toLocaleString()} kr</strong>
                       </div>
                       <div className="quote-timeline">
-                        <span>{currentContent.contact.form.quoteTimeline}: {quoteData.estimatedTimeline}</span>
+                        <span>{currentContent.contact.form.quoteTimeline}: {quoteData.estimatedTimeline || '6-8 uker'}</span>
                       </div>
                       <div className="quote-monthly-costs">
-                        <span>Månedlige driftskostnader (10%): {quoteData.monthlyRunningCosts.toLocaleString()} kr</span>
+                        <span>Månedlige driftskostnader (10%): {(quoteData.monthlyRunningCosts || 0).toLocaleString()} kr</span>
                       </div>
                     </div>
                     

@@ -207,9 +207,17 @@
 
 /* Dashboard Main Content */
 .dashboard-main {
-  max-width: 1400px;
+  max-width: 1800px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+/* Ensure white text in quotes section */
+.quotes-section .section-header h2,
+.quotes-section .section-header p,
+.quotes-section .template-selection h3,
+.quotes-section .template-selection p {
+  color: #ffffff !important;
 }
 
 .section-header {
@@ -221,11 +229,11 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .section-header p {
-  color: #ffffff;
+  color: #ffffff !important;
   font-size: 1.1rem;
 }
 
@@ -285,30 +293,36 @@
   margin-bottom: 2rem;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow-x: auto;
+  min-width: 100%;
 }
 
 .pricing-table {
   width: 100%;
+  min-width: 800px;
   border-collapse: collapse;
   color: #ffffff;
   font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .pricing-table th,
 .pricing-table td {
   padding: 1rem;
   text-align: left;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .pricing-table th {
   font-weight: 600;
   color: #eab20b;
   font-size: 1rem;
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .pricing-table td {
-  color: #ffffff;
+  color: #000000;
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .pricing-table td[contenteditable="true"]:focus {
@@ -318,13 +332,27 @@
 }
 
 .pricing-table .total-row {
-  background: rgba(234, 178, 11, 0.1);
+  background: rgba(234, 178, 11, 0.2);
   font-weight: 600;
 }
 
 .pricing-table .total-row td {
-  color: #eab20b;
+  color: #000000;
   border-bottom: none;
+  background: rgba(234, 178, 11, 0.2);
+}
+
+.pricing-table .mva-row td {
+  color: #000000;
+  border-bottom: none;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.pricing-table .total-with-mva-row td {
+  color: #000000;
+  border-bottom: none;
+  background: rgba(34, 197, 94, 0.2);
+  font-weight: 700;
 }
 
 .editable-hours {
@@ -362,7 +390,7 @@
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .template-grid {
@@ -719,7 +747,7 @@
   background: linear-gradient(135deg, #0f1c30 0%, #363f50 100%);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
-  max-width: 800px;
+  max-width: 1400px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
@@ -878,6 +906,18 @@
 
 .running-costs-price {
   color: #fbbf24;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.mva-price {
+  color: #ef4444;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.total-with-mva-price {
+  color: #22c55e;
   font-size: 1.2rem;
   font-weight: 700;
 }
@@ -1212,4 +1252,96 @@
   .template-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.no-customers {
+  text-align: center;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.no-customers p {
+  color: #9ca3af;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Quotes Tracking Section */
+.quotes-tracking-section h2 {
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.no-quotes {
+  text-align: center;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.no-quotes p {
+  color: #9ca3af;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.quotes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.quote-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.quote-info h4 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin: 0 0 1rem 0;
+}
+
+.quote-info p {
+  color: #e5e7eb;
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.quote-info .status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.quote-info .status.sent {
+  background: rgba(59, 130, 246, 0.2);
+  color: #60a5fa;
+}
+
+.quote-info .status.accepted {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+.quote-info .status.akseptert {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+.quote-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 150px;
 }
