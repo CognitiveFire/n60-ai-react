@@ -547,53 +547,60 @@ function App() {
             ],
             innovation: [
               {
-                id: "chat-bots",
-                name: "Chat/Voice/Help Bots",
-                description: "Integrert chat + valgfri taleagent-integrasjon",
+                id: "chatbots-voice",
+                name: "Chatbots og stemmeassistenter",
+                description: "Integrerte chat + valgfri stemmeagent-integrasjon",
                 hours: 25,
                 price: 15000
               },
               {
-                id: "smart-forms",
-                name: "Smarte skjemaer og landingssider",
+                id: "smart-forms-landing",
+                name: "SmartForms og intelligente landingssider",
                 description: "Adaptive skjemaer, konverteringsoptimalisering",
                 hours: 20,
                 price: 12000
               },
               {
                 id: "whatsapp-social",
-                name: "WhatsApp / Sosiale kampanjer",
-                description: "Multi-kanal outreach-oppsett",
+                name: "WhatsApp og multikanals outreach",
+                description: "Multi-kanal outreach oppsett",
                 hours: 25,
                 price: 15000
               },
               {
-                id: "product-guides",
-                name: "Personlige produktguider",
-                description: "AI-genererte ROI-guider, PDF-er/mikrosider",
+                id: "personalized-content",
+                name: "Personlig innhold",
+                description: "AI-genererte ROI-guider, PDFs/mikrosider",
                 hours: 30,
                 price: 18000
               },
               {
-                id: "content-translation",
-                name: "Forsterket innhold + oversettelse",
-                description: "Kampanjevinkelforslag + naturlig lokalisering",
+                id: "augmented-content",
+                name: "Augmentert innhold og lokalisering",
+                description: "Kampanjevinkel-forslag + naturlig lokalisering",
                 hours: 30,
                 price: 18000
               },
               {
                 id: "predictive-insights",
-                name: "Prediktive innsikter / Churn-risiko",
-                description: "Forecastings-dashboards, kontohverdsanbefalinger",
+                name: "Prediktivt salg og data-innsikt",
+                description: "Prognose-dashboards, kontohelse-anbefalinger",
                 hours: 35,
                 price: 21000
               },
               {
                 id: "event-pipeline",
-                name: "Event-til-Pipeline-automatisering",
-                description: "AI som kobler events til CRM-oppfølging",
+                name: "Fysiske eventer til digital pipeline",
+                description: "AI-bro mellom events og CRM-oppfølging",
                 hours: 40,
                 price: 24000
+              },
+              {
+                id: "ai-seo",
+                name: "AI for SEO",
+                description: "AI-drevet søkemotoroptimalisering og innholdsstrategi",
+                hours: 30,
+                price: 20000
               }
             ]
           }

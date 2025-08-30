@@ -169,53 +169,60 @@ const AdminLogin = ({ onClose }) => {
 
   const allServices = [
     {
-      id: 'chat-voice-bots',
-      name: 'Chat/Voice/Hjelpeboter',
+      id: 'chatbots-voice',
+      name: 'Chatbots og stemmeassistenter',
       description: 'Integrerte chat + valgfri stemmeagent-integrasjon',
       price: 15000,
       hours: 25
     },
     {
       id: 'smart-forms-landing',
-      name: 'Smart Forms & Landing Pages',
+      name: 'SmartForms og intelligente landingssider',
       description: 'Adaptive skjemaer, konverteringsoptimalisering',
       price: 12000,
       hours: 20
     },
     {
       id: 'whatsapp-social',
-      name: 'WhatsApp / Sosiale Kampanjer',
+      name: 'WhatsApp og multikanals outreach',
       description: 'Multi-kanal outreach oppsett',
       price: 15000,
       hours: 25
     },
     {
-      id: 'personalised-guides',
-      name: 'Personlige Produktguider',
+      id: 'personalized-content',
+      name: 'Personlig innhold',
       description: 'AI-genererte ROI-guider, PDFs/mikrosider',
       price: 18000,
       hours: 30
     },
     {
       id: 'augmented-content',
-      name: 'Augmentert Innhold + Oversettelse',
+      name: 'Augmentert innhold og lokalisering',
       description: 'Kampanjevinkel-forslag + naturlig lokalisering',
       price: 18000,
       hours: 30
     },
     {
       id: 'predictive-insights',
-      name: 'Prediktive Innblikk / Churn Risiko',
+      name: 'Prediktivt salg og data-innsikt',
       description: 'Prognose-dashboards, kontohelse-anbefalinger',
       price: 21000,
       hours: 35
     },
     {
       id: 'event-pipeline',
-      name: 'Event-til-Pipeline Automatisering',
+      name: 'Fysiske eventer til digital pipeline',
       description: 'AI-bro mellom events og CRM-oppfølging',
       price: 24000,
       hours: 40
+    },
+    {
+      id: 'ai-seo',
+      name: 'AI for SEO',
+      description: 'AI-drevet søkemotoroptimalisering og innholdsstrategi',
+      price: 20000,
+      hours: 30
     }
   ];
 
