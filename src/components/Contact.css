@@ -294,6 +294,19 @@
   margin-bottom: 1rem !important;
 }
 
+.quote-mva {
+  color: #666 !important;
+  font-size: 1.1rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.quote-total-with-mva {
+  font-size: 1.3rem !important;
+  color: #28a745 !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+}
+
 .quote-timeline {
   color: #666 !important;
   font-size: 1rem !important;

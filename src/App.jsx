@@ -1081,12 +1081,16 @@ function MainPage() {
   const nextStep = () => {
     if (currentStep < 5) {
       setCurrentStep(currentStep + 1);
+      // Scroll to top of the form
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   const prevStep = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1);
+      // Scroll to top of the form
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -1730,6 +1734,12 @@ function MainPage() {
                     <div className="quote-summary">
                       <div className="quote-total">
                         <strong>{currentContent.contact.form.quoteTotal}: {(quoteData.totalPrice || 0).toLocaleString()} kr</strong>
+                      </div>
+                      <div className="quote-mva">
+                        <span>MVA (25%): {Math.round((quoteData.totalPrice || 0) * 0.25).toLocaleString()} kr</span>
+                      </div>
+                      <div className="quote-total-with-mva">
+                        <strong>Totalt inkl. MVA: {Math.round((quoteData.totalPrice || 0) * 1.25).toLocaleString()} kr</strong>
                       </div>
                       <div className="quote-timeline">
                         <span>{currentContent.contact.form.quoteTimeline}: {quoteData.estimatedTimeline || '6-8 uker'}</span>
