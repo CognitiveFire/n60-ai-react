@@ -179,9 +179,9 @@
 
 /* Calendly Integration */
 .salesbot-calendly {
-  position: absolute;
-  bottom: calc(100% + 1rem);
-  right: 0;
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
   background: white;
   border-radius: 16px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
@@ -189,6 +189,7 @@
   max-height: 700px;
   overflow: hidden;
   animation: popupSlideIn 0.3s ease-out;
+  z-index: 1000;
 }
 
 .calendly-header {
@@ -199,6 +200,8 @@
   border-bottom: 1px solid #f3f4f6;
   position: relative;
   min-height: 60px;
+  z-index: 1000;
+  background: white;
 }
 
 /* Old close button styles removed - using calendly-close-button instead */
@@ -250,27 +253,29 @@
   border: none;
   width: 100%;
   height: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 /* Calendly Close Button - More Prominent */
 .calendly-close-button {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  position: fixed;
+  top: 20px;
+  right: 20px;
   background: #ef4444;
   border: 2px solid #dc2626;
   font-size: 1.5rem;
   color: #ffffff;
   cursor: pointer;
   padding: 0;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   transition: all 0.2s ease;
-  z-index: 100;
+  z-index: 9999;
   box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
   font-weight: bold;
 }
