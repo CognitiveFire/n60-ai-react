@@ -295,7 +295,7 @@
   border-radius: 16px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   z-index: 1000;
-  overflow: hidden;
+  overflow-y: auto;
   animation: slideUp 0.3s ease-out;
 }
 
@@ -329,6 +329,62 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
+/* Contact Form Field Styles */
+.salesbot-contact-form form {
+  padding: 1.5rem;
+}
+
+.salesbot-contact-form label {
+  display: block;
+  color: #000000 !important;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.salesbot-contact-form input,
+.salesbot-contact-form textarea,
+.salesbot-contact-form select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #000000 !important;
+  background: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.salesbot-contact-form input::placeholder,
+.salesbot-contact-form textarea::placeholder {
+  color: #6b7280 !important;
+}
+
+.salesbot-contact-form input:focus,
+.salesbot-contact-form textarea:focus,
+.salesbot-contact-form select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.salesbot-contact-form button[type="submit"] {
+  width: 100%;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.875rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.salesbot-contact-form button[type="submit"]:hover {
+  background: #2563eb;
+}
+
 @keyframes slideUp {
   from {
     opacity: 0;
@@ -346,5 +402,22 @@
     right: 20px;
     left: 20px;
     bottom: 80px;
+    max-height: 70vh;
+  }
+  
+  .salesbot-contact-form form {
+    padding: 1rem;
+  }
+  
+  .salesbot-contact-form input,
+  .salesbot-contact-form textarea,
+  .salesbot-contact-form select {
+    padding: 0.625rem;
+    font-size: 0.875rem;
+  }
+  
+  .salesbot-contact-form button[type="submit"] {
+    padding: 0.75rem;
+    font-size: 0.9rem;
   }
 }
