@@ -63,7 +63,8 @@
   border-radius: 16px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   width: 320px;
-  overflow: hidden;
+  max-height: 400px;
+  overflow-y: auto;
   animation: popupSlideIn 0.3s ease-out;
 }
 
@@ -89,7 +90,7 @@
 }
 
 .popup-title {
-  color: #1f2937;
+  color: #000000 !important;
   font-size: 1.1rem;
   font-weight: 600;
   flex: 1;
@@ -143,7 +144,7 @@
 
 .action-button {
   background: #374151;
-  color: white;
+  color: #000000 !important;
   border: none;
   padding: 0.875rem 1rem;
   border-radius: 8px;
@@ -171,7 +172,7 @@
 }
 
 .popup-footer span {
-  color: #1f2937;
+  color: #000000 !important;
   font-size: 0.875rem;
   font-weight: 500;
 }

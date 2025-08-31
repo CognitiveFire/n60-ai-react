@@ -153,9 +153,14 @@ const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
           </div>
           
           {/* Question Button */}
-          <button className="hero-question-btn">
-            <span className="question-icon">👤</span>
-            <span>Har du et spørsmål?</span>
+          <button 
+            className="hero-question-btn"
+            onClick={() => {
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            <span className="question-icon">💰</span>
+            <span>Hva koster det?</span>
           </button>
         </div>
       </div>

@@ -15,10 +15,15 @@ const Salesbot = () => {
   };
 
   const handleBookDemo = () => {
-    // Open Calendly in new tab
-    window.open('https://calendly.com/n60/new-meeting', '_blank');
+    // Open Calendly inside the chatbot
+    setShowContactForm(false);
     setIsOpen(false);
     setIsExpanded(false);
+    // Open Calendly in a new window/tab but keep focus
+    const calendlyWindow = window.open('https://calendly.com/n60/new-meeting', '_blank');
+    if (calendlyWindow) {
+      calendlyWindow.focus();
+    }
   };
 
   const handleContact = () => {
@@ -36,7 +41,7 @@ const Salesbot = () => {
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="chat-bubble-content">
-          <span className="chat-text">Har du et spørsmål?</span>
+          <span className="chat-text">Hva koster det?</span>
           <div className="avatar">
             <img 
               src="https://i.ibb.co/yn9WGQBT/salesbot.png" 
@@ -50,7 +55,7 @@ const Salesbot = () => {
       {isOpen && (
         <div className="salesbot-popup">
           <div className="popup-header">
-            <span className="popup-title">Har du et spørsmål?</span>
+            <span className="popup-title">Hva koster det?</span>
             <div className="popup-avatar">
               <img 
                 src="https://i.ibb.co/yn9WGQBT/salesbot.png" 
