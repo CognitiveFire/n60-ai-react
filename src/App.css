@@ -3399,3 +3399,100 @@ body, html {
   border-color: #d4a009;
   color: #000000;
 }
+
+/* Responsive design for solutions grid */
+@media (min-width: 1200px) {
+  .solutions-grid {
+    grid-template-columns: repeat(4, 1fr) !important; /* 4 in a row on large screens */
+    grid-template-rows: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 769px) {
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* 2x2 grid on medium screens */
+    grid-template-rows: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+  }
+}
+
+/* Mobile responsiveness for solutions grid */
+@media (max-width: 768px) {
+  .solutions-grid {
+    grid-template-columns: 1fr !important; /* Single column on mobile */
+    grid-template-rows: auto !important;
+    gap: 1.5rem !important;
+    margin: 2rem 1rem !important;
+  }
+  
+  .solution-card {
+    min-height: auto !important;
+    padding: 1.5rem 1rem !important;
+  }
+  
+  .solution-card h3 {
+    font-size: 1.1rem !important;
+    min-height: auto !important;
+  }
+  
+  .solution-description {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  .solution-icon-container {
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 2.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Standardize radio button and checkbox sizes across all form screens */
+.radio-option input[type="radio"],
+.checkbox-option input[type="checkbox"] {
+  width: 24px !important;
+  height: 24px !important;
+  accent-color: #eab20b !important;
+  flex-shrink: 0 !important;
+}
+
+/* Ensure consistent spacing and sizing for radio/checkbox options */
+.radio-option,
+.checkbox-option {
+  display: flex !important;
+  align-items: center !important;
+  gap: 1rem !important;
+  padding: 1.5rem !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+  border: 2px solid #e5e7eb !important;
+  border-radius: 16px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 80px !important;
+}
+
+/* Mobile responsiveness for radio/checkbox options */
+@media (max-width: 768px) {
+  .radio-options,
+  .checkbox-options {
+    grid-template-columns: 1fr !important; /* Stack vertically on mobile */
+    gap: 1rem !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .radio-option,
+  .checkbox-option {
+    padding: 1rem !important;
+    min-height: 60px !important;
+  }
+  
+  .radio-option span,
+  .checkbox-option span {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+  }
+}
