@@ -1411,7 +1411,7 @@ function MainPage() {
                         <p>{currentContent.contact.form.step1Subtitle}</p>
                       </div>
                       
-                      <div className="challenge-cards">
+                      <div className="challenge-cards four-cards">
                         {currentContent?.contact?.modules?.core?.map((module) => (
                           <label key={module.id} className="challenge-card">
                             <input 

@@ -55,7 +55,7 @@
   margin: 0 !important;
 }
 
-/* Challenge Cards (Step 1) - IMPROVED LAYOUT */
+/* Challenge Cards (Step 1) - BALANCED 4-CARD LAYOUT */
 .challenge-cards {
   display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
@@ -64,6 +64,40 @@
   width: 100% !important;
   max-width: 100% !important;
   align-items: stretch !important;
+}
+
+/* Special layout for 4 cards - make them more balanced */
+.challenge-cards:has(.challenge-card:nth-child(4)) {
+  grid-template-columns: repeat(2, 1fr) !important;
+  grid-template-rows: repeat(2, auto) !important;
+}
+
+/* Alternative approach for browsers that don't support :has() */
+.challenge-cards.four-cards {
+  grid-template-columns: repeat(2, 1fr) !important;
+  grid-template-rows: repeat(2, auto) !important;
+  justify-items: center !important;
+  align-items: stretch !important;
+}
+
+/* Ensure cards in the second row are centered when there are only 2 cards */
+.challenge-cards.four-cards .challenge-card:nth-child(3),
+.challenge-cards.four-cards .challenge-card:nth-child(4) {
+  justify-self: center !important;
+}
+
+@media (min-width: 1200px) {
+  .challenge-cards {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 769px) {
+  .challenge-cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+  }
 }
 
 @media (max-width: 768px) {
@@ -93,7 +127,7 @@
   background: #fff !important;
   border: 2px solid #e0e0e0 !important;
   border-radius: 12px !important;
-  padding: 2.5rem 2rem !important;
+  padding: 2rem 1.5rem !important;
   text-align: center !important;
   transition: all 0.3s ease !important;
   height: 100% !important;
@@ -103,7 +137,7 @@
   align-items: center !important;
   justify-content: space-between !important;
   box-sizing: border-box !important;
-  min-height: 280px !important;
+  min-height: 260px !important;
 }
 
 .card-content h4 {
