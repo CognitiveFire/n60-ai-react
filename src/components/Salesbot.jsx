@@ -121,6 +121,12 @@ const Salesbot = () => {
               ← Tilbake
             </button>
             <h3>Book en demo</h3>
+            <button 
+              className="close-button"
+              onClick={() => setShowCalendly(false)}
+            >
+              ×
+            </button>
           </div>
           <div className="calendly-embed">
             <iframe

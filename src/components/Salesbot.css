@@ -200,6 +200,30 @@
   position: relative;
 }
 
+.calendly-header .close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.calendly-header .close-button:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
 .calendly-header h3 {
   color: #000000;
   font-size: 1.1rem;

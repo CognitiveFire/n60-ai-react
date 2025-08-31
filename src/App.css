@@ -1011,6 +1011,14 @@
 .solution-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  border-color: #3b82f6;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.solution-card:hover .solution-icon-container {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
 }
 
 .solution-icon-container {
@@ -2731,6 +2739,19 @@ body, html {
 
 .solution-card:hover {
   transform: translateY(-8px);
+  border-color: #3b82f6;
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.solution-card:hover .solution-content h3 {
+  color: #1e40af;
+  transition: color 0.3s ease;
+}
+
+.solution-card:hover .solution-image {
+  border-color: #3b82f6;
+  transition: border-color 0.3s ease;
 }
 
 .solution-image {
