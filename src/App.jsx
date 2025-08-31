@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -387,6 +386,13 @@ function MainPage() {
               price: 27000
             },
             {
+              id: "lead-discovery",
+              name: "AI-drevet leaddiscovery",
+              description: "Bygg presise lead-lister ved å kombinere AI med dataleverandører, LinkedIn, bransjesider og events. Tilpasset din ICP og prioritert med lead scoring for raskere pipeline-vekst.",
+              hours: 35,
+              price: 20000
+            },
+            {
               id: "market-expansion",
               name: "AI for markedsutvidelse", 
               description: "Markedsinnsikt, ABM light/full, lokaliseringsoppsett",
@@ -541,6 +547,13 @@ function MainPage() {
                 description: "Prediktiv scoring, outreach-automatisering, pipeline-dashboards",
                 hours: 45,
                 price: 27000
+              },
+              {
+                id: "lead-discovery",
+                name: "AI-drevet leaddiscovery",
+                description: "Bygg presise lead-lister ved å kombinere AI med dataleverandører, LinkedIn, bransjesider og events. Tilpasset din ICP og prioritert med lead scoring for raskere pipeline-vekst.",
+                hours: 35,
+                price: 20000
               },
               {
                 id: "market-expansion",
@@ -779,6 +792,13 @@ function MainPage() {
               description: "Prediktiv scoring, outreach-automatisering, pipeline-dashboards",
               hours: 45,
               price: 27000
+            },
+            {
+              id: "lead-discovery",
+              name: "AI-drevet leaddiscovery",
+              description: "Bygg presise lead-lister ved å kombinere AI med dataleverandører, LinkedIn, bransjesider og events. Tilpasset din ICP og prioritert med lead scoring for raskere pipeline-vekst.",
+              hours: 35,
+              price: 20000
             },
             {
               id: "market-expansion",
@@ -1382,6 +1402,7 @@ function MainPage() {
                               <div className="card-icon">
                                 {module.id === 'product-marketing' && '📢'}
                                 {module.id === 'lead-generation' && '🔄'}
+                                {module.id === 'lead-discovery' && '🔍'}
                                 {module.id === 'market-expansion' && '🌍'}
                               </div>
                               <h4>
