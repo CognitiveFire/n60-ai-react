@@ -1,13 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Salesbot from './components/Salesbot';
-import SimpleContactForm from './components/SimpleContactForm';
-import AdminLogin from './components/AdminLogin';
 import QuotePage from './components/QuotePage';
 import './App.css';
 import './components/Contact.css';
+
+// Mobile detection utility
+const isMobileDevice = () => {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+         window.innerWidth <= 768;
+};
+
+// Mobile-friendly video URL (without autoplay and with mobile-optimized parameters)
+const getMobileVideoUrl = (originalUrl) => {
+  if (!originalUrl) return null;
+  
+  // Remove problematic parameters for mobile
+  const mobileUrl = originalUrl
+    .replace('autoplay=1', 'autoplay=0')
+    .replace('loop=1', 'loop=0')
+    .replace('muted=1', 'muted=0')
+    .replace('controls=1', 'controls=0');
+  
+  return mobileUrl;
+};
 
 function App() {
   return (
@@ -36,6 +55,32 @@ function AppContent() {
     company: ''
   });
   const [showLoginLightbox, setShowLoginLightbox] = useState(false);
+  const [selectedServices, setSelectedServices] = useState([]);
+  const [selectedInnovations, setSelectedInnovations] = useState([]);
+  const [companySize, setCompanySize] = useState('');
+  const [contactInfo, setContactInfo] = useState({
+    name: '',
+    email: '',
+    company: '',
+    phone: ''
+  });
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if device is mobile on component mount
+    setIsMobile(isMobileDevice());
+    
+    // Add resize listener for responsive behavior
+    const handleResize = () => {
+      setIsMobile(isMobileDevice());
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <Routes>
@@ -1308,15 +1353,35 @@ function MainPage() {
                               <div className="what-is-visual" data-aos="fade-left">
                   {currentContent.whatIs.video ? (
                     <div className="what-is-video">
-                      <iframe
-                        src={currentContent.whatIs.video}
-                        title="N60 AI Marketing Demo"
-                        frameBorder="0"
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                        loading="lazy"
-                      ></iframe>
+                      {isMobile ? (
+                        // Show static image on mobile to avoid video errors
+                        <img 
+                          src="https://i.ibb.co/fd5v2xtv/om-n60.png" 
+                          alt="Om N60" 
+                          className="what-is-image"
+                        />
+                      ) : (
+                        // Show video on desktop with mobile-friendly URL
+                        <iframe
+                          src={getMobileVideoUrl(currentContent.whatIs.video)}
+                          title="N60 AI Marketing Demo"
+                          frameBorder="0"
+                          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                          loading="lazy"
+                          onError={(e) => {
+                            // Fallback to image if video fails to load
+                            console.log('Video failed to load, showing fallback image');
+                            e.target.style.display = 'none';
+                            const fallbackImg = document.createElement('img');
+                            fallbackImg.src = "https://i.ibb.co/fd5v2xtv/om-n60.png";
+                            fallbackImg.alt = "Om N60";
+                            fallbackImg.className = "what-is-image";
+                            e.target.parentNode.appendChild(fallbackImg);
+                          }}
+                        />
+                      )}
                     </div>
                   ) : (
                     <img src="https://i.ibb.co/fd5v2xtv/om-n60.png" alt="Om N60" className="what-is-image" />
