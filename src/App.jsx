@@ -104,6 +104,17 @@ function MainPage() {
             ]
           },
           {
+            title: "AI-drevet leaddiscovery",
+            emoji: "🔍",
+            description: "Bygg presise lead-lister ved å kombinere AI med dataleverandører, LinkedIn, bransjesider og events.",
+            image: "https://i.ibb.co/fzQ6S1Rf/A-2-D-digital-dashboard-UI-design-showcases-AI-powe.png",
+            features: [
+              "Tilpasset din ICP og prioritert med lead scoring",
+              "Kombinerer AI med dataleverandører og LinkedIn",
+              "Raskere pipeline-vekst med kvalifiserte leads"
+            ]
+          },
+          {
             title: "Markedsutvidelse",
             emoji: "🌍",
             description: "Voks trygt inn i nye markeder.",
@@ -256,6 +267,18 @@ function MainPage() {
               "product-marketing": "Optimaliser produktbeskrivelser og innhold slik at de alltid er synlige der kundene søker.",
               "lead-generation": "Bruk AI til å identifisere søketrender og lage innhold som tiltrekker kvalifisert trafikk.",
               "scaling-markets": "Ta posisjon i nye markeder raskt ved å la AI analysere lokale søkemønstre og produsere relevant innhold."
+            }
+          },
+          {
+            id: "lead-discovery",
+            title: "AI-drevet leaddiscovery",
+            price: 20000,
+            hours: 35,
+            dashboard: "https://i.ibb.co/fzQ6S1Rf/A-2-D-digital-dashboard-UI-design-showcases-AI-powe.png",
+            descriptions: {
+              "product-marketing": "Bygg presise lead-lister ved å kombinere AI med dataleverandører og bransjesider.",
+              "lead-generation": "Tilpasset din ICP og prioritert med lead scoring for raskere pipeline-vekst.",
+              "scaling-markets": "Identifiser nye markedsmuligheter med AI-drevet leaddiscovery på tvers av geografier."
             }
           }
         ]
