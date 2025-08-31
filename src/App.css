@@ -590,14 +590,31 @@
 
 .solutions-grid {
   display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
+  grid-template-columns: repeat(2, 1fr) !important;
   gap: 2rem !important;
   margin-top: 3rem !important;
   /* Debug: ensure grid works properly */
   grid-auto-flow: row !important;
   align-items: start !important;
-  /* Force single row layout */
-  grid-template-rows: 1fr !important;
+  /* Force 2x2 layout for 4 cards */
+  grid-template-rows: repeat(2, auto) !important;
+}
+
+/* Responsive design for solutions grid */
+@media (min-width: 1200px) {
+  .solutions-grid {
+    grid-template-columns: repeat(4, 1fr) !important; /* 4 in a row on large screens */
+    grid-template-rows: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 769px) {
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* 2x2 grid on medium screens */
+    grid-template-rows: repeat(2, auto) !important;
+    gap: 2rem !important;
+  }
 }
 
 .solution-card {
@@ -2499,6 +2516,10 @@ body, html {
   border-left: 4px solid #4ade80;
 }
 
+.innovation-card[data-lane="lead-discovery"] {
+  border-left: 4px solid #f59e0b; /* Orange color for lead discovery */
+}
+
 .innovation-card[data-lane="scaling-markets"] {
   border-left: 4px solid #a855f7;
 }
@@ -2516,6 +2537,11 @@ body, html {
 .innovation-card[data-lane="scaling-markets"]:hover {
   border-color: #a855f7;
   box-shadow: 0 12px 35px rgba(168, 85, 247, 0.3);
+}
+
+.innovation-card[data-lane="lead-discovery"]:hover {
+  border-color: #f59e0b;
+  box-shadow: 0 12px 35px rgba(245, 158, 11, 0.3);
 }
 
 .innovation-image {
