@@ -259,9 +259,9 @@
 
 /* Calendly Close Button - More Prominent */
 .calendly-close-button {
-  position: fixed;
-  top: 20px;
-  right: 20px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
   background: #ef4444;
   border: 2px solid #dc2626;
   font-size: 1.5rem;
@@ -367,6 +367,68 @@
   .calendly-embed {
     height: 400px;
   }
+}
+
+/* Mobile responsiveness for Calendly */
+@media (max-width: 768px) {
+  .salesbot-calendly {
+    width: 95vw !important;
+    max-width: 400px !important;
+    right: 2.5vw !important;
+    bottom: 80px !important;
+    max-height: 80vh !important;
+  }
+  
+  .calendly-close-button {
+    position: absolute !important;
+    top: 0.75rem !important;
+    right: 0.75rem !important;
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 1.25rem !important;
+    z-index: 10000 !important;
+    background: #ef4444 !important;
+    border: 2px solid #dc2626 !important;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4) !important;
+  }
+  
+  .calendly-header {
+    padding: 1rem 3rem 1rem 1rem !important;
+    min-height: 50px !important;
+  }
+  
+  .calendly-embed {
+    height: 500px !important;
+  }
+  
+  .calendly-embed iframe {
+    z-index: 1 !important;
+  }
+}
+
+/* Ensure Calendly cookie consent and other buttons are visible */
+.calendly-embed iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Override any Calendly iframe styles that might hide buttons */
+.calendly-embed iframe * {
+  z-index: auto !important;
+}
+
+/* Ensure Calendly close button is always on top */
+.calendly-close-button {
+  position: absolute !important;
+  top: 1rem !important;
+  right: 1rem !important;
+  z-index: 10000 !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Salesbot Contact Form Styles */
