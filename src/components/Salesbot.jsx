@@ -122,9 +122,6 @@ const Salesbot = () => {
             </button>
             <h3>Book en demo</h3>
           </div>
-          <div className="calendly-message">
-            <p>La oss ta en prat om dine behov og hvilke løsninger som passer best for din bedrift. Vi hjelper deg med å finne den riktige strategien for å vokse.</p>
-          </div>
           <div className="calendly-embed">
             <iframe
               src="https://calendly.com/n60/new-meeting"

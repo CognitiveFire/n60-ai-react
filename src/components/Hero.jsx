@@ -1,9 +1,19 @@
 
 // Hero.jsx
-import React from 'react';
+import React, { useState } from 'react';
 // CSS moved to App.css
 
 const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
+  const [showCalendlyLightbox, setShowCalendlyLightbox] = useState(false);
+
+  const handleOpenCalendly = () => {
+    setShowCalendlyLightbox(true);
+  };
+
+  const handleCloseCalendly = () => {
+    setShowCalendlyLightbox(false);
+  };
+
   return (
     <section id="hero" className="hero-section">
       <div className="hero-container">
@@ -13,13 +23,7 @@ const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
             N60.ai leverer målrettede AI-verktøy for markedsføring, skreddersydd for din bedrift. Ingen unødvendige funksjoner – bare løsninger som gir rask vekst og flere kunder.
           </p>
           <button 
-            onClick={() => {
-              // Open Calendly in a lightbox/modal
-              const calendlyWindow = window.open('https://calendly.com/n60/new-meeting', '_blank', 'width=800,height=600,scrollbars=yes,resizable=yes');
-              if (calendlyWindow) {
-                calendlyWindow.focus();
-              }
-            }} 
+            onClick={handleOpenCalendly}
             className="hero-cta"
           >
             Kom i gang
@@ -176,6 +180,35 @@ const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
           </button>
         </div>
       </div>
+      
+      {/* Calendly Lightbox */}
+      {showCalendlyLightbox && (
+        <div className="hero-calendly-lightbox">
+          <div className="lightbox-overlay" onClick={handleCloseCalendly}></div>
+          <div className="lightbox-content">
+            <div className="lightbox-header">
+              <button 
+                className="lightbox-close"
+                onClick={handleCloseCalendly}
+              >
+                ×
+              </button>
+            </div>
+            <div className="calendly-message">
+              <p>La oss ta en prat om dine behov og hvilke løsninger som passer best for din bedrift. Vi hjelper deg med å finne den riktige strategien for å vokse.</p>
+            </div>
+            <div className="calendly-embed">
+              <iframe
+                src="https://calendly.com/n60/new-meeting"
+                width="100%"
+                height="600"
+                frameBorder="0"
+                title="Book N60 Demo"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
