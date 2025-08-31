@@ -534,6 +534,255 @@
   color: #fff;
 }
 
+/* Hero Dashboard Displays */
+.hero-dashboards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Laptop Display */
+.laptop-display {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.laptop-screen {
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border: 2px solid #333;
+}
+
+.dashboard-header h3 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin: 0 0 1rem 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.dashboard-card {
+  background: #2a2a2a;
+  border-radius: 6px;
+  padding: 1rem;
+  border: 1px solid #444;
+}
+
+.dashboard-card h4 {
+  color: #ffffff;
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+}
+
+.chart-placeholder {
+  height: 60px;
+  background: #333;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-line {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background: #eab20b;
+  border-radius: 1px;
+}
+
+.chart-line.purple {
+  background: #a855f7;
+  width: 80%;
+  left: 10%;
+}
+
+.chart-line.yellow {
+  background: #eab20b;
+  width: 60%;
+  left: 20%;
+  bottom: 20px;
+}
+
+.chart-line.wavy {
+  background: #4ade80;
+  width: 70%;
+  left: 15%;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.chart-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.chart-labels span {
+  color: #cccccc;
+  font-size: 0.7rem;
+}
+
+.metric {
+  color: #eab20b;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.7rem;
+}
+
+.table-container th,
+.table-container td {
+  padding: 0.25rem;
+  text-align: left;
+  color: #cccccc;
+  border-bottom: 1px solid #444;
+}
+
+.table-container th {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Mobile Phone Display */
+.mobile-display {
+  width: 120px;
+  height: 200px;
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.mobile-screen {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border: 2px solid #333;
+  height: 100%;
+}
+
+.mobile-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobile-card {
+  background: #2a2a2a;
+  border-radius: 4px;
+  padding: 0.5rem;
+  border: 1px solid #444;
+}
+
+.mobile-card h4 {
+  color: #ffffff;
+  font-size: 0.7rem;
+  margin: 0 0 0.25rem 0;
+  font-weight: 500;
+}
+
+.mobile-chart {
+  height: 30px;
+  background: #333;
+  border-radius: 3px;
+  margin-bottom: 0.25rem;
+  position: relative;
+}
+
+.bar-chart {
+  display: flex;
+  align-items: end;
+  height: 100%;
+  gap: 2px;
+  padding: 2px;
+}
+
+.bar {
+  background: #eab20b;
+  width: 8px;
+  border-radius: 1px;
+}
+
+.line-chart {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 4px;
+  padding: 2px;
+}
+
+.line-point {
+  width: 4px;
+  height: 4px;
+  background: #4ade80;
+  border-radius: 50%;
+}
+
+.mobile-metric {
+  color: #cccccc;
+  font-size: 0.6rem;
+  display: block;
+  margin-bottom: 0.1rem;
+}
+
+/* Question Button */
+.hero-question-btn {
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  background: #eab20b;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 8px 20px rgba(234, 178, 11, 0.3);
+  transition: all 0.3s ease;
+  z-index: 4;
+}
+
+.hero-question-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(234, 178, 11, 0.4);
+}
+
+.question-icon {
+  font-size: 1.1rem;
+}
+
 /* Mobile Responsiveness for Hero */
 @media (max-width: 768px) {
   .hero-container {
@@ -621,12 +870,16 @@
   background: #ffffff;
   border: 1px solid #e9ecef;
   border-radius: 16px;
-  padding: 2.5rem;
+  padding: 2rem 1.5rem;
   text-align: center;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .solution-card:hover {

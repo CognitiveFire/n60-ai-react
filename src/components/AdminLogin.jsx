@@ -370,12 +370,12 @@ const AdminLogin = ({ onClose }) => {
           <div class="company-info">
             <div class="info-grid">
               <div>
-                <p><strong>Kontaktperson:</strong> ${quote.clientContact || 'Ikke spesifisert'}</p>
+            <p><strong>Kontaktperson:</strong> ${quote.clientContact || 'Ikke spesifisert'}</p>
                 <p><strong>E-post:</strong> ${quote.clientEmail}</p>
               </div>
               <div>
-                <p><strong>Tilbuds-ID:</strong> ${quote.id}</p>
-                <p><strong>Generert:</strong> ${quote.generatedAt}</p>
+            <p><strong>Tilbuds-ID:</strong> ${quote.id}</p>
+            <p><strong>Generert:</strong> ${quote.generatedAt}</p>
               </div>
             </div>
           </div>
@@ -883,10 +883,10 @@ const AdminLogin = ({ onClose }) => {
                 <p>Ingen kunder ennå. Kunder vil automatisk legges til når du genererer forslag.</p>
               </div>
             ) : (
-              <div className="customer-list">
+            <div className="customer-list">
                 {customers.map((customer) => (
                   <div key={customer.id} className="customer-item">
-                    <div className="customer-info">
+                <div className="customer-info">
                       <h4>{customer.company}</h4>
                       <p>{customer.email}</p>
                       {customer.contact && <p>Kontakt: {customer.contact}</p>}
@@ -894,12 +894,12 @@ const AdminLogin = ({ onClose }) => {
                       <p>Forslag-ID: {customer.quoteId}</p>
                       <p>Generert: {customer.generatedAt}</p>
                       <p><strong>Deal størrelse: {customer.dealSize?.toLocaleString()} NOK</strong></p>
-                    </div>
-                    <div className="customer-actions">
-                      <button className="action-btn">Se forslag</button>
+                </div>
+                <div className="customer-actions">
+                  <button className="action-btn">Se forslag</button>
                       <button className="action-btn">Oppdater status</button>
-                    </div>
-                  </div>
+                </div>
+              </div>
                 ))}
               </div>
             )}
@@ -912,7 +912,7 @@ const AdminLogin = ({ onClose }) => {
             {quotes.length === 0 ? (
               <div className="no-quotes">
                 <p>Ingen tilbud generert ennå.</p>
-              </div>
+                </div>
             ) : (
               <div className="quotes-list">
                 {quotes.map((quote) => (
@@ -927,7 +927,7 @@ const AdminLogin = ({ onClose }) => {
                       <p>Total (eks. MVA): {quote.totalPrice.toLocaleString()} NOK</p>
                       <p>MVA: {quote.mva.toLocaleString()} NOK</p>
                       <p>Total inkl. MVA: {quote.totalWithMva.toLocaleString()} NOK</p>
-                    </div>
+                </div>
                     <div className="quote-actions">
                       <button className="action-btn">Se tilbud</button>
                       <button className="action-btn">Oppdater status</button>
@@ -938,11 +938,11 @@ const AdminLogin = ({ onClose }) => {
                       >
                         {quote.status === 'Akseptert' ? 'Akseptert ✓' : 'Merk som akseptert'}
                       </button>
-                    </div>
-                  </div>
-                ))}
               </div>
-            )}
+            </div>
+                ))}
+          </div>
+        )}
           </div>
         )}
 

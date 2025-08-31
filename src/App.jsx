@@ -64,8 +64,8 @@ function MainPage() {
     company: ''
   });
   const [showLoginLightbox, setShowLoginLightbox] = useState(false);
-
-  // Version: 1.0.4 - Force fresh deployment - CSS conflicts fixed
+        
+        // Version: 1.0.4 - Force fresh deployment - CSS conflicts fixed
 
   // Content in Norwegian following Naeva's structure
   const content = {
@@ -677,9 +677,9 @@ function MainPage() {
           }
         },
         pricing: {
-          title: "Pris",
-          subtitle: "Velg pakken som passer best for deg",
-          featureLabel: "Funksjon / Verdi",
+        title: "Pris",
+        subtitle: "Velg pakken som passer best for deg",
+        featureLabel: "Funksjon / Verdi",
         starter: {
           name: "Start",
           description: "For små bedrifter som trenger en grunnleggende markedsføringsverktøy."
@@ -1757,18 +1757,18 @@ function MainPage() {
                     <div className="quote-items">
                       {quoteData.selectedModules && quoteData.selectedModules.length > 0 ? (
                         quoteData.selectedModules.map((module, index) => (
-                          <div key={index} className="quote-item">
-                            <div className="quote-item-content">
-                              <div>
-                                <h4>{module.name}</h4>
-                                <p className="quote-description">{module.description}</p>
-                              </div>
+                        <div key={index} className="quote-item">
+                          <div className="quote-item-content">
+                            <div>
+                              <h4>{module.name}</h4>
+                              <p className="quote-description">{module.description}</p>
+                            </div>
                               <span className="quote-price">{module.price?.toLocaleString() || 0} kr</span>
-                              <div className="quote-details">
+                            <div className="quote-details">
                                 <span>Estimert tid: {module.hours || 0} timer</span>
-                              </div>
                             </div>
                           </div>
+                        </div>
                         ))
                       ) : (
                         <p>Ingen moduler valgt</p>
