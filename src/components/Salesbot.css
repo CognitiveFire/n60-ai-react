@@ -192,31 +192,34 @@
 }
 
 .calendly-header {
-  padding: 1.5rem 1.5rem 1rem;
+  padding: 1.5rem 3rem 1rem 1.5rem;
   display: flex;
   align-items: center;
   gap: 0.75rem;
   border-bottom: 1px solid #f3f4f6;
   position: relative;
+  min-height: 60px;
 }
 
 .calendly-header .close-button {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: none;
-  border: none;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   font-size: 1.5rem;
   color: #6b7280;
   cursor: pointer;
   padding: 0;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 4px;
   transition: all 0.2s ease;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .calendly-header .close-button:hover {
