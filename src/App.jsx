@@ -64,23 +64,7 @@ function AppContent() {
     company: '',
     phone: ''
   });
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    // Check if device is mobile on component mount
-    setIsMobile(isMobileDevice());
-    
-    // Add resize listener for responsive behavior
-    const handleResize = () => {
-      setIsMobile(isMobileDevice());
-    };
-    
-    window.addEventListener('resize', handleResize);
-    
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  // Mobile detection moved to MainPage component
 
   return (
     <Routes>
@@ -109,6 +93,23 @@ function MainPage() {
     company: ''
   });
   const [showLoginLightbox, setShowLoginLightbox] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check if device is mobile on component mount
+    setIsMobile(isMobileDevice());
+    
+    // Add resize listener for responsive behavior
+    const handleResize = () => {
+      setIsMobile(isMobileDevice());
+    };
+    
+    window.addEventListener('resize', handleResize);
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
         
         // Version: 1.0.4 - Force fresh deployment - CSS conflicts fixed
 
