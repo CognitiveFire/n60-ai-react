@@ -772,3 +772,230 @@
   }
 }
 
+/* Comprehensive Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Form container */
+  .contact-form-container {
+    padding: 0 1rem !important;
+    margin: 0 !important;
+  }
+  
+  .contact-form {
+    padding: 1.5rem 1rem !important;
+    margin: 0 !important;
+    border-radius: 16px !important;
+  }
+  
+  /* Step headers */
+  .step-header {
+    padding: 1.5rem 1rem !important;
+    text-align: center !important;
+  }
+  
+  .step-header h3 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .step-header p {
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+  }
+  
+  /* Challenge cards - Force mobile layout */
+  .challenge-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    grid-template-columns: 1fr !important;
+    margin: 0 0 2rem 0 !important;
+  }
+  
+  .challenge-card {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+  
+  .card-content {
+    padding: 1.5rem 1rem !important;
+    min-height: auto !important;
+    height: auto !important;
+    text-align: center !important;
+  }
+  
+  .card-content h4 {
+    font-size: 1.1rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.75rem !important;
+    word-wrap: break-word !important;
+  }
+  
+  .card-content p {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .card-icon {
+    font-size: 2.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Form fields */
+  .contact-fields {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  
+  .contact-fields input,
+  .contact-fields textarea,
+  .contact-fields select {
+    width: 100% !important;
+    margin-bottom: 0 !important;
+    padding: 1rem !important;
+    font-size: 1rem !important;
+  }
+  
+  /* Form navigation */
+  .form-navigation {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    margin-top: 2rem !important;
+  }
+  
+  .next-step,
+  .prev-step,
+  .submit-button {
+    width: 100% !important;
+    padding: 1rem !important;
+    font-size: 1rem !important;
+    border-radius: 8px !important;
+  }
+  
+  /* Quote summary */
+  .quote-summary {
+    padding: 1.5rem 1rem !important;
+    margin: 1.5rem 0 !important;
+  }
+  
+  .quote-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.5rem !important;
+    padding: 1rem !important;
+  }
+  
+  .quote-item h5 {
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .quote-item p {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Company size options */
+  .company-size-options {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  .company-size-option {
+    padding: 1rem !important;
+    text-align: center !important;
+  }
+  
+  /* Innovation grid */
+  .innovation-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* Radio and checkbox options */
+  .radio-options,
+  .checkbox-options {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  .radio-option,
+  .checkbox-option {
+    padding: 1rem !important;
+    text-align: left !important;
+  }
+  
+  /* Ready for chat section */
+  .ready-for-chat {
+    padding: 1.5rem 1rem !important;
+    margin: 1.5rem 0 !important;
+  }
+  
+  .ready-for-chat h4 {
+    font-size: 1.2rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .ready-for-chat p {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+  .contact-form {
+    padding: 1rem 0.75rem !important;
+  }
+  
+  .step-header {
+    padding: 1rem 0.75rem !important;
+  }
+  
+  .step-header h3 {
+    font-size: 1.3rem !important;
+  }
+  
+  .card-content {
+    padding: 1rem 0.75rem !important;
+  }
+  
+  .card-content h4 {
+    font-size: 1rem !important;
+  }
+  
+  .card-content p {
+    font-size: 0.85rem !important;
+  }
+  
+  .next-step,
+  .prev-step,
+  .submit-button {
+    padding: 0.875rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Ensure mobile styles take precedence */
+@media (max-width: 768px) {
+  .challenge-cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+  
+  .challenge-card {
+    width: 100% !important;
+    max-width: none !important;
+  }
+  
+  .card-content {
+    width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
+}
+
