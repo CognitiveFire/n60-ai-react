@@ -7,27 +7,35 @@ const Salesbot = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [showContactForm, setShowContactForm] = useState(false);
   const [showCalendly, setShowCalendly] = useState(false);
+  const [calendlyLoading, setCalendlyLoading] = useState(true);
 
   const handleAskQuestion = () => {
-    // Show contact form in salesbot
+    setShowContactForm(true);
     setIsOpen(false);
     setIsExpanded(false);
-    setShowContactForm(true);
   };
 
   const handleBookDemo = () => {
-    // Show Calendly inside the chatbot
     setShowContactForm(false);
     setShowCalendly(true);
+    setCalendlyLoading(true);
     setIsOpen(false);
     setIsExpanded(false);
   };
 
   const handleContact = () => {
-    // Show contact form in salesbot
+    setShowContactForm(true);
     setIsOpen(false);
     setIsExpanded(false);
-    setShowContactForm(true);
+  };
+
+  const handleCalendlyLoad = () => {
+    setCalendlyLoading(false);
+  };
+
+  const handleCloseCalendly = () => {
+    setShowCalendly(false);
+    setCalendlyLoading(true);
   };
 
   return (
@@ -37,14 +45,14 @@ const Salesbot = () => {
         className={`chat-bubble ${isExpanded ? 'expanded' : ''}`}
         onClick={() => setIsOpen(!isOpen)}
       >
-        <div className="chat-bubble-content">
-          <span className="chat-text">Hva koster det?</span>
-          <div className="avatar">
-            <img 
-              src="https://i.ibb.co/yn9WGQBT/salesbot.png" 
-              alt="N60 Salesbot" 
-            />
-          </div>
+        <div className="avatar">
+          <img 
+            src="https://i.ibb.co/yn9WGQBT/salesbot.png" 
+            alt="N60 Salesbot" 
+          />
+        </div>
+        <div className="chat-text">
+          {isExpanded ? 'Hva koster det?' : 'Hva koster det?'}
         </div>
       </div>
 
@@ -116,25 +124,36 @@ const Salesbot = () => {
           <div className="calendly-header">
             <button 
               className="back-button"
-              onClick={() => setShowCalendly(false)}
+              onClick={handleCloseCalendly}
             >
               ← Tilbake
             </button>
             <h3>Book en demo</h3>
             <button 
-              className="close-button"
-              onClick={() => setShowCalendly(false)}
+              className="calendly-close-button"
+              onClick={handleCloseCalendly}
+              title="Lukk"
             >
               ×
             </button>
           </div>
-          <div className="calendly-embed">
+          
+          {/* Loading State */}
+          {calendlyLoading && (
+            <div className="calendly-loading">
+              <div className="loading-spinner"></div>
+              <p>Laster Calendly...</p>
+            </div>
+          )}
+          
+          <div className="calendly-embed" style={{ display: calendlyLoading ? 'none' : 'block' }}>
             <iframe
               src="https://calendly.com/n60/new-meeting"
               width="100%"
               height="600"
               frameBorder="0"
               title="Book N60 Demo"
+              onLoad={handleCalendlyLoad}
             />
           </div>
         </div>

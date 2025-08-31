@@ -201,31 +201,7 @@
   min-height: 60px;
 }
 
-.calendly-header .close-button {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  font-size: 1.5rem;
-  color: #6b7280;
-  cursor: pointer;
-  padding: 0;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  transition: all 0.2s ease;
-  z-index: 10;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.calendly-header .close-button:hover {
-  background: #f3f4f6;
-  color: #374151;
-}
+/* Old close button styles removed - using calendly-close-button instead */
 
 .calendly-header h3 {
   color: #000000;
@@ -274,6 +250,69 @@
   border: none;
   width: 100%;
   height: 100%;
+}
+
+/* Calendly Close Button - More Prominent */
+.calendly-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #ef4444;
+  border: 2px solid #dc2626;
+  font-size: 1.5rem;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+  font-weight: bold;
+}
+
+.calendly-close-button:hover {
+  background: #dc2626;
+  border-color: #b91c1c;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(239, 68, 68, 0.4);
+}
+
+/* Loading State */
+.calendly-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  background: #f8fafc;
+  min-height: 400px;
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.calendly-loading p {
+  color: #6b7280;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 500;
 }
 
 /* Mobile Responsiveness */
