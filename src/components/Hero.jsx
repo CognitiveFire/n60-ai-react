@@ -13,10 +13,16 @@ const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
             N60.ai leverer målrettede AI-verktøy for markedsføring, skreddersydd for din bedrift. Ingen unødvendige funksjoner – bare løsninger som gir rask vekst og flere kunder.
           </p>
           <button 
-            onClick={() => window.open('https://calendly.com/n60/new-meeting', '_blank')} 
+            onClick={() => {
+              // Open Calendly in a lightbox/modal
+              const calendlyWindow = window.open('https://calendly.com/n60/new-meeting', '_blank', 'width=800,height=600,scrollbars=yes,resizable=yes');
+              if (calendlyWindow) {
+                calendlyWindow.focus();
+              }
+            }} 
             className="hero-cta"
           >
-            Se demoen
+            Kom i gang
           </button>
         </div>
         <div className="hero-right">
