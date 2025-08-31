@@ -144,7 +144,7 @@
 
 .action-button {
   background: #374151;
-  color: #000000 !important;
+  color: #ffffff !important;
   border: none;
   padding: 0.875rem 1rem;
   border-radius: 8px;
@@ -175,6 +175,64 @@
   color: #000000 !important;
   font-size: 0.875rem;
   font-weight: 500;
+}
+
+/* Calendly Integration */
+.salesbot-calendly {
+  position: absolute;
+  bottom: calc(100% + 1rem);
+  right: 0;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  width: 400px;
+  max-height: 700px;
+  overflow: hidden;
+  animation: popupSlideIn 0.3s ease-out;
+}
+
+.calendly-header {
+  padding: 1.5rem 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid #f3f4f6;
+  position: relative;
+}
+
+.calendly-header h3 {
+  color: #000000;
+  font-size: 1.1rem;
+  font-weight: 600;
+  flex: 1;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.calendly-embed {
+  padding: 0;
+  height: 600px;
+  overflow: hidden;
+}
+
+.calendly-embed iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
 }
 
 /* Mobile Responsiveness */
@@ -213,6 +271,16 @@
   
   .popup-footer {
     padding: 0.875rem 1.25rem;
+  }
+  
+  .salesbot-calendly {
+    width: 320px;
+    right: -1rem;
+    max-height: 500px;
+  }
+  
+  .calendly-embed {
+    height: 400px;
   }
 }
 

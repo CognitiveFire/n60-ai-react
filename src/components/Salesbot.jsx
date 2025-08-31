@@ -6,6 +6,7 @@ const Salesbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const [showContactForm, setShowContactForm] = useState(false);
+  const [showCalendly, setShowCalendly] = useState(false);
 
   const handleAskQuestion = () => {
     // Show contact form in salesbot
@@ -15,15 +16,11 @@ const Salesbot = () => {
   };
 
   const handleBookDemo = () => {
-    // Open Calendly inside the chatbot
+    // Show Calendly inside the chatbot
     setShowContactForm(false);
+    setShowCalendly(true);
     setIsOpen(false);
     setIsExpanded(false);
-    // Open Calendly in a new window/tab but keep focus
-    const calendlyWindow = window.open('https://calendly.com/n60/new-meeting', '_blank');
-    if (calendlyWindow) {
-      calendlyWindow.focus();
-    }
   };
 
   const handleContact = () => {
@@ -110,6 +107,30 @@ const Salesbot = () => {
             <h3>Kontakt oss</h3>
           </div>
           <SimpleContactForm />
+        </div>
+      )}
+      
+      {/* Calendly Integration */}
+      {showCalendly && (
+        <div className="salesbot-calendly">
+          <div className="calendly-header">
+            <button 
+              className="back-button"
+              onClick={() => setShowCalendly(false)}
+            >
+              ← Tilbake
+            </button>
+            <h3>Book en demo</h3>
+          </div>
+          <div className="calendly-embed">
+            <iframe
+              src="https://calendly.com/n60/new-meeting"
+              width="100%"
+              height="600"
+              frameBorder="0"
+              title="Book N60 Demo"
+            />
+          </div>
         </div>
       )}
     </div>

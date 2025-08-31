@@ -156,7 +156,13 @@ const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
           <button 
             className="hero-question-btn"
             onClick={() => {
-              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              const contactElement = document.getElementById('contact');
+              console.log('Contact element:', contactElement);
+              if (contactElement) {
+                contactElement.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                console.log('Contact element not found');
+              }
             }}
           >
             <span className="question-icon">💰</span>
