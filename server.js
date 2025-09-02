@@ -26,6 +26,9 @@ app.use(express.json());
 // Serve static files from the React build - this must come BEFORE the catch-all route
 app.use(express.static(join(__dirname, 'dist')));
 
+// Serve robots.txt and sitemap.xml from public directory
+app.use(express.static(join(__dirname, 'public')));
+
 // Test endpoint
 app.get('/api/test', (req, res) => {
   console.log('Test endpoint hit');
@@ -70,6 +73,19 @@ app.post('/api/sendgrid', async (req, res) => {
   }
 });
 
+// Specific routes for privacy policy (both with and without .html extension)
+app.get('/privacy-policy.html', (req, res) => {
+  const privacyPolicyPath = join(__dirname, 'public', 'privacy-policy.html');
+  console.log('Serving privacy policy from:', privacyPolicyPath);
+  res.sendFile(privacyPolicyPath);
+});
+
+app.get('/privacy-policy', (req, res) => {
+  const privacyPolicyPath = join(__dirname, 'public', 'privacy-policy.html');
+  console.log('Serving privacy policy from:', privacyPolicyPath);
+  res.sendFile(privacyPolicyPath);
+});
+
 // Catch-all handler: send back React's index.html file for any non-API routes
 // This must come AFTER the static file middleware
 app.get('*', (req, res) => {
@@ -79,7 +95,7 @@ app.get('*', (req, res) => {
   }
   
   // Skip static file requests that should be handled by express.static
-  if (req.path.startsWith('/images/') || req.path.startsWith('/assets/') || req.path.startsWith('/favicon.ico')) {
+  if (req.path.startsWith('/images/') || req.path.startsWith('/assets/') || req.path.startsWith('/favicon.ico') || req.path.startsWith('/robots.txt') || req.path.startsWith('/sitemap.xml')) {
     return res.status(404).json({ error: 'Static file not found' });
   }
   
