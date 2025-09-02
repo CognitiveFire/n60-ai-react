@@ -551,6 +551,13 @@ const AdminLogin = ({ onClose }) => {
           <div className="login-card">
             <div className="login-header">
               <h1>N60 Command Center</h1>
+              <button 
+                className="login-close-button"
+                onClick={onClose}
+                title="Lukk"
+              >
+                ×
+              </button>
             </div>
             
             <form onSubmit={handleLogin} className="login-form">

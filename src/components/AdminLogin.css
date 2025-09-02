@@ -1139,6 +1139,43 @@
   overflow-y: auto;
 }
 
+/* Login Close Button */
+.login-close-button {
+  position: absolute !important;
+  top: 1rem !important;
+  right: 1rem !important;
+  background: #ef4444 !important;
+  border: 2px solid #dc2626 !important;
+  font-size: 1.5rem !important;
+  color: #ffffff !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  transition: all 0.2s ease !important;
+  z-index: 99999 !important;
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3) !important;
+  font-weight: bold !important;
+  pointer-events: auto !important;
+}
+
+.login-close-button:hover {
+  background: #dc2626 !important;
+  border-color: #b91c1c !important;
+  transform: scale(1.1) !important;
+  box-shadow: 0 6px 12px rgba(239, 68, 68, 0.4) !important;
+}
+
+/* Update login header to accommodate close button */
+.login-header {
+  position: relative;
+  padding-right: 4rem;
+}
+
 /* Login Nav Button */
 .login-nav-button {
   background: #eab20b;

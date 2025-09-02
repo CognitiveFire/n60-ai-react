@@ -200,8 +200,9 @@
   border-bottom: 1px solid #f3f4f6;
   position: relative;
   min-height: 60px;
-  z-index: 1000;
+  z-index: 10000;
   background: white;
+  overflow: visible;
 }
 
 /* Old close button styles removed - using calendly-close-button instead */
@@ -247,6 +248,8 @@
   padding: 0;
   height: 600px;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .calendly-embed iframe {
@@ -255,36 +258,73 @@
   height: 100%;
   position: relative;
   z-index: 1;
+  pointer-events: auto;
+}
+
+/* Make sure close button area is always clickable */
+.calendly-header {
+  pointer-events: auto;
+}
+
+.calendly-close-button {
+  pointer-events: auto !important;
+}
+
+/* Fallback Close Button - Always Visible */
+.calendly-fallback-close {
+  position: absolute !important;
+  bottom: 1rem !important;
+  right: 1rem !important;
+  background: #ef4444 !important;
+  border: 2px solid #dc2626 !important;
+  color: #ffffff !important;
+  cursor: pointer !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 8px !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  z-index: 99999 !important;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3) !important;
+  transition: all 0.2s ease !important;
+  pointer-events: auto !important;
+}
+
+.calendly-fallback-close:hover {
+  background: #dc2626 !important;
+  border-color: #b91c1c !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4) !important;
 }
 
 /* Calendly Close Button - More Prominent */
 .calendly-close-button {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: #ef4444;
-  border: 2px solid #dc2626;
-  font-size: 1.5rem;
-  color: #ffffff;
-  cursor: pointer;
-  padding: 0;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: all 0.2s ease;
-  z-index: 9999;
-  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
-  font-weight: bold;
+  position: absolute !important;
+  top: 1rem !important;
+  right: 1rem !important;
+  background: #ef4444 !important;
+  border: 2px solid #dc2626 !important;
+  font-size: 1.5rem !important;
+  color: #ffffff !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  transition: all 0.2s ease !important;
+  z-index: 99999 !important;
+  box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3) !important;
+  font-weight: bold !important;
+  pointer-events: auto !important;
 }
 
 .calendly-close-button:hover {
-  background: #dc2626;
-  border-color: #b91c1c;
-  transform: scale(1.1);
-  box-shadow: 0 6px 12px rgba(239, 68, 68, 0.4);
+  background: #dc2626 !important;
+  border-color: #b91c1c !important;
+  transform: scale(1.1) !important;
+  box-shadow: 0 6px 12px rgba(239, 68, 68, 0.4) !important;
 }
 
 /* Loading State */

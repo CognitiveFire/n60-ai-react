@@ -156,6 +156,15 @@ const Salesbot = () => {
               onLoad={handleCalendlyLoad}
             />
           </div>
+          
+          {/* Fallback Close Button - Always Visible */}
+          <button 
+            className="calendly-fallback-close"
+            onClick={handleCloseCalendly}
+            title="Lukk Calendly"
+          >
+            ✕ Lukk
+          </button>
         </div>
       )}
     </div>
