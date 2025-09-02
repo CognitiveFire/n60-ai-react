@@ -138,21 +138,76 @@ export const SeoHelmet: React.FC<{ lang: Lang }> = ({ lang }) => {
       
       {/* Additional Structured Data for Norwegian Market */}
       {lang === 'no' && (
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            name: "N60.ai",
-            url: "https://n60.ai",
-            description: "AI-drevet B2B-markedsføring for norske bedrifter",
-            inLanguage: "no",
-            potentialAction: {
-              "@type": "SearchAction",
-              target: "https://n60.ai/search?q={search_term_string}",
-              "query-input": "required name=search_term_string"
-            }
-          })}
-        </script>
+        <>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "N60.ai",
+              url: "https://n60.ai",
+              description: "AI-drevet B2B-markedsføring for norske bedrifter",
+              inLanguage: "no",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://n60.ai/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })}
+          </script>
+          
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "N60.ai",
+              description: "AI-drevet B2B-markedsføring for små og mellomstore bedrifter i Norge",
+              url: "https://n60.ai",
+              telephone: "+47-XXX-XX-XXX",
+              email: "matthew@n60.ai",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Bergen",
+                addressCountry: "NO"
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: "60.3913",
+                longitude: "5.3221"
+              },
+              openingHours: "Mo-Fr 09:00-17:00",
+              priceRange: "$$",
+              paymentAccepted: "Credit Card, Bank Transfer",
+              currenciesAccepted: "NOK, EUR, USD"
+            })}
+          </script>
+          
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              name: "N60.ai AI Marketing Platform",
+              applicationCategory: "BusinessApplication",
+              operatingSystem: "Web Browser",
+              description: "AI-drevet markedsføringsplattform for norske bedrifter",
+              url: "https://n60.ai",
+              author: {
+                "@type": "Organization",
+                name: "N60.ai"
+              },
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "NOK",
+                description: "Gratis demo og konsultasjon"
+              },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5.0",
+                ratingCount: "1"
+              }
+            })}
+          </script>
+        </>
       )}
     </Helmet>
   );
