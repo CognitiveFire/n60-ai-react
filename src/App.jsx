@@ -119,67 +119,67 @@ function MainPage() {
   const content = {
     no: {
       hero: {
-        title: "AI-drevet B2B-markedsføring",
-        subtitle: "AI-løsninger som dekker hele reisen – fra produkt til kunde og videre til nye markeder.",
-        cta: "Få et tilpasset tilbud",
+        title: "AI-innovasjon for norske bedrifter",
+        subtitle: "Automatiser B2B-produktmarkedsføring med kraftig AI-teknologi. Skap mer etterspørsel, generer flere leads og voks raskere – tilpasset norske små og mellomstore bedrifter.",
+        cta: "Se hvordan det fungerer",
         background: "https://i.ibb.co/ycfYCgMP/Hero-background.png",
         video: null
       },
       solutions: {
-        title: "Våre løsninger",
-        subtitle: "AI-løsninger som dekker hele reisen – fra produkt til kunde og videre til nye markeder.",
+        title: "AI-løsninger for norske bedrifter",
+        subtitle: "Automatiser produktmarkedsføring, generer kvalifiserte leads og voks inn i nye markeder med AI-teknologi skreddersydd for norske små og mellomstore bedrifter.",
         cases: [
           {
-            title: "Produktmarkedsføring",
+            title: "AI-drevet produktmarkedsføring",
             emoji: "🎯",
-            description: "Nå de riktige kundene, med budskap som skaper etterspørsel.",
+            description: "Automatiser markedsføring av produkter og tjenester med AI som skaper etterspørsel og engasjement hos riktige kunder.",
             image: "https://i.ibb.co/chg1b8CL/A-digital-graphic-displays-AI-powered-product-mark.png",
             features: [
-              "Finn din idealkundeprofil (ICP)",
-              "Skap kampanjer som bygger interesse",
-              "Personlige kundereiser som leder til kjøp"
+              "AI finner og analyserer din idealkundeprofil",
+              "Automatiserte kampanjer som bygger interesse",
+              "Personlige kundereiser som konverterer til salg"
             ]
           },
           {
-            title: "Leadgenerering",
+            title: "Automatisert leadgenerering",
             emoji: "📈",
-            description: "Fyll pipelinen med kvalifiserte leads, ikke bare flere kontakter.",
+            description: "AI genererer og kvalifiserer leads automatisk, slik at salgsteamet ditt fokuserer på de som faktisk vil kjøpe.",
             image: "https://i.ibb.co/fzQ6S1Rf/A-2-D-digital-dashboard-UI-design-showcases-AI-powe.png",
             features: [
-              "Prediktive pipelines viser hvem som vil kjøpe",
-              "Outreach i skala, men med personlig preg",
-              "Høyere konverteringsrate for salget ditt"
+              "AI predikerer hvilke leads som konverterer",
+              "Automatisert outreach med personlig tilpasning",
+              "Høyere konverteringsrate og mer effektivt salg"
             ]
           },
           {
-            title: "AI-drevet leaddiscovery",
+            title: "Smart leaddiscovery",
             emoji: "🔍",
-            description: "Bygg presise lead-lister ved å kombinere AI med dataleverandører, LinkedIn, bransjesider og events.",
+            description: "AI finner og analyserer potensielle kunder automatisk fra LinkedIn, bransjesider, events og databaser.",
             image: "https://i.ibb.co/fzQ6S1Rf/A-2-D-digital-dashboard-UI-design-showcases-AI-powe.png",
             features: [
-              "Tilpasset din ICP og prioritert med lead scoring",
-              "Kombinerer AI med dataleverandører og LinkedIn",
-              "Raskere pipeline-vekst med kvalifiserte leads"
+              "AI søker og scorer leads basert på din kundeprofil",
+              "Automatisk datainnsamling fra flere kilder",
+              "Kvalifiserte leads direkte til salgsteamet ditt"
             ]
           },
           {
-            title: "Markedsutvidelse",
+            title: "AI-drevet markedsutvidelse",
             emoji: "🌍",
-            description: "Voks trygt inn i nye markeder.",
+            description: "Voks inn i nye markeder med AI som analyserer muligheter og tilpasser kommunikasjon automatisk.",
             image: "https://i.ibb.co/sn2LDYD/A-2-D-digital-dashboard-interface-screenshot-displa.png",
             features: [
-              "AI-drevet innsikt i etterspørsel og konkurrenter",
-              "ABM-kampanjer mot nøkkelkunder",
-              "Lokalisert kommunikasjon i Skandinavia og Europa"
+              "AI analyserer markedsmuligheter og konkurrenter",
+              "Automatiserte kampanjer mot nøkkelkunder",
+              "Lokalisert kommunikasjon for norske bedrifter i Europa"
             ]
           }
         ],
-        footer: "👉 Én helhetlig pakke. Verdi og vekst – uten kompleksitet."
+        footer: "👉 Alt du trenger for AI-drevet vekst i én løsning – tilpasset norske bedrifter."
       },
       howItWorks: {
-        title: "Vår teknologi",
-        description: "Ved å kombinere AI og markedsføringserfaring har vi skapt smarte løsninger for B2B-selskaper. Våre AI-verktøy installeres i eksisterende systemer og gir datainnsamling, automatisering og prosessoptimalisering - alt gjennom én plattform.",
-        cta: "Lær mer"
+        title: "Slik fungerer AI-innovasjonen vår",
+        description: "Vi kombinerer kraftig AI-teknologi med norsk markedsføringskunnskap for å automatisere produktmarkedsføring. Våre løsninger integreres enkelt i eksisterende systemer og gir umiddelbar verdi for norske bedrifter.",
+        cta: "Se hvordan det fungerer"
       },
       value: {
         title: "Innsikt og besparelser for dine prosjekter",
@@ -201,23 +201,23 @@ function MainPage() {
         cta: "Ta kontakt for demo"
       },
       innovation: {
-        title: "Innovasjonsmoduler",
-        subtitle: "Hos N60.ai bygger vi løsninger som kombinerer kraften i kunstig intelligens med konkret forretningsverdi. Våre innovasjonsmoduler kan settes sammen fleksibelt for å støtte tre sentrale vekstspor: produktmarkedsføring, leadgenerering og skalering/markedsutvidelse.",
+        title: "AI-innovasjon for norske bedrifter",
+        subtitle: "Vi bygger AI-løsninger som automatiserer produktmarkedsføring for norske små og mellomstore bedrifter. Våre moduler kan kombineres fleksibelt for å støtte tre hovedområder: automatiserte produktkampanjer, smart leadgenerering og markedsutvidelse.",
         lanes: [
           {
             id: "product-marketing",
-            title: "Produktmarkedsføring",
-            description: "Fokus på å fremheve produktets verdi og engasjere kunder"
+            title: "Automatisert produktmarkedsføring",
+            description: "AI som skaper etterspørsel og engasjement for produkter og tjenester"
           },
           {
             id: "lead-generation", 
-            title: "Leadgenerering",
-            description: "Automatisert lead-kvalifisering og pipeline-oppfølging"
+            title: "Smart leadgenerering",
+            description: "AI finner og kvalifiserer leads automatisk for norske bedrifter"
           },
           {
             id: "scaling-markets",
-            title: "Skalering og markedsutvidelse",
-            description: "Ekspansjon til nye markeder med lokalt tilpasset innhold"
+            title: "Markedsutvidelse med AI",
+            description: "Voks inn i nye markeder med automatiserte kampanjer"
           }
         ],
         modules: [
@@ -228,9 +228,9 @@ function MainPage() {
             hours: 25,
             dashboard: "https://i.ibb.co/B2h0pvty/A-2-D-digital-mockup-of-a-web-based-analytics-dashb.png",
             descriptions: {
-              "product-marketing": "Gi kundene en levende produktopplevelse med AI-drevne assistenter som kan forklare funksjoner, sammenligne alternativer og svare på spørsmål i sanntid.",
-              "lead-generation": "Sett opp chatbots som kvalifiserer leads automatisk, samler inn nøkkelinformasjon og kobler direkte til salgsteamet når kunden er klar for dialog.",
-              "scaling-markets": "Bruk flerspråklige stemmeassistenter for å åpne nye markeder uten behov for å bygge opp lokale kundeservice-team fra bunnen av."
+              "product-marketing": "AI-drevne assistenter som automatisk forklarer produkter, sammenligner alternativer og svarer på kundespørsmål – 24/7 for norske bedrifter.",
+              "lead-generation": "Automatiserte chatbots som kvalifiserer leads, samler inn kontaktinfo og kobler direkte til salgsteamet ditt når kunden er klar.",
+              "scaling-markets": "Flerspråklige AI-assistenter som hjelper norske bedrifter å vokse inn i nye markeder uten å bygge opp lokale team."
             }
           },
           {
@@ -554,20 +554,20 @@ function MainPage() {
           ]
         },
         pricing: {
-        title: "Pris",
-        subtitle: "Velg pakken som passer best for deg",
-        featureLabel: "Funksjon / Verdi",
+        title: "Priser for norske bedrifter",
+        subtitle: "Velg AI-løsningen som passer din bedrift",
+        featureLabel: "AI-funksjon / Verdi",
         starter: {
           name: "Start",
-          description: "For små bedrifter som trenger en grunnleggende markedsføringsverktøy."
+          description: "For norske småbedrifter som vil automatisere produktmarkedsføring."
         },
         growth: {
           name: "Vekst",
-          description: "For bedrifter som ønsker å utvikle seg og nå større markeder."
+          description: "For bedrifter som vil vokse raskere med AI-drevet markedsføring."
         },
         scale: {
           name: "Skala",
-          description: "For store bedrifter som trenger avanserte markedsføringsverktøy og personalisering."
+          description: "For større bedrifter som vil dominere markedet med avansert AI."
         },
         features: [
           { 

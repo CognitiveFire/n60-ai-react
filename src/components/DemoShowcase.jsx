@@ -7,7 +7,7 @@ const DemoShowcase = () => {
       <div className="about-header">
         <h2>Hvem er N60?</h2>
         <p className="about-intro">
-          N60 er et AI-byrå basert i Bergen som gjør kraftig kunstig intelligens tilgjengelig for norske SMB-er.
+          N60 er et AI-byrå fra Bergen som hjelper norske små og mellomstore bedrifter med å automatisere produktmarkedsføring og vokse raskere med kunstig intelligens.
         </p>
       </div>
       
@@ -17,32 +17,32 @@ const DemoShowcase = () => {
           <div className="feature-item">
             <div className="feature-icon">✦</div>
             <div className="feature-content">
-              <h4>Skreddersydde og ferdigbygde AI-løsninger</h4>
-              <p>Øk inntektene, jobb smartere og skalér raskt</p>
+              <h4>AI-løsninger tilpasset norske bedrifter</h4>
+              <p>Automatiser produktmarkedsføring, øk inntektene og voks raskere</p>
             </div>
           </div>
           
           <div className="feature-item">
             <div className="feature-icon">✦</div>
             <div className="feature-content">
-              <h4>Overkommelig pris og høy verdi</h4>
-              <p>Ingen behov for eget teknologiteam</p>
+              <h4>Overkommelig for norske bedrifter</h4>
+              <p>Ingen behov for eget AI-team eller teknologikunnskap</p>
             </div>
           </div>
           
           <div className="feature-item">
             <div className="feature-icon">✦</div>
             <div className="feature-content">
-              <h4>Full eierskap og lokal hosting i Norge</h4>
-              <p>GDPR-kompatibelt og fremtidsrettet</p>
+              <h4>Norsk eierskap og GDPR-sikkerhet</h4>
+              <p>Alle data lagres i Norge med full personvernsikkerhet</p>
             </div>
           </div>
           
           <div className="feature-item">
             <div className="feature-icon">✦</div>
             <div className="feature-content">
-              <h4>Målet vårt:</h4>
-              <p>Å gi deg kontroll, effektivitet og vekst – med løsninger som passer dine behov og ditt budsjett.</p>
+              <h4>Vårt mål:</h4>
+              <p>Hjelpe norske bedrifter med å automatisere produktmarkedsføring og vokse raskere – med AI-løsninger som passer din bedrift og ditt budsjett.</p>
             </div>
           </div>
         </div>

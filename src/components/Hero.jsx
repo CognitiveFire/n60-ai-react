@@ -18,15 +18,15 @@ const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
     <section id="hero" className="hero-section">
       <div className="hero-container">
         <div className="hero-left">
-          <h1 className="hero-headline">Kraftig AI-markedsføring for norske B2B-bedrifter</h1>
+          <h1 className="hero-headline">AI-innovasjon for norske bedrifter</h1>
           <p className="hero-subheadline">
-            N60.ai leverer målrettede AI-verktøy for markedsføring, skreddersydd for din bedrift. Ingen unødvendige funksjoner – bare løsninger som gir rask vekst og flere kunder.
+            Automatiser B2B-produktmarkedsføring med kraftig AI-teknologi. Skap mer etterspørsel, generer flere leads og voks raskere – tilpasset norske små og mellomstore bedrifter.
           </p>
           <button 
             onClick={handleOpenCalendly}
             className="hero-cta"
           >
-            Kom i gang
+            Se hvordan det fungerer
           </button>
         </div>
         <div className="hero-right">
