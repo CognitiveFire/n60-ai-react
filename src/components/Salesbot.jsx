@@ -52,7 +52,7 @@ const Salesbot = () => {
           />
         </div>
         <div className="chat-text">
-          {isExpanded ? 'Hva koster det?' : 'Hva koster det?'}
+          {isExpanded ? 'Chat med en ekspert' : 'Chat med en ekspert'}
         </div>
       </div>
 
@@ -60,7 +60,7 @@ const Salesbot = () => {
       {isOpen && (
         <div className="salesbot-popup">
           <div className="popup-header">
-            <span className="popup-title">Hva koster det?</span>
+            <span className="popup-title">Chat med en ekspert</span>
             <div className="popup-avatar">
               <img 
                 src="https://i.ibb.co/yn9WGQBT/salesbot.png" 
