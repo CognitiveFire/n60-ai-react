@@ -610,18 +610,23 @@ const AdminLogin = ({ onClose }) => {
               Tilbud & Forslag
             </button>
             <button 
-              className={`nav-tab customers-tab ${activeTab === 'customers' ? 'active' : ''}`}
+              className={`nav-tab ${activeTab === 'customers' ? 'active' : ''}`}
               onClick={() => setActiveTab('customers')}
             >
               Kunder
             </button>
             <button 
-              className={`nav-tab quotes-tracking-tab ${activeTab === 'quotes-tracking' ? 'active' : ''}`}
+              className={`nav-tab ${activeTab === 'quotes-tracking' ? 'active' : ''}`}
               onClick={() => setActiveTab('quotes-tracking')}
             >
               Tilbud Tracking
             </button>
-
+            <button 
+              className={`nav-tab ${activeTab === 'analytics' ? 'active' : ''}`}
+              onClick={() => setActiveTab('analytics')}
+            >
+              Analytics
+            </button>
           </nav>
           <button onClick={handleLogout} className="logout-button">
             Logg ut
@@ -950,6 +955,32 @@ const AdminLogin = ({ onClose }) => {
                 ))}
           </div>
         )}
+          </div>
+        )}
+
+        {activeTab === 'analytics' && (
+          <div className="analytics-section">
+            <h2>Analytics Dashboard</h2>
+            <div className="analytics-grid">
+              <div className="analytics-card">
+                <h3>Totalt Omsetning</h3>
+                <p className="analytics-value">{quotes.reduce((total, quote) => total + quote.dealSize, 0).toLocaleString()} NOK</p>
+              </div>
+              <div className="analytics-card">
+                <h3>Antall Tilbud</h3>
+                <p className="analytics-value">{quotes.length}</p>
+              </div>
+              <div className="analytics-card">
+                <h3>Antall Kunder</h3>
+                <p className="analytics-value">{customers.length}</p>
+              </div>
+              <div className="analytics-card">
+                <h3>Konverteringsrate</h3>
+                <p className="analytics-value">
+                  {quotes.length > 0 ? Math.round((quotes.filter(q => q.status === 'Akseptert').length / quotes.length) * 100) : 0}%
+                </p>
+              </div>
+            </div>
           </div>
         )}
 

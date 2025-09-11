@@ -149,7 +149,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 1rem;
 }
 
@@ -163,6 +163,8 @@
 .admin-nav {
   display: flex;
   gap: 0.5rem;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 .nav-tab {
@@ -175,40 +177,36 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: 120px;
+  text-align: center;
 }
 
 .nav-tab:hover {
   background: rgba(0, 0, 0, 0.15);
   border-color: rgba(0, 0, 0, 0.3);
+  color: #1f2937;
 }
 
 .nav-tab.active {
   background: #3b82f6;
-  border-color: transparent;
+  border-color: #3b82f6;
   color: #ffffff;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
 }
 
-/* Specific button styles */
-.nav-tab.customers-tab {
-  background: rgba(34, 197, 94, 0.2);
-  border-color: #22c55e;
-  color: #ffffff;
-}
-
-.nav-tab.customers-tab:hover {
-  background: rgba(34, 197, 94, 0.3);
-  border-color: #16a34a;
-}
-
+/* All navigation buttons use consistent styling */
+.nav-tab.customers-tab,
 .nav-tab.quotes-tracking-tab {
-  background: rgba(234, 178, 11, 0.2);
-  border-color: #eab20b;
-  color: #ffffff;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #374151;
 }
 
+.nav-tab.customers-tab:hover,
 .nav-tab.quotes-tracking-tab:hover {
-  background: rgba(234, 178, 11, 0.3);
-  border-color: #d4a009;
+  background: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.3);
 }
 
 .logout-button {
@@ -1286,11 +1284,13 @@
   .admin-nav {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 0.25rem;
   }
   
   .nav-tab {
     font-size: 0.8rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.75rem;
+    min-width: 100px;
   }
   
   .form-row {
@@ -1408,4 +1408,55 @@
   flex-direction: column;
   gap: 0.75rem;
   min-width: 150px;
+}
+
+/* Analytics Section */
+.analytics-section {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.analytics-section h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.analytics-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.analytics-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.analytics-card h3 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.analytics-value {
+  color: #eab20b;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
 }
