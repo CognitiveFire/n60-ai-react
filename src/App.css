@@ -27,13 +27,36 @@
 }
 
 .navbar-logo {
-  height: 107px !important;
-  max-width: 215px !important;
+  height: 126px !important; /* 17% larger (reduced by 10%) */
+  max-width: 270px !important; /* 17% larger (reduced by 10%) */
   width: auto !important;
   padding-top: 0 !important;
   object-fit: contain !important;
-  display: block !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
+
+/* Mobile responsive navbar logo */
+@media (max-width: 768px) {
+  .navbar-logo {
+    height: 60px !important; /* Smaller for tablet */
+    max-width: 150px !important; /* Smaller for tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo {
+    height: 50px !important; /* Much smaller for mobile */
+    max-width: 120px !important; /* Much smaller for mobile */
+  }
+}
+
+/* Animated Logo Styles - moved to AnimatedLogo.css */
+
+/* Keyframes moved to AnimatedLogo.css */
+
+/* No glow effect - removed yellow box */
 
 .logo-container {
   display: flex;
@@ -91,9 +114,10 @@
   background: none;
   border: none;
   color: #374151;
-  font-size: 1.5rem;
+  font-size: 2rem; /* Bigger burger menu */
   cursor: pointer;
   z-index: 1200;
+  padding: 0.5rem; /* Add padding for better touch target */
 }
 
 /* Tech Partners Section */
@@ -197,7 +221,7 @@
   }
   
   .hero-section {
-    padding: 4rem 1rem 2rem;
+    padding: 2rem 1rem 1.5rem; /* Much reduced padding for mobile */
     min-height: auto;
   }
   
@@ -353,9 +377,9 @@
 .hero-section {
   background: linear-gradient(135deg, #0f1c30 0%, #363f50 100%);
   position: relative;
-  padding: 6rem 2rem 4rem;
+  padding: 4rem 2rem 3rem; /* Reduced top and bottom padding */
   color: #fff;
-  min-height: 120vh;
+  min-height: 100vh; /* Reduced height */
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -923,7 +947,7 @@
   }
   
   .hero-section {
-    padding: 6rem 1rem 4rem;
+    padding: 3rem 1rem 2rem; /* Reduced padding for tablet */
   }
 }
 

@@ -21,12 +21,14 @@
 }
 
 .navbar-logo {
-  height: 112px !important; /* 20% smaller than 140px */
-  max-width: 224px !important; /* 20% smaller than 280px */
+  height: 126px !important; /* 17% larger (reduced by 10%) */
+  max-width: 270px !important; /* 17% larger (reduced by 10%) */
   width: auto !important;
   padding-top: 0 !important;
   object-fit: contain !important;
-  display: block !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .logo-container {
@@ -121,8 +123,8 @@
   }
 
   .navbar-logo {
-    height: 67px !important; /* 20% smaller than 84px */
-    max-width: 168px !important; /* 20% smaller than 210px */
+    height: 60px !important; /* Smaller for tablet */
+    max-width: 150px !important; /* Smaller for tablet */
   }
 
   .nav-links {
@@ -166,8 +168,8 @@
   }
 
   .navbar-logo {
-    height: 56px !important; /* 20% smaller than 70px */
-    max-width: 134px !important; /* 20% smaller than 168px */
+    height: 50px !important; /* Much smaller for mobile */
+    max-width: 120px !important; /* Much smaller for mobile */
   }
 
   .language-toggle {

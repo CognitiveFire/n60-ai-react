@@ -20,6 +20,41 @@
   min-width: 200px;
 }
 
+/* Mobile responsive chatbot button */
+@media (max-width: 768px) {
+  .chat-bubble {
+    padding: 0.75rem 1rem;
+    min-width: 160px;
+    border-radius: 20px;
+  }
+  
+  .chat-text {
+    font-size: 0.85rem;
+  }
+  
+  .avatar {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chat-bubble {
+    padding: 0.6rem 0.8rem;
+    min-width: 140px;
+    border-radius: 18px;
+  }
+  
+  .chat-text {
+    font-size: 0.8rem;
+  }
+  
+  .avatar {
+    width: 28px;
+    height: 28px;
+  }
+}
+
 .chat-bubble:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 40px rgba(234, 178, 11, 0.4);
