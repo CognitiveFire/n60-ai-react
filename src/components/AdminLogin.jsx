@@ -601,7 +601,6 @@ const AdminLogin = ({ onClose }) => {
     <div className="admin-dashboard-page">
       <header className="dashboard-header">
         <div className="header-content">
-          <h1>Control Center</h1>
           <nav className="admin-nav">
             <button 
               className={`nav-tab ${activeTab === 'quotes' ? 'active' : ''}`}
