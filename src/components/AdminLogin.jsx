@@ -180,12 +180,13 @@ const AdminLogin = ({ onClose }) => {
               background: #ffffff;
               color: #1f2937;
               line-height: 1.6;
+              font-size: 14px;
             }
             .header { 
               text-align: center; 
               margin-bottom: 40px; 
               padding-bottom: 30px;
-              border-bottom: 3px solid #3b82f6;
+              border-bottom: 2px solid #1f2937;
             }
             .logo-section {
               display: flex;
@@ -194,27 +195,27 @@ const AdminLogin = ({ onClose }) => {
               margin-bottom: 20px;
             }
             .logo-section img {
-              height: 80px;
+              height: 60px;
               width: auto;
               margin: 0;
             }
             .quote-title {
-              color: #374151;
-              font-size: 1.8rem;
+              color: #1f2937;
+              font-size: 1.5rem;
               margin: 10px 0;
+              font-weight: 600;
             }
             .customer-name {
               color: #1f2937;
-              font-size: 2.5rem;
+              font-size: 2rem;
               font-weight: 700;
               margin: 15px 0;
             }
             .company-info { 
               margin-bottom: 40px; 
-              background: #f8fafc;
-              padding: 25px;
-              border-radius: 8px;
-              border: 1px solid #e2e8f0;
+              background: #f9fafb;
+              padding: 20px;
+              border: 1px solid #e5e7eb;
             }
             .info-grid {
               display: grid;
@@ -225,136 +226,145 @@ const AdminLogin = ({ onClose }) => {
               margin-bottom: 40px; 
             }
             .service-item { 
-              margin-bottom: 20px; 
-              padding: 20px; 
-              border: 1px solid #e2e8f0; 
-              border-radius: 8px;
-              background: #f8fafc;
-              border-left: 4px solid #3b82f6;
+              margin-bottom: 15px; 
+              padding: 15px; 
+              border: 1px solid #e5e7eb; 
+              background: #ffffff;
             }
             .service-header {
               display: flex;
               justify-content: space-between;
               align-items: center;
-              margin-bottom: 10px;
+              margin-bottom: 8px;
             }
             .service-name {
-              color: #1e40af;
-              font-size: 1.2rem;
+              color: #1f2937;
+              font-size: 1.1rem;
               font-weight: 600;
               margin: 0;
             }
             .service-price {
-              color: #059669;
+              color: #1f2937;
               font-weight: 700;
-              font-size: 1.1rem;
+              font-size: 1rem;
             }
             .service-description {
               color: #6b7280;
-              margin-bottom: 15px;
+              margin-bottom: 10px;
+              font-size: 0.9rem;
             }
             .service-details {
               display: flex;
               gap: 20px;
-              font-size: 0.9rem;
-              color: #374151;
+              font-size: 0.85rem;
+              color: #6b7280;
             }
             .pricing-table {
               margin-bottom: 40px;
-              border: 1px solid #e2e8f0;
-              border-radius: 8px;
-              overflow: hidden;
+              border: 1px solid #e5e7eb;
+              width: 100%;
             }
             .pricing-table table {
               width: 100%;
               border-collapse: collapse;
             }
             .pricing-table th {
-              background: #f1f5f9;
-              color: #1e293b;
+              background: #f9fafb;
+              color: #1f2937;
               font-weight: 600;
-              padding: 15px;
+              padding: 12px;
               text-align: left;
-              border-bottom: 2px solid #e2e8f0;
+              border-bottom: 1px solid #e5e7eb;
+              font-size: 0.9rem;
             }
             .pricing-table td {
-              padding: 15px;
-              border-bottom: 1px solid #e2e8f0;
-              color: #374151;
+              padding: 12px;
+              border-bottom: 1px solid #f3f4f6;
+              color: #1f2937;
+              font-size: 0.9rem;
             }
             .pricing-table .subtotal {
-              background: #f8fafc;
+              background: #f9fafb;
               font-weight: 600;
             }
             .pricing-table .mva {
-              background: #fef2f2;
-              color: #dc2626;
+              background: #f9fafb;
+              color: #1f2937;
               font-weight: 600;
             }
             .pricing-table .total {
-              background: #f0fdf4;
-              color: #059669;
+              background: #f9fafb;
+              color: #1f2937;
               font-weight: 700;
-              font-size: 1.1rem;
+              font-size: 1rem;
             }
             .totals { 
               margin-top: 30px; 
-              padding: 25px; 
-              background: #f8fafc; 
-              border-radius: 8px;
-              border: 1px solid #e2e8f0;
+              padding: 20px; 
+              background: #f9fafb; 
+              border: 1px solid #e5e7eb;
             }
             .totals h3 {
-              color: #1e40af;
+              color: #1f2937;
               margin-top: 0;
-              margin-bottom: 20px;
+              margin-bottom: 15px;
+              font-size: 1.2rem;
             }
             .total-row {
               display: flex;
               justify-content: space-between;
-              padding: 10px 0;
-              border-bottom: 1px solid #e2e8f0;
+              padding: 8px 0;
+              border-bottom: 1px solid #e5e7eb;
             }
             .total-row:last-child {
               border-bottom: none;
             }
             .total-row.mva {
-              color: #dc2626;
+              color: #1f2937;
               font-weight: 600;
             }
             .total-row.final {
-              color: #059669;
+              color: #1f2937;
               font-weight: 700;
               font-size: 1.1rem;
-              border-top: 2px solid #3b82f6;
+              border-top: 2px solid #1f2937;
               margin-top: 10px;
-              padding-top: 15px;
+              padding-top: 12px;
             }
             .proposal-content { 
               margin-top: 30px; 
-              background: #fef3c7;
-              padding: 25px;
-              border-radius: 8px;
-              border: 1px solid #fde68a;
+              background: #f9fafb;
+              padding: 20px;
+              border: 1px solid #e5e7eb;
             }
             .proposal-content h3 {
-              color: #92400e;
+              color: #1f2937;
               margin-top: 0;
+              font-size: 1.1rem;
             }
             .proposal-content p {
-              color: #92400e;
+              color: #1f2937;
               margin: 0;
+              font-size: 0.9rem;
             }
-            h1, h2, h3 { color: #1e40af; }
-            .price { font-weight: bold; color: #059669; }
-            .running-costs { color: #f59e0b; }
+            h1, h2, h3 { 
+              color: #1f2937; 
+              font-weight: 600;
+            }
+            .price { 
+              font-weight: 600; 
+              color: #1f2937; 
+            }
+            .running-costs { 
+              color: #6b7280; 
+            }
             .footer {
               margin-top: 40px;
               padding-top: 20px;
-              border-top: 1px solid #e2e8f0;
+              border-top: 1px solid #e5e7eb;
               text-align: center;
               color: #6b7280;
-              font-size: 0.9rem;
+              font-size: 0.85rem;
             }
           </style>
         </head>

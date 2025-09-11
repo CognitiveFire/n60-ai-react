@@ -27,8 +27,8 @@
 }
 
 .navbar-logo {
-  height: 134px !important;
-  max-width: 269px !important;
+  height: 107px !important;
+  max-width: 215px !important;
   width: auto !important;
   padding-top: 0 !important;
   object-fit: contain !important;
@@ -320,8 +320,8 @@
   }
 
   .navbar-logo {
-    height: 84px !important;
-    max-width: 210px !important;
+    height: 67px !important;
+    max-width: 168px !important;
   }
 
   .navbar-nav {
@@ -339,8 +339,8 @@
   }
 
   .navbar-logo {
-    height: 70px !important;
-    max-width: 168px !important;
+    height: 56px !important;
+    max-width: 134px !important;
   }
 
   .language-toggle {
