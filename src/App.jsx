@@ -201,7 +201,7 @@ function MainPage() {
         cta: "Ta kontakt for demo"
       },
       innovation: {
-        title: "AI-innovasjon for norske bedrifter",
+        title: "Våre AI-løsninger",
         subtitle: "Vi bygger AI-løsninger som automatiserer produktmarkedsføring for norske små og mellomstore bedrifter. Våre moduler kan kombineres fleksibelt for å støtte tre hovedområder: automatiserte produktkampanjer, smart leadgenerering og markedsutvidelse.",
         lanes: [
           {

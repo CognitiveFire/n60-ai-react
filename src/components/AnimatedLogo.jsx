@@ -4,6 +4,7 @@ import './AnimatedLogo.css';
 const AnimatedLogo = ({ text = "n60", className = "" }) => {
   const logoRef = useRef(null);
   const [letters, setLetters] = useState([]);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
     const textLetters = text.split('');
@@ -36,10 +37,41 @@ const AnimatedLogo = ({ text = "n60", className = "" }) => {
     setTimeout(restartAnimation, 500);
   }, [text]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  console.log('AnimatedLogo rendering, isMobile:', isMobile, 'window.innerWidth:', window.innerWidth);
+  console.log('Letters:', letters);
+  
   return (
-    <div className={`animated-logo ${className}`} ref={logoRef}>
+    <div 
+      className={`animated-logo ${className}`} 
+      ref={logoRef}
+      style={{
+        letterSpacing: isMobile ? '-15px' : '-2px',
+        fontSize: isMobile ? '1.5rem' : '4.91rem',
+        color: isMobile ? 'red' : '#eab20b',
+        backgroundColor: isMobile ? 'yellow' : 'transparent'
+      }}
+    >
       {letters.map((char, index) => (
-        <span key={`${char}-${index}`} className="logo-letter" style={{ '--final-order': index }}>
+        <span 
+          key={`${char}-${index}`} 
+          className={`logo-letter ${isMobile ? 'mobile-spacing' : 'desktop-spacing'}`}
+          style={{ 
+            '--final-order': index,
+            animation: 'none',
+            opacity: 1,
+            transform: `translate(calc(-50% + ${index * 40}px), -50%)`,
+            letterSpacing: isMobile ? '-15px' : '-2px'
+          }}
+        >
           {char}
         </span>
       ))}
