@@ -33,13 +33,6 @@
   top: 50%;
 }
 
-.logo-letter.mobile-spacing {
-  letter-spacing: -15px !important;
-}
-
-.logo-letter.desktop-spacing {
-  letter-spacing: -2px !important;
-}
 
 .logo-letter:nth-child(1) { animation-delay: 0s; }
 .logo-letter:nth-child(2) { animation-delay: 0.3s; }
@@ -123,11 +116,11 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .animated-logo {
-    font-size: 1.89rem !important; /* 5% larger than 1.8rem */
-    letter-spacing: -8px !important; /* Much tighter spacing for mobile */
-    min-width: 120px !important; /* Smaller container */
+    font-size: 1.89rem; /* 5% larger than 1.8rem */
+    letter-spacing: -3px; /* Much tighter spacing for mobile */
+    min-width: 120px; /* Smaller container */
   }
   
   /* Tighter letter spacing in animation for mobile */

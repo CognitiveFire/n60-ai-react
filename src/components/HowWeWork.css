@@ -7,14 +7,6 @@
   text-align: center;
 }
 
-/* Force mobile centering */
-@media (max-width: 768px) {
-  .howwework-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
 
 .howwework-grid {
   display: grid;
