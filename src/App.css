@@ -52,11 +52,6 @@
   }
 }
 
-/* Animated Logo Styles - moved to AnimatedLogo.css */
-
-/* Keyframes moved to AnimatedLogo.css */
-
-/* No glow effect - removed yellow box */
 
 .logo-container {
   display: flex;

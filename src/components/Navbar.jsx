@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import AnimatedLogo from './AnimatedLogo';
 // CSS moved to App.css
 
 const Navbar = ({ onLoginClick }) => {
@@ -10,7 +9,11 @@ const Navbar = ({ onLoginClick }) => {
     <nav className="navbar">
       <div className="navbar-container">
         <a href="#hero" className="navbar-brand">
-          <AnimatedLogo text="n60" className="navbar-logo" />
+          <img 
+            src="/n60 Logo/1.png" 
+            alt="n60 Logo" 
+            className="navbar-logo"
+          />
         </a>
         
         <nav className="navbar-nav">
