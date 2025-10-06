@@ -10,7 +10,7 @@ const Navbar = ({ onLoginClick }) => {
       <div className="navbar-container">
         <a href="#hero" className="navbar-brand">
           <img 
-            src="/n60 Logo/1.png" 
+            src="https://i.ibb.co/DPb4dK2Y/1.png" 
             alt="n60 Logo" 
             className="navbar-logo"
           />

@@ -18,7 +18,7 @@
 .navbar-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,8 +27,8 @@
 }
 
 .navbar-logo {
-  height: 126px !important; /* 17% larger (reduced by 10%) */
-  max-width: 270px !important; /* 17% larger (reduced by 10%) */
+  height: 88px !important; /* Reduced by 30% from 126px */
+  max-width: 189px !important; /* Reduced by 30% from 270px */
   width: auto !important;
   padding-top: 0 !important;
   object-fit: contain !important;
@@ -40,15 +40,15 @@
 /* Mobile responsive navbar logo */
 @media (max-width: 768px) {
   .navbar-logo {
-    height: 60px !important; /* Smaller for tablet */
-    max-width: 150px !important; /* Smaller for tablet */
+    height: 42px !important; /* Reduced by 30% from 60px */
+    max-width: 105px !important; /* Reduced by 30% from 150px */
   }
 }
 
 @media (max-width: 480px) {
   .navbar-logo {
-    height: 50px !important; /* Much smaller for mobile */
-    max-width: 120px !important; /* Much smaller for mobile */
+    height: 35px !important; /* Reduced by 30% from 50px */
+    max-width: 84px !important; /* Reduced by 30% from 120px */
   }
 }
 
@@ -56,7 +56,7 @@
 .logo-container {
   display: flex;
   align-items: center;
-  padding-left: 0.5rem;
+  padding-left: 0;
   margin-right: 0;
 }
 
@@ -216,8 +216,9 @@
   }
   
   .hero-section {
-    padding: 2rem 1rem 1.5rem; /* Much reduced padding for mobile */
+    padding: 10rem 1rem 6rem !important; /* Much reduced padding for mobile */
     min-height: auto;
+    background: #ffffff !important;
   }
   
   .solutions-section {
@@ -336,6 +337,7 @@
 
   .navbar-container {
     height: 100%;
+    padding: 0.5rem 1.5rem;
   }
 
   .navbar-logo {
@@ -354,7 +356,7 @@
 
 @media (max-width: 480px) {
   .navbar-container {
-    padding: 0.5rem;
+    padding: 0.5rem 1.5rem;
   }
 
   .navbar-logo {
@@ -368,42 +370,29 @@
   }
 }
 
+/* Large Screen Navbar Alignment */
+@media (min-width: 1440px) {
+  .navbar-container {
+    max-width: 1400px;
+    padding: 0.5rem 3rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .navbar-container {
+    max-width: 1600px;
+    padding: 0.5rem 4rem;
+  }
+}
+
+@media (min-width: 2560px) {
+  .navbar-container {
+    max-width: 2000px;
+  }
+}
+
 /* ===== HERO STYLES ===== */
-.hero-section {
-  background: linear-gradient(135deg, #0f1c30 0%, #363f50 100%);
-  position: relative;
-  padding: 4rem 2rem 3rem; /* Reduced top and bottom padding */
-  color: #fff;
-  min-height: 100vh; /* Reduced height */
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-/* Mountain overlay using pseudo-elements */
-.hero-section::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60%;
-  background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
-  clip-path: polygon(0 100%, 15% 70%, 30% 85%, 45% 60%, 60% 80%, 75% 50%, 90% 75%, 100% 65%, 100% 100%);
-  z-index: 1;
-}
-
-.hero-section::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40%;
-  background: linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.06) 50%, transparent 100%);
-  clip-path: polygon(0 100%, 25% 80%, 50% 90%, 75% 70%, 100% 85%, 100% 100%);
-  z-index: 1;
-}
+/* Hero section styles now in Hero.css - removed to prevent conflicts */
 
 /* Removed black overlay so blue gradient shows through */
 
@@ -420,56 +409,9 @@
   margin-top: 1rem;
 }
 
-.hero-left {
-  text-align: left;
-}
+/* Hero left/right, headline and subheadline styles moved to Hero.css */
 
-.hero-right {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-  min-height: 720px;
-  width: 100%;
-}
-
-.hero-headline {
-  font-size: 3.5rem;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  margin-bottom: 2.5rem;
-  margin-top: 0.5rem;
-}
-
-.hero-subheadline {
-  font-size: 1.25rem;
-  font-weight: 300;
-  line-height: 1.7;
-  max-width: 700px;
-  margin: 0 auto 3rem;
-  color: #ccc;
-}
-
-.hero-cta {
-  background-color: transparent;
-  color: #fff;
-  border: 2px solid #fff;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.hero-cta:hover {
-  background-color: #fff;
-  color: #000;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
+/* Hero CTA styles moved to Hero.css */
 
 .hero-image {
   width: 120%;
@@ -678,23 +620,19 @@
 
 /* Question Button */
 .hero-question-btn {
-  position: absolute;
-  bottom: -20px;
-  right: 20px;
   background: #eab20b;
   color: #000000;
   border: none;
   border-radius: 8px;
-  padding: 0.75rem 1rem;
-  font-size: 0.9rem;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  display: inline-block;
   box-shadow: 0 8px 20px rgba(234, 178, 11, 0.3);
   transition: all 0.3s ease;
-  z-index: 4;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .hero-question-btn:hover {
@@ -702,17 +640,14 @@
   box-shadow: 0 12px 25px rgba(234, 178, 11, 0.4);
 }
 
-.question-icon {
-  font-size: 1.1rem;
-}
-
 /* Mobile Responsiveness for Hero */
 @media (max-width: 768px) {
   .hero-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    text-align: left; /* Keep left alignment on mobile */
-    padding-left: 2rem; /* Add left spacing for hero text */
+    padding: 0 1.5rem;
+  }
+  
+  .hero-content {
+    text-align: center;
   }
   
   .hero-headline {
@@ -724,7 +659,74 @@
   }
   
   .hero-section {
-    padding: 3rem 1rem 2rem; /* Reduced padding for tablet */
+    padding: 10rem 1rem 6rem !important; /* Reduced padding for tablet */
+    background: #ffffff !important;
+  }
+}
+
+/* Large Screen Responsiveness for Hero */
+@media (min-width: 1440px) {
+  .hero-container {
+    max-width: 1000px;
+  }
+  
+  .hero-headline {
+    font-size: 4rem;
+  }
+  
+  .hero-subheadline {
+    font-size: 1.35rem;
+  }
+  
+  .hero-question-btn {
+    font-size: 1rem;
+    padding: 0.875rem 1.25rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  .hero-container {
+    max-width: 1200px;
+  }
+  
+  .hero-headline {
+    font-size: 4.5rem;
+  }
+  
+  .hero-subheadline {
+    font-size: 1.5rem;
+  }
+  
+  .hero-question-btn {
+    font-size: 1.1rem;
+    padding: 1rem 1.5rem;
+  }
+  
+  .question-icon {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 2560px) {
+  .hero-container {
+    max-width: 1400px;
+  }
+  
+  .hero-headline {
+    font-size: 5.5rem;
+  }
+  
+  .hero-subheadline {
+    font-size: 1.75rem;
+  }
+  
+  .hero-question-btn {
+    font-size: 1.2rem;
+    padding: 1.2rem 1.75rem;
+  }
+  
+  .question-icon {
+    font-size: 1.5rem;
   }
 }
 
@@ -2202,12 +2204,16 @@ body, html {
     grid-template-columns: 1fr;
   }
 
-  .hero-section,
   .solutions-section,
   .how-it-works-section,
   .value-section,
   .contact-section {
     padding: 80px 0;
+  }
+  
+  .hero-section {
+    padding: 12rem 2rem 8rem !important;
+    background: #ffffff !important;
   }
 
   .chat-tab {
@@ -2714,14 +2720,23 @@ body, html {
   color: #f3f4f6;
 }
 
-.innovation-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+/* Innovation Carousel Container */
+.innovation-carousel-container {
   margin-top: 3rem;
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 2rem 4rem;
+  position: relative;
+}
+
+.innovation-swiper {
+  padding-bottom: 60px !important;
+}
+
+/* Keep grid class for backwards compatibility but hide it */
+.innovation-grid {
+  display: none;
 }
 
 .innovation-card {
@@ -2733,6 +2748,9 @@ body, html {
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
   position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .innovation-card:hover {
@@ -2840,6 +2858,55 @@ body, html {
 }
 
 /* Mobile Responsiveness for Innovation Section */
+/* Custom Swiper Navigation Buttons */
+.innovation-swiper .swiper-button-next,
+.innovation-swiper .swiper-button-prev {
+  color: #eab20b;
+  background: rgba(255, 255, 255, 0.1);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(234, 178, 11, 0.3);
+  transition: all 0.3s ease;
+}
+
+.innovation-swiper .swiper-button-next:after,
+.innovation-swiper .swiper-button-prev:after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.innovation-swiper .swiper-button-next:hover,
+.innovation-swiper .swiper-button-prev:hover {
+  background: rgba(234, 178, 11, 0.2);
+  border-color: #eab20b;
+  transform: scale(1.1);
+}
+
+/* Custom Swiper Pagination */
+.innovation-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.innovation-swiper .swiper-pagination-bullet-active {
+  background: #eab20b;
+  opacity: 1;
+  width: 30px;
+  border-radius: 6px;
+}
+
+/* Swiper slide height consistency */
+.innovation-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+/* Legacy grid styles kept for compatibility but hidden */
 @media (min-width: 1400px) {
   .innovation-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -2883,7 +2950,22 @@ body, html {
   }
   
   .innovation-card {
-    margin: 0 1rem;
+    margin: 0;
+  }
+  
+  .innovation-carousel-container {
+    padding: 0 1rem 4rem;
+  }
+  
+  .innovation-swiper .swiper-button-next,
+  .innovation-swiper .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .innovation-swiper .swiper-button-next:after,
+  .innovation-swiper .swiper-button-prev:after {
+    font-size: 16px;
   }
 }
 

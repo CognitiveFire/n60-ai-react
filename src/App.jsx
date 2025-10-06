@@ -10,6 +10,15 @@ import CookieConsent from './components/CookieConsent';
 import './App.css';
 import './components/Contact.css';
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 // Mobile detection utility
 const isMobileDevice = () => {
   return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
@@ -973,31 +982,58 @@ function MainPage() {
               ))}
             </div>
             
-            {/* Innovation Modules Grid */}
-            <div className="innovation-grid" data-aos="fade-up">
-              {currentContent.innovation.modules.map((module, index) => (
-                <div 
-                  key={index} 
-                  className="innovation-card" 
-                  data-aos="fade-up" 
-                  data-aos-delay={index * 100}
-                  data-lane={selectedLane}
-                >
-                  <div className="innovation-image">
-                    <img src={module.dashboard} alt={module.title} />
-                  </div>
-                  <div className="innovation-content">
-                    <h3>{module.title}</h3>
-                    <p className="module-description">
-                      {module.descriptions[selectedLane]}
-                    </p>
-                    <div className="innovation-price">
-                      <span className="price">{module.price.toLocaleString()} NOK</span>
-                      <span className="hours">{module.hours}h</span>
+            {/* Innovation Modules Carousel */}
+            <div className="innovation-carousel-container" data-aos="fade-up">
+              <Swiper
+                modules={[Navigation, Pagination, Autoplay]}
+                spaceBetween={30}
+                slidesPerView={1}
+                navigation
+                pagination={{ clickable: true }}
+                autoplay={{
+                  delay: 5000,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+                }}
+                breakpoints={{
+                  640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 25,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                  },
+                }}
+                className="innovation-swiper"
+              >
+                {currentContent.innovation.modules.map((module, index) => (
+                  <SwiperSlide key={index}>
+                    <div 
+                      className="innovation-card" 
+                      data-lane={selectedLane}
+                    >
+                      <div className="innovation-image">
+                        <img src={module.dashboard} alt={module.title} />
+                      </div>
+                      <div className="innovation-content">
+                        <h3>{module.title}</h3>
+                        <p className="module-description">
+                          {module.descriptions[selectedLane]}
+                        </p>
+                        <div className="innovation-price">
+                          <span className="price">{module.price.toLocaleString()} NOK</span>
+                          <span className="hours">{module.hours}h</span>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              ))}
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
         </section>
