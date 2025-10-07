@@ -732,6 +732,13 @@
   }
 }
 
+/* Desktop spacing for hero buttons */
+@media (min-width: 769px) {
+  #hero .hero-buttons {
+    margin-top: 3.625rem !important; /* 10px extra space above CTA button on desktop */
+  }
+}
+
 /* Large Screen Responsiveness for Hero */
 @media (min-width: 1440px) {
   .hero-container {
