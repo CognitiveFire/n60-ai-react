@@ -54,7 +54,7 @@
   font-weight: 300;
   line-height: 1.7;
   max-width: 700px;
-  margin: 0 0 1rem 0;
+  margin: 0 0 2rem 0;
   color: #333333 !important;
 }
 
@@ -70,7 +70,7 @@
 @media (max-width: 768px) {
   .hero-buttons {
     flex-direction: column !important;
-    gap: 7px !important;
+    gap: 1rem !important;
     align-items: center !important;
     margin-top: 1rem !important;
     margin-bottom: 1rem !important;
@@ -135,7 +135,7 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .hero-section {
-    padding: 3rem 1rem 2rem !important;
+    padding: 2rem 1rem 1.5rem !important;
     min-height: auto !important;
     display: flex !important;
     align-items: center !important;
@@ -173,6 +173,7 @@
   .hero-subheadline {
     font-size: 1.1rem !important;
     text-align: center !important;
+    margin: 0 0 1.5rem 0 !important;
   }
   
   .hero-cta {
@@ -183,7 +184,7 @@
 
 @media (max-width: 480px) {
   .hero-section {
-    padding: 2rem 1rem 1rem !important;
+    padding: 1.5rem 1rem 1rem !important;
     min-height: auto !important;
     display: flex !important;
     align-items: center !important;
@@ -204,6 +205,7 @@
   .hero-subheadline {
     font-size: 0.9rem !important;
     text-align: center !important;
+    margin: 0 0 1.5rem 0 !important;
   }
   
   .hero-flag-image {
