@@ -78,18 +78,18 @@
 }
 
 .hero-cta {
-  background-color: #FFD700 !important; /* Yellow background */
+  background-color: #eab106 !important; /* Correct yellow background */
   color: #000000 !important;
-  border: 2px solid #FFD700 !important; /* Yellow border */
+  border: 3px solid #000000 !important; /* Hand-drawn style black border */
   padding: 1rem 2rem !important;
   font-size: 1.1rem !important;
   font-weight: 600 !important;
   cursor: pointer !important;
   transition: all 0.3s ease !important;
-  border-radius: 8px !important;
+  border-radius: 15px 8px 12px 6px !important; /* Hand-drawn irregular border */
   text-transform: uppercase !important;
   letter-spacing: 0.5px !important;
-  box-shadow: none !important;
+  box-shadow: 4px 4px 0px 0px #000000 !important; /* Hand-drawn shadow */
   display: inline-block !important;
   text-align: center !important;
   text-decoration: none !important;
@@ -100,14 +100,15 @@
   line-height: 1 !important;
   margin: 0 !important;
   position: relative !important;
+  transform: rotate(-1deg) !important; /* Slight hand-drawn tilt */
 }
 
 .hero-cta:hover {
-  background-color: #FFA500 !important; /* Darker yellow on hover */
-  border-color: #FFA500 !important;
+  background-color: #d49e05 !important; /* Darker yellow on hover */
+  border-color: #000000 !important;
   color: #000000 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3) !important;
+  transform: rotate(1deg) translateY(-2px) !important; /* Slight counter-rotation on hover */
+  box-shadow: 6px 6px 0px 0px #000000 !important; /* Stronger hand-drawn shadow */
 }
 
 .hero-placeholder {
@@ -190,9 +191,12 @@
   #hero .hero-cta {
     padding: 0.875rem 1.75rem !important;
     font-size: 1rem !important;
-    background-color: #FFD700 !important; /* Ensure yellow on mobile */
-    border: 2px solid #FFD700 !important;
+    background-color: #eab106 !important; /* Correct yellow on mobile */
+    border: 3px solid #000000 !important; /* Hand-drawn black border */
     color: #000000 !important;
+    border-radius: 15px 8px 12px 6px !important; /* Hand-drawn irregular border */
+    box-shadow: 4px 4px 0px 0px #000000 !important; /* Hand-drawn shadow */
+    transform: rotate(-1deg) !important; /* Slight hand-drawn tilt */
   }
 }
 
