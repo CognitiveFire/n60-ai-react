@@ -216,7 +216,7 @@
   }
   
   .hero-section {
-    padding: 6rem 1rem 4rem !important; /* Reduced padding for mobile */
+    padding: 3rem 1rem 2rem !important; /* Much reduced padding for mobile */
     min-height: auto !important;
     background: #ffffff !important;
     display: flex !important;
@@ -667,7 +667,7 @@
   }
   
   .hero-section {
-    padding: 6rem 1rem 4rem !important; /* Reduced padding for tablet */
+    padding: 3rem 1rem 2rem !important; /* Much reduced padding for tablet */
     background: #ffffff !important;
     min-height: auto !important;
     display: flex !important;
@@ -678,7 +678,7 @@
 
 @media (max-width: 480px) {
   .hero-section {
-    padding: 5rem 1rem 3rem !important; /* Further reduced padding for mobile */
+    padding: 2rem 1rem 1rem !important; /* Much reduced padding for mobile */
     min-height: auto !important;
     display: flex !important;
     align-items: center !important;

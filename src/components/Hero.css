@@ -72,8 +72,8 @@
     flex-direction: column !important;
     gap: 7px !important;
     align-items: center !important;
-    margin-top: 2rem !important;
-    margin-bottom: 2rem !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
   }
 }
 
@@ -135,7 +135,7 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .hero-section {
-    padding: 6rem 1rem 4rem !important;
+    padding: 3rem 1rem 2rem !important;
     min-height: auto !important;
     display: flex !important;
     align-items: center !important;
@@ -183,7 +183,7 @@
 
 @media (max-width: 480px) {
   .hero-section {
-    padding: 5rem 1rem 3rem !important;
+    padding: 2rem 1rem 1rem !important;
     min-height: auto !important;
     display: flex !important;
     align-items: center !important;

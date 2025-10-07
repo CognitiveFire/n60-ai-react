@@ -18,27 +18,14 @@ const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
     <section id="hero" className="hero-section">
       <div className="hero-container">
         <div className="hero-left">
-          <h1 className="hero-headline" style={{ lineHeight: '1', marginBottom: '2.5rem' }}>AI-innovasjon for norske bedrifter</h1>
+          <h1 className="hero-headline">AI-innovasjon for norske bedrifter</h1>
           <p className="hero-subheadline">
             Automatiser B2B-produktmarkedsføring med kraftig AI-teknologi. Skap mer etterspørsel, generer flere leads og voks raskere – tilpasset norske små og mellomstore bedrifter.
           </p>
-          <div className="hero-buttons" style={{ display: 'flex', flexDirection: 'row', gap: '1rem', marginTop: '3rem', marginBottom: '3rem' }}>
+          <div className="hero-buttons">
             <button 
               onClick={handleOpenCalendly}
               className="hero-cta"
-              style={{
-                backgroundColor: 'transparent',
-                color: '#000000',
-                border: '2px solid #000000',
-                padding: '1rem 2rem',
-                fontSize: '1.1rem',
-                fontWeight: '600',
-                borderRadius: '8px',
-                textTransform: 'uppercase',
-                letterSpacing: '0.5px',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease'
-              }}
             >
               Se hvordan det fungerer
             </button>
