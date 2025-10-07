@@ -643,6 +643,34 @@
   box-shadow: 0 12px 25px rgba(234, 178, 11, 0.4);
 }
 
+/* Ensure CTA button styling is applied */
+#hero .hero-cta {
+  background-color: #FFD700 !important;
+  border: 2px solid #FFD700 !important;
+  color: #000000 !important;
+  padding: 1rem 2rem !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  display: inline-block !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#hero .hero-cta:hover {
+  background-color: #FFA500 !important;
+  border-color: #FFA500 !important;
+  color: #000000 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3) !important;
+}
+
 /* Mobile Responsiveness for Hero */
 @media screen and (max-width: 768px) {
   #hero .hero-container {
@@ -657,7 +685,7 @@
   }
   
   #hero .hero-headline {
-    font-size: 2rem !important;
+    font-size: 2.5rem !important; /* Same size as other sections */
     text-align: center !important;
   }
   
@@ -692,7 +720,7 @@
   }
   
   #hero .hero-headline {
-    font-size: 1.6rem !important;
+    font-size: 2.5rem !important; /* Same size as other sections */
     text-align: center !important;
   }
   
