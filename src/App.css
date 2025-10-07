@@ -216,7 +216,7 @@
   }
   
   .hero-section {
-    padding: 2rem 1rem 1.5rem !important; /* Reduced padding for mobile */
+    padding: 4rem 1rem 1.5rem !important; /* Increased top padding to clear navbar */
     min-height: auto !important;
     background: #ffffff !important;
     display: flex !important;
@@ -668,7 +668,7 @@
   }
   
   #hero.hero-section {
-    padding: 2rem 1rem 1.5rem !important; /* Reduced padding for tablet */
+    padding: 4rem 1rem 1.5rem !important; /* Increased top padding to clear navbar */
     background: #ffffff !important;
     min-height: auto !important;
     display: flex !important;
@@ -679,7 +679,7 @@
 
 @media screen and (max-width: 480px) {
   #hero.hero-section {
-    padding: 1.5rem 1rem 1rem !important; /* Much reduced padding for mobile */
+    padding: 3.5rem 1rem 1rem !important; /* Increased top padding to clear navbar */
     min-height: auto !important;
     display: flex !important;
     align-items: center !important;

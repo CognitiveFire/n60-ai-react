@@ -29,22 +29,6 @@ const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
             >
               Se hvordan det fungerer
             </button>
-            
-            {/* Question Button */}
-            <button 
-              className="hero-question-btn"
-              onClick={() => {
-                const contactElement = document.getElementById('contact');
-                console.log('Contact element:', contactElement);
-                if (contactElement) {
-                  contactElement.scrollIntoView({ behavior: 'smooth' });
-                } else {
-                  console.log('Contact element not found');
-                }
-              }}
-            >
-              Hva koster det?
-            </button>
           </div>
         </div>
         

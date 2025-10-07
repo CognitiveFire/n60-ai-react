@@ -1,6 +1,6 @@
 .hero-section {
   position: relative;
-  padding: 12rem 2rem 12rem;
+  padding: 14rem 2rem 12rem; /* Increased top padding to clear navbar */
   background: #ffffff;
   color: #000000;
   min-height: 100vh;
@@ -78,9 +78,9 @@
 }
 
 .hero-cta {
-  background-color: transparent !important;
+  background-color: #FFD700 !important; /* Yellow background */
   color: #000000 !important;
-  border: 2px solid #000000 !important;
+  border: 2px solid #FFD700 !important; /* Yellow border */
   padding: 1rem 2rem !important;
   font-size: 1.1rem !important;
   font-weight: 600 !important;
@@ -97,10 +97,11 @@
 }
 
 .hero-cta:hover {
-  background-color: #000000 !important;
-  color: #ffffff !important;
+  background-color: #FFA500 !important; /* Darker yellow on hover */
+  border-color: #FFA500 !important;
+  color: #000000 !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important;
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3) !important;
 }
 
 .hero-placeholder {
@@ -139,7 +140,7 @@
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
   #hero.hero-section {
-    padding: 2rem 1rem 1.5rem !important;
+    padding: 4rem 1rem 1.5rem !important; /* Increased top padding to clear navbar */
     min-height: auto !important;
     display: flex !important;
     align-items: center !important;
@@ -188,7 +189,7 @@
 
 @media screen and (max-width: 480px) {
   #hero.hero-section {
-    padding: 1.5rem 1rem 1rem !important;
+    padding: 3.5rem 1rem 1rem !important; /* Increased top padding to clear navbar */
     min-height: auto !important;
     display: flex !important;
     align-items: center !important;
