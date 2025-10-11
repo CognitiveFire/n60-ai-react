@@ -135,7 +135,7 @@ function MainPage() {
         video: null
       },
       solutions: {
-        title: "AI-løsninger for norske bedrifter",
+        title: "Bærekraftig vekst med smart teknologi",
         subtitle: "Automatiser produktmarkedsføring, generer kvalifiserte leads og voks inn i nye markeder med AI-teknologi skreddersydd for norske små og mellomstore bedrifter.",
         cases: [
           {
