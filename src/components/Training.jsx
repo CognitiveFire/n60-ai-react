@@ -13,7 +13,7 @@ const Training = () => {
     format: '',
     message: ''
   });
-  const [formStatus, setFormStatus] = useState(null);
+  const [formStatus, setFormStatus] = useState({ type: 'idle', message: '' });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -357,7 +357,7 @@ const Training = () => {
                   Request Training Information
                 </button>
                 
-                {formStatus && (
+                {formStatus.type !== 'idle' && (
                   <div className={`form-status ${formStatus.type}`}>
                     {formStatus.message}
                   </div>
