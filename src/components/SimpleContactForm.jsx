@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './SimpleContactForm.css';
 
-const SimpleContactForm = () => {
+const SimpleContactForm = ({ isInSalesbot = false }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -9,6 +9,8 @@ const SimpleContactForm = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,22 +20,41 @@ const SimpleContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
+    setIsLoading(true);
+    setError('');
     
-    // Reset form after submission
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        message: ''
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    }, 3000);
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        // Reset form after submission
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFormData({
+            name: '',
+            email: '',
+            company: '',
+            message: ''
+          });
+        }, 3000);
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending form:', error);
+      setError('Det oppstod en feil ved sending av meldingen. Vennligst prøv igjen.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isSubmitted) {
@@ -48,8 +69,8 @@ const SimpleContactForm = () => {
   }
 
   return (
-    <div className="simple-contact-form-container">
-      <div className="simple-contact-form">
+    <div className={`simple-contact-form-container ${isInSalesbot ? 'in-salesbot' : ''}`}>
+      <div className={`simple-contact-form ${isInSalesbot ? 'in-salesbot' : ''}`}>
         <h2>Kontakt oss</h2>
         <p>Har du et spørsmål? Send oss en melding og vi svarer deg raskt.</p>
         
@@ -105,8 +126,14 @@ const SimpleContactForm = () => {
             />
           </div>
 
-          <button type="submit" className="submit-button">
-            Send melding
+          {error && (
+            <div className="form-error">
+              {error}
+            </div>
+          )}
+          
+          <button type="submit" className="submit-button" disabled={isLoading}>
+            {isLoading ? 'Sender...' : 'Send melding'}
           </button>
         </form>
       </div>

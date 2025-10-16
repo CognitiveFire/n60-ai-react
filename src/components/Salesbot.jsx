@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Salesbot.css';
-import SimpleContactForm from './SimpleContactForm';
+import SalesbotContactForm from './SalesbotContactForm';
 
 const Salesbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -561,7 +561,7 @@ const Salesbot = () => {
               ← Tilbake
             </button>
           </div>
-          <SimpleContactForm />
+          <SalesbotContactForm />
         </div>
       )}
       

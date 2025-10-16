@@ -7,6 +7,16 @@
   justify-content: center;
 }
 
+/* When used inside salesbot */
+.simple-contact-form-container.in-salesbot {
+  padding: 0 !important;
+  background: transparent !important;
+  min-height: auto !important;
+  display: block !important;
+  align-items: stretch !important;
+  justify-content: stretch !important;
+}
+
 .simple-contact-form {
   background: white;
   padding: 3rem;
@@ -14,6 +24,20 @@
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   max-width: 600px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* When used inside salesbot */
+.simple-contact-form.in-salesbot {
+  background: white !important;
+  padding: 1.5rem !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  max-width: none !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .simple-contact-form h2 {
@@ -32,8 +56,24 @@
   line-height: 1.6;
 }
 
+/* When used inside salesbot */
+.simple-contact-form.in-salesbot h2 {
+  font-size: 1.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.simple-contact-form.in-salesbot p {
+  font-size: 0.9rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
 .form-group {
   margin-bottom: 1.5rem;
+}
+
+/* When used inside salesbot */
+.simple-contact-form.in-salesbot .form-group {
+  margin-bottom: 1rem !important;
 }
 
 .form-group label {
@@ -74,35 +114,83 @@
   font-family: inherit;
 }
 
-.submit-button {
+.simple-contact-form form {
   width: 100%;
-  background: #3b82f6;
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.simple-contact-form .submit-button {
+  width: 100% !important;
+  background: #3b82f6 !important;
+  color: white !important;
+  border: none !important;
+  padding: 1rem 2rem !important;
+  border-radius: 8px !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  margin-top: 1rem !important;
+  box-sizing: border-box !important;
+}
+
+.simple-contact-form .submit-button:hover {
+  background: #2563eb !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3) !important;
+}
+
+.simple-contact-form .submit-button:active {
+  transform: translateY(0) !important;
+}
+
+.simple-contact-form .submit-button:disabled {
+  background: #9ca3af !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* When used inside salesbot - override salesbot button styles */
+.simple-contact-form.in-salesbot .submit-button {
+  width: 100% !important;
+  background: #3b82f6 !important;
+  color: white !important;
+  border: none !important;
+  padding: 0.75rem 1rem !important;
+  border-radius: 8px !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  margin-top: 1rem !important;
+  box-sizing: border-box !important;
+}
+
+.simple-contact-form.in-salesbot .submit-button:hover {
+  background: #2563eb !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.simple-contact-form.in-salesbot .submit-button:disabled {
+  background: #9ca3af !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.form-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 1rem;
   border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  margin-top: 1rem;
-}
-
-.submit-button:hover {
-  background: #2563eb;
-  transform: translateY(-1px);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
-}
-
-.submit-button:active {
-  transform: translateY(0);
-}
-
-.submit-button:disabled {
-  background: #9ca3af;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Success Message */
@@ -161,8 +249,13 @@
     font-size: 0.95rem;
   }
   
-  .submit-button {
-    padding: 0.875rem 1.5rem;
-    font-size: 1rem;
+  .simple-contact-form .submit-button {
+    padding: 0.875rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+  
+  .simple-contact-form.in-salesbot .submit-button {
+    padding: 0.75rem 1rem !important;
+    font-size: 0.9rem !important;
   }
 }

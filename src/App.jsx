@@ -7,6 +7,7 @@ import Salesbot from './components/Salesbot';
 import QuotePage from './components/QuotePage';
 import AdminLogin from './components/AdminLogin';
 import CookieConsent from './components/CookieConsent';
+import Training from './components/Training';
 import './App.css';
 import './components/Contact.css';
 
@@ -80,6 +81,7 @@ function AppContent() {
   return (
     <Routes>
       <Route path="/quote/*" element={<QuotePage />} />
+      <Route path="/training" element={<Training />} />
       <Route path="/" element={<MainPage />} />
     </Routes>
   );

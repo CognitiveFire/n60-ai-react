@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import sgMail from '@sendgrid/mail';
+import { Resend } from 'resend';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
@@ -18,7 +18,7 @@ console.log('Environment:', process.env.NODE_ENV || 'development');
 console.log('Port:', port);
 console.log('Current directory:', __dirname);
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.use(cors());
 app.use(express.json());
@@ -54,22 +54,60 @@ app.get('/', (req, res) => {
   res.sendFile(indexPath);
 });
 
-app.post('/api/sendgrid', async (req, res) => {
-  console.log('Received POST request to /api/sendgrid');
+// Main website contact form
+app.post('/api/contact', async (req, res) => {
+  console.log('Received POST request to /api/contact');
   console.log('Request body:', req.body);
   const { name, email, company, message } = req.body;
   try {
-    await sgMail.send({
-      to: 'matthew@n60.ai',
-      from: 'matthew@n60.ai',
+    await resend.emails.send({
+      from: 'N60 Website <onboarding@resend.dev>',
+      to: ['matthew@n60.ai'],
       subject: `Ny henvendelse fra ${name} (${company})`,
-      text: `Navn: ${name}\nE-post: ${email}\nBedrift: ${company}\n\nMelding:\n${message}`
+      html: `
+        <h2>Ny henvendelse fra N60.no</h2>
+        <p><strong>Navn:</strong> ${name}</p>
+        <p><strong>E-post:</strong> ${email}</p>
+        <p><strong>Bedrift:</strong> ${company}</p>
+        <p><strong>Melding:</strong></p>
+        <p>${message}</p>
+      `
     });
-    console.log('Email sent successfully');
+    console.log('Email sent successfully via Resend');
     res.status(200).json({ success: true });
   } catch (err) {
-    console.error('SendGrid error:', err);
+    console.error('Resend error:', err);
     res.status(500).json({ error: 'Kunne ikke sende e-post' });
+  }
+});
+
+// Training form endpoint
+app.post('/api/training-contact', async (req, res) => {
+  console.log('Received POST request to /api/training-contact');
+  console.log('Request body:', req.body);
+  const { name, email, company, phone, participants, format, message } = req.body;
+  try {
+    await resend.emails.send({
+      from: 'N60 Training <onboarding@resend.dev>',
+      to: ['matthew@n60.ai'],
+      subject: `AI Training Request from ${name} (${company})`,
+      html: `
+        <h2>AI Competence Training Request</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Company:</strong> ${company}</p>
+        <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
+        <p><strong>Participants:</strong> ${participants}</p>
+        <p><strong>Preferred Format:</strong> ${format}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message || 'No additional message provided'}</p>
+      `
+    });
+    console.log('Training email sent successfully via Resend');
+    res.status(200).json({ success: true });
+  } catch (err) {
+    console.error('Resend error:', err);
+    res.status(500).json({ error: 'Could not send email' });
   }
 });
 
