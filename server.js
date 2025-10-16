@@ -18,7 +18,14 @@ console.log('Environment:', process.env.NODE_ENV || 'development');
 console.log('Port:', port);
 console.log('Current directory:', __dirname);
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend only if API key is available
+let resend = null;
+if (process.env.RESEND_API_KEY) {
+  resend = new Resend(process.env.RESEND_API_KEY);
+  console.log('✅ Resend initialized with API key');
+} else {
+  console.log('⚠️  Resend API key not found - email functionality disabled');
+}
 
 app.use(cors());
 app.use(express.json());
@@ -59,6 +66,14 @@ app.post('/api/contact', async (req, res) => {
   console.log('Received POST request to /api/contact');
   console.log('Request body:', req.body);
   const { name, email, company, message } = req.body;
+  
+  if (!resend) {
+    console.log('⚠️  Resend not available - form submission logged only');
+    console.log('Contact form submission:', { name, email, company, message });
+    res.status(200).json({ success: true, message: 'Form submitted (email disabled)' });
+    return;
+  }
+  
   try {
     await resend.emails.send({
       from: 'N60 Website <onboarding@resend.dev>',
@@ -86,6 +101,14 @@ app.post('/api/training-contact', async (req, res) => {
   console.log('Received POST request to /api/training-contact');
   console.log('Request body:', req.body);
   const { name, email, company, phone, participants, format, message } = req.body;
+  
+  if (!resend) {
+    console.log('⚠️  Resend not available - training form submission logged only');
+    console.log('Training form submission:', { name, email, company, phone, participants, format, message });
+    res.status(200).json({ success: true, message: 'Training request submitted (email disabled)' });
+    return;
+  }
+  
   try {
     await resend.emails.send({
       from: 'N60 Training <onboarding@resend.dev>',
