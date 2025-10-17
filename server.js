@@ -189,55 +189,310 @@ app.get('/privacy-policy', (req, res) => {
   res.sendFile(privacyPolicyPath);
 });
 
-// Training page endpoint - serve standalone HTML
+// Training page endpoint - serve inline HTML
 // This MUST come before the catch-all route
 app.get('/training', (req, res) => {
-  console.log('🎯 TRAINING ENDPOINT HIT - NEW VERSION DEPLOYED!');
+  console.log('🎯 TRAINING ENDPOINT HIT - SERVING INLINE HTML!');
   console.log('Training endpoint hit at:', new Date().toISOString());
-  console.log('Request URL:', req.url);
-  console.log('Request method:', req.method);
   
-  // Try both locations
-  const publicPath = join(__dirname, 'public', 'training.html');
-  const distPath = join(__dirname, 'dist', 'training.html');
+  const trainingHTML = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Competence Training for Teams - N60.ai</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #1f2937; background: #ffffff; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .navbar { background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 0; }
+        .navbar-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #3b82f6; text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: #374151; text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+        .nav-links a:hover { color: #3b82f6; }
+        .training-hero { background: linear-gradient(135deg, #0f1c30 0%, #363f50 100%); color: white; padding: 120px 0 80px; text-align: center; }
+        .hero-content h1 { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.1; }
+        .hero-subtitle { font-size: 1.5rem; font-weight: 300; margin-bottom: 1.5rem; opacity: 0.9; }
+        .hero-description { font-size: 1.1rem; max-width: 800px; margin: 0 auto 2rem; opacity: 0.9; line-height: 1.7; }
+        .hero-cta { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; }
+        .cta-button { padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; display: inline-block; }
+        .cta-button.primary { background: #3b82f6; color: white; }
+        .cta-button.secondary { background: transparent; color: white; border: 2px solid white; }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .section { padding: 80px 0; }
+        .section h2 { font-size: 2.5rem; font-weight: 700; text-align: center; margin-bottom: 3rem; color: #1f2937; }
+        .outcomes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .outcome-item { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: center; border: 1px solid #e5e7eb; }
+        .outcome-item h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #1f2937; }
+        .agenda-items { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .agenda-item { background: #f8fafc; padding: 2rem; border-radius: 12px; border-left: 4px solid #3b82f6; }
+        .agenda-item h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #1f2937; }
+        .agenda-item ul { list-style: none; }
+        .agenda-item li { padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb; }
+        .pricing-table { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .pricing-card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border: 1px solid #e5e7eb; text-align: center; position: relative; }
+        .pricing-card.featured { border: 2px solid #3b82f6; transform: scale(1.05); }
+        .popular-badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #3b82f6; color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 600; }
+        .price { margin: 1rem 0; }
+        .currency { font-size: 1.2rem; color: #6b7280; }
+        .amount { font-size: 3rem; font-weight: 800; color: #1f2937; }
+        .period { font-size: 1rem; color: #6b7280; }
+        .features { list-style: none; margin: 2rem 0; }
+        .features li { padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb; }
+        .add-on { background: linear-gradient(135deg, #0f1c30 0%, #363f50 100%); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin-top: 3rem; }
+        .add-on h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .add-on strong { color: #fbbf24; }
+        .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+        .contact-methods { margin-top: 2rem; }
+        .contact-method { background: #f8fafc; padding: 1.5rem; border-radius: 8px; margin-bottom: 1rem; }
+        .contact-method h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .training-form { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+        .training-form input, .training-form select, .training-form textarea { padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s ease; }
+        .training-form input:focus, .training-form select:focus, .training-form textarea:focus { outline: none; border-color: #3b82f6; }
+        .submit-button { width: 100%; background: #3b82f6; color: white; padding: 1rem; border: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background-color 0.3s ease; margin-top: 1rem; }
+        .submit-button:hover { background: #2563eb; }
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            .hero-cta { flex-direction: column; align-items: center; }
+            .contact-content { grid-template-columns: 1fr; gap: 2rem; }
+            .form-row { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="/" class="logo">n60.ai</a>
+                <ul class="nav-links">
+                    <li><a href="/#solutions">Solutions</a></li>
+                    <li><a href="/#innovation">Innovation</a></li>
+                    <li><a href="/training">Training & Courses</a></li>
+                    <li><a href="/#how-we-work">How We Work</a></li>
+                    <li><a href="/#why-ai">Why AI</a></li>
+                    <li><a href="/#contact">Pricing</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="training-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>AI Competence Training for Teams</h1>
+                <p class="hero-subtitle">Empower your employees to use AI responsibly and effectively</p>
+                <p class="hero-description">
+                    AI isn't just for tech companies. It's a tool every team can use to work smarter. Our one-day AI Competence Training gives your employees the knowledge and confidence to use AI tools responsibly, efficiently, and in line with your company's goals and policies.
+                </p>
+                <p class="hero-description">
+                    Ready to upskill your team? Let's make AI part of your company's everyday workflow: safely, efficiently, and with purpose.
+                </p>
+                <div class="hero-cta">
+                    <a href="#training-contact" class="cta-button primary">Book Your Training Session</a>
+                    <a href="#pricing" class="cta-button secondary">View Pricing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section learning-outcomes">
+        <div class="container">
+            <h2>What Your Team Will Learn</h2>
+            <div class="outcomes-grid">
+                <div class="outcome-item">
+                    <h3>🎯 AI Fundamentals</h3>
+                    <p>Understand what AI is, how it works, and its current capabilities and limitations</p>
+                </div>
+                <div class="outcome-item">
+                    <h3>🛡️ Responsible AI Use</h3>
+                    <p>Learn best practices for using AI tools safely and ethically in your industry</p>
+                </div>
+                <div class="outcome-item">
+                    <h3>⚡ Productivity Boost</h3>
+                    <p>Discover practical AI tools that can streamline your daily work processes</p>
+                </div>
+                <div class="outcome-item">
+                    <h3>📊 Data Privacy</h3>
+                    <p>Understand data protection, privacy concerns, and how to use AI securely</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section training-agenda">
+        <div class="container">
+            <h2>Training Agenda</h2>
+            <div class="agenda-items">
+                <div class="agenda-item">
+                    <h3>Morning Session (3 hours)</h3>
+                    <ul>
+                        <li>Introduction to AI and Machine Learning</li>
+                        <li>Current AI Tools and Their Applications</li>
+                        <li>Hands-on Practice with Popular AI Tools</li>
+                        <li>Break and Q&A</li>
+                    </ul>
+                </div>
+                <div class="agenda-item">
+                    <h3>Afternoon Session (3 hours)</h3>
+                    <ul>
+                        <li>AI Ethics and Responsible Use</li>
+                        <li>Data Privacy and Security Best Practices</li>
+                        <li>Implementing AI in Your Workflow</li>
+                        <li>Creating Your AI Action Plan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section pricing-section">
+        <div class="container">
+            <h2>Training Options</h2>
+            <div class="pricing-table">
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3>In-Person Workshop</h3>
+                    <div class="price">
+                        <span class="currency">NOK</span>
+                        <span class="amount">25,000</span>
+                        <span class="period">per session</span>
+                    </div>
+                    <ul class="features">
+                        <li>Up to 15 participants</li>
+                        <li>Full-day training (6 hours)</li>
+                        <li>Hands-on exercises</li>
+                        <li>Training materials included</li>
+                        <li>30-day follow-up support</li>
+                    </ul>
+                    <a href="#training-contact" class="cta-button primary">Book Training</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h3>Virtual Training</h3>
+                    <div class="price">
+                        <span class="currency">NOK</span>
+                        <span class="amount">18,000</span>
+                        <span class="period">per session</span>
+                    </div>
+                    <ul class="features">
+                        <li>Up to 20 participants</li>
+                        <li>Half-day training (4 hours)</li>
+                        <li>Interactive online format</li>
+                        <li>Digital materials included</li>
+                        <li>14-day follow-up support</li>
+                    </ul>
+                    <a href="#training-contact" class="cta-button secondary">Book Training</a>
+                </div>
+            </div>
+            
+            <div class="add-on">
+                <h3>Optional add-on</h3>
+                <p><strong>Custom AI Policy Development:</strong> NOK 15,000</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section whats-included">
+        <div class="container">
+            <h2>What's Included</h2>
+            <div class="outcomes-grid">
+                <div class="outcome-item">
+                    <h3>📚 Training Materials</h3>
+                    <p>Comprehensive guides, checklists, and reference materials</p>
+                </div>
+                <div class="outcome-item">
+                    <h3>💻 Hands-on Practice</h3>
+                    <p>Real-world exercises using popular AI tools</p>
+                </div>
+                <div class="outcome-item">
+                    <h3>📞 Follow-up Support</h3>
+                    <p>Ongoing support to help implement what you've learned</p>
+                </div>
+                <div class="outcome-item">
+                    <h3>🎓 Certificate of Completion</h3>
+                    <p>Professional certificate for all participants</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="training-contact" class="section training-contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Ready to get started?</h2>
+                    <p>Contact us to discuss your AI training needs and get a customized proposal.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <h3>📅 Book a Training Session</h3>
+                            <p>Fill out the form and we'll contact you within 24 hours</p>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <h3>📧 Email us directly</h3>
+                            <p><a href="mailto:hello@n60.ai">hello@n60.ai</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <form class="training-form" action="/api/training-contact" method="POST">
+                        <h3>Request Training Information</h3>
+                        
+                        <div class="form-row">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <input type="text" name="company" placeholder="Company Name" required>
+                            <input type="tel" name="phone" placeholder="Phone Number">
+                        </div>
+                        
+                        <div class="form-row">
+                            <select name="participants" required>
+                                <option value="">Number of Participants</option>
+                                <option value="1-5">1-5 people</option>
+                                <option value="6-15">6-15 people</option>
+                                <option value="16-30">16-30 people</option>
+                                <option value="30+">30+ people</option>
+                            </select>
+                            
+                            <select name="format" required>
+                                <option value="">Preferred Format</option>
+                                <option value="in-person">In-Person Workshop</option>
+                                <option value="virtual">Virtual Training</option>
+                                <option value="hybrid">Hybrid (In-Person + Virtual)</option>
+                            </select>
+                        </div>
+                        
+                        <textarea name="message" placeholder="Tell us about your team's AI training needs, specific departments, or any questions you have..." rows="4" required></textarea>
+                        
+                        <button type="submit" class="submit-button">Request Training Information</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.querySelector('.training-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! We will contact you within 24 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+  `;
   
-  console.log('Checking public path:', publicPath);
-  console.log('Checking dist path:', distPath);
-  console.log('Current working directory:', process.cwd());
-  console.log('__dirname:', __dirname);
-  
-  // Check if file exists
-  const fs = require('fs');
-  
-  if (fs.existsSync(distPath)) {
-    console.log('✅ training.html found in dist/');
-    console.log('File size:', fs.statSync(distPath).size, 'bytes');
-    res.sendFile(distPath, (err) => {
-      if (err) {
-        console.log('❌ Error sending file:', err);
-        res.status(500).send('Error serving training page');
-      } else {
-        console.log('✅ training.html sent successfully');
-      }
-    });
-  } else if (fs.existsSync(publicPath)) {
-    console.log('✅ training.html found in public/');
-    console.log('File size:', fs.statSync(publicPath).size, 'bytes');
-    res.sendFile(publicPath, (err) => {
-      if (err) {
-        console.log('❌ Error sending file:', err);
-        res.status(500).send('Error serving training page');
-      } else {
-        console.log('✅ training.html sent successfully');
-      }
-    });
-  } else {
-    console.log('❌ training.html file NOT found in either location');
-    console.log('Directory contents:');
-    console.log('public/', fs.existsSync(join(__dirname, 'public')) ? fs.readdirSync(join(__dirname, 'public')) : 'public directory not found');
-    console.log('dist/', fs.existsSync(join(__dirname, 'dist')) ? fs.readdirSync(join(__dirname, 'dist')) : 'dist directory not found');
-    res.status(404).send('Training page not found - file missing');
-  }
+  res.setHeader('Content-Type', 'text/html');
+  res.send(trainingHTML);
 });
 
 // Catch-all handler: send back React's index.html file for any non-API routes
