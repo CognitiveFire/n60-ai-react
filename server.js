@@ -61,6 +61,14 @@ app.get('/', (req, res) => {
   res.sendFile(indexPath);
 });
 
+// Training page endpoint
+app.get('/training', (req, res) => {
+  console.log('Training endpoint hit');
+  const indexPath = join(__dirname, 'dist', 'index.html');
+  console.log('Serving index.html for training page from:', indexPath);
+  res.sendFile(indexPath);
+});
+
 // Main website contact form
 app.post('/api/contact', async (req, res) => {
   console.log('Received POST request to /api/contact');

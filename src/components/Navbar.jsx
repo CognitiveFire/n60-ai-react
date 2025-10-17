@@ -19,7 +19,7 @@ const Navbar = ({ onLoginClick }) => {
         <nav className="navbar-nav">
           <a href="#solutions">Løsninger</a>
           <a href="#innovation">Innovasjon</a>
-          <a href="/training">Training & Courses</a>
+          <a href="/#/training">Training & Courses</a>
           <a href="#how-we-work">Hvordan vi jobber</a>
           <a href="#why-ai">Hvorfor AI</a>
                       <a href="#contact">Pris</a>
