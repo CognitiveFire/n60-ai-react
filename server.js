@@ -63,10 +63,20 @@ app.get('/', (req, res) => {
 
 // Training page endpoint - serve standalone HTML
 app.get('/training', (req, res) => {
-  console.log('Training endpoint hit');
+  console.log('🎯 TRAINING ENDPOINT HIT - NEW VERSION DEPLOYED!');
+  console.log('Training endpoint hit at:', new Date().toISOString());
   const trainingPath = join(__dirname, 'public', 'training.html');
   console.log('Serving training.html from:', trainingPath);
-  res.sendFile(trainingPath);
+  
+  // Check if file exists
+  const fs = require('fs');
+  if (fs.existsSync(trainingPath)) {
+    console.log('✅ training.html file exists');
+    res.sendFile(trainingPath);
+  } else {
+    console.log('❌ training.html file NOT found');
+    res.status(404).send('Training page not found');
+  }
 });
 
 // Main website contact form
