@@ -192,8 +192,9 @@ app.get('/privacy-policy', (req, res) => {
 // Training page endpoint - serve inline HTML
 // This MUST come before the catch-all route
 app.get('/training', (req, res) => {
-  console.log('🎯 TRAINING ENDPOINT HIT - SERVING INLINE HTML!');
+  console.log('🎯🎯🎯 TRAINING ENDPOINT HIT - VERSION 1.1.8 - SERVING INLINE HTML! 🎯🎯🎯');
   console.log('Training endpoint hit at:', new Date().toISOString());
+  console.log('THIS IS THE LATEST VERSION WITH INLINE HTML!');
   
   const trainingHTML = `
 <!DOCTYPE html>
