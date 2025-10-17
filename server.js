@@ -1,4 +1,4 @@
-console.log('🚀 SERVER STARTING - VERSION 1.2.1');
+console.log('🚀🚀🚀 SERVER STARTING - VERSION 1.2.4 - FRESH DEPLOYMENT 🚀🚀🚀');
 console.log('Node.js version:', process.version);
 console.log('Current working directory:', process.cwd());
 
