@@ -87,11 +87,17 @@ app.get('/debug', (req, res) => {
   
   res.json({
     message: 'Debug route working',
-    version: '1.1.5',
+    version: '1.1.9',
     timestamp: new Date().toISOString(),
     files: files,
     directory: __dirname
   });
+});
+
+// Ultra simple test route
+app.get('/simple-test', (req, res) => {
+  console.log('🚀 SIMPLE TEST ROUTE HIT - VERSION 1.1.9!');
+  res.send('<h1>SUCCESS! Server routes are working!</h1><p>Version 1.1.9</p><p>If you see this, the server is running the latest code.</p>');
 });
 
 // Root endpoint for basic connectivity test
