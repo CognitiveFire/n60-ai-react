@@ -4,17 +4,12 @@ import CookieConsent from './CookieConsent';
 
 const Training = () => {
   console.log('🎯 Training component is rendering!');
-  
+
   return (
     <div style={{ minHeight: '100vh', background: '#ffffff', color: '#1f2937' }}>
       <Navbar onLoginClick={() => {}} />
       <CookieConsent />
-      
-      {/* Debug info */}
-      <div style={{ background: '#ff0000', color: 'white', padding: '10px', textAlign: 'center' }}>
-        🎯 TRAINING PAGE IS WORKING! 🎯
-      </div>
-      
+
       <div style={{ padding: '120px 20px 80px', textAlign: 'center' }}>
         <h1 style={{ fontSize: '3rem', marginBottom: '1rem', color: '#0f1c30' }}>
           AI Competence Training for Teams
@@ -29,8 +24,8 @@ const Training = () => {
           Ready to upskill your team? Let's make AI part of your company's everyday workflow: safely, efficiently, and with purpose.
         </p>
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <a 
-            href="mailto:hello@n60.ai?subject=AI Training Inquiry" 
+          <a
+            href="mailto:hello@n60.ai?subject=AI Training Inquiry"
             style={{
               background: '#3b82f6',
               color: 'white',
@@ -43,8 +38,8 @@ const Training = () => {
           >
             📅 Book Training Session
           </a>
-          <a 
-            href="mailto:hello@n60.ai" 
+          <a
+            href="mailto:hello@n60.ai"
             style={{
               background: 'transparent',
               color: '#3b82f6',
