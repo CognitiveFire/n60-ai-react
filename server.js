@@ -48,13 +48,21 @@ app.get('/api/test', (req, res) => {
 
 // Health check endpoint for Railway
 app.get('/health', (req, res) => {
-  console.log('Health check endpoint hit');
+  console.log('🏥 HEALTH CHECK HIT - VERSION 1.2.4');
   res.status(200).json({ 
     status: 'healthy', 
     timestamp: new Date().toISOString(),
     uptime: process.uptime(),
-    memory: process.memoryUsage()
+    memory: process.memoryUsage(),
+    version: '1.2.4',
+    message: 'Docker deployment working correctly'
   });
+});
+
+// Ultra simple test route for Docker deployment
+app.get('/docker-test', (req, res) => {
+  console.log('🐳 DOCKER TEST ROUTE HIT - VERSION 1.2.4');
+  res.send('<h1>DOCKER DEPLOYMENT SUCCESS!</h1><p>This proves our Node.js server is handling requests through Docker.</p><p>Version 1.2.4</p><p>Timestamp: ' + new Date().toISOString() + '</p>');
 });
 
 // Test route to verify server is working
