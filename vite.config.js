@@ -1,9 +1,27 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
+import { copyFileSync, existsSync } from 'fs';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    {
+      name: 'copy-training-html',
+      closeBundle() {
+        // Copy training.html to dist directory after build
+        const sourcePath = resolve(__dirname, 'public/training.html');
+        const destPath = resolve(__dirname, 'dist/training.html');
+        
+        if (existsSync(sourcePath)) {
+          copyFileSync(sourcePath, destPath);
+          console.log('✅ Copied training.html to dist/');
+        } else {
+          console.log('❌ training.html not found in public/');
+        }
+      }
+    }
+  ],
   build: {
     outDir: 'dist',
     rollupOptions: {

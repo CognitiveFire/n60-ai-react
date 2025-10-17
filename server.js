@@ -53,6 +53,20 @@ app.get('/health', (req, res) => {
   });
 });
 
+// Test route to verify server is working
+app.get('/test', (req, res) => {
+  console.log('🧪 TEST ROUTE HIT');
+  res.json({ 
+    message: 'Server is working!', 
+    timestamp: new Date().toISOString(),
+    version: '1.0.4',
+    files: {
+      public: require('fs').existsSync(join(__dirname, 'public', 'training.html')),
+      dist: require('fs').existsSync(join(__dirname, 'dist', 'training.html'))
+    }
+  });
+});
+
 // Root endpoint for basic connectivity test
 app.get('/', (req, res) => {
   console.log('Root endpoint hit');
