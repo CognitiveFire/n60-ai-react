@@ -3,6 +3,8 @@ import Navbar from './Navbar';
 import CookieConsent from './CookieConsent';
 
 const Training = () => {
+  console.log('🎯 Training component is rendering!');
+
   return (
     <div style={{ minHeight: '100vh', background: '#ffffff', color: '#1f2937' }}>
       <Navbar onLoginClick={() => {}} />
