@@ -159,7 +159,7 @@ function MainPage() {
     };
   }, [location]);
         
-        // Version: 1.0.4 - Force fresh deployment - CSS conflicts fixed
+          // Version: 1.3.6 - Training page separated from home page - Force new build
 
   // Content in Norwegian following Naeva's structure
   const content = {
