@@ -96,14 +96,14 @@ app.get('/debug', (req, res) => {
 
 // Ultra simple test route
 app.get('/simple-test', (req, res) => {
-  console.log('🚀 SIMPLE TEST ROUTE HIT - VERSION 1.1.9!');
-  res.send('<h1>SUCCESS! Server routes are working!</h1><p>Version 1.1.9</p><p>If you see this, the server is running the latest code.</p>');
+  console.log('🚀 SIMPLE TEST ROUTE HIT - VERSION 1.2.0!');
+  res.send('<h1>SUCCESS! Server routes are working!</h1><p>Version 1.2.0</p><p>If you see this, the server is running the latest code.</p>');
 });
 
 // Root endpoint for basic connectivity test
 app.get('/', (req, res) => {
-  console.log('Root endpoint hit');
-  const indexPath = join(__dirname, 'dist', 'index.html');
+  console.log('Root endpoint hit - serving from source index.html');
+  const indexPath = join(__dirname, 'index.html');
   console.log('Serving index.html from:', indexPath);
   res.sendFile(indexPath);
 });
