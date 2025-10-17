@@ -9,15 +9,33 @@ export default defineConfig({
     {
       name: 'copy-training-html',
       closeBundle() {
+        console.log('🔄 Vite closeBundle hook started');
+        console.log('Current directory:', process.cwd());
+        console.log('__dirname:', __dirname);
+        
         // Copy training.html to dist directory after build
         const sourcePath = resolve(__dirname, 'public/training.html');
         const destPath = resolve(__dirname, 'dist/training.html');
+        
+        console.log('Source path:', sourcePath);
+        console.log('Dest path:', destPath);
+        console.log('Source exists:', existsSync(sourcePath));
+        console.log('Dest dir exists:', existsSync(resolve(__dirname, 'dist')));
         
         if (existsSync(sourcePath)) {
           copyFileSync(sourcePath, destPath);
           console.log('✅ Copied training.html to dist/');
         } else {
           console.log('❌ training.html not found in public/');
+        }
+        
+        // List dist directory contents
+        const distPath = resolve(__dirname, 'dist');
+        if (existsSync(distPath)) {
+          const files = require('fs').readdirSync(distPath);
+          console.log('📁 Dist directory contents:', files);
+        } else {
+          console.log('❌ Dist directory does not exist');
         }
         
         // Force rebuild timestamp
