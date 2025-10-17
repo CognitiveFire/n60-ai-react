@@ -1,4 +1,4 @@
-console.log('🚀🚀🚀 SERVER STARTING - VERSION 1.3.4 - DOCKER DEPLOYMENT 🚀🚀🚀');
+console.log('🚀🚀🚀 SERVER STARTING - VERSION 1.3.5 - TRAINING PAGE FIX 🚀🚀🚀');
 console.log('Node.js version:', process.version);
 console.log('Current working directory:', process.cwd());
 
