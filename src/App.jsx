@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -82,7 +82,6 @@ function AppContent() {
     <Routes>
       <Route path="/quote/*" element={<QuotePage />} />
       <Route path="/training" element={<Training />} />
-      <Route path="training" element={<Training />} />
       <Route path="/" element={<MainPage />} />
     </Routes>
   );
