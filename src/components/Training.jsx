@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import CookieConsent from './CookieConsent';
-// import './Training.css';
+import './Training.css';
 
 const Training = () => {
   const [formData, setFormData] = useState({
