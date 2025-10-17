@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
-import { copyFileSync, existsSync } from 'fs';
+import { copyFileSync, existsSync, readdirSync } from 'fs';
 
 export default defineConfig({
   plugins: [
@@ -32,7 +32,7 @@ export default defineConfig({
         // List dist directory contents
         const distPath = resolve(__dirname, 'dist');
         if (existsSync(distPath)) {
-          const files = require('fs').readdirSync(distPath);
+          const files = readdirSync(distPath);
           console.log('📁 Dist directory contents:', files);
         } else {
           console.log('❌ Dist directory does not exist');
