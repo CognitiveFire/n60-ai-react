@@ -37,8 +37,11 @@ app.use(express.json());
 // Serve static files from the React build - this must come BEFORE the catch-all route
 app.use(express.static(join(__dirname, 'dist')));
 
-// Serve robots.txt and sitemap.xml from public directory
+// Serve static files from the public directory
 app.use(express.static(join(__dirname, 'public')));
+
+// Serve React app files from src directory (for development)
+app.use('/src', express.static(join(__dirname, 'src')));
 
 // Test endpoint
 app.get('/api/test', (req, res) => {
@@ -61,8 +64,14 @@ app.get('/health', (req, res) => {
 
 // Ultra simple test route for Docker deployment
 app.get('/docker-test', (req, res) => {
-  console.log('🐳 DOCKER TEST ROUTE HIT - VERSION 1.2.4');
+  console.log('🐳🐳🐳 DOCKER TEST ROUTE HIT - VERSION 1.2.4! 🐳🐳🐳');
   res.send('<h1>DOCKER DEPLOYMENT SUCCESS!</h1><p>This proves our Node.js server is handling requests through Docker.</p><p>Version 1.2.4</p><p>Timestamp: ' + new Date().toISOString() + '</p>');
+});
+
+// Another test route to confirm server is working
+app.get('/server-working', (req, res) => {
+  console.log('🔥🔥🔥 SERVER WORKING ROUTE HIT - VERSION 1.2.4! 🔥🔥🔥');
+  res.send('<h1>SERVER IS DEFINITELY WORKING!</h1><p>If you see this, Railway is routing through our Node.js server.</p><p>Version 1.2.4</p>');
 });
 
 // Test route to verify server is working
