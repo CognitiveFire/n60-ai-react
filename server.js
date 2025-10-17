@@ -75,32 +75,6 @@ app.get('/', (req, res) => {
   res.sendFile(indexPath);
 });
 
-// Training page endpoint - serve standalone HTML
-app.get('/training', (req, res) => {
-  console.log('🎯 TRAINING ENDPOINT HIT - NEW VERSION DEPLOYED!');
-  console.log('Training endpoint hit at:', new Date().toISOString());
-  
-  // Try both locations
-  const publicPath = join(__dirname, 'public', 'training.html');
-  const distPath = join(__dirname, 'dist', 'training.html');
-  
-  console.log('Checking public path:', publicPath);
-  console.log('Checking dist path:', distPath);
-  
-  // Check if file exists
-  const fs = require('fs');
-  
-  if (fs.existsSync(distPath)) {
-    console.log('✅ training.html found in dist/');
-    res.sendFile(distPath);
-  } else if (fs.existsSync(publicPath)) {
-    console.log('✅ training.html found in public/');
-    res.sendFile(publicPath);
-  } else {
-    console.log('❌ training.html file NOT found in either location');
-    res.status(404).send('Training page not found - file missing');
-  }
-});
 
 // Main website contact form
 app.post('/api/contact', async (req, res) => {
@@ -186,6 +160,34 @@ app.get('/privacy-policy', (req, res) => {
   const privacyPolicyPath = join(__dirname, 'public', 'privacy-policy.html');
   console.log('Serving privacy policy from:', privacyPolicyPath);
   res.sendFile(privacyPolicyPath);
+});
+
+// Training page endpoint - serve standalone HTML
+// This MUST come before the catch-all route
+app.get('/training', (req, res) => {
+  console.log('🎯 TRAINING ENDPOINT HIT - NEW VERSION DEPLOYED!');
+  console.log('Training endpoint hit at:', new Date().toISOString());
+  
+  // Try both locations
+  const publicPath = join(__dirname, 'public', 'training.html');
+  const distPath = join(__dirname, 'dist', 'training.html');
+  
+  console.log('Checking public path:', publicPath);
+  console.log('Checking dist path:', distPath);
+  
+  // Check if file exists
+  const fs = require('fs');
+  
+  if (fs.existsSync(distPath)) {
+    console.log('✅ training.html found in dist/');
+    res.sendFile(distPath);
+  } else if (fs.existsSync(publicPath)) {
+    console.log('✅ training.html found in public/');
+    res.sendFile(publicPath);
+  } else {
+    console.log('❌ training.html file NOT found in either location');
+    res.status(404).send('Training page not found - file missing');
+  }
 });
 
 // Catch-all handler: send back React's index.html file for any non-API routes
