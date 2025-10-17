@@ -128,7 +128,11 @@ function MainPage() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.substring(1); // Remove the # symbol
-      if (hash && hash !== 'training') { // Skip 'training' as it's a route
+      
+      // Only handle scrolling for actual section IDs, not React routes
+      const validSections = ['solutions', 'innovation', 'how-we-work', 'why-ai', 'contact'];
+      
+      if (hash && validSections.includes(hash)) {
         const element = document.getElementById(hash);
         if (element) {
           // Add a small delay to ensure the page is rendered
@@ -142,8 +146,10 @@ function MainPage() {
       }
     };
 
-    // Handle initial hash if present
-    handleHashChange();
+    // Only handle hash changes when we're on the home page (not on other routes)
+    if (location.hash === '' || location.hash === '#') {
+      handleHashChange();
+    }
 
     // Listen for hash changes
     window.addEventListener('hashchange', handleHashChange);
@@ -151,7 +157,7 @@ function MainPage() {
     return () => {
       window.removeEventListener('hashchange', handleHashChange);
     };
-  }, []);
+  }, [location]);
         
         // Version: 1.0.4 - Force fresh deployment - CSS conflicts fixed
 
