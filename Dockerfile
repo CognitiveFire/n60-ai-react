@@ -1,6 +1,16 @@
 # Use Node.js 18
 FROM node:18-alpine
 
+# Install system dependencies for image processing
+RUN apk add --no-cache \
+    autoconf \
+    automake \
+    libtool \
+    nasm \
+    make \
+    g++ \
+    python3
+
 # Set working directory
 WORKDIR /app
 
