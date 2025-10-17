@@ -5,9 +5,9 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Salesbot from './components/Salesbot';
 import QuotePage from './components/QuotePage';
+import Training from './components/Training';
 import AdminLogin from './components/AdminLogin';
 import CookieConsent from './components/CookieConsent';
-import Training from './components/Training';
 import './App.css';
 import './components/Contact.css';
 
@@ -81,7 +81,7 @@ function AppContent() {
   return (
     <Routes>
       <Route path="/quote/*" element={<QuotePage />} />
-      <Route path="/training" element={<Navigate to="/#training" replace />} />
+      <Route path="/training" element={<Training />} />
       <Route path="/" element={<MainPage />} />
     </Routes>
   );
@@ -1182,33 +1182,6 @@ function MainPage() {
 
 
 
-
-        {/* Training Section */}
-        <section id="training" className="training-section">
-          <div className="container">
-            <div className="section-header" data-aos="fade-up">
-              <h2>AI Competence Training for Teams</h2>
-              <p>Empower your employees to use AI responsibly and effectively</p>
-            </div>
-            
-            <div className="training-content" data-aos="fade-up" data-aos-delay="200">
-              <div className="training-description">
-                <p>AI isn't just for tech companies. It's a tool every team can use to work smarter. Our one-day AI Competence Training gives your employees the knowledge and confidence to use AI tools responsibly, efficiently, and in line with your company's goals and policies.</p>
-                
-                <p>Ready to upskill your team? Let's make AI part of your company's everyday workflow: safely, efficiently, and with purpose.</p>
-              </div>
-              
-              <div className="training-cta">
-                <a href="mailto:hello@n60.ai?subject=AI Training Inquiry" className="cta-button primary">
-                  📅 Book Training Session
-                </a>
-                <a href="mailto:hello@n60.ai" className="cta-button secondary">
-                  💬 Contact Us
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Contact Section with Smart Form */}
         <section id="contact" className="contact-section">
