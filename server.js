@@ -67,6 +67,12 @@ app.get('/test', (req, res) => {
   });
 });
 
+// Simple training test route
+app.get('/training-test', (req, res) => {
+  console.log('🎯 TRAINING TEST ROUTE HIT!');
+  res.send('<h1>Training Test Route Works!</h1><p>If you see this, custom routes are working.</p>');
+});
+
 // Root endpoint for basic connectivity test
 app.get('/', (req, res) => {
   console.log('Root endpoint hit');
