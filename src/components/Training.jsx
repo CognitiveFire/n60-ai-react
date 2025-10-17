@@ -3,10 +3,17 @@ import Navbar from './Navbar';
 import CookieConsent from './CookieConsent';
 
 const Training = () => {
+  console.log('🎯 Training component is rendering!');
+  
   return (
     <div style={{ minHeight: '100vh', background: '#ffffff', color: '#1f2937' }}>
       <Navbar onLoginClick={() => {}} />
       <CookieConsent />
+      
+      {/* Debug info */}
+      <div style={{ background: '#ff0000', color: 'white', padding: '10px', textAlign: 'center' }}>
+        🎯 TRAINING PAGE IS WORKING! 🎯
+      </div>
       
       <div style={{ padding: '120px 20px 80px', textAlign: 'center' }}>
         <h1 style={{ fontSize: '3rem', marginBottom: '1rem', color: '#0f1c30' }}>
