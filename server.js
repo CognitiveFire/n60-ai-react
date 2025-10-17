@@ -133,12 +133,30 @@ app.get('/server-test', (req, res) => {
   res.send('<h1>SERVER IS WORKING!</h1><p>This proves our Node.js server is handling requests.</p><p>Version 1.2.3</p>');
 });
 
-// Root endpoint for basic connectivity test
+// Root endpoint - serve simple HTML to test if server is working
 app.get('/', (req, res) => {
-  console.log('Root endpoint hit - serving from source index.html');
-  const indexPath = join(__dirname, 'index.html');
-  console.log('Serving index.html from:', indexPath);
-  res.sendFile(indexPath);
+  console.log('🏠 ROOT ENDPOINT HIT - VERSION 1.2.7');
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>N60.ai - Server is Working</title>
+    </head>
+    <body>
+      <h1>Server is Working!</h1>
+      <p>Version 1.2.7</p>
+      <p>If you see this, our Node.js server is handling requests.</p>
+      <ul>
+        <li><a href="/ping">Test /ping</a></li>
+        <li><a href="/server-working">Test /server-working</a></li>
+        <li><a href="/training">Test /training</a></li>
+        <li><a href="/health">Test /health</a></li>
+      </ul>
+    </body>
+    </html>
+  `);
 });
 
 
