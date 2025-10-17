@@ -6,7 +6,3 @@ README.md
 .env.development
 *.log
 .DS_Store
-index.html
-vite.config.js
-public/
-src/

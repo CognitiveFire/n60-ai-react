@@ -5,6 +5,17 @@ import React, { useState } from 'react';
 const Navbar = ({ onLoginClick }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Function to scroll to section smoothly
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -17,13 +28,13 @@ const Navbar = ({ onLoginClick }) => {
         </a>
         
         <nav className="navbar-nav">
-          <a href="#solutions">Løsninger</a>
-          <a href="#innovation">Innovasjon</a>
-          <a href="/training">Training & Courses</a>
-          <a href="#how-we-work">Hvordan vi jobber</a>
-          <a href="#why-ai">Hvorfor AI</a>
-                      <a href="#contact">Pris</a>
-            <button onClick={onLoginClick} className="login-nav-button">Login</button>
+          <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('solutions'); }}>Løsninger</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('innovation'); }}>Innovasjon</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('training'); }}>Opplæring & Kurs</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('how-we-work'); }}>Hvordan vi jobber</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('why-ai'); }}>Hvorfor AI</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Pris</a>
+          <button onClick={onLoginClick} className="login-nav-button">Login</button>
         </nav>
         
         <div className="navbar-actions">
@@ -50,12 +61,12 @@ const Navbar = ({ onLoginClick }) => {
             </button>
           </div>
           <nav className="mobile-menu-nav">
-            <a href="#solutions" onClick={() => setMenuOpen(false)}>Løsninger</a>
-            <a href="#innovation" onClick={() => setMenuOpen(false)}>Innovasjon</a>
-            <a href="/training" onClick={() => setMenuOpen(false)}>Training & Courses</a>
-            <a href="#how-we-work" onClick={() => setMenuOpen(false)}>Hvordan vi jobber</a>
-            <a href="#why-ai" onClick={() => setMenuOpen(false)}>Hvorfor AI</a>
-            <a href="#contact" onClick={() => setMenuOpen(false)}>Pris</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('solutions'); setMenuOpen(false); }}>Løsninger</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('innovation'); setMenuOpen(false); }}>Innovasjon</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('training'); setMenuOpen(false); }}>Opplæring & Kurs</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('how-we-work'); setMenuOpen(false); }}>Hvordan vi jobber</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('why-ai'); setMenuOpen(false); }}>Hvorfor AI</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); setMenuOpen(false); }}>Pris</a>
             <button onClick={() => { onLoginClick(); setMenuOpen(false); }} className="login-nav-button">Login</button>
           </nav>
         </div>
