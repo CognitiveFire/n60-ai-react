@@ -1,3 +1,7 @@
+console.log('🚀 SERVER STARTING - VERSION 1.2.1');
+console.log('Node.js version:', process.version);
+console.log('Current working directory:', process.cwd());
+
 import express from 'express';
 import cors from 'cors';
 import { Resend } from 'resend';
