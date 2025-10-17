@@ -82,6 +82,7 @@ function AppContent() {
     <Routes>
       <Route path="/quote/*" element={<QuotePage />} />
       <Route path="/training" element={<Training />} />
+      <Route path="training" element={<Training />} />
       <Route path="/" element={<MainPage />} />
     </Routes>
   );
