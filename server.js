@@ -70,7 +70,28 @@ app.get('/test', (req, res) => {
 // Simple training test route
 app.get('/training-test', (req, res) => {
   console.log('🎯 TRAINING TEST ROUTE HIT!');
-  res.send('<h1>Training Test Route Works!</h1><p>If you see this, custom routes are working.</p>');
+  res.send('<h1>Training Test Route Works!</h1><p>If you see this, custom routes are working.</p><p>Version: 1.1.5</p>');
+});
+
+// Simple debug route
+app.get('/debug', (req, res) => {
+  console.log('🔍 DEBUG ROUTE HIT!');
+  const fs = require('fs');
+  const path = require('path');
+  
+  const files = {
+    public: fs.existsSync(path.join(__dirname, 'public', 'training.html')),
+    dist: fs.existsSync(path.join(__dirname, 'dist', 'training.html')),
+    index: fs.existsSync(path.join(__dirname, 'dist', 'index.html'))
+  };
+  
+  res.json({
+    message: 'Debug route working',
+    version: '1.1.5',
+    timestamp: new Date().toISOString(),
+    files: files,
+    directory: __dirname
+  });
 });
 
 // Root endpoint for basic connectivity test
