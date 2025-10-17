@@ -19,7 +19,7 @@ const Navbar = ({ onLoginClick }) => {
         <nav className="navbar-nav">
           <a href="#solutions">Løsninger</a>
           <a href="#innovation">Innovasjon</a>
-          <a href="/#/training">Training & Courses</a>
+          <a href="/training">Training & Courses</a>
           <a href="#how-we-work">Hvordan vi jobber</a>
           <a href="#why-ai">Hvorfor AI</a>
                       <a href="#contact">Pris</a>
@@ -52,7 +52,7 @@ const Navbar = ({ onLoginClick }) => {
           <nav className="mobile-menu-nav">
             <a href="#solutions" onClick={() => setMenuOpen(false)}>Løsninger</a>
             <a href="#innovation" onClick={() => setMenuOpen(false)}>Innovasjon</a>
-            <a href="/#/training" onClick={() => setMenuOpen(false)}>Training & Courses</a>
+            <a href="/training" onClick={() => setMenuOpen(false)}>Training & Courses</a>
             <a href="#how-we-work" onClick={() => setMenuOpen(false)}>Hvordan vi jobber</a>
             <a href="#why-ai" onClick={() => setMenuOpen(false)}>Hvorfor AI</a>
             <a href="#contact" onClick={() => setMenuOpen(false)}>Pris</a>

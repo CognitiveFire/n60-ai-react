@@ -61,12 +61,12 @@ app.get('/', (req, res) => {
   res.sendFile(indexPath);
 });
 
-// Training page endpoint
+// Training page endpoint - serve standalone HTML
 app.get('/training', (req, res) => {
   console.log('Training endpoint hit');
-  const indexPath = join(__dirname, 'dist', 'index.html');
-  console.log('Serving index.html for training page from:', indexPath);
-  res.sendFile(indexPath);
+  const trainingPath = join(__dirname, 'public', 'training.html');
+  console.log('Serving training.html from:', trainingPath);
+  res.sendFile(trainingPath);
 });
 
 // Main website contact form
