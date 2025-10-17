@@ -65,17 +65,26 @@ app.get('/', (req, res) => {
 app.get('/training', (req, res) => {
   console.log('🎯 TRAINING ENDPOINT HIT - NEW VERSION DEPLOYED!');
   console.log('Training endpoint hit at:', new Date().toISOString());
-  const trainingPath = join(__dirname, 'public', 'training.html');
-  console.log('Serving training.html from:', trainingPath);
+  
+  // Try both locations
+  const publicPath = join(__dirname, 'public', 'training.html');
+  const distPath = join(__dirname, 'dist', 'training.html');
+  
+  console.log('Checking public path:', publicPath);
+  console.log('Checking dist path:', distPath);
   
   // Check if file exists
   const fs = require('fs');
-  if (fs.existsSync(trainingPath)) {
-    console.log('✅ training.html file exists');
-    res.sendFile(trainingPath);
+  
+  if (fs.existsSync(distPath)) {
+    console.log('✅ training.html found in dist/');
+    res.sendFile(distPath);
+  } else if (fs.existsSync(publicPath)) {
+    console.log('✅ training.html found in public/');
+    res.sendFile(publicPath);
   } else {
-    console.log('❌ training.html file NOT found');
-    res.status(404).send('Training page not found');
+    console.log('❌ training.html file NOT found in either location');
+    res.status(404).send('Training page not found - file missing');
   }
 });
 
