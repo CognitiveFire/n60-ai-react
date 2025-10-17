@@ -16,5 +16,11 @@ COPY . .
 # Expose port
 EXPOSE 8080
 
+# Create startup script
+RUN echo '#!/bin/sh' > /app/start.sh && \
+    echo 'echo "🚀 Starting server..."' >> /app/start.sh && \
+    echo 'node server.js' >> /app/start.sh && \
+    chmod +x /app/start.sh
+
 # Start the server
-CMD ["node", "server.js"]
+CMD ["/app/start.sh"]

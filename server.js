@@ -1,4 +1,4 @@
-console.log('🚀🚀🚀 SERVER STARTING - VERSION 1.2.4 - FRESH DEPLOYMENT 🚀🚀🚀');
+console.log('🚀🚀🚀 SERVER STARTING - VERSION 1.2.7 - DOCKER DEPLOYMENT 🚀🚀🚀');
 console.log('Node.js version:', process.version);
 console.log('Current working directory:', process.cwd());
 
@@ -70,8 +70,14 @@ app.get('/docker-test', (req, res) => {
 
 // Another test route to confirm server is working
 app.get('/server-working', (req, res) => {
-  console.log('🔥🔥🔥 SERVER WORKING ROUTE HIT - VERSION 1.2.4! 🔥🔥🔥');
-  res.send('<h1>SERVER IS DEFINITELY WORKING!</h1><p>If you see this, Railway is routing through our Node.js server.</p><p>Version 1.2.4</p>');
+  console.log('🔥🔥🔥 SERVER WORKING ROUTE HIT - VERSION 1.2.7! 🔥🔥🔥');
+  res.send('<h1>SERVER IS DEFINITELY WORKING!</h1><p>If you see this, Railway is routing through our Node.js server.</p><p>Version 1.2.7</p>');
+});
+
+// Ultra simple test route
+app.get('/ping', (req, res) => {
+  console.log('🏓 PING ROUTE HIT - VERSION 1.2.7');
+  res.send('pong');
 });
 
 // Test route to verify server is working
