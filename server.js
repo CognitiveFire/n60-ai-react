@@ -167,6 +167,8 @@ app.get('/privacy-policy', (req, res) => {
 app.get('/training', (req, res) => {
   console.log('🎯 TRAINING ENDPOINT HIT - NEW VERSION DEPLOYED!');
   console.log('Training endpoint hit at:', new Date().toISOString());
+  console.log('Request URL:', req.url);
+  console.log('Request method:', req.method);
   
   // Try both locations
   const publicPath = join(__dirname, 'public', 'training.html');
@@ -174,18 +176,39 @@ app.get('/training', (req, res) => {
   
   console.log('Checking public path:', publicPath);
   console.log('Checking dist path:', distPath);
+  console.log('Current working directory:', process.cwd());
+  console.log('__dirname:', __dirname);
   
   // Check if file exists
   const fs = require('fs');
   
   if (fs.existsSync(distPath)) {
     console.log('✅ training.html found in dist/');
-    res.sendFile(distPath);
+    console.log('File size:', fs.statSync(distPath).size, 'bytes');
+    res.sendFile(distPath, (err) => {
+      if (err) {
+        console.log('❌ Error sending file:', err);
+        res.status(500).send('Error serving training page');
+      } else {
+        console.log('✅ training.html sent successfully');
+      }
+    });
   } else if (fs.existsSync(publicPath)) {
     console.log('✅ training.html found in public/');
-    res.sendFile(publicPath);
+    console.log('File size:', fs.statSync(publicPath).size, 'bytes');
+    res.sendFile(publicPath, (err) => {
+      if (err) {
+        console.log('❌ Error sending file:', err);
+        res.status(500).send('Error serving training page');
+      } else {
+        console.log('✅ training.html sent successfully');
+      }
+    });
   } else {
     console.log('❌ training.html file NOT found in either location');
+    console.log('Directory contents:');
+    console.log('public/', fs.existsSync(join(__dirname, 'public')) ? fs.readdirSync(join(__dirname, 'public')) : 'public directory not found');
+    console.log('dist/', fs.existsSync(join(__dirname, 'dist')) ? fs.readdirSync(join(__dirname, 'dist')) : 'dist directory not found');
     res.status(404).send('Training page not found - file missing');
   }
 });
