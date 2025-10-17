@@ -520,7 +520,8 @@ app.get('*', (req, res) => {
   }
   
   // Serve the React app for all other routes
-  const indexPath = join(__dirname, 'dist', 'index.html');
+  console.log('🎯 CATCH-ALL SERVING REACT APP FOR:', req.path);
+  const indexPath = join(__dirname, 'index.html');
   console.log('Serving index.html from:', indexPath);
   res.sendFile(indexPath);
 });
