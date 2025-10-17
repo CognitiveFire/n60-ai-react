@@ -7,11 +7,14 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install only production dependencies
-RUN npm ci --only=production
+# Install all dependencies (including dev dependencies for build)
+RUN npm ci
 
 # Copy application code
 COPY . .
+
+# Build the React app
+RUN npm run build
 
 # Expose port
 EXPOSE 8080
