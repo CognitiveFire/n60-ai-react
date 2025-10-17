@@ -1,4 +1,5 @@
-Deployment triggered at: 2025-01-17T04:30:00Z
-Version: 1.1.1
-Purpose: Fix JavaScript errors and training page
+Deployment triggered at: 2025-01-17T04:35:00Z
+Version: 1.1.2
+Purpose: Force clean rebuild to remove tracking scripts completely
 Status: READY FOR DEPLOYMENT
+Build Command: rm -rf dist/ && npm run build
