@@ -19,6 +19,9 @@ export default defineConfig({
         } else {
           console.log('❌ training.html not found in public/');
         }
+        
+        // Force rebuild timestamp
+        console.log('🕒 Build completed at:', new Date().toISOString());
       }
     }
   ],
