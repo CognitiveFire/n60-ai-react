@@ -100,8 +100,14 @@ app.get('/debug', (req, res) => {
 
 // Ultra simple test route
 app.get('/simple-test', (req, res) => {
-  console.log('🚀 SIMPLE TEST ROUTE HIT - VERSION 1.2.0!');
-  res.send('<h1>SUCCESS! Server routes are working!</h1><p>Version 1.2.0</p><p>If you see this, the server is running the latest code.</p>');
+  console.log('🚀🚀🚀 SIMPLE TEST ROUTE HIT - VERSION 1.2.3! 🚀🚀🚀');
+  res.send('<h1>SUCCESS! Server routes are working!</h1><p>Version 1.2.3</p><p>If you see this, the server is running the latest code.</p><p>Timestamp: ' + new Date().toISOString() + '</p>');
+});
+
+// Another test route with different path
+app.get('/server-test', (req, res) => {
+  console.log('🔥 SERVER TEST ROUTE HIT - VERSION 1.2.3! 🔥');
+  res.send('<h1>SERVER IS WORKING!</h1><p>This proves our Node.js server is handling requests.</p><p>Version 1.2.3</p>');
 });
 
 // Root endpoint for basic connectivity test
