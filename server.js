@@ -230,16 +230,15 @@ app.get('/privacy-policy', (req, res) => {
   res.sendFile(privacyPolicyPath);
 });
 
-// Training page endpoint - serve React app (let React Router handle the route)
+// Training page endpoint - redirect to hash route for HashRouter
 // This MUST come before the catch-all route
 app.get('/training', (req, res) => {
-  console.log('🎯🎯🎯 TRAINING ENDPOINT HIT - SERVING REACT APP! 🎯🎯🎯');
+  console.log('🎯🎯🎯 TRAINING ENDPOINT HIT - REDIRECTING TO HASH ROUTE! 🎯🎯🎯');
   console.log('Training endpoint hit at:', new Date().toISOString());
-  console.log('Serving React app - let React Router handle /training route');
+  console.log('Redirecting to #/training for HashRouter');
   
-  // Serve the React app - React Router will handle the /training route
-  const indexPath = join(__dirname, 'dist', 'index.html');
-  res.sendFile(indexPath);
+  // Redirect to hash route for HashRouter
+  res.redirect('/#/training');
 });
 
 // Catch-all handler: send back React's index.html file for any non-API routes
