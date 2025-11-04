@@ -1,4 +1,4 @@
-# Use Node.js 18
+# Use Node.js 18 - Version 2.0.0 Complete Rebuild
 FROM node:18-alpine
 
 # Set working directory

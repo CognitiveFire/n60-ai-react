@@ -17,23 +17,25 @@ const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
   return (
     <section id="hero" className="hero-section">
       <div className="hero-container">
-        <div className="hero-left">
-          <h1 className="hero-headline">AI-innovasjon for norske bedrifter</h1>
+        <div className="hero-content">
+          <h1 className="hero-headline">
+            From Strategy to System We Make AI Responsible, Scalable, and Measurable.
+          </h1>
           <p className="hero-subheadline">
-            Automatiser B2B-produktmarkedsføring med kraftig AI-teknologi. Skap mer etterspørsel, generer flere leads og voks raskere – tilpasset norske små og mellomstore bedrifter.
+            We combine strategy, architecture, governance, and capability so AI delivers real business value safely and measurably.
           </p>
           <div className="hero-buttons">
             <button 
               onClick={handleOpenCalendly}
               className="hero-cta"
             >
-              Se hvordan det fungerer
+              Start Your AI Readiness Review
+            </button>
+            <button onClick={handleOpenCalendly} className="hero-cta hero-cta-secondary">
+              Book a Discovery Call
             </button>
           </div>
-        </div>
-        
-        <div className="hero-right">
-          <img src="https://i.ibb.co/tp3xm3MP/Chat-GPT-Image-Oct-6-2025-04-55-30-PM.png" alt="Norwegian Flag" className="hero-flag-image" />
+          <p className="hero-trust-text">Independent. Vendor-neutral. Built for Nordic organisations.</p>
         </div>
       </div>
       
@@ -51,7 +53,7 @@ const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
               </button>
             </div>
             <div className="calendly-message">
-              <p>La oss ta en prat om dine behov og hvilke løsninger som passer best for din bedrift. Vi hjelper deg med å finne den riktige strategien for å vokse.</p>
+              <p>Let's discuss your AI readiness and how we can help protect your organisation's future.</p>
             </div>
             <div className="calendly-embed">
               <iframe

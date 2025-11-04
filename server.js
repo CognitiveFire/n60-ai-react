@@ -1,4 +1,4 @@
-console.log('🚀🚀🚀 SERVER STARTING - VERSION 1.3.6 - FORCE FRESH BUILD 🚀🚀🚀');
+console.log('🚀🚀🚀 SERVER STARTING - VERSION 2.0.0 - COMPLETE REBUILD 🚀🚀🚀');
 console.log('Node.js version:', process.version);
 console.log('Current working directory:', process.cwd());
 
@@ -60,26 +60,26 @@ app.get('/health', (req, res) => {
     timestamp: new Date().toISOString(),
     uptime: process.uptime(),
     memory: process.memoryUsage(),
-    version: '1.3.6',
+        version: '2.0.0',
     message: 'Training page properly separated from home page'
   });
 });
 
 // Ultra simple test route for Docker deployment
 app.get('/docker-test', (req, res) => {
-  console.log('🐳🐳🐳 DOCKER TEST ROUTE HIT - VERSION 1.3.6! 🐳🐳🐳');
-  res.send('<h1>DOCKER DEPLOYMENT SUCCESS!</h1><p>This proves our Node.js server is handling requests through Docker.</p><p>Version 1.3.6</p><p>Timestamp: ' + new Date().toISOString() + '</p>');
+  console.log('🐳🐳🐳 DOCKER TEST ROUTE HIT - VERSION 2.0.0! 🐳🐳🐳');
+  res.send('<h1>DOCKER DEPLOYMENT SUCCESS!</h1><p>This proves our Node.js server is handling requests through Docker.</p><p>Version 2.0.0</p><p>Timestamp: ' + new Date().toISOString() + '</p>');
 });
 
 // Another test route to confirm server is working
 app.get('/server-working', (req, res) => {
-  console.log('🔥🔥🔥 SERVER WORKING ROUTE HIT - VERSION 1.3.6! 🔥🔥🔥');
-  res.send('<h1>SERVER IS DEFINITELY WORKING!</h1><p>If you see this, Railway is routing through our Node.js server.</p><p>Version 1.3.6</p>');
+  console.log('🔥🔥🔥 SERVER WORKING ROUTE HIT - VERSION 2.0.0! 🔥🔥🔥');
+  res.send('<h1>SERVER IS DEFINITELY WORKING!</h1><p>If you see this, Railway is routing through our Node.js server.</p><p>Version 2.0.0</p>');
 });
 
 // Ultra simple test route
 app.get('/ping', (req, res) => {
-  console.log('🏓 PING ROUTE HIT - VERSION 1.3.6');
+  console.log('🏓 PING ROUTE HIT - VERSION 2.0.0');
   res.send('pong');
 });
 

@@ -12,6 +12,9 @@ export default defineConfig({
       }
     }
   },
+  define: {
+    __BUILD_VERSION__: JSON.stringify('2.0.0-cache-bust')
+  },
   server: {
     port: process.env.PORT || 3000,
     host: '0.0.0.0'
