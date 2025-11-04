@@ -3,7 +3,7 @@ import { HashRouter as Router, Routes, Route, useLocation, Navigate } from 'reac
 import { Helmet } from 'react-helmet';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import SimpleContactForm from './components/SimpleContactForm';
+import Salesbot from './components/Salesbot';
 import QuotePage from './components/QuotePage';
 import TrainingPage from './components/TrainingPage';
 import AdminLogin from './components/AdminLogin';
@@ -82,14 +82,12 @@ function AppContent() {
     <Routes>
       <Route path="/quote/*" element={<QuotePage />} />
       <Route path="/training" element={<TrainingPage />} />
-      <Route path="/contact" element={<SimpleContactForm />} />
       <Route path="/" element={<MainPage />} />
     </Routes>
   );
 }
 
 function MainPage() {
-  const location = useLocation();
   const [formStatus, setFormStatus] = useState(null);
   const [selectedModules, setSelectedModules] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -962,493 +960,697 @@ function MainPage() {
         <Navbar onLoginClick={() => setShowLoginLightbox(true)} />
 
         {/* Hero Section */}
-        <Hero onOpenDemo={() => {}} backgroundImage={currentContent?.hero?.background} videoUrl={currentContent?.hero?.video} />
+        <Hero onOpenDemo={() => {}} backgroundImage={currentContent.hero.background} videoUrl={currentContent.hero.video} />
 
-        {/* 🌌 N60 Compass Introduction */}
-        <section id="journey-intro" className="journey-intro-section">
+        {/* Solutions Section - Three Core Areas */}
+        <section id="solutions" className="solutions-section">
           <div className="container">
-            <div className="journey-intro-content" data-aos="fade-up">
-              <h2>🧭 N60 Compass</h2>
-              <p className="journey-subtitle">Guiding organisations toward responsible, profitable, and human-centred AI.</p>
-              <p className="journey-description">
-                The N60 Compass is your signature AI transformation framework — a structured journey through four essential stages: Strategy & Governance, Solution Design, Investment & ROI, and Training & Recruitment.
-              </p>
-              <p className="journey-description">
-                It represents clarity, progression, and confidence in the age of intelligent automation. This model is simple enough for executives to grasp, yet robust enough for implementation teams to apply.
-              </p>
-              <div className="journey-cta-row">
-                <button className="cta-button primary" onClick={() => {
-                  const hero = document.getElementById('hero');
-                  if (hero) {
-                    const calendlyButton = hero.querySelector('.hero-cta');
-                    if (calendlyButton) calendlyButton.click();
-                  }
-                }}>Explore the Compass →</button>
-                <button className="cta-button secondary" onClick={() => {
-                  const hero = document.getElementById('hero');
-                  if (hero) {
-                    const calendlyButton = hero.querySelector('.hero-cta');
-                    if (calendlyButton) calendlyButton.click();
-                  }
-                }}>Book a Consultation →</button>
-              </div>
+            <div className="section-header" data-aos="fade-up">
+              <h2>{currentContent.solutions.title}</h2>
+              <p>{currentContent.solutions.subtitle}</p>
             </div>
-          </div>
-        </section>
-
-        {/* 🧭 Journey Line Container */}
-        <div className="journey-line-container">
-          {/* Journey Line SVG - will be animated */}
-          <svg className="journey-line-svg" viewBox="0 0 100 400" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="journeyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#60a38d" />
-                <stop offset="100%" stopColor="#2c3659" />
-              </linearGradient>
-            </defs>
-            <path
-              className="journey-path"
-              d="M 50 0 Q 50 100 50 200 T 50 400"
-              stroke="url(#journeyGradient)"
-              strokeWidth="3"
-              fill="none"
-              strokeLinecap="round"
-            />
-          </svg>
-        </div>
-
-        {/* 🧭 I. Compass – Strategy & Governance */}
-        <section id="compass" className="pillar-section compass-section">
-          <div className="container">
-            <div className="pillar-content">
-              <div className="pillar-icon" data-aos="fade-up">
-                <span className="pillar-emoji">🧭</span>
-              </div>
-              <div className="pillar-text" data-aos="fade-up">
-                <h2 className="pillar-title">Step 1 — Compass: Strategy & Governance</h2>
-                <p className="pillar-tagline">Define direction, principles, and control mechanisms for responsible AI.</p>
-                <div className="pillar-description">
-                  <p><strong>Purpose:</strong> Define direction, principles, and control mechanisms for responsible AI.</p>
-                  <p><strong>Value:</strong> Provides strategic clarity and regulatory assurance. Leaders understand where AI creates value — and where guardrails are needed.</p>
-                  <p><strong>Client Input Needed:</strong> Leadership participation, access to policies, IT architecture, and data practices.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Connected Packages */}
-            <div className="packages-grid" data-aos="fade-up">
-              <div className="package-card">
-                <h3>Strategy & Governance Deliverables</h3>
-                <div className="package-details">
-                  <h4>Deliverables:</h4>
-                  <ul>
-                    <li>Executive AI workshop and maturity assessment</li>
-                    <li>AI strategy and governance charter</li>
-                    <li>Policy and ethical framework aligned with the EU AI Act</li>
-                    <li>Risk and compliance mapping</li>
-                    <li>Leadership briefing pack</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 📐 Step 2 – Compass: Solution Design */}
-        <section id="blueprint" className="pillar-section blueprint-section">
-          <div className="container">
-            <div className="pillar-content">
-              <div className="pillar-icon" data-aos="fade-up">
-                <span className="pillar-emoji">📐</span>
-              </div>
-              <div className="pillar-text" data-aos="fade-up">
-                <h2 className="pillar-title">Step 2 — Compass: Solution Design</h2>
-                <p className="pillar-tagline">Translate strategy into concrete, compliant, and scalable AI applications.</p>
-                <div className="pillar-description">
-                  <p><strong>Purpose:</strong> Translate strategy into concrete, compliant, and scalable AI applications.</p>
-                  <p><strong>Value:</strong> Moves AI from theory to execution — safely and pragmatically. Ensures the organisation builds once, scales many times.</p>
-                  <p><strong>Client Input Needed:</strong> Technical environment overview, process documentation, access to IT and data owners.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Deliverables */}
-            <div className="packages-grid" data-aos="fade-up">
-              <div className="package-card">
-                <h3>Solution Design Deliverables</h3>
-                <div className="package-details">
-                  <h4>Deliverables:</h4>
-                  <ul>
-                    <li>System and process architecture mapping</li>
-                    <li>AI use-case selection and feasibility analysis</li>
-                    <li>Vendor-neutral solution design and technical blueprint</li>
-                    <li>Data workflow and integration plan</li>
-                    <li>6–12 month implementation roadmap</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 📈 III. Growth – Investment & ROI */}
-        <section id="growth" className="pillar-section growth-section">
-          <div className="container">
-            <div className="pillar-content">
-              <div className="pillar-icon" data-aos="fade-up">
-                <span className="pillar-emoji">📈</span>
-              </div>
-              <div className="pillar-text" data-aos="fade-up">
-                <h2 className="pillar-title">Step 3 — Compass: Investment & ROI</h2>
-                <p className="pillar-tagline">Align financial decisions, resourcing, and value creation for sustainable AI growth.</p>
-                <div className="pillar-description">
-                  <p><strong>Purpose:</strong> Align financial decisions, resourcing, and value creation for sustainable AI growth.</p>
-                  <p><strong>Value:</strong> Turns AI into a measurable business asset. Gives boards confidence to invest responsibly.</p>
-                  <p><strong>Client Input Needed:</strong> Budget ranges and cost centres, access to financial planning or CFO function.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Connected Packages */}
-            <div className="packages-grid" data-aos="fade-up">
-              <div className="package-card">
-                <h3>Investment & ROI Deliverables</h3>
-                <div className="package-details">
-                  <h4>Deliverables:</h4>
-                  <ul>
-                    <li>Cost-benefit and ROI modelling</li>
-                    <li>AI budget framework and investment roadmap</li>
-                    <li>KPI dashboard and impact tracking model</li>
-                    <li>Pilot program and performance report</li>
-                    <li>Risk-adjusted financial forecast</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="package-card">
-                <h3>Full N60 AI Transformation Program</h3>
-                <p className="package-duration">12–16 weeks | from 120,000 NOK</p>
-                <p className="package-description">Combine all five pillars into a single, guided transformation initiative.</p>
-                <button className="package-cta" onClick={() => {
-                  const element = document.getElementById('growth');
-                  if (element) {
-                    const packageDetails = element.querySelectorAll('.package-card')[1];
-                    if (packageDetails) {
-                      packageDetails.classList.toggle('expanded');
-                    }
-                  }
-                }}>View Details →</button>
-                <div className="package-details">
-                  <h4>Deliverables:</h4>
-                  <ul>
-                    <li>Complete readiness and architecture audit</li>
-                    <li>Governance and compliance framework</li>
-                    <li>Vendor and technology roadmap</li>
-                    <li>Implementation plan with financial modelling</li>
-                    <li>Workforce training and hiring support</li>
-                    <li>Quarterly performance and ROI review</li>
-                  </ul>
-                  <p><strong>Outcome:</strong> Your organisation becomes AI-ready — strategically, technically, and operationally — with ongoing oversight from N60.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 👥 IV. Capability – Workforce & Culture */}
-        <section id="capability" className="pillar-section capability-section">
-          <div className="container">
-            <div className="pillar-content">
-              <div className="pillar-icon" data-aos="fade-up">
-                <span className="pillar-emoji">👥</span>
-              </div>
-              <div className="pillar-text" data-aos="fade-up">
-                <h2 className="pillar-title">Step 4 — Compass: Training & Recruitment</h2>
-                <p className="pillar-tagline">Build the human capability to sustain and scale AI adoption.</p>
-                <div className="pillar-description">
-                  <p><strong>Purpose:</strong> Build the human capability to sustain and scale AI adoption.</p>
-                  <p><strong>Value:</strong> Transforms employees from passive users to active AI contributors. Reduces resistance and strengthens your employer brand.</p>
-                  <p><strong>Client Input Needed:</strong> HR and Learning contact, access to existing training materials and job descriptions.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Connected Packages */}
-            <div className="packages-grid" data-aos="fade-up">
-              <div className="package-card">
-                <h3>Training & Recruitment Deliverables</h3>
-                <div className="package-details">
-                  <h4>Deliverables:</h4>
-                  <ul>
-                    <li>Competence gap analysis</li>
-                    <li>Custom AI training and certification program</li>
-                    <li>AI-ready job design and recruitment strategy</li>
-                    <li>Safe Use of AI workshop</li>
-                    <li>Learning measurement and progression report</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="package-card">
-                <h3>Full N60 AI Transformation Program</h3>
-                <p className="package-duration">12–16 weeks | from 120,000 NOK</p>
-                <p className="package-description">Combine all five pillars into a single, guided transformation initiative.</p>
-                <button className="package-cta" onClick={() => {
-                  const element = document.getElementById('capability');
-                  if (element) {
-                    const packageDetails = element.querySelectorAll('.package-card')[1];
-                    if (packageDetails) {
-                      packageDetails.classList.toggle('expanded');
-                    }
-                  }
-                }}>View Details →</button>
-                <div className="package-details">
-                  <h4>Deliverables:</h4>
-                  <ul>
-                    <li>Complete readiness and architecture audit</li>
-                    <li>Governance and compliance framework</li>
-                    <li>Vendor and technology roadmap</li>
-                    <li>Implementation plan with financial modelling</li>
-                    <li>Workforce training and hiring support</li>
-                    <li>Quarterly performance and ROI review</li>
-                  </ul>
-                  <p><strong>Outcome:</strong> Your organisation becomes AI-ready — strategically, technically, and operationally — with ongoing oversight from N60.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 🚀 Final CTA Section */}
-        <section id="journey-cta" className="journey-cta-section">
-          <div className="container">
-            <div className="journey-cta-content" data-aos="fade-up">
-              <h2>Your Journey Starts Here</h2>
-              <p>Every organisation's AI journey begins somewhere. Let's find your compass point — and chart the path toward capability.</p>
-              <div className="journey-cta-buttons">
-                <button className="cta-button primary" onClick={() => {
-                  const hero = document.getElementById('hero');
-                  if (hero) {
-                    const calendlyButton = hero.querySelector('.hero-cta');
-                    if (calendlyButton) calendlyButton.click();
-                  }
-                }}>Start Your Readiness Review</button>
-                <button className="cta-button secondary" onClick={() => {
-                  const hero = document.getElementById('hero');
-                  if (hero) {
-                    const calendlyButton = hero.querySelector('.hero-cta');
-                    if (calendlyButton) calendlyButton.click();
-                  }
-                }}>Book a Strategy Call</button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 🧭 About N60 - Who We Are */}
-        <section id="about-who" className="about-n60-section">
-          <div className="container">
-            <div className="about-n60-content">
-              <div className="about-header" data-aos="fade-up">
-                <h2>About N60</h2>
-                <p className="about-tagline">From Compass to Capability — guiding organisations toward responsible, profitable AI.</p>
-              </div>
-
-              {/* Who We Are */}
-              <div className="about-subsection" data-aos="fade-up">
-                <h3>Who We Are</h3>
-                <p className="about-intro">
-                  N60 is a Nordic consultancy specialising in AI strategy, governance, and workforce transformation.
-                </p>
-                <p>
-                  We help organisations use artificial intelligence responsibly — not as a technology project, but as a structured part of business growth.
-                </p>
-                <div className="about-founding">
-                  <p><strong>Founded in Norway, N60 was built on a simple idea:</strong></p>
-                  <p className="founding-idea">AI should create value for people, not replace them.</p>
-                </div>
-                <p>
-                  We focus on helping small and medium-sized enterprises, public organisations, and leadership teams adapt, invest, and upskill through a clear and measurable approach to AI.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* What We Do */}
-        <section id="about-what" className="about-n60-section about-n60-alt">
-          <div className="container">
-            <div className="about-n60-content">
-              <div className="about-subsection" data-aos="fade-up">
-                <h3>What We Do</h3>
-                <p className="about-intro">
-                  We turn AI from uncertainty into clarity.
-                </p>
-                <p>
-                  Our work spans four pillars — the foundation of our Responsible AI Framework:
-                </p>
-                <div className="pillars-grid">
-                  <div className="pillar-item">
-                    <span className="pillar-number">1️⃣</span>
-                    <div className="pillar-item-content">
-                      <h4>Strategy & Governance – The Compass</h4>
-                      <p>Set a direction for AI that aligns with your purpose, risk appetite, and compliance goals.</p>
+            <div className="solutions-grid">
+              {currentContent.solutions.cases.map((solution, index) => (
+                <div key={index} className="solution-card" data-aos="fade-up" data-aos-delay={index * 100}>
+                  {solution.image && (
+                    <div className="solution-image">
+                      <img src={solution.image} alt={solution.title} />
                     </div>
+                  )}
+                  <div className="solution-header">
+                    <h3>{solution.title}</h3>
                   </div>
-                  <div className="pillar-item">
-                    <span className="pillar-number">2️⃣</span>
-                    <div className="pillar-item-content">
-                      <h4>Architecture & Technology – The Blueprint</h4>
-                      <p>Design scalable, secure systems that support measurable AI adoption.</p>
-                    </div>
-                  </div>
-                  <div className="pillar-item">
-                    <span className="pillar-number">3️⃣</span>
-                    <div className="pillar-item-content">
-                      <h4>Investment & ROI – The Growth Path</h4>
-                      <p>Connect business value to AI outcomes with clear budgeting and performance metrics.</p>
-                    </div>
-                  </div>
-                  <div className="pillar-item">
-                    <span className="pillar-number">4️⃣</span>
-                    <div className="pillar-item-content">
-                      <h4>Workforce & Capability – The Human Core</h4>
-                      <p>Upskill your people and redesign roles so human intelligence and machine intelligence work together.</p>
-                    </div>
-                  </div>
+                  <p className="solution-description">{solution.description}</p>
+                  <ul className="solution-features">
+                    {solution.features.map((feature, featureIndex) => (
+                      <li key={featureIndex}>{feature}</li>
+                    ))}
+                  </ul>
                 </div>
-                <p className="about-outcome">
-                  Each client engagement starts with these pillars and leads toward a practical outcome: an organisation that's ready, compliant, and future-proofed.
-                </p>
+              ))}
+            </div>
+            {currentContent.solutions.footer && (
+              <div className="solutions-footer" data-aos="fade-up">
+                <p>{currentContent.solutions.footer}</p>
               </div>
+            )}
+          </div>
+        </section>
+
+        {/* Innovation Layer Section */}
+        <section id="innovation" className="innovation-section">
+          <div className="container">
+            <div className="section-header" data-aos="fade-up">
+              <h2>{currentContent.innovation.title}</h2>
+              <p>{currentContent.innovation.subtitle}</p>
+            </div>
+            
+            {/* Lane Selection */}
+            <div className="innovation-lanes" data-aos="fade-up">
+              {currentContent.innovation.lanes.map((lane) => (
+                <button
+                  key={lane.id}
+                  className={`lane-button ${selectedLane === lane.id ? 'active' : ''}`}
+                  onClick={() => setSelectedLane(lane.id)}
+                >
+                  <h3>{lane.title}</h3>
+                  <p>{lane.description}</p>
+                </button>
+              ))}
+            </div>
+            
+            {/* Innovation Modules Carousel */}
+            <div className="innovation-carousel-container" data-aos="fade-up">
+              <Swiper
+                modules={[Navigation, Pagination, Autoplay]}
+                spaceBetween={30}
+                slidesPerView={1}
+                navigation
+                pagination={{ clickable: true }}
+                autoplay={{
+                  delay: 5000,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+                }}
+                breakpoints={{
+                  640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                    spaceBetween: 25,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                  },
+                }}
+                className="innovation-swiper"
+              >
+                {currentContent.innovation.modules.map((module, index) => (
+                  <SwiperSlide key={index}>
+                    <div 
+                      className="innovation-card" 
+                      data-lane={selectedLane}
+                    >
+                      <div className="innovation-image">
+                        <img src={module.dashboard} alt={module.title} />
+                      </div>
+                      <div className="innovation-content">
+                        <h3>{module.title}</h3>
+                        <p className="module-description">
+                          {module.descriptions[selectedLane]}
+                        </p>
+                        <div className="innovation-price">
+                          <span className="price">{module.price.toLocaleString()} NOK</span>
+                          <span className="hours">{module.hours}h</span>
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
         </section>
 
-        {/* Our Approach */}
-        <section id="about-approach" className="about-n60-section">
+        {/* What is N60 Section */}
+        <section className="what-is-section">
           <div className="container">
-            <div className="about-n60-content">
-              <div className="about-subsection" data-aos="fade-up">
-                <h3>Our Approach</h3>
-                <p>
-                  Unlike traditional technology consultancies, we don't sell software or licences.
-                </p>
-                <p>
-                  Instead, we provide independent, evidence-based guidance that lets clients make the right technology and investment choices — on their own terms.
-                </p>
-                <p><strong>Our methodology blends:</strong></p>
-                <ul className="about-methodology">
-                  <li>European governance standards (GDPR + upcoming EU AI Act compliance)</li>
-                  <li>Business design and financial modelling</li>
-                  <li>Organisational change and learning frameworks</li>
+            <div className="section-header" data-aos="fade-up">
+              <h2>{currentContent.whatIs.title}</h2>
+              <p>{currentContent.whatIs.subtitle}</p>
+            </div>
+            <div className="what-is-content">
+              <div className="what-is-text" data-aos="fade-right">
+                <p>{currentContent.whatIs.description}</p>
+                <ul>
+                  {currentContent.whatIs.features.map((feature, index) => (
+                    <li key={index}>{feature}</li>
+                  ))}
                 </ul>
-                <p className="about-philosophy">
-                  We combine analytical depth with Nordic simplicity:<br />
-                  <strong>No jargon, no black boxes — just practical strategy and measurable results.</strong>
-                </p>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why It Matters */}
-        <section id="about-why" className="about-n60-section about-n60-alt">
-          <div className="container">
-            <div className="about-n60-content">
-              <div className="about-subsection" data-aos="fade-up">
-                <h3>Why It Matters</h3>
-                <p>
-                  AI is advancing faster than most organisations can adapt.
-                </p>
-                <p>
-                  The real challenge isn't the technology — it's aligning people, governance, and strategy to keep pace.
-                </p>
-                <p className="about-value">
-                  That's where we come in.
-                </p>
-                <p>
-                  By turning strategy into structure, and structure into capability, N60 helps organisations future-proof their workforce and investments in a fast-changing window of opportunity.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Promise */}
-        <section id="about-promise" className="about-n60-section">
-          <div className="container">
-            <div className="about-n60-content">
-              <div className="about-subsection" data-aos="fade-up">
-                <h3>Our Promise</h3>
-                <div className="promise-grid">
-                  <div className="promise-item">
-                    <h4>Independent</h4>
-                    <p>Vendor-neutral, focused solely on client outcomes.</p>
-                  </div>
-                  <div className="promise-item">
-                    <h4>Responsible</h4>
-                    <p>Built on trust, compliance, and ethics.</p>
-                  </div>
-                  <div className="promise-item">
-                    <h4>Scalable</h4>
-                    <p>Designed to grow with your organisation's maturity.</p>
-                  </div>
+                              <div className="what-is-visual" data-aos="fade-left">
+                  {currentContent.whatIs.video ? (
+                    <div className="what-is-video">
+                      {isMobile ? (
+                        // Show static image on mobile to avoid video errors
+                        <img 
+                          src="https://i.ibb.co/fd5v2xtv/om-n60.png" 
+                          alt="Om N60" 
+                          className="what-is-image"
+                        />
+                      ) : (
+                        // Show video on desktop with mobile-friendly URL
+                        <iframe
+                          src={getMobileVideoUrl(currentContent.whatIs.video)}
+                          title="N60 AI Marketing Demo"
+                          frameBorder="0"
+                          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                          loading="lazy"
+                          onError={(e) => {
+                            // Fallback to image if video fails to load
+                            console.log('Video failed to load, showing fallback image');
+                            e.target.style.display = 'none';
+                            const fallbackImg = document.createElement('img');
+                            fallbackImg.src = "https://i.ibb.co/fd5v2xtv/om-n60.png";
+                            fallbackImg.alt = "Om N60";
+                            fallbackImg.className = "what-is-image";
+                            e.target.parentNode.appendChild(fallbackImg);
+                          }}
+                        />
+                      )}
+                    </div>
+                  ) : (
+                    <img src="https://i.ibb.co/fd5v2xtv/om-n60.png" alt="Om N60" className="what-is-image" />
+                  )}
                 </div>
-                <p className="about-close">
-                  We guide you from compass to capability — making AI responsible, measurable, and human.
-                </p>
-              </div>
             </div>
           </div>
         </section>
 
-        {/* CTA Block */}
-        <section id="about-cta" className="about-cta-section">
+
+        {/* How We Work Section */}
+        <section id="how-we-work" className="how-we-work-section">
           <div className="container">
-            <div className="about-cta-block" data-aos="fade-up">
-              <p className="about-cta-intro">Explore how your organisation can build Responsible AI capability.</p>
-              <div className="about-cta-buttons">
-                <button className="cta-button primary" onClick={() => {
-                  const hero = document.getElementById('hero');
-                  if (hero) {
-                    const calendlyButton = hero.querySelector('.hero-cta');
-                    if (calendlyButton) calendlyButton.click();
-                  }
-                }}>Book a Consultation →</button>
-                <button className="cta-button secondary" onClick={() => {
-                  // TODO: Add download link for framework guide
-                  window.open('#framework', '_self');
-                }}>Download the N60 Framework Guide →</button>
-              </div>
+            <div className="section-header" data-aos="fade-up">
+              <h2>{currentContent.howWeWork.title}</h2>
+              <p>{currentContent.howWeWork.subtitle}</p>
+            </div>
+            <div className="work-steps">
+              {currentContent.howWeWork.steps.map((step, index) => (
+                <div key={index} className="work-step" data-aos="fade-up" data-aos-delay={index * 100}>
+                  <div className="step-icon">
+                    {index === 0 && '🔍'}
+                    {index === 1 && '📈'}
+                    {index === 2 && '⚙️'}
+                    {index === 3 && '📊'}
+                  </div>
+                  <div className="step-content">
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
+                  </div>
+                  {index < currentContent.howWeWork.steps.length - 1 && (
+                    <div className="step-connector"></div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
+        {/* Why AI Section */}
+        <section id="why-ai" className="why-ai-section">
+          <div className="container">
+            <div className="section-header" data-aos="fade-up">
+              <h2>{currentContent.whyAI.title}</h2>
+              <p>{currentContent.whyAI.subtitle}</p>
+            </div>
+            <div className="why-ai-grid">
+              {currentContent.whyAI.benefits.map((benefit, index) => (
+                <div key={index} className="why-ai-card" data-aos="fade-up" data-aos-delay={index * 100}>
+                  <h3>{benefit.title}</h3>
+                  <p>{benefit.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* TEST SECTION - SHOULD APPEAR IN BUILD */}
+        <section id="test-section" className="test-section">
+          <div className="container">
+            <h2>TEST SECTION - UNIQUE CONTENT</h2>
+            <p>This is a test section that should appear in the build</p>
+          </div>
+        </section>
+
+
+
+
+        {/* Contact Section with Smart Form */}
+        <section id="contact" className="contact-section">
+          <div className="container">
+            <div className="section-header" data-aos="fade-up">
+              <h2>{currentContent.contact.title}</h2>
+              <p>{currentContent.contact.subtitle}</p>
+            </div>
+            <div className="contact-content">
+              <div className="contact-form-container" data-aos="fade-right">
+                                <form className="contact-form" onSubmit={handleFormSubmit}>
+                  
+                  {/* Step 1: Main Challenge Selection */}
+                  {currentStep === 1 && (
+                    <div className="form-step">
+                      <div className="step-header">
+                        <div className="stepper-container">
+                          <div className="stepper">
+                            {[1, 2, 3, 4, 5].map((step) => (
+                              <div key={step} className={`stepper-dot ${step === 1 ? 'active' : ''}`}>
+                                {step === 1 && <span className="step-number">1</span>}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <h3>{currentContent.contact.form.step1Title}</h3>
+                        <p>{currentContent.contact.form.step1Subtitle}</p>
+                      </div>
+                      
+                      <div className="challenge-cards four-cards">
+                        {currentContent?.contact?.modules?.core?.map((module) => (
+                          <label key={module.id} className="challenge-card">
+                            <input 
+                              type="radio" 
+                              name="challenge" 
+                              value={module.id}
+                              checked={formSelections.challenge === module.id}
+                              onChange={(e) => handleSelectionChange('challenge', e.target.value)}
+                            />
+                            <div className="card-content">
+                              <div className="card-icon">
+                                {module.id === 'product-marketing' && '📢'}
+                                {module.id === 'lead-generation' && '🔄'}
+                                {module.id === 'lead-discovery' && '🔍'}
+                                {module.id === 'market-expansion' && '🌍'}
+                              </div>
+                              <h4>
+                                {module.name.split(' ').map((word, index) => 
+                                  word === 'AI' ? <span key={index} className="accent-text">{word}</span> : word
+                                ).reduce((prev, curr) => [prev, ' ', curr])}
+                              </h4>
+                              <p>{module.description}</p>
+                            </div>
+                          </label>
+                        ))}
+                      </div>
+                      
+                      <button 
+                        type="button" 
+                        className="next-step" 
+                        onClick={nextStep}
+                        disabled={!isStepValid(1)}
+                      >
+                        {currentContent.contact.form.step1Button}
+                      </button>
+                    </div>
+                  )}
+                  
+                  {/* Step 2: Main Challenges */}
+                  {currentStep === 2 && (
+                    <div className="form-step">
+                      <div className="step-header">
+                        <div className="stepper-container">
+                          <div className="stepper">
+                            {[1, 2, 3, 4, 5].map((step) => (
+                              <div key={step} className={`stepper-dot ${step === 2 ? 'active' : ''}`}>
+                                {step === 2 && <span className="step-number">2</span>}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <h3>{currentContent.contact.form.step2Title}</h3>
+                        <p>{currentContent.contact.form.step2Subtitle}</p>
+                      </div>
+                      <div className="checkbox-options">
+                        <label className="checkbox-option">
+                          <input 
+                            type="checkbox" 
+                            name="main-challenge" 
+                            value="demand-generation"
+                            checked={formSelections.mainChallenge.includes('demand-generation')}
+                            onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
+                          />
+                          <span>Generere etterspørsel for produktet</span>
+                        </label>
+                        <label className="checkbox-option">
+                          <input 
+                            type="checkbox" 
+                            name="main-challenge" 
+                            value="lead-engagement"
+                            checked={formSelections.mainChallenge.includes('lead-engagement')}
+                            onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
+                          />
+                          <span>Finne og engasjere potensielle leads</span>
+                        </label>
+                        <label className="checkbox-option">
+                          <input 
+                            type="checkbox" 
+                            name="main-challenge" 
+                            value="market-expansion"
+                            checked={formSelections.mainChallenge.includes('market-expansion')}
+                            onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
+                          />
+                          <span>Utvide til nye markeder</span>
+                        </label>
+                        <label className="checkbox-option">
+                          <input 
+                            type="checkbox" 
+                            name="main-challenge" 
+                            value="other"
+                            checked={formSelections.mainChallenge.includes('other')}
+                            onChange={(e) => handleSelectionChange('mainChallenge', e.target.value)}
+                          />
+                          <span>Annet</span>
+                        </label>
+                      </div>
+                      <div className="form-navigation">
+                        <button type="button" className="prev-step" onClick={prevStep}>{currentContent.contact.form.back}</button>
+                        <button 
+                          type="button" 
+                          className="next-step" 
+                          onClick={nextStep}
+                          disabled={!isStepValid(2)}
+                        >
+                          {currentContent.contact.form.step2Button}
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* Step 3: Innovation Solutions */}
+                  {currentStep === 3 && (
+                    <div className="form-step">
+                      <div className="step-header">
+                        <div className="stepper-container">
+                          <div className="stepper">
+                            {[1, 2, 3, 4, 5].map((step) => (
+                              <div key={step} className={`stepper-dot ${step === 3 ? 'active' : ''}`}>
+                                {step === 3 && <span className="step-number">3</span>}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <h3>{currentContent.contact.form.step3Title}</h3>
+                        <p>{currentContent.contact.form.step3Subtitle}</p>
+                      </div>
+                      <div className="checkbox-options">
+                        {currentContent.contact.modules.innovation.map((module) => (
+                          <label key={module.id} className="checkbox-option">
+                            <input 
+                              type="checkbox" 
+                              name="innovation" 
+                              value={module.id}
+                              checked={formSelections.innovation.includes(module.id)}
+                              onChange={(e) => handleSelectionChange('innovation', e.target.value)}
+                            />
+                            <span>{module.name}</span>
+                          </label>
+                        ))}
+                      </div>
+                      <div className="form-navigation">
+                        <button type="button" className="prev-step" onClick={prevStep}>{currentContent.contact.form.back}</button>
+                        <button 
+                          type="button" 
+                          className="next-step" 
+                          onClick={nextStep}
+                          disabled={!isStepValid(3)}
+                        >
+                          {currentContent.contact.form.step3Button}
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* Step 4: Company Size */}
+                  {currentStep === 4 && (
+                    <div className="form-step">
+                      <div className="step-header">
+                        <div className="stepper-container">
+                          <div className="stepper">
+                            {[1, 2, 3, 4, 5].map((step) => (
+                              <div key={step} className={`stepper-dot ${step === 4 ? 'active' : ''}`}>
+                                {step === 4 && <span className="step-number">4</span>}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <h3>{currentContent.contact.form.companySizeTitle}</h3>
+                        <p>{currentContent.contact.form.companySizeSubtitle}</p>
+                      </div>
+                      
+                      <div className="company-size-explanation">
+                        <p>{currentContent.contact.form.companySizeExplanation}</p>
+                      </div>
+                      
+                      <div className="radio-options">
+                        <label className="radio-option">
+                          <input 
+                            type="radio" 
+                            name="company-size" 
+                            value="1-9"
+                            checked={formSelections.companySize === '1-9'}
+                            onChange={(e) => handleSelectionChange('companySize', e.target.value)}
+                          />
+                          <span>1-9</span>
+                        </label>
+                        <label className="radio-option">
+                          <input 
+                            type="radio" 
+                            name="company-size" 
+                            value="10-49"
+                            checked={formSelections.companySize === '10-49'}
+                            onChange={(e) => handleSelectionChange('companySize', e.target.value)}
+                        />
+                          <span>10-49</span>
+                        </label>
+                        <label className="radio-option">
+                          <input 
+                            type="radio" 
+                            name="company-size" 
+                            value="50+"
+                            checked={formSelections.companySize === '50+'}
+                            onChange={(e) => handleSelectionChange('companySize', e.target.value)}
+                          />
+                          <span>50 eller mer</span>
+                        </label>
+                      </div>
+                      
+                      <div className="form-navigation">
+                        <button type="button" className="prev-step" onClick={prevStep}>{currentContent.contact.form.back}</button>
+                        <button 
+                          type="button" 
+                          className="next-step" 
+                          onClick={nextStep}
+                          disabled={!isStepValid(4)}
+                        >
+                          {currentContent.contact.form.step4Button}
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* Step 5: Contact & Strategy Meeting */}
+                  {currentStep === 5 && (
+                    <div className="form-step">
+                      <div className="step-header">
+                        <div className="stepper-container">
+                          <div className="stepper">
+                            {[1, 2, 3, 4, 5].map((step) => (
+                              <div key={step} className={`stepper-dot ${step === 5 ? 'active' : ''}`}>
+                                {step === 5 && <span className="step-number">5</span>}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <h3>{currentContent.contact.form.step5Title}</h3>
+                        <p>{currentContent.contact.form.step5Subtitle}</p>
+                      </div>
+                      
+                      <div className="selection-summary">
+                        <h4>Dine valgte løsninger:</h4>
+                        <div className="summary-items">
+                          {/* Show selected core module */}
+                          {formSelections.challenge && (() => {
+                            const module = currentContent?.contact?.modules?.core?.find(m => m.id === formSelections.challenge);
+                            return module ? (
+                              <div key="core" className="summary-item">
+                                <span className="item-name">{module.name}</span>
+                                <span className="item-description">{module.description}</span>
+                              </div>
+                            ) : null;
+                          })()}
+                          
+                          {/* Show selected main challenge modules */}
+                          {formSelections.mainChallenge && formSelections.mainChallenge.length > 0 && 
+                            formSelections.mainChallenge.map((challengeId, index) => {
+                              const module = currentContent?.contact?.modules?.mainChallenges?.find(m => m.id === challengeId);
+                              return module ? (
+                                <div key={`mainChallenge-${index}`} className="summary-item">
+                                  <span className="item-name">{module.name}</span>
+                                  <span className="item-description">{module.description}</span>
+                                </div>
+                              ) : null;
+                            })
+                          }
+                          
+                          {/* Show selected innovation modules */}
+                          {formSelections.innovation && formSelections.innovation.length > 0 && 
+                            formSelections.innovation.map((innovationId, index) => {
+                              const module = currentContent?.contact?.modules?.innovation?.find(m => m.id === innovationId);
+                              return module ? (
+                                <div key={`innovation-${index}`} className="summary-item">
+                                  <span className="item-name">{module.name}</span>
+                                  <span className="item-description">{module.description}</span>
+                                </div>
+                              ) : null;
+                            })
+                          }
+                          
+                          {/* Show company size if applicable */}
+                          {formSelections.companySize && (
+                            <div className="summary-item">
+                                                          <span className="item-name">Bedriftsstørrelse</span>
+                            <span className="item-description">{formSelections.companySize} ansatte</span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                      
+                      <div className="contact-fields">
+                        <input 
+                          type="text" 
+                          name="name" 
+                          placeholder={currentContent.contact.form.namePlaceholder} 
+                          value={formSelections.name}
+                          onChange={(e) => handleSelectionChange('name', e.target.value)}
+                          required 
+                        />
+                        <input 
+                          type="email" 
+                          name="email" 
+                          placeholder={currentContent.contact.form.emailPlaceholder} 
+                          value={formSelections.email}
+                          onChange={(e) => handleSelectionChange('email', e.target.value)}
+                          required 
+                        />
+                        <input 
+                          type="text" 
+                          name="company" 
+                          placeholder={currentContent.contact.form.companyPlaceholder} 
+                          value={formSelections.company}
+                          onChange={(e) => handleSelectionChange('company', e.target.value)}
+                          required 
+                        />
+                      </div>
+                      
+                      <div className="form-navigation">
+                        <button type="button" className="prev-step" onClick={prevStep}>
+                          {currentContent.contact.form.step5Back}
+                        </button>
+                        <button type="button" className="submit-button" onClick={handleFormSubmit}>
+                          {currentContent.contact.form.step5Button}
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {formStatus && formStatus.type === 'success' && (
+                    <p className={`form-status ${formStatus.type}`}>
+                      {formStatus.message}
+                    </p>
+                  )}
+                </form>
+                
+                {/* Quote Display */}
+                {showQuote && quoteData && (
+                  <div className="quote-display">
+                    <div className="quote-header">
+                      <h3>{currentContent.contact.form.quoteTitle}</h3>
+                      <p>{currentContent.contact.form.quoteSubtitle}</p>
+                    </div>
+                    
+                    <div className="quote-items">
+                      {quoteData.selectedModules && quoteData.selectedModules.length > 0 ? (
+                        quoteData.selectedModules.map((module, index) => (
+                        <div key={index} className="quote-item">
+                          <div className="quote-item-content">
+                            <div>
+                              <h4>{module.name}</h4>
+                              <p className="quote-description">{module.description}</p>
+                            </div>
+                              <span className="quote-price">{module.price?.toLocaleString() || 0} kr</span>
+                            <div className="quote-details">
+                                <span>Estimert tid: {module.hours || 0} timer</span>
+                            </div>
+                          </div>
+                        </div>
+                        ))
+                      ) : (
+                        <p>Ingen moduler valgt</p>
+                      )}
+                    </div>
+                    
+                    <div className="quote-summary">
+                      <div className="quote-total">
+                        <strong>{currentContent.contact.form.quoteTotal}: {(quoteData.totalPrice || 0).toLocaleString()} kr</strong>
+                      </div>
+                      <div className="quote-mva">
+                        <span>MVA (25%): {Math.round((quoteData.totalPrice || 0) * 0.25).toLocaleString()} kr</span>
+                      </div>
+                      <div className="quote-total-with-mva">
+                        <strong>Totalt inkl. MVA: {Math.round((quoteData.totalPrice || 0) * 1.25).toLocaleString()} kr</strong>
+                      </div>
+                      <div className="quote-timeline">
+                        <span>{currentContent.contact.form.quoteTimeline}: {quoteData.estimatedTimeline || '6-8 uker'}</span>
+                      </div>
+                      <div className="quote-monthly-costs">
+                        <span>Månedlige driftskostnader (10%): {(quoteData.monthlyRunningCosts || 0).toLocaleString()} kr</span>
+                      </div>
+                    </div>
+                    
+                    <div className="quote-footer">
+                      <p>{currentContent.contact.form.quoteFooter1}</p>
+                      <p>{currentContent.contact.form.quoteFooter2}</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+            </div>
+          </div>
+        </section>
       </div>
 
-      {/* Floating Contact CTA */}
-      <div className="floating-contact-cta">
-        <a href="#/contact" className="floating-contact-button">
-          <span className="cta-text">Contact n60</span>
-          <span className="cta-icon">💬</span>
-        </a>
-      </div>
+      {/* Tech Partners Section */}
+      <section id="tech-partners" className="tech-partners-section">
+        <div className="container">
+          <h2 className="tech-partners-title">Våre Teknologipartnere</h2>
+          <div className="tech-partners-grid">
+            <div className="tech-partner">
+              <img src="https://i.ibb.co/QFM3Hy6r/1.png" alt="Tech Partner 1" className="tech-partner-logo" />
+            </div>
+            <div className="tech-partner">
+              <img src="https://i.ibb.co/XkxgG9ts/2.png" alt="Tech Partner 2" className="tech-partner-logo" />
+            </div>
+            <div className="tech-partner">
+              <img src="https://i.ibb.co/ZRYQ1mFS/3.png" alt="Tech Partner 3" className="tech-partner-logo" />
+            </div>
+            <div className="tech-partner">
+              <img src="https://i.ibb.co/rRhngx6R/4.png" alt="Tech Partner 4" className="tech-partner-logo" />
+            </div>
+            <div className="tech-partner">
+              <img src="https://i.ibb.co/j9PBM5W8/5.png" alt="Tech Partner 5" className="tech-partner-logo" />
+            </div>
+            <div className="tech-partner">
+              <img src="https://i.ibb.co/TMfHy3Rw/6.png" alt="Tech Partner 6" className="tech-partner-logo" />
+            </div>
+            <div className="tech-partner">
+              <img src="https://i.ibb.co/RkpSHHr8/7.png" alt="Tech Partner 7" className="tech-partner-logo" />
+            </div>
+            <div className="tech-partner">
+              <img src="https://i.ibb.co/7JWkhQP6/8.png" alt="Tech Partner 8" className="tech-partner-logo" />
+            </div>
+          </div>
+        </div>
+      </section>
 
-      {/* 🔟 Footer */}
       <footer className="footer">
         <div className="container">
-          <div className="footer-tagline">
-            <h3>N60 — Responsible AI for the Future of Work.</h3>
-          </div>
-          <div className="footer-contact">
-            <p>📧 hello@n60.no</p>
-            <p>🌐 n60.ai</p>
-            <p>📍 Bergen, Norway</p>
-          </div>
-          <div className="footer-bottom">
-            <p>© {new Date().getFullYear()} N60</p>
-          </div>
+          <p>© {new Date().getFullYear()} N60</p>
+          <p className="made-with-love">Made in Bergen, Norway, with love ❤️</p>
         </div>
       </footer>
 
@@ -1461,6 +1663,7 @@ function MainPage() {
         </div>
       )}
 
+      <Salesbot />
       <CookieConsent />
     </>
   );
