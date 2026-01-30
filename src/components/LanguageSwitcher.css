@@ -1,0 +1,43 @@
+.language-switcher {
+  background: transparent;
+  border: 2px solid var(--teal-primary);
+  color: var(--teal-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 1rem;
+}
+
+.language-switcher:hover {
+  background: var(--teal-primary);
+  color: var(--white);
+  border-color: var(--teal-primary);
+}
+
+@media (max-width: 1024px) {
+  .language-switcher {
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 0;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 14px;
+  }
+  
+  /* Style for language switcher in mobile menu */
+  .mobile-menu-actions .language-switcher {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .mobile-menu-actions .language-switcher:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.8);
+    color: var(--white);
+  }
+}
+

@@ -161,21 +161,21 @@ app.post('/api/contact', async (req, res) => {
     await resend.emails.send({
       from: 'N60 Website <onboarding@resend.dev>',
       to: ['matthew@n60.ai'],
-      subject: `Ny henvendelse fra ${name} (${company})`,
+      subject: `New Contact Form Submission from ${name} (${company})`,
       html: `
-        <h2>Ny henvendelse fra N60.no</h2>
-        <p><strong>Navn:</strong> ${name}</p>
-        <p><strong>E-post:</strong> ${email}</p>
-        <p><strong>Bedrift:</strong> ${company}</p>
-        <p><strong>Melding:</strong></p>
-        <p>${message}</p>
+        <h2>New Contact Form Submission from N60 Website</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Company:</strong> ${company}</p>
+        <p><strong>Message:</strong></p>
+        <p>${message || 'No message provided'}</p>
       `
     });
     console.log('Email sent successfully via Resend');
     res.status(200).json({ success: true });
   } catch (err) {
     console.error('Resend error:', err);
-    res.status(500).json({ error: 'Kunne ikke sende e-post' });
+    res.status(500).json({ error: 'Could not send email' });
   }
 });
 

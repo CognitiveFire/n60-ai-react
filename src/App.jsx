@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation, useNavigate, Link, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
+import { translations } from './translations';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import SimpleContactForm from './components/SimpleContactForm';
@@ -8,6 +10,7 @@ import QuotePage from './components/QuotePage';
 import TrainingPage from './components/TrainingPage';
 import AdminLogin from './components/AdminLogin';
 import CookieConsent from './components/CookieConsent';
+import FloatingContactButton from './components/FloatingContactButton';
 import './App.css';
 import './components/Contact.css';
 
@@ -42,9 +45,11 @@ const getMobileVideoUrl = (originalUrl) => {
 
 function App() {
   return (
+    <LanguageProvider>
     <Router>
       <AppContent />
     </Router>
+    </LanguageProvider>
   );
 }
 
@@ -90,6 +95,9 @@ function AppContent() {
 
 function MainPage() {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { language } = useLanguage();
+  const t = translations[language];
   const [formStatus, setFormStatus] = useState(null);
   const [selectedModules, setSelectedModules] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -109,6 +117,16 @@ function MainPage() {
   });
   const [showLoginLightbox, setShowLoginLightbox] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [activeFrameworkStep, setActiveFrameworkStep] = useState(null);
+  const [activeFaqItem, setActiveFaqItem] = useState(null);
+
+  const toggleFrameworkStep = (stepId) => {
+    setActiveFrameworkStep((prev) => (prev === stepId ? null : stepId));
+  };
+
+  const toggleFaqItem = (itemId) => {
+    setActiveFaqItem((prev) => (prev === itemId ? null : itemId));
+  };
 
   useEffect(() => {
     // Check if device is mobile on component mount
@@ -126,13 +144,34 @@ function MainPage() {
     };
   }, []);
 
+  useEffect(() => {
+    const aboutSection = document.getElementById('about');
+    if (!aboutSection) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(aboutSection);
+
+    return () => observer.disconnect();
+  }, []);
+
   // Handle smooth scrolling to sections based on hash
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.substring(1); // Remove the # symbol
       
-      // Only handle scrolling for actual section IDs, not React routes
-      const validSections = ['solutions', 'innovation', 'how-we-work', 'why-ai', 'contact'];
+      // Valid sections for the new design
+      const validSections = ['about', 'framework', 'services', 'insights', 'cta', 'contact'];
       
       if (hash && validSections.includes(hash)) {
         const element = document.getElementById(hash);
@@ -149,7 +188,7 @@ function MainPage() {
     };
 
     // Only handle hash changes when we're on the home page (not on other routes)
-    if (location.hash === '' || location.hash === '#') {
+    if (location.pathname === '/' || location.pathname === '') {
       handleHashChange();
     }
 
@@ -681,6 +720,48 @@ function MainPage() {
 
   const currentContent = content.no;
 
+  const frameworkSteps = [
+    { id: 'step-1', data: t.framework.step1 },
+    { id: 'step-2', data: t.framework.step2 },
+    { id: 'step-3', data: t.framework.step3 },
+    { id: 'step-4', data: t.framework.step4 }
+  ];
+
+  const sidebarCopy = language === 'no'
+    ? {
+        bookTitle: 'Start med en samtale',
+        bookBody: 'Planlegg et 30 minutters møte for å kartlegge AI-prioriteringer, risiko og ønsket avkastning.',
+        bookCTA: 'Book et møte',
+        downloadTitle: 'Last ned Compass-oversikten',
+        downloadBody: 'Fire steg, leveransemodeller og veiledende priser i et kort sammendrag.',
+        downloadCTA: 'Last ned PDF',
+        contactTitle: 'Trenger du noe spesifikt?',
+        contactBody: 'Vi svarer innen én virkedag.',
+        contactFormLink: 'Ta kontakt',
+        trustTitle: 'Hvorfor team velger N60',
+        trustItems: [
+          'Uavhengige rådgivere med lang leveranseerfaring',
+          'GDPR- og EU AI Act-kompatible rammeverk',
+          'Praktisk opplæring som gir målbar ROI'
+        ]
+      }
+    : {
+        bookTitle: 'Start with a conversation',
+        bookBody: 'Schedule a 30-minute briefing to map your AI priorities, risks, and ROI targets.',
+        bookCTA: 'Book a Call',
+        downloadTitle: 'Download Compass overview',
+        downloadBody: 'Four-step methodology, engagement formats, and indicative pricing in one PDF.',
+        downloadCTA: 'Download PDF',
+        contactTitle: 'Need something specific?',
+        contactBody: 'We respond within one business day.',
+        contactFormLink: 'Get in touch',
+        trustTitle: 'Why teams choose N60',
+        trustItems: [
+          'Independent advisors with deep delivery experience',
+          'GDPR & EU AI Act aligned frameworks',
+          'Hands-on enablement that proves ROI'
+        ]
+      };
 
 
   useEffect(() => {
@@ -950,505 +1031,331 @@ function MainPage() {
 
 
 
-  // Safety check to ensure content is loaded
-  if (!currentContent || !currentContent.contact || !currentContent.contact.form) {
-    console.log('Content not loaded yet:', { currentContent });
-    return <div>Loading...</div>;
-  }
+  // Route to contact form (book a call / contact)
+  const handleBookConsultation = () => {
+    navigate('/contact');
+  };
+
+  // Handle scroll to section
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+                  if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <>
+      <Helmet>
+        <html lang={language === 'no' ? 'no' : 'en'} />
+        <title>{t.seo.title}</title>
+        <meta name="description" content={t.seo.description} />
+        <meta name="keywords" content={t.seo.keywords} />
+        <link rel="canonical" href={t.seo.canonicalUrl} />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={t.seo.canonicalUrl} />
+        <meta property="og:title" content={t.seo.ogTitle} />
+        <meta property="og:description" content={t.seo.ogDescription} />
+        <meta property="og:image" content={t.seo.ogImage} />
+        <meta property="og:locale" content={language === 'no' ? 'no_NO' : 'en_US'} />
+        <meta property="og:locale:alternate" content={language === 'no' ? 'en_US' : 'no_NO'} />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content={t.seo.twitterCard} />
+        <meta name="twitter:url" content={t.seo.canonicalUrl} />
+        <meta name="twitter:title" content={t.seo.twitterTitle} />
+        <meta name="twitter:description" content={t.seo.twitterDescription} />
+        <meta name="twitter:image" content={t.seo.ogImage} />
+        
+        {/* Additional SEO */}
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="N60 AS" />
+        <meta name="geo.region" content="NO" />
+        <meta name="geo.placename" content="Bergen" />
+        <meta name="language" content={language === 'no' ? 'Norwegian' : 'English'} />
+        <meta name="revisit-after" content="7 days" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "N60 AS",
+          "url": "https://n60.ai",
+          "logo": "https://n60.ai/n60%20Logo/n60compass%20-%20Edited.png",
+          "description": t.seo.description,
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bergen",
+            "addressCountry": "NO"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/n60"
+          ]
+        })}</script>
+      </Helmet>
       <div className="App">
         <Navbar onLoginClick={() => setShowLoginLightbox(true)} />
 
         {/* Hero Section */}
-        <Hero onOpenDemo={() => {}} backgroundImage={currentContent?.hero?.background} videoUrl={currentContent?.hero?.video} />
+        <Hero onOpenDemo={() => {}} />
 
-        {/* 🌌 N60 Compass Introduction */}
-        <section id="journey-intro" className="journey-intro-section">
-          <div className="container">
-            <div className="journey-intro-content" data-aos="fade-up">
-              <h2>🧭 N60 Compass</h2>
-              <p className="journey-subtitle">Guiding organisations toward responsible, profitable, and human-centred AI.</p>
-              <p className="journey-description">
-                The N60 Compass is your signature AI transformation framework — a structured journey through four essential stages: Strategy & Governance, Solution Design, Investment & ROI, and Training & Recruitment.
-              </p>
-              <p className="journey-description">
-                It represents clarity, progression, and confidence in the age of intelligent automation. This model is simple enough for executives to grasp, yet robust enough for implementation teams to apply.
-              </p>
-              <div className="journey-cta-row">
-                <button className="cta-button primary" onClick={() => {
-                  const hero = document.getElementById('hero');
-                  if (hero) {
-                    const calendlyButton = hero.querySelector('.hero-cta');
-                    if (calendlyButton) calendlyButton.click();
-                  }
-                }}>Explore the Compass →</button>
-                <button className="cta-button secondary" onClick={() => {
-                  const hero = document.getElementById('hero');
-                  if (hero) {
-                    const calendlyButton = hero.querySelector('.hero-cta');
-                    if (calendlyButton) calendlyButton.click();
-                  }
-                }}>Book a Consultation →</button>
-              </div>
-            </div>
-          </div>
-        </section>
+        <div className="home-container">
+          <div className="home-grid">
+            <div className="home-main">
+              {/* About Section - Compass Overview */}
+            <section id="about" className="about-section">
+              <div className="about-container">
+                <div className="about-content">
+                  <span className="about-tagline">{t.about.tagline}</span>
+                  <h2 className="about-title">{t.about.title}</h2>
+                  <span className="about-divider"></span>
 
-        {/* 🧭 Journey Line Container */}
-        <div className="journey-line-container">
-          {/* Journey Line SVG - will be animated */}
-          <svg className="journey-line-svg" viewBox="0 0 100 400" preserveAspectRatio="none">
-            <defs>
-              <linearGradient id="journeyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#60a38d" />
-                <stop offset="100%" stopColor="#2c3659" />
-              </linearGradient>
-            </defs>
-            <path
-              className="journey-path"
-              d="M 50 0 Q 50 100 50 200 T 50 400"
-              stroke="url(#journeyGradient)"
-              strokeWidth="3"
-              fill="none"
-              strokeLinecap="round"
-            />
-          </svg>
+                  <div className="about-body">
+                    {t.about.paragraphs.map((paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    ))}
         </div>
 
-        {/* 🧭 I. Compass – Strategy & Governance */}
-        <section id="compass" className="pillar-section compass-section">
+                  <button
+                    type="button"
+                    className="about-cta"
+                    onClick={() => document.getElementById('framework')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                  >
+                    {t.about.cta}
+                  </button>
+            </div>
+          </div>
+        </section>
+
+              {/* The Compass Framework Section */}
+            <section id="framework" className="framework-section">
           <div className="container">
-            <div className="pillar-content">
-              <div className="pillar-icon" data-aos="fade-up">
-                <span className="pillar-emoji">🧭</span>
-              </div>
-              <div className="pillar-text" data-aos="fade-up">
-                <h2 className="pillar-title">Step 1 — Compass: Strategy & Governance</h2>
-                <p className="pillar-tagline">Define direction, principles, and control mechanisms for responsible AI.</p>
-                <div className="pillar-description">
-                  <p><strong>Purpose:</strong> Define direction, principles, and control mechanisms for responsible AI.</p>
-                  <p><strong>Value:</strong> Provides strategic clarity and regulatory assurance. Leaders understand where AI creates value — and where guardrails are needed.</p>
-                  <p><strong>Client Input Needed:</strong> Leadership participation, access to policies, IT architecture, and data practices.</p>
-                </div>
-              </div>
+                <div className="framework-header">
+                  <h2 className="section-title">{t.framework.title}</h2>
+                  <p className="framework-subtitle">
+                    {t.framework.subtitle}
+                  </p>
             </div>
 
-            {/* Connected Packages */}
-            <div className="packages-grid" data-aos="fade-up">
-              <div className="package-card">
-                <h3>Strategy & Governance Deliverables</h3>
-                <div className="package-details">
-                  <h4>Deliverables:</h4>
-                  <ul>
-                    <li>Executive AI workshop and maturity assessment</li>
-                    <li>AI strategy and governance charter</li>
-                    <li>Policy and ethical framework aligned with the EU AI Act</li>
-                    <li>Risk and compliance mapping</li>
-                    <li>Leadership briefing pack</li>
+                <div className="framework-accordion">
+                  {frameworkSteps.map((step) => {
+                    const isActive = activeFrameworkStep === step.id;
+                    return (
+                      <div
+                        key={step.id}
+                        className={`framework-accordion-step ${isActive ? 'active' : ''}`}
+                      >
+                        <button
+                          type="button"
+                          className="framework-accordion-header"
+                          onClick={() => toggleFrameworkStep(step.id)}
+                          aria-expanded={isActive}
+                          aria-controls={`${step.id}-content`}
+                          id={`${step.id}-header`}
+                        >
+                          <div className="framework-accordion-text">
+                            <h3 className="step-title">{step.data.title}</h3>
+                            <p className="framework-accordion-summary">{step.data.purpose.text}</p>
+                </div>
+                          <span className="framework-accordion-toggle" aria-hidden="true">
+                            {isActive ? '−' : '+'}
+                          </span>
+                        </button>
+
+                        <div
+                          id={`${step.id}-content`}
+                          className="framework-accordion-content"
+                          role="region"
+                          aria-labelledby={`${step.id}-header`}
+                          hidden={!isActive}
+                        >
+                          <div className="step-purpose">
+                            <h4>{step.data.purpose.title}</h4>
+                            <p>{step.data.purpose.text}</p>
+            </div>
+
+                          <div className="step-process">
+                            <h4>{step.data.process.title}</h4>
+                            <ul>
+                              {step.data.process.items.map((item, index) => (
+                                <li key={index}>{item}</li>
+                              ))}
+                  </ul>
+              </div>
+
+                          <div className="step-deliverables">
+                            <h4>{step.data.deliverables.title}</h4>
+                            <ul>
+                              {step.data.deliverables.items.map((item, index) => (
+                                <li key={index}>{item}</li>
+                              ))}
                   </ul>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* 📐 Step 2 – Compass: Solution Design */}
-        <section id="blueprint" className="pillar-section blueprint-section">
-          <div className="container">
-            <div className="pillar-content">
-              <div className="pillar-icon" data-aos="fade-up">
-                <span className="pillar-emoji">📐</span>
-              </div>
-              <div className="pillar-text" data-aos="fade-up">
-                <h2 className="pillar-title">Step 2 — Compass: Solution Design</h2>
-                <p className="pillar-tagline">Translate strategy into concrete, compliant, and scalable AI applications.</p>
-                <div className="pillar-description">
-                  <p><strong>Purpose:</strong> Translate strategy into concrete, compliant, and scalable AI applications.</p>
-                  <p><strong>Value:</strong> Moves AI from theory to execution — safely and pragmatically. Ensures the organisation builds once, scales many times.</p>
-                  <p><strong>Client Input Needed:</strong> Technical environment overview, process documentation, access to IT and data owners.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Deliverables */}
-            <div className="packages-grid" data-aos="fade-up">
-              <div className="package-card">
-                <h3>Solution Design Deliverables</h3>
-                <div className="package-details">
-                  <h4>Deliverables:</h4>
-                  <ul>
-                    <li>System and process architecture mapping</li>
-                    <li>AI use-case selection and feasibility analysis</li>
-                    <li>Vendor-neutral solution design and technical blueprint</li>
-                    <li>Data workflow and integration plan</li>
-                    <li>6–12 month implementation roadmap</li>
+                          <div className="step-value">
+                            <h4>{step.data.value.title}</h4>
+                            <ul>
+                              {step.data.value.items.map((item, index) => (
+                                <li key={index}>{item}</li>
+                              ))}
                   </ul>
+              </div>
+
+                          <div className="step-cost">
+                            <strong>{step.data.cost}</strong>
                 </div>
               </div>
+            </div>
+                    );
+                  })}
+          </div>
+
+          </div>
+        </section>
+
+            {/* FAQ Section */}
+            <section id="faq" className="faq-section">
+              <div className="faq-container">
+                <div className="faq-header">
+                  <span className="faq-pretitle">{t.faq.pretitle}</span>
+                  <h2 className="faq-title">{t.faq.title}</h2>
+                  <p className="faq-description">{t.faq.description}</p>
+              </div>
+
+                <div className="faq-accordion">
+                  {t.faq.items.map((item, index) => {
+                    const isOpen = activeFaqItem === index;
+                    return (
+                      <div key={index} className={`faq-item ${isOpen ? 'open' : ''}`}>
+                        <button
+                          type="button"
+                          className="faq-question"
+                          onClick={() => toggleFaqItem(index)}
+                          aria-expanded={isOpen}
+                          aria-controls={`faq-item-${index}`}
+                          id={`faq-item-${index}-trigger`}
+                        >
+                          <span className="faq-question-text">
+                            <span className="faq-question-desktop">{item.question}</span>
+                            <span className="faq-question-mobile">{item.mobileQuestion}</span>
+                          </span>
+                          <span className={`faq-toggle ${isOpen ? 'open' : ''}`} aria-hidden="true">
+                            {isOpen ? '−' : '+'}
+                          </span>
+                        </button>
+                        <div
+                          className="faq-answer"
+                          id={`faq-item-${index}`}
+                          role="region"
+                          aria-labelledby={`faq-item-${index}-trigger`}
+                          hidden={!isOpen}
+                        >
+                          <p className="faq-answer-desktop">{item.answer}</p>
+                          <p className="faq-answer-mobile">{item.mobileAnswer}</p>
+                </div>
+              </div>
+                    );
+                  })}
+            </div>
+
+                <div className="faq-cta">
+                  <p>{t.faq.ctaText}</p>
+                  <button
+                    type="button"
+                    className="faq-cta-button"
+                    onClick={handleBookConsultation}
+                  >
+                    {t.faq.ctaButton}
+                  </button>
             </div>
           </div>
         </section>
 
-        {/* 📈 III. Growth – Investment & ROI */}
-        <section id="growth" className="pillar-section growth-section">
+              {/* Call to Action Section */}
+              <section id="cta" className="cta-section">
           <div className="container">
-            <div className="pillar-content">
-              <div className="pillar-icon" data-aos="fade-up">
-                <span className="pillar-emoji">📈</span>
+                  <div className="cta-content">
+                    <h2 className="cta-headline">{t.cta.headline}</h2>
+                    <p className="cta-body">
+                      {t.cta.body}
+                    </p>
+                    <div className="cta-buttons">
+                      <button className="cta-button-primary" onClick={handleBookConsultation}>
+                        {t.cta.bookConsultation}
+                      </button>
+                      <button className="cta-button-secondary" onClick={() => {
+                        window.open('/n60 Logo/Smarter work. Safer data. Stronger teams.pdf', '_blank');
+                      }}>
+                        {t.cta.downloadPDF}
+                      </button>
               </div>
-              <div className="pillar-text" data-aos="fade-up">
-                <h2 className="pillar-title">Step 3 — Compass: Investment & ROI</h2>
-                <p className="pillar-tagline">Align financial decisions, resourcing, and value creation for sustainable AI growth.</p>
-                <div className="pillar-description">
-                  <p><strong>Purpose:</strong> Align financial decisions, resourcing, and value creation for sustainable AI growth.</p>
-                  <p><strong>Value:</strong> Turns AI into a measurable business asset. Gives boards confidence to invest responsibly.</p>
-                  <p><strong>Client Input Needed:</strong> Budget ranges and cost centres, access to financial planning or CFO function.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Connected Packages */}
-            <div className="packages-grid" data-aos="fade-up">
-              <div className="package-card">
-                <h3>Investment & ROI Deliverables</h3>
-                <div className="package-details">
-                  <h4>Deliverables:</h4>
-                  <ul>
-                    <li>Cost-benefit and ROI modelling</li>
-                    <li>AI budget framework and investment roadmap</li>
-                    <li>KPI dashboard and impact tracking model</li>
-                    <li>Pilot program and performance report</li>
-                    <li>Risk-adjusted financial forecast</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="package-card">
-                <h3>Full N60 AI Transformation Program</h3>
-                <p className="package-duration">12–16 weeks | from 120,000 NOK</p>
-                <p className="package-description">Combine all five pillars into a single, guided transformation initiative.</p>
-                <button className="package-cta" onClick={() => {
-                  const element = document.getElementById('growth');
-                  if (element) {
-                    const packageDetails = element.querySelectorAll('.package-card')[1];
-                    if (packageDetails) {
-                      packageDetails.classList.toggle('expanded');
-                    }
-                  }
-                }}>View Details →</button>
-                <div className="package-details">
-                  <h4>Deliverables:</h4>
-                  <ul>
-                    <li>Complete readiness and architecture audit</li>
-                    <li>Governance and compliance framework</li>
-                    <li>Vendor and technology roadmap</li>
-                    <li>Implementation plan with financial modelling</li>
-                    <li>Workforce training and hiring support</li>
-                    <li>Quarterly performance and ROI review</li>
-                  </ul>
-                  <p><strong>Outcome:</strong> Your organisation becomes AI-ready — strategically, technically, and operationally — with ongoing oversight from N60.</p>
-                </div>
-              </div>
+                    <p className="cta-support">{t.cta.support}</p>
             </div>
           </div>
         </section>
-
-        {/* 👥 IV. Capability – Workforce & Culture */}
-        <section id="capability" className="pillar-section capability-section">
-          <div className="container">
-            <div className="pillar-content">
-              <div className="pillar-icon" data-aos="fade-up">
-                <span className="pillar-emoji">👥</span>
-              </div>
-              <div className="pillar-text" data-aos="fade-up">
-                <h2 className="pillar-title">Step 4 — Compass: Training & Recruitment</h2>
-                <p className="pillar-tagline">Build the human capability to sustain and scale AI adoption.</p>
-                <div className="pillar-description">
-                  <p><strong>Purpose:</strong> Build the human capability to sustain and scale AI adoption.</p>
-                  <p><strong>Value:</strong> Transforms employees from passive users to active AI contributors. Reduces resistance and strengthens your employer brand.</p>
-                  <p><strong>Client Input Needed:</strong> HR and Learning contact, access to existing training materials and job descriptions.</p>
-                </div>
-              </div>
             </div>
 
-            {/* Connected Packages */}
-            <div className="packages-grid" data-aos="fade-up">
-              <div className="package-card">
-                <h3>Training & Recruitment Deliverables</h3>
-                <div className="package-details">
-                  <h4>Deliverables:</h4>
-                  <ul>
-                    <li>Competence gap analysis</li>
-                    <li>Custom AI training and certification program</li>
-                    <li>AI-ready job design and recruitment strategy</li>
-                    <li>Safe Use of AI workshop</li>
-                    <li>Learning measurement and progression report</li>
-                  </ul>
-                </div>
+            <aside className="home-sidebar">
+              <div className="home-sidebar-card">
+                <h3>{sidebarCopy.bookTitle}</h3>
+                <p>{sidebarCopy.bookBody}</p>
+                <Link to="/contact" className="home-sidebar-button">
+                  {sidebarCopy.bookCTA}
+                </Link>
               </div>
 
-              <div className="package-card">
-                <h3>Full N60 AI Transformation Program</h3>
-                <p className="package-duration">12–16 weeks | from 120,000 NOK</p>
-                <p className="package-description">Combine all five pillars into a single, guided transformation initiative.</p>
-                <button className="package-cta" onClick={() => {
-                  const element = document.getElementById('capability');
-                  if (element) {
-                    const packageDetails = element.querySelectorAll('.package-card')[1];
-                    if (packageDetails) {
-                      packageDetails.classList.toggle('expanded');
-                    }
-                  }
-                }}>View Details →</button>
-                <div className="package-details">
-                  <h4>Deliverables:</h4>
-                  <ul>
-                    <li>Complete readiness and architecture audit</li>
-                    <li>Governance and compliance framework</li>
-                    <li>Vendor and technology roadmap</li>
-                    <li>Implementation plan with financial modelling</li>
-                    <li>Workforce training and hiring support</li>
-                    <li>Quarterly performance and ROI review</li>
-                  </ul>
-                  <p><strong>Outcome:</strong> Your organisation becomes AI-ready — strategically, technically, and operationally — with ongoing oversight from N60.</p>
-                </div>
-              </div>
+              <div className="home-sidebar-card">
+                <h3>{sidebarCopy.downloadTitle}</h3>
+                <p>{sidebarCopy.downloadBody}</p>
+                <button
+                  type="button"
+                  className="home-sidebar-button secondary"
+                  onClick={() => window.open('/n60 Logo/Smarter work. Safer data. Stronger teams.pdf', '_blank')}
+                >
+                  {sidebarCopy.downloadCTA}
+                </button>
             </div>
-          </div>
-        </section>
 
-        {/* 🚀 Final CTA Section */}
-        <section id="journey-cta" className="journey-cta-section">
-          <div className="container">
-            <div className="journey-cta-content" data-aos="fade-up">
-              <h2>Your Journey Starts Here</h2>
-              <p>Every organisation's AI journey begins somewhere. Let's find your compass point — and chart the path toward capability.</p>
-              <div className="journey-cta-buttons">
-                <button className="cta-button primary" onClick={() => {
-                  const hero = document.getElementById('hero');
-                  if (hero) {
-                    const calendlyButton = hero.querySelector('.hero-cta');
-                    if (calendlyButton) calendlyButton.click();
-                  }
-                }}>Start Your Readiness Review</button>
-                <button className="cta-button secondary" onClick={() => {
-                  const hero = document.getElementById('hero');
-                  if (hero) {
-                    const calendlyButton = hero.querySelector('.hero-cta');
-                    if (calendlyButton) calendlyButton.click();
-                  }
-                }}>Book a Strategy Call</button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 🧭 About N60 - Who We Are */}
-        <section id="about-who" className="about-n60-section">
-          <div className="container">
-            <div className="about-n60-content">
-              <div className="about-header" data-aos="fade-up">
-                <h2>About N60</h2>
-                <p className="about-tagline">From Compass to Capability — guiding organisations toward responsible, profitable AI.</p>
+              <div className="home-sidebar-card home-sidebar-contact">
+                <h3>{sidebarCopy.contactTitle}</h3>
+                <p>{sidebarCopy.contactBody}</p>
+                <Link to="/contact" className="home-sidebar-contact-form-link">{sidebarCopy.contactFormLink}</Link>
               </div>
 
-              {/* Who We Are */}
-              <div className="about-subsection" data-aos="fade-up">
-                <h3>Who We Are</h3>
-                <p className="about-intro">
-                  N60 is a Nordic consultancy specialising in AI strategy, governance, and workforce transformation.
-                </p>
-                <p>
-                  We help organisations use artificial intelligence responsibly — not as a technology project, but as a structured part of business growth.
-                </p>
-                <div className="about-founding">
-                  <p><strong>Founded in Norway, N60 was built on a simple idea:</strong></p>
-                  <p className="founding-idea">AI should create value for people, not replace them.</p>
-                </div>
-                <p>
-                  We focus on helping small and medium-sized enterprises, public organisations, and leadership teams adapt, invest, and upskill through a clear and measurable approach to AI.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* What We Do */}
-        <section id="about-what" className="about-n60-section about-n60-alt">
-          <div className="container">
-            <div className="about-n60-content">
-              <div className="about-subsection" data-aos="fade-up">
-                <h3>What We Do</h3>
-                <p className="about-intro">
-                  We turn AI from uncertainty into clarity.
-                </p>
-                <p>
-                  Our work spans four pillars — the foundation of our Responsible AI Framework:
-                </p>
-                <div className="pillars-grid">
-                  <div className="pillar-item">
-                    <span className="pillar-number">1️⃣</span>
-                    <div className="pillar-item-content">
-                      <h4>Strategy & Governance – The Compass</h4>
-                      <p>Set a direction for AI that aligns with your purpose, risk appetite, and compliance goals.</p>
-                    </div>
-                  </div>
-                  <div className="pillar-item">
-                    <span className="pillar-number">2️⃣</span>
-                    <div className="pillar-item-content">
-                      <h4>Architecture & Technology – The Blueprint</h4>
-                      <p>Design scalable, secure systems that support measurable AI adoption.</p>
-                    </div>
-                  </div>
-                  <div className="pillar-item">
-                    <span className="pillar-number">3️⃣</span>
-                    <div className="pillar-item-content">
-                      <h4>Investment & ROI – The Growth Path</h4>
-                      <p>Connect business value to AI outcomes with clear budgeting and performance metrics.</p>
-                    </div>
-                  </div>
-                  <div className="pillar-item">
-                    <span className="pillar-number">4️⃣</span>
-                    <div className="pillar-item-content">
-                      <h4>Workforce & Capability – The Human Core</h4>
-                      <p>Upskill your people and redesign roles so human intelligence and machine intelligence work together.</p>
-                    </div>
-                  </div>
-                </div>
-                <p className="about-outcome">
-                  Each client engagement starts with these pillars and leads toward a practical outcome: an organisation that's ready, compliant, and future-proofed.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Approach */}
-        <section id="about-approach" className="about-n60-section">
-          <div className="container">
-            <div className="about-n60-content">
-              <div className="about-subsection" data-aos="fade-up">
-                <h3>Our Approach</h3>
-                <p>
-                  Unlike traditional technology consultancies, we don't sell software or licences.
-                </p>
-                <p>
-                  Instead, we provide independent, evidence-based guidance that lets clients make the right technology and investment choices — on their own terms.
-                </p>
-                <p><strong>Our methodology blends:</strong></p>
-                <ul className="about-methodology">
-                  <li>European governance standards (GDPR + upcoming EU AI Act compliance)</li>
-                  <li>Business design and financial modelling</li>
-                  <li>Organisational change and learning frameworks</li>
+              <div className="home-sidebar-card">
+                <h3>{sidebarCopy.trustTitle}</h3>
+                <ul className="home-sidebar-list">
+                  {sidebarCopy.trustItems.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
                 </ul>
-                <p className="about-philosophy">
-                  We combine analytical depth with Nordic simplicity:<br />
-                  <strong>No jargon, no black boxes — just practical strategy and measurable results.</strong>
-                </p>
               </div>
+            </aside>
             </div>
           </div>
-        </section>
 
-        {/* Why It Matters */}
-        <section id="about-why" className="about-n60-section about-n60-alt">
-          <div className="container">
-            <div className="about-n60-content">
-              <div className="about-subsection" data-aos="fade-up">
-                <h3>Why It Matters</h3>
-                <p>
-                  AI is advancing faster than most organisations can adapt.
-                </p>
-                <p>
-                  The real challenge isn't the technology — it's aligning people, governance, and strategy to keep pace.
-                </p>
-                <p className="about-value">
-                  That's where we come in.
-                </p>
-                <p>
-                  By turning strategy into structure, and structure into capability, N60 helps organisations future-proof their workforce and investments in a fast-changing window of opportunity.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+      {/* Floating Contact Button */}
+      <FloatingContactButton />
 
-        {/* Our Promise */}
-        <section id="about-promise" className="about-n60-section">
-          <div className="container">
-            <div className="about-n60-content">
-              <div className="about-subsection" data-aos="fade-up">
-                <h3>Our Promise</h3>
-                <div className="promise-grid">
-                  <div className="promise-item">
-                    <h4>Independent</h4>
-                    <p>Vendor-neutral, focused solely on client outcomes.</p>
-                  </div>
-                  <div className="promise-item">
-                    <h4>Responsible</h4>
-                    <p>Built on trust, compliance, and ethics.</p>
-                  </div>
-                  <div className="promise-item">
-                    <h4>Scalable</h4>
-                    <p>Designed to grow with your organisation's maturity.</p>
-                  </div>
-                </div>
-                <p className="about-close">
-                  We guide you from compass to capability — making AI responsible, measurable, and human.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Block */}
-        <section id="about-cta" className="about-cta-section">
-          <div className="container">
-            <div className="about-cta-block" data-aos="fade-up">
-              <p className="about-cta-intro">Explore how your organisation can build Responsible AI capability.</p>
-              <div className="about-cta-buttons">
-                <button className="cta-button primary" onClick={() => {
-                  const hero = document.getElementById('hero');
-                  if (hero) {
-                    const calendlyButton = hero.querySelector('.hero-cta');
-                    if (calendlyButton) calendlyButton.click();
-                  }
-                }}>Book a Consultation →</button>
-                <button className="cta-button secondary" onClick={() => {
-                  // TODO: Add download link for framework guide
-                  window.open('#framework', '_self');
-                }}>Download the N60 Framework Guide →</button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-      </div>
-
-      {/* Floating Contact CTA */}
-      <div className="floating-contact-cta">
-        <a href="#/contact" className="floating-contact-button">
-          <span className="cta-text">Contact n60</span>
-          <span className="cta-icon">💬</span>
-        </a>
-      </div>
-
-      {/* 🔟 Footer */}
+      {/* Footer */}
       <footer className="footer">
-        <div className="container">
-          <div className="footer-tagline">
-            <h3>N60 — Responsible AI for the Future of Work.</h3>
+        <div className="footer-inner">
+          <div className="footer-brand">
+            <img
+              src="/n60 Logo/n60compass - Edited.png"
+              alt="N60 Compass"
+              className="footer-logo"
+            />
+            <span className="footer-name">N60</span>
           </div>
-          <div className="footer-contact">
-            <p>📧 hello@n60.no</p>
-            <p>🌐 n60.ai</p>
-            <p>📍 Bergen, Norway</p>
-          </div>
-          <div className="footer-bottom">
-            <p>© {new Date().getFullYear()} N60</p>
-          </div>
+          <p className="footer-tagline">{t.footer.tagline}</p>
+          <nav className="footer-links">
+            <a href="/privacy-policy.html">{t.footer.privacyPolicy}</a>
+            <Link to="/contact">{t.footer.contact}</Link>
+            <a href="https://www.linkedin.com/company/n60" target="_blank" rel="noopener noreferrer">{t.footer.linkedin}</a>
+          </nav>
         </div>
       </footer>
 
@@ -1462,6 +1369,7 @@ function MainPage() {
       )}
 
       <CookieConsent />
+      </div>
     </>
   );
 }

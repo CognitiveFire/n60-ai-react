@@ -229,7 +229,7 @@ function SimpleContactForm() {
           <h2 style={{
             textAlign: 'center',
             marginBottom: '30px',
-            color: '#2c3548',
+            color: '#000',
             fontSize: '32px',
             fontWeight: '600'
           }}>
@@ -252,7 +252,7 @@ function SimpleContactForm() {
               display: 'block',
               marginBottom: '8px',
               fontWeight: '500',
-              color: '#2c3548'
+              color: '#000'
             }}>
               {t.name}
             </label>
@@ -280,7 +280,7 @@ function SimpleContactForm() {
               display: 'block',
               marginBottom: '8px',
               fontWeight: '500',
-              color: '#2c3548'
+              color: '#000'
             }}>
               {t.email}
             </label>
@@ -308,7 +308,7 @@ function SimpleContactForm() {
               display: 'block',
               marginBottom: '8px',
               fontWeight: '500',
-              color: '#2c3548'
+              color: '#000'
             }}>
               {t.company}
             </label>
@@ -336,7 +336,7 @@ function SimpleContactForm() {
               display: 'block',
               marginBottom: '8px',
               fontWeight: '500',
-              color: '#2c3548'
+              color: '#000'
             }}>
               {t.interest}
             </label>
@@ -373,7 +373,7 @@ function SimpleContactForm() {
               display: 'block',
               marginBottom: '8px',
               fontWeight: '500',
-              color: '#2c3548'
+              color: '#000'
             }}>
               {t.message}
             </label>

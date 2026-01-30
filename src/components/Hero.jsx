@@ -1,9 +1,11 @@
-
 // Hero.jsx
 import React, { useState } from 'react';
-// CSS moved to App.css
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations';
 
 const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
+  const { language } = useLanguage();
+  const t = translations[language];
   const [showCalendlyLightbox, setShowCalendlyLightbox] = useState(false);
 
   const handleOpenCalendly = () => {
@@ -14,29 +16,24 @@ const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
     setShowCalendlyLightbox(false);
   };
 
+  // Handle "Explore the Compass" button - scroll to framework section
+  const handleExploreCompass = () => {
+    const frameworkSection = document.getElementById('framework');
+    if (frameworkSection) {
+      frameworkSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section id="hero" className="hero-section">
+      <div className="hero-compass-animation"></div>
       <div className="hero-container">
-        <div className="hero-content">
-          <h1 className="hero-headline">
-            From Strategy to System We Make AI Responsible, Scalable, and Measurable.
-          </h1>
-          <p className="hero-subheadline">
-            We combine strategy, architecture, governance, and capability so AI delivers real business value safely and measurably.
-          </p>
-          <div className="hero-buttons">
-            <button 
-              onClick={handleOpenCalendly}
-              className="hero-cta"
-            >
-              Start Your AI Readiness Review
-            </button>
-            <button onClick={handleOpenCalendly} className="hero-cta hero-cta-secondary">
-              Book a Discovery Call
-            </button>
-          </div>
-          <p className="hero-trust-text">Independent. Vendor-neutral. Built for Nordic organisations.</p>
-        </div>
+        <h1 className="hero-headline hero-headline-desktop">
+          {t.hero.headline}
+        </h1>
+        <h1 className="hero-headline hero-headline-mobile">
+          {t.hero.headlineMobile}
+        </h1>
       </div>
       
       {/* Calendly Lightbox */}
@@ -53,7 +50,7 @@ const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
               </button>
             </div>
             <div className="calendly-message">
-              <p>Let's discuss your AI readiness and how we can help protect your organisation's future.</p>
+              <p>{t.hero.calendlyMessage}</p>
             </div>
             <div className="calendly-embed">
               <iframe
@@ -61,7 +58,7 @@ const Hero = ({ onOpenDemo, backgroundImage, videoUrl }) => {
                 width="100%"
                 height="600"
                 frameBorder="0"
-                title="Book N60 Demo"
+                title="Book N60 Consultation"
               />
             </div>
           </div>

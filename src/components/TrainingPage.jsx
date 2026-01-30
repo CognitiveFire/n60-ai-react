@@ -32,9 +32,9 @@ const Training = () => {
               </div>
             </div>
             <div className="training-hero-ctas">
-              <a href="https://calendly.com/n60/new-meeting" target="_blank" rel="noopener noreferrer" className="training-btn training-btn-outline">
+              <Link to="/contact" className="training-btn training-btn-outline">
                 📅 Book a Call
-              </a>
+              </Link>
               <button 
                 className="training-btn training-btn-outline" 
                 onClick={() => {
@@ -448,15 +448,13 @@ const Training = () => {
                     >
                       📅 Send Inquiry
                     </button>
-                    <a 
-                      href="https://calendly.com/n60/new-meeting" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
+                    <Link 
+                      to="/contact"
                       className="training-btn training-btn-secondary training-form-submit"
                       style={{ textDecoration: 'none', display: 'inline-block' }}
                     >
                       📞 Book a Call
-                    </a>
+                    </Link>
                   </div>
                   
                   <p className="training-form-note">
@@ -472,9 +470,9 @@ const Training = () => {
             <div className="training-sidebar-card training-sidebar-cta">
               <h3>Book a Call</h3>
               <p style={{ marginBottom: '1rem' }}>Ready to get started?</p>
-              <a href="https://calendly.com/n60/new-meeting" target="_blank" rel="noopener noreferrer" className="training-btn training-btn-outline" style={{ width: '100%', justifyContent: 'center' }}>
+              <Link to="/contact" className="training-btn training-btn-outline" style={{ width: '100%', justifyContent: 'center' }}>
                 📅 Book a Call
-              </a>
+              </Link>
             </div>
 
             {/* Course Leader Bio */}
