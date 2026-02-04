@@ -9,6 +9,7 @@ function App() {
   });
   const [submitting, setSubmitting] = useState(false);
   const [status, setStatus] = useState(null);
+  const [navOpen, setNavOpen] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -50,24 +51,27 @@ function App() {
     <div className="page">
       <header className="site-header">
         <div className="site-header-inner">
-          <div className="site-brand">
-            <img
-              src="/n60 Logo/n60-logo.png"
-              alt="N60"
-              className="site-logo"
-            />
-            <span className="site-name">Matthew Robinson</span>
-          </div>
-          <nav className="site-nav" aria-label="Main">
-            <a href="#hero">Hero</a>
-            <a href="#what-i-do">What I do</a>
-            <a href="#how-i-work">How I work</a>
-            <a href="#experience">Experience</a>
-            <a href="#capabilities">Capabilities</a>
-            <a href="#engagement-models">Engagement</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-          </nav>
+          <button
+            type="button"
+            className="menu-toggle"
+            aria-label="Toggle navigation"
+            aria-expanded={navOpen ? 'true' : 'false'}
+            onClick={() => setNavOpen((open) => !open)}
+          >
+            <span className="menu-toggle-bar" />
+            <span className="menu-toggle-bar" />
+          </button>
+          {navOpen && (
+            <nav className="site-nav-panel" aria-label="Main">
+              <a href="#what-i-do" onClick={() => setNavOpen(false)}>What I do</a>
+              <a href="#how-i-work" onClick={() => setNavOpen(false)}>How I work</a>
+              <a href="#experience" onClick={() => setNavOpen(false)}>Experience</a>
+              <a href="#capabilities" onClick={() => setNavOpen(false)}>Capabilities</a>
+              <a href="#engagement-models" onClick={() => setNavOpen(false)}>Engagement</a>
+              <a href="#about" onClick={() => setNavOpen(false)}>About</a>
+              <a href="#contact" onClick={() => setNavOpen(false)}>Contact</a>
+            </nav>
+          )}
         </div>
       </header>
       <main className="page-inner">
