@@ -51,6 +51,7 @@ function App() {
     <div className="page">
       <header className="site-header">
         <div className="site-header-inner">
+          <span className="site-title">Matthew Robinson</span>
           <button
             type="button"
             className="menu-toggle"
