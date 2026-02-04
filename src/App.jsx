@@ -48,9 +48,31 @@ function App() {
 
   return (
     <div className="page">
+      <header className="site-header">
+        <div className="site-header-inner">
+          <div className="site-brand">
+            <img
+              src="/n60 Logo/n60-logo.png"
+              alt="N60"
+              className="site-logo"
+            />
+            <span className="site-name">Matthew Robinson</span>
+          </div>
+          <nav className="site-nav" aria-label="Main">
+            <a href="#hero">Hero</a>
+            <a href="#what-i-do">What I do</a>
+            <a href="#how-i-work">How I work</a>
+            <a href="#experience">Experience</a>
+            <a href="#capabilities">Capabilities</a>
+            <a href="#engagement-models">Engagement</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
       <main className="page-inner">
         {/* Hero */}
-        <header id="hero" className="page-header section hero-section">
+        <header id="hero" className="page-header section">
           <div className="section-header">
             <p className="page-kicker">Matthew Robinson</p>
             <h1 className="page-title">Digital marketing leadership for growth-focused companies.</h1>
@@ -60,7 +82,7 @@ function App() {
               digital transformation — combining hands-on execution with senior-level strategic
               leadership.
             </p>
-          </div>
+              </div>
           <p className="page-subtitle">
             Strategy, performance, and execution — from early-stage scale-ups to established global
             brands.
@@ -69,7 +91,7 @@ function App() {
             <a href="#contact" className="button-primary">
               Start a conversation →
             </a>
-          </div>
+              </div>
         </header>
 
         {/* What I do */}
@@ -80,7 +102,7 @@ function App() {
             <p className="section-kicker">
               I work at the intersection of strategy, execution, and leadership.
             </p>
-          </div>
+        </div>
 
           <div className="columns-3">
             <div className="block-card">
@@ -88,21 +110,21 @@ function App() {
               <p className="block-body">
                 Building measurable demand engines across B2B and B2C — from acquisition to revenue.
               </p>
-            </div>
+              </div>
             <div className="block-card">
               <h3 className="block-title">Digital Strategy &amp; Transformation</h3>
               <p className="block-body">
                 Helping organisations modernise their marketing, data, and technology to support growth.
               </p>
-            </div>
+                </div>
             <div className="block-card">
               <h3 className="block-title">Leadership &amp; Enablement</h3>
               <p className="block-body">
                 Leading teams, mentoring specialists, and aligning marketing with sales, product, and
                 leadership.
               </p>
+              </div>
             </div>
-          </div>
         </section>
 
         {/* How I work */}
@@ -117,7 +139,7 @@ function App() {
               <li>Clear priorities, realistic roadmaps</li>
               <li>Close collaboration with internal teams</li>
               <li>Transparent reporting and measurable impact</li>
-            </ul>
+                  </ul>
             <p className="lead">
               I’m comfortable operating as an external advisor, a hands-on consultant, or an embedded
               marketing leader — depending on what the business needs.
@@ -130,7 +152,7 @@ function App() {
           <div className="section-header">
             <p className="section-eyebrow">Experience &amp; scope</p>
             <h2 className="section-title">Markets, clients, and models.</h2>
-          </div>
+              </div>
 
           <div className="two-column">
             <div className="stack-large">
@@ -141,7 +163,7 @@ function App() {
                   <li>Europe</li>
                   <li>Global markets</li>
                 </ul>
-              </div>
+            </div>
 
               <div>
                 <p className="list-heading">Client types:</p>
@@ -149,9 +171,9 @@ function App() {
                   <li>Startups and scale-ups</li>
                   <li>SaaS and technology companies</li>
                   <li>Established, category-leading brands</li>
-                </ul>
+                  </ul>
+                </div>
               </div>
-            </div>
 
             <div className="stack">
               <p className="list-heading">Commercial models:</p>
@@ -167,7 +189,7 @@ function App() {
           <div className="section-header">
             <p className="section-eyebrow">Capabilities</p>
             <h2 className="section-title">Where I’m most useful.</h2>
-          </div>
+              </div>
 
           <div className="stack-large">
             <div className="stack-large">
@@ -185,8 +207,8 @@ function App() {
                 <li>Technical and content-led SEO</li>
                 <li>Search visibility in AI-driven environments</li>
                 <li>Structured content for discovery and authority</li>
-              </ul>
-            </div>
+                  </ul>
+              </div>
 
             <div className="stack-large">
               <p className="list-heading">Demand Generation &amp; Revenue</p>
@@ -194,8 +216,8 @@ function App() {
                 <li>Pipeline creation and forecasting</li>
                 <li>Account-Based Marketing (ABM)</li>
                 <li>Lead generation and nurturing</li>
-              </ul>
-            </div>
+                  </ul>
+                </div>
 
             <div className="stack-large">
               <p className="list-heading">Marketing Technology</p>
@@ -212,8 +234,8 @@ function App() {
                 <li>Positioning and messaging</li>
                 <li>Go-to-market strategy</li>
                 <li>Alignment between product, sales, and marketing</li>
-              </ul>
-            </div>
+                  </ul>
+              </div>
 
             <div className="stack-large">
               <p className="list-heading">AI &amp; Insights</p>
@@ -221,8 +243,8 @@ function App() {
                 <li>AI-assisted research and analysis</li>
                 <li>Automation for efficiency and scale</li>
                 <li>Practical applications, not experimentation theatre</li>
-              </ul>
-            </div>
+                  </ul>
+                </div>
 
             <div className="stack-large">
               <p className="list-heading">Governance</p>
@@ -239,7 +261,7 @@ function App() {
           <div className="section-header">
             <p className="section-eyebrow">Engagement models</p>
             <h2 className="section-title">How we might work together.</h2>
-          </div>
+              </div>
 
           <div className="stack-large">
             <div className="block-card">
@@ -253,13 +275,13 @@ function App() {
               <p className="block-body">
                 End-to-end ownership of campaigns, platforms, or transformation initiatives.
               </p>
-            </div>
+                </div>
             <div className="block-card">
               <h3 className="block-title">Interim or Fractional Lead</h3>
               <p className="block-body">
                 Hands-on leadership for teams, functions, or critical growth phases.
-              </p>
-            </div>
+                </p>
+              </div>
 
             <p className="small-text">
               Each engagement is shaped around business objectives, internal maturity, and delivery
@@ -273,7 +295,7 @@ function App() {
           <div className="section-header">
             <p className="section-eyebrow">About me</p>
             <h2 className="section-title">A partner, not a passenger.</h2>
-          </div>
+              </div>
 
           <div className="two-column">
             <div className="stack-large">
@@ -290,8 +312,8 @@ function App() {
               <p className="lead">
                 I care deeply about clarity, accountability, and work that actually moves the business
                 forward.
-              </p>
-            </div>
+                </p>
+              </div>
 
             <div className="stack-large">
               <div>
@@ -302,7 +324,7 @@ function App() {
                   <li>Strong across both performance and long-term demand</li>
                   <li>Proven in complex, regulated environments</li>
                 </ul>
-              </div>
+                  </div>
               <div>
                 <p className="subtle-label">Cons (by design)</p>
                 <ul className="tight-list">
@@ -320,7 +342,7 @@ function App() {
           <div className="section-header">
             <p className="section-eyebrow">Contact</p>
             <h2 className="section-title">Let’s talk.</h2>
-          </div>
+              </div>
 
           <div className="stack-large">
             <p className="lead">
@@ -341,7 +363,7 @@ function App() {
                     onChange={handleChange}
                     required
                   />
-                </div>
+            </div>
                 <div className="field">
                   <label htmlFor="company">Company</label>
                   <input
@@ -352,7 +374,7 @@ function App() {
                     onChange={handleChange}
                     required
                   />
-                </div>
+          </div>
               </div>
 
               <div className="field">
@@ -366,7 +388,7 @@ function App() {
                   onChange={handleChange}
                   required
                 />
-              </div>
+      </div>
 
               <div className="field">
                 <label htmlFor="message">Short message</label>
@@ -377,14 +399,14 @@ function App() {
                   onChange={handleChange}
                   placeholder="A few lines about your context, challenges, or questions."
                 />
-              </div>
+      </div>
 
               <div className="form-footer">
                 <button type="submit" className="button-primary" disabled={submitting}>
                   {submitting ? 'Sending…' : 'Send →'}
                 </button>
                 <span className="form-hint">I usually respond within one business day.</span>
-              </div>
+          </div>
 
               {status && (
                 <p className={`form-status ${status.type}`}>
@@ -395,7 +417,7 @@ function App() {
           </div>
         </section>
       </main>
-    </div>
+        </div>
   );
 }
 

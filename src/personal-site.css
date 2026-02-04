@@ -38,20 +38,62 @@ a {
   margin-bottom: 3rem;
 }
 
-.hero-section {
-  margin: -2rem -1.5rem 3rem;
-  padding: 3rem 1.5rem 3.25rem;
-  background:
-    radial-gradient(circle at top left, rgba(59, 130, 246, 0.12), transparent 55%),
-    radial-gradient(circle at top right, rgba(79, 70, 229, 0.10), transparent 60%),
-    #f7f5f0;
-  border-bottom: 1px solid rgba(229, 231, 235, 0.7);
+/* Simple top nav */
+.site-header {
+  padding: 1.25rem 1.5rem 0;
 }
 
-@media (max-width: 780px) {
-  .hero-section {
-    margin: -1.5rem -1.25rem 2.5rem;
-    padding: 2.5rem 1.25rem 2.75rem;
+.site-header-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.site-logo {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  object-fit: contain;
+}
+
+.site-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4b5563;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  font-size: 0.85rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #4b5563;
+  padding: 0.15rem 0;
+}
+
+.site-nav a:hover {
+  color: #111827;
+}
+
+@media (max-width: 700px) {
+  .site-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
