@@ -50,7 +50,7 @@ function App() {
     <div className="page">
       <main className="page-inner">
         {/* Hero */}
-        <header id="hero" className="page-header section">
+        <header id="hero" className="page-header section hero-section">
           <div className="section-header">
             <p className="page-kicker">Matthew Robinson</p>
             <h1 className="page-title">Digital marketing leadership for growth-focused companies.</h1>

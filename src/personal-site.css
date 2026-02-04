@@ -38,6 +38,23 @@ a {
   margin-bottom: 3rem;
 }
 
+.hero-section {
+  margin: -2rem -1.5rem 3rem;
+  padding: 3rem 1.5rem 3.25rem;
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.12), transparent 55%),
+    radial-gradient(circle at top right, rgba(79, 70, 229, 0.10), transparent 60%),
+    #f7f5f0;
+  border-bottom: 1px solid rgba(229, 231, 235, 0.7);
+}
+
+@media (max-width: 780px) {
+  .hero-section {
+    margin: -1.5rem -1.25rem 2.5rem;
+    padding: 2.5rem 1.25rem 2.75rem;
+  }
+}
+
 .page-kicker {
   font-size: 0.85rem;
   letter-spacing: 0.08em;
