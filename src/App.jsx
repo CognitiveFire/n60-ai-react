@@ -51,11 +51,14 @@ function App() {
     <div className="page">
       <header className="site-header">
         <div className="site-header-inner">
-          <img
-            src="/n60 Logo/mjr.png"
-            alt="Logo"
-            className="site-logo"
-          />
+          <div className="site-brand">
+            <img
+              src="https://ibb.co/TqqBtT4x"
+              alt="Matthew Robinson"
+              className="site-logo"
+            />
+            <span className="site-title">Matthew Robinson</span>
+          </div>
           <button
             type="button"
             className="menu-toggle"
@@ -83,6 +86,7 @@ function App() {
         {/* Hero */}
         <header id="hero" className="page-header section">
           <div className="section-header">
+            <p className="page-kicker">Matthew Robinson</p>
             <h1 className="page-title">Digital marketing leadership for growth-focused companies.</h1>
             <p className="lead">
               I help companies build sustainable demand, predictable pipelines, and modern marketing
