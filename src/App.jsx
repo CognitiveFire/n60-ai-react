@@ -51,7 +51,11 @@ function App() {
     <div className="page">
       <header className="site-header">
         <div className="site-header-inner">
-          <span className="site-title">Matthew Robinson</span>
+          <img
+            src="/n60 Logo/mjr.png"
+            alt="Logo"
+            className="site-logo"
+          />
           <button
             type="button"
             className="menu-toggle"
@@ -73,13 +77,12 @@ function App() {
               <a href="#contact" onClick={() => setNavOpen(false)}>Contact</a>
             </nav>
           )}
-        </div>
+              </div>
       </header>
       <main className="page-inner">
         {/* Hero */}
         <header id="hero" className="page-header section">
           <div className="section-header">
-            <p className="page-kicker">Matthew Robinson</p>
             <h1 className="page-title">Digital marketing leadership for growth-focused companies.</h1>
             <p className="lead">
               I help companies build sustainable demand, predictable pipelines, and modern marketing
@@ -96,7 +99,7 @@ function App() {
             <a href="#contact" className="button-primary">
               Start a conversation →
             </a>
-              </div>
+            </div>
         </header>
 
         {/* What I do */}
