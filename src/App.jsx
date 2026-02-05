@@ -53,11 +53,10 @@ function App() {
         <div className="site-header-inner">
           <div className="site-brand">
             <img
-              src="https://ibb.co/TqqBtT4x"
-              alt="Matthew Robinson"
+              src="https://i.ibb.co/XkkZt47r/mjr.png"
+              alt="Logo"
               className="site-logo"
             />
-            <span className="site-title">Matthew Robinson</span>
           </div>
           <button
             type="button"
